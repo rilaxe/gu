@@ -1,0 +1,27 @@
+@media (max-width:800px) {
+    .topimgheight {
+        height: 15vh;
+    }
+
+    .logimg {
+        height: 50px;
+    }
+
+    .aligntopimg {
+        text-align: center;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 3000px) {
+    .topimgheight {
+        height: 100vh;
+    }
+
+    .logimg {
+        height: 70px;
+    }
+
+    .aligntopimg {
+        text-align: start;
+    }
+}

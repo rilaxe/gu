@@ -1,0 +1,191 @@
+<div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+   
+    <!--end::Header-->
+    <!--begin::Content-->
+    <div class="content d-flex flex-column flex-column-fluid " id="kt_content">
+
+        <!--begin::Post-->
+        <div class="post d-flex flex-column-fluid" id="kt_post">
+            <!--begin::Container-->
+            <div id="kt_content_container" class="container-xxl">
+                <!--begin::Connected Accounts-->
+                <div class="card mb-5 mb-xl-10">
+                    <!--begin::Card header-->
+                    <div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse"
+                        data-bs-target="#kt_account_connected_accounts" aria-expanded="true"
+                        aria-controls="kt_account_connected_accounts">
+                        <div class="card-title m-0">
+                            <h3 class="fw-bolder m-0">Publish Assessment Result</h3>
+                        </div>
+                     
+                    </div>
+                    <!--end::Card header-->
+                    <!--begin::Content-->
+                    <div id="kt_account_settings_connected_accounts" class="collapse show">
+                        <!--begin::Card body-->
+                        <div class="card-body border-top p-9">
+                            <!--begin::Form-->
+                            <form action="" id="kt_invoice_form">
+
+                                <!--begin::Wrapper-->
+                                <div class="mb-0">
+                                    <!--begin::Row-->
+                                    <div class="row gx-10 mb-5">
+                                        <!--begin::Col-->
+                                        <div class="col-lg-6">
+                                            <!--begin::Label-->
+                                            <div class="fv-row mb-10">
+                                                <label class="fs-6 fw-bold form-label mt-3">
+                                                    <span class="required">Select Session</span>
+                                                </label>
+                                                <!--end::Label-->
+                                                <div class="w-100">
+                                                    <!--begin::Input-->
+                                                    <select [(ngModel)]="currentSessionId" name="classu"
+                                                                aria-label="Select class" data-control="select2"
+                                                                data-placeholder="Select class.."
+                                                                class="form-select form-select-solid form-select-lg">
+                                                                <option value="">Select Session...</option>
+                                                                <option *ngFor="let session of sessionlist"
+                                                                    [value]="session.id">{{session.sessionName}}
+                                                                </option>
+                                                            </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--end::Col-->
+                                        <!--begin::Col-->
+                                        <div class="col-lg-6">
+                                            <!--begin::Label-->
+                                            <div class="fv-row mb-10">
+                                                <label class="fs-6 fw-bold form-label mt-3">
+                                                    <span class="required">Term</span>
+                                                </label>
+                                                <!--end::Label-->
+                                                <div class="w-100">
+                                                    <!--begin::Input-->
+                                                    <select [(ngModel)]="currentTerm" name="clasis" aria-label="Select term"
+                                            data-control="select2" data-placeholder="Select term.."
+                                            class="form-select form-select-solid form-select-lg">
+                                            <option selected disabled>Select term</option>
+                                            <option value="FIRST">First</option>
+                                            <option value="SECOND">Second</option>
+                                            <option value="THIRD">Third</option>
+                                            <option value="ANNUAL">Annual</option>
+                                        </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="fv-row mb-10">
+                                                <label class="fs-6 fw-bold form-label mt-3">
+                                                    <span class="required">Category</span>
+                                                </label>
+                                            
+                                                <div class="w-100">
+                                                    <select [(ngModel)]="selectedCategory" name="categ" aria-label="Select Term"
+                                                        class="form-select form-select-solid form-select-lg">
+                                                        <option value="">Select Category</option>
+                                                        <option *ngFor="let session of category"
+                                                            [value]="session">{{session}}
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        
+                                <div class="col-lg-6">
+                                    <div class="fv-row mb-10 text-end">
+                                        
+                                        <div class="w-100">
+                                            <button (click)="loadCA()" type="button" class="btn btn-primary mt-12" style="padding: 12px 70px;">Load CA</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+                                    </div>
+
+                                    <div
+                                                class="d-flex col-12 flex-column fv-row rounded-3 p-5 border border-dashed border-gray-300">
+                                                <!--begin::Label-->
+                                                <div class="fs-5 fw-bold form-label mb-5">
+                                                    Result Components
+
+                                                    <span class="ms-2 cursor-pointer"
+                                                        data-bs-toggle="popover"
+                                                        data-bs-trigger="hover focus" data-bs-html="true"
+                                                        data-bs-delay-hide="1000"
+                                                        data-bs-content="Thresholds help manage risk by limiting the unpaid usage balance a customer can accrue. Thresholds only measure and bill for metered usage (including discounts but excluding tax). <a href='#'>Learn more</a>."
+                                                        data-kt-initialized="1">
+                                                        <i class="ki-duotone ki-information fs-7"><span
+                                                                class="path1"></span><span
+                                                                class="path2"></span><span
+                                                                class="path3"></span></i> </span>
+                                                </div>
+                                                <!--end::Label-->
+                                                <div *ngFor="let ca of dispalyCaSetupData | keyvalue" class="d-flex mb-3">
+                                                    <!--begin::Checkbox-->
+                                                    <label
+                                                        class="form-check form-check-sm me-6 form-check-custom form-check-solid">
+                                                        <input #pho class="form-check-input" type="checkbox"
+                                                            [checked]="isCheckAll" (change)="setField(pho.checked, ca.key)">
+                                                        <span class="form-check-label fw-bold fs-6">
+                                                            {{ca.value}}
+                                                        </span>
+                                                    </label>
+                                                    <!--end::Checkbox-->
+                                                    <!--begin::Checkbox-->
+                                                    
+                                                    <!--end::Checkbox-->
+                                                </div>
+                                            </div>
+
+                                    <!--end::Col-->
+                                </div>
+
+                                <div style="text-align: end;">
+                                    <div>
+                                        <button [disabled]="loading" (click)="Submit()" type="button" class="btn btn-info mt-3">Publish
+                                            Assessment Result</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <!--end::Form-->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!--end::Connected Accounts-->
+
+        </div>
+        <!--end::Content-->
+    </div>
+    <!--end::Post-->
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

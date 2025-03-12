@@ -1,0 +1,178 @@
+<div class="col-xxl-12">
+    <!--begin::Security summary-->
+    <div class="card card-xxl-stretch mb-5 mb-xl-10">
+        <!--begin::Header-->
+        <div class="card-header card-header-stretch">
+            <!--begin::Title-->
+            <div class="card-title">
+                <h3 class="m-0 text-gray-900">Academic Performance</h3>
+            </div>
+            <!--end::Title-->
+            <!--begin::Toolbar-->
+            <div class="card-toolbar">
+                <ul class="nav nav-tabs nav-line-tabs nav-stretch border-transparent fs-5 fw-bolder"
+                    id="kt_security_summary_tabs">
+                    <li class="nav-item">
+                        <a class="nav-link text-active-primary"
+                            (click)="changeTerm('FIRST')"
+                            [ngClass]="academicTerm == 'FIRST' ? 'active': ''"
+                            data-kt-countup-tabs="true" data-bs-toggle="tab">First Term</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-active-primary"
+                            (click)="changeTerm('SECOND')"
+                            [ngClass]="academicTerm == 'SECOND' ? 'active': ''"
+                            data-kt-countup-tabs="true" data-bs-toggle="tab">Second Term</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-active-primary"
+                            (click)="changeTerm('THIRD')"
+                            [ngClass]="academicTerm == 'THIRD' ? 'active': ''"
+                            data-kt-countup-tabs="true" data-bs-toggle="tab">Third Term</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-link">
+                            <select #ses [(ngModel)]="currentSessionId"
+                                (change)="changeSession(ses.value.toString())" name="classu"
+                                class=" me-2 form-select form-select-sm form-select-solid w-125px"
+                                data-control="select2" data-placeholder="Select Hours"
+                                data-hide-search="true">
+                                <option value="">Select Session...</option>
+                                <option *ngFor="let session of sessionlist"
+                                    [value]="session.id">{{session.sessionName}}</option>
+                            </select>
+                            <!--begin::Select-->
+                            <!-- <select class=" me-2 form-select form-select-sm form-select-solid w-125px" data-control="select2" data-placeholder="Select Hours" data-hide-search="true">
+                <option value="1" selected="selected">Year</option>
+                <option value="2">2024</option>
+                <option value="3">2023</option>
+                <option value="4">2022</option>
+            </select> -->
+                            <!--end::Select-->
+
+                        </div>
+                    </li>
+                </ul>
+
+
+
+            </div>
+            <!--end::Toolbar-->
+
+        </div>
+        <!--end::Header-->
+        <!--begin::Body-->
+        <div class="card-body pt-7 pb-0 px-0">
+            <!--begin::Tab content-->
+            <div class="tab-content">
+                <!--begin::Tab panel-->
+                <div class="tab-pane fade active show" role="tabpanel">
+                    <!--begin::Row-->
+                    <div class="row p-0 mb-5 px-9">
+                        <!--begin::Col-->
+                        <div class="col">
+                            <div
+                                class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-4 pb-2 my-3">
+                                <span class="fs-4 fw-bold text-success d-block">Highest
+                                    Average</span>
+                                <span class="fs-2hx fw-bolder text-gray-900"
+                                    data-kt-countup="true"
+                                    data-kt-countup-value="89.2">{{highestave?.toFixed(1)}}</span>
+                            </div>
+                        </div>
+                        <!--end::Col-->
+                        <!--begin::Col-->
+                        <div class="col">
+                            <div
+                                class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-4 pb-2 my-3">
+                                <span class="fs-4 fw-bold text-primary d-block">Student
+                                    Average</span>
+                                <span class="fs-2hx fw-bolder text-gray-900"
+                                    data-kt-countup="true"
+                                    data-kt-countup-value="74.4">{{myave?.toFixed(1)}}</span>
+                            </div>
+                        </div>
+                        <!--end::Col-->
+                        <!--begin::Col-->
+                        <div class="col">
+                            <div
+                                class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-4 pb-2 my-3">
+                                <span class="fs-4 fw-bold text-danger d-block">Lowest
+                                    Average</span>
+                                <span class="fs-2hx fw-bolder text-gray-900"
+                                    data-kt-countup="true"
+                                    data-kt-countup-value="56.0">{{lowestave?.toFixed(1)}}</span>
+                            </div>
+                        </div>
+                        <!--end::Col-->
+                    </div>
+                    <!--end::Row-->
+                    <!--begin::Container-->
+                    <div class="pt-2">
+                        <!--begin::Tabs-->
+                        <div class="d-flex align-items-center pb-6 px-9">
+                            <!--begin::Title-->
+                            <h3 class="m-0 text-gray-900 flex-grow-1">Result Chart</h3>
+                            <!--end::Title-->
+                            <!--begin::Nav pills-->
+
+
+                            <a class="nav-link btn btn-active-light btn-active-color-gray-700 btn-color-gray-400 py-2 px-5 fs-6 fw-bold"
+                                data-bs-toggle="tab"
+                                id="kt_security_summary_tab_hours_agents"
+                                href="#kt_security_summary_tab_pane_hours_agents"></a>
+
+
+                            <a class="nav-link btn btn-active-light btn-active-color-gray-700 btn-color-gray-400 py-2 px-5 fs-6 fw-bold"
+                                data-bs-toggle="tab"
+                                id="kt_security_summary_tab_hours_clients"
+                                href="#kt_security_summary_tab_pane_hours_clients"></a>
+
+
+                            <!--end::Nav pills-->
+                            <!--begin::Nav pills-->
+
+
+
+
+                            <a class="nav-link btn btn-active-light btn-active-color-gray-700 btn-color-gray-400 py-2 px-5 fs-6 fw-bold"
+                                data-bs-toggle="tab"
+                                id="kt_security_summary_tab_day_clients"
+                                href="#kt_security_summary_tab_pane_day_clients"></a>
+
+
+                            <!--end::Nav pills-->
+                        </div>
+
+                        <div *ngIf="isViewAR" style="text-align:center">
+                            <apx-chart [series]="chartDoubleOptions.series"
+                                [chart]="chartDoubleOptions.chart"
+                                [dataLabels]="chartDoubleOptions.dataLabels"
+                                [yaxis]="chartDoubleOptions.yaxis"
+                                [xaxis]="chartDoubleOptions.xaxis"
+                                [legend]="chartDoubleOptions.legend"
+                                [plotOptions]="chartDoubleOptions.plotOptions"
+                                [fill]="chartDoubleOptions.fill"
+                                [tooltip]="chartDoubleOptions.tooltip"></apx-chart>
+                        </div>
+                        <!--end::Tabs-->
+                        <!--begin::Tab content-->
+
+                        <!--end::Tab content-->
+                    </div>
+                    <!--end::Container-->
+                </div>
+                <!--end::Tab panel-->
+                <!--begin::Tab panel-->
+
+                <!--end::Tab panel-->
+                <!--begin::Tab panel-->
+
+                <!--end::Tab panel-->
+            </div>
+            <!--end::Tab content-->
+        </div>
+        <!--end::Body-->
+    </div>
+    <!--end::Security summary-->
+</div>

@@ -1,0 +1,255 @@
+<div class="content d-flex flex-column flex-column-fluid " id="kt_content">
+
+    <!--begin::Post-->
+    <div class="post d-flex flex-column-fluid" id="kt_post">
+        <!--begin::Container-->
+        <div id="kt_content_container" class="container-xxl">
+            <!--begin::Card-->
+            <div class="card mb-10">
+                <!--begin::Card body-->
+                <div class="card-body p-12">
+                    <!--begin::Form-->
+                    <form action="" id="kt_invoice_form">
+
+                        <!--begin::Wrapper-->
+                        <div class="mb-0">
+                            <!--begin::Row-->
+                            <div class="row gx-10 mb-5">
+                                <!--begin::Col-->
+                                <div class="col-lg-6">
+                                    
+                                    <div class="fv-row mb-10">
+                                        <label class="fs-6 fw-bold form-label mt-3">
+                                            <span class="required">Select Class</span>
+                                        </label>
+                                        <!--end::Label-->
+                                        <div class="w-100">
+                                            <select [(ngModel)]="currentClassId" name="classy" aria-label="Select class" data-control="select2"
+                                            data-placeholder="Select class.."
+                                            class="form-select form-select-solid form-select-lg">
+                                            <option value="">Select Class...</option>
+                                            <option *ngFor="let session of schoolClasses" [value]="session.id">{{session.class}}</option>
+                                        </select>
+                                            <!--end::Input-->
+
+                                        </div>
+                                    </div>
+                                    <!--begin::Label-->
+                                    <div class="fv-row mb-10">
+                                        <label class="fs-6 fw-bold form-label">
+                                            <span class="required">Session</span>
+                                        </label>
+                                        <!--end::Label-->
+                                        <div class="w-100">
+
+                                            <select [(ngModel)]="currentSessionId" name="classu" aria-label="Select class"
+                                                    data-control="select2" data-placeholder="Select class.."
+                                                    class="form-select form-select-solid form-select-lg">
+                                                    <option value="">Select Session...</option>
+                                                    <option *ngFor="let session of sessionlist" [value]="session.id">{{session.sessionName}}</option>
+                                                </select>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!--end::Col-->
+                                <!--begin::Col-->
+                                <div class="col-lg-6">
+
+                                    <!--begin::Label-->
+                                    <div class="fv-row mb-10">
+                                        <label class="fs-6 fw-bold form-label mt-3">
+                                            <span class="required">Term</span>
+                                        </label>
+                                        <!--end::Label-->
+                                        <div class="w-100">
+                                            <select [(ngModel)]="currentTerm" name="clasis" aria-label="Select term"
+                                                    data-control="select2" data-placeholder="Select term.."
+                                                    class="form-select form-select-solid form-select-lg">
+                                                    <option selected disabled>Select term</option>
+                                                    <option value="FIRST">First</option>
+                                                    <option value="SECOND">Second</option>
+                                                    <option value="THIRD">Third</option>
+                                                </select>
+                                            <!--end::Input-->
+
+                                        </div>
+                                    </div>
+                                    <!--begin::Label-->
+
+                                    <div class="fv-row mb-5" style="margin-top: 60px;">
+                                        <div class="w-100">
+                                            <button (click)="getStudents()" class="w-100 btn btn-primary" style="padding: 10px ;">Show Results</button>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <!--end::Col-->
+
+                            </div>
+                            <!--end::Row-->
+
+                            <!--begin::Table wrapper-->
+                            <div class="table-responsive mb-10">
+                                <!--begin::Table-->
+                                <!--begin::Table-->
+                                <table class="table align-middle table-row-dashed fs-6 gy-5"
+                                    id="kt_customers_table">
+                                    <!--begin::Table head-->
+                                    <thead>
+                                        <!--begin::Table row-->
+                                        <tr
+                                            class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+                                            <th>S/N</th>
+                                            <th class="min-w-175px mr-10">Student Name</th>
+                                            <th class="min-w-75px">Gender</th>
+                                            <th class="min-w-50px">Admission Number</th>
+                                            <th class="text-start min-w-70px">Actions</th>
+                                            <th class="min-w-50px">Reason</th>  
+                                        </tr>
+                                        <!--end::Table row-->
+                                    </thead>
+                                    <!--end::Table head-->
+                                    <!--begin::Table body-->
+                                    <tbody class="fw-bold text-gray-600">
+                                        <tr  *ngFor="let item of students; index as i">
+                                            <!--begin::Name=-->
+                                            <td>{{i + 1}}</td>
+                                            <td>
+                                                <a href="View_user.html"
+                                                    class="text-gray-800 text-hover-info mb-1">{{((item.surname ?? '') + ' ' + (item.middleName ?? '') + ' ' + (item.firstName ?? '')).trim()}}</a>
+                                            </td>
+                                            <!--end::Name=-->
+                                            <!--begin::Email=-->
+                                            <td>
+                                                <a class="text-gray-600 text-hover-info mb-1">{{item.sex}}</a>
+                                            </td>
+                                            <!--end::Email=-->
+
+                                            <!--begin::Payment method=-->
+                                            <td data-filter="mastercard">{{item.admissionNo}}</td>
+                                            <!--end::Payment method=-->
+
+                                            <!--begin::Action=-->
+                                            <td *ngIf="!item.isResultBlocked" class="text-start">
+                                                <button data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer" (click)="selectedStudent = item"
+                                                    class="btn btn-sm btn-light-danger btn-active-danger me-3">Block</button>
+                                                <!--end::Menu-->
+                                            </td>
+                                            <td *ngIf="item.isResultBlocked" class="text-start">
+                                                <button (click)="unblockStudent(item.id)"
+                                                    class="btn btn-sm btn-light-primary btn-active-primary me-3">Unblock</button>
+                                                <!--end::Menu-->
+                                            </td>
+                                            <td *ngIf="item.isResultBlocked">{{item.reasonBlocked}}</td>
+                                            <!--end::Action=-->
+                                        </tr>
+                                       
+                                    </tbody>
+                                    <!--end::Table body-->
+                                </table>
+                            </div>
+                            <!--end::Wrapper-->
+                        </div>
+                    </form>
+                    <!--end::Form-->
+
+                </div>
+                <!--end::Card body-->
+
+            </div>
+            <!--end::Card-->
+
+        </div>
+        <!--end::Container-->
+    </div>
+    <!--end::Post-->
+</div>
+
+
+
+<div class="modal fade" id="kt_modal_add_customer" tabindex="-1" aria-hidden="true">
+    <!--begin::Modal dialog-->
+    <div class="modal-dialog modal-dialog-centered mw-650px">
+        <!--begin::Modal content-->
+        <div class="modal-content">
+            <!--begin::Form-->
+            <form class="form" action="#" id="kt_modal_add_customer_form" data-kt-redirect="../../demo1/dist/apps/customers/list.html">
+                <!--begin::Modal header-->
+                <div class="modal-header" id="kt_modal_add_customer_header">
+                    <!--begin::Modal title-->
+                    <h2 class="fw-bolder">Reason</h2>
+                    <!--end::Modal title-->
+                    <!--begin::Close-->
+                    <div id="kt_modal_add_customer_close" class="btn btn-icon btn-sm btn-active-icon-primary">
+                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                        <span class="svg-icon svg-icon-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
+                                <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor" />
+                            </svg>
+                        </span>
+                        <!--end::Svg Icon-->
+                    </div>
+                    <!--end::Close-->
+                </div>
+                <!--end::Modal header-->
+                <!--begin::Modal body-->
+                <div class="modal-body py-10 px-lg-17">
+                    <!--begin::Scroll-->
+                    <div class="scroll-y me-n7 pe-7">
+                        
+                            <!--begin::Label-->
+                            <label class="fs-6 fw-bold mb-2">
+                                <span class="required">Reason</span>
+                                <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Reason why student result is blocked"></i>
+                            </label>
+                            <!--end::Label-->
+
+                        <select #reas id="reason-select" name="reason" [value]="reason" (change)="changeReason(reas.value)" data-control="select2" data-placeholder="Select ..." class="form-select form-select-solid fw-bolder">
+                            <option disabled>Select ...</option>
+                            <option>Outstanding Fees</option>
+                            <option>Disciplinary Issues</option>    
+                            <option>Incomplete Assessments</option>
+                            <option>Exam Malpractice</option>
+                            <option>Incorrect Personal Information</option>    
+                            <option>Violation of Hostel Rules</option>    
+                            <option>Unmet Attendance Requirements</option>    
+                            <option>Incomplete Registration</option>    
+                            <option>Others</option>    
+                        </select>
+                        
+                        <div *ngIf="isOther" class="fv-row mt-5 mb-3" id="other-reason-container">
+                            <!--begin::Label-->
+                            <label class="fs-5 fw-bold form-label mb-2">Other Reason</label>
+                            <!--end::Label-->
+                            <textarea class="form-control form-control-solid" rows="3" name="target_details" placeholder="Type  Details" spellcheck="false" [(ngModel)]="reason"></textarea>
+                        </div>
+                      
+                                                                        
+
+                    </div>
+                    <!--end::Scroll-->
+                </div>
+                <!--end::Modal body-->
+                <!--begin::Modal footer-->
+                <div class="modal-footer flex-center">
+                    <!--begin::Button-->
+                    <button type="reset" id="kt_modal_add_customer_cancel" class="btn btn-light me-3">Discard</button>
+                    <!--end::Button-->
+                    <!--begin::Button-->
+                    <button type="submit" id="kt_modal_add_customer_submit" (click)="blockStudent(selectedStudent.id)" class="btn btn-info">
+                        <span class="indicator-label">Submit</span>
+                        <span class="indicator-progress">Please wait...
+                        <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                    </button>
+                    <!--end::Button-->
+                </div>
+                <!--end::Modal footer-->
+            </form>
+            <!--end::Form-->
+        </div>
+    </div>
+</div>

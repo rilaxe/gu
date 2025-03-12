@@ -1,0 +1,393 @@
+<div id="kt_wrapper" class="marlin">
+    
+    <!--begin::Content-->
+    <div id="kt_content">
+        
+        <!--begin::Post-->
+        <div id="kt_post">
+            <!--begin::Container-->
+            <div id="kt_content_container">
+                <!--begin::Card-->
+                <div class="card mb-10">
+                    <!--begin::Card body-->
+                    <div class="card-body">
+                        <!--begin::Form-->
+                        <form [formGroup]="resultForm" (ngSubmit)="getStudents()" id="kt_invoice_form">
+                            <!--begin::Wrapper-->
+                            <div class="d-flex flex-column align-items-start flex-xxl-row">
+                              
+                                <!--begin::Input group -->
+                                <div class="d-flex flex-center flex-equal fw-row text-nowrap order-1 order-xxl-2 me-4" data-bs-toggle="tooltip" data-bs-trigger="hover">
+                                    <span class="fs-2x fw-bolder text-gray-800">Enter Students Result</span>
+                                   
+                                </div>
+                                <!--end::Input group-->
+                              
+                            </div>
+                            <!--end::Top-->
+                            <!--begin::Separator-->
+                            <div class="separator separator-dashed my-10"></div>
+                            <!--end::Separator-->
+                            <!--begin::Wrapper-->
+                            <div class="mb-0">
+                                <!--begin::Row-->
+                                <div class="row gx-10 mb-5">
+                                    <!--begin::Col-->
+                                    <div class="col-lg-6">
+                                       <!--begin::Label-->
+                                       <div class="fv-row mb-10">
+                                                <label class="fs-6 fw-bold form-label mt-3">
+                                                    <span class="required">Select Class</span>
+                                                </label>
+                                                <!--end::Label-->
+                                                <div class="w-100">
+                                                    
+                            <!--begin::Input-->
+                            <select #cuclass [value]="currentClass" (change)="getGradeScale(cuclass.value)" formControlName="classId" aria-label="Select class" data-control="select2" data-placeholder="Select class.." class="form-select form-select-solid form-select-lg">
+                                <option selected value="">Select Class...</option>
+                                <option *ngFor="let session of schoolClasses" [value]="session.id">{{session.class}}</option>
+                            </select>
+                            <div *ngIf="!cuclass.value && submitted" class="eroce">
+                                <div>No class is selected</div>
+                            </div>
+                            <!--end::Input-->
+                                                    
+                                                </div>
+                                            </div>
+                                        <!--begin::Label-->
+                                        <div class="fv-row mb-5">
+                                            <label class="fs-6 fw-bold form-label ">
+                                                <span class="required">Term</span>
+                                            </label>
+                                            <!--end::Label-->
+                                            <div class="w-100">
+                                                
+                        <!--begin::Input-->
+                        <select #ter [(ngModel)]="currentTerm" name="class" formControlName="term" aria-label="Select Term" data-control="select2" data-placeholder="Select Term.." class="form-select form-select-solid form-select-lg">
+                            <option value="">Select Term...</option>
+                            <option  value="FIRST">First </option>
+                            <option  value="SECOND">Second</option>
+                            <option  value="THIRD">Third</option>
+                        </select>
+                        <div *ngIf="!ter.value && submitted" class="eroce">
+                            <div>No term is selected</div>
+                        </div>
+                        <!--end::Input-->
+                                                
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                    <!--end::Col-->
+                                    <!--begin::Col-->
+                                    <div class="col-lg-6">
+                                        <!--begin::Label-->
+                                        <div class="fv-row mb-10">
+                                                 <label class="fs-6 fw-bold form-label mt-3">
+                                                     <span class="required">Subject</span>
+                                                 </label>
+                                                 <!--end::Label-->
+                                                 <div class="w-100">
+                                                     
+                             <!--begin::Input-->
+                             <select #subj [(ngModel)]="currentSubjectId" formControlName="subjectId" aria-label="Select subject" data-control="select2" data-placeholder="Select subject.." class="form-select form-select-solid form-select-lg">
+                                 <option value="">Select Subject...</option>
+                                 <option *ngFor="let session of classSubjects" [value]="session.id">{{session.subjects}}</option>
+                             </select>
+                             <div *ngIf="!subj.value && submitted" class="eroce">
+                                <div>No subject is selected</div>
+                            </div>
+                             <!--end::Input-->
+                                                     
+                                                 </div>
+                                             </div>
+                                         <!--begin::Label-->
+                                         <div class="fv-row mb-10">
+                                            <label class="fs-6 fw-bold form-label">
+                                                <span class="required">Session</span>
+                                            </label>
+                                            <!--end::Label-->
+                                            <div class="w-100">
+                                                <select #ses [(ngModel)]="currentSessionId" formControlName="sessionId" aria-label="Select class"
+																data-control="select2" data-placeholder="Select class.."
+																class="form-select form-select-solid form-select-lg">
+																<option selected value="">Select Session...</option>
+																<option *ngFor="let session of sessionlist" [value]="session.id">{{session.sessionName}}</option>
+															</select>
+                                                            <div *ngIf="!ses.value && submitted" class="eroce">
+                                                                <div>No session is selected</div>
+                                                            </div>
+                                                <!-- <input type="text" class=" disable form-control form-control-solid" placeholder="2023/2024" disabled value="{{}}" /> -->
+                                                
+                                            </div>
+                                        </div>
+                                        
+                                     </div>
+
+
+                                     <div style="text-align: center; width: 100%;">
+                                        <div>
+                                            <button (click)="getStudents()" class="btn btn-primary" style="padding: 10px 10% ;">Show Students</button>
+                                        </div>
+                                    </div>
+
+                                     <div class="d-flex" style="width: 100%; justify-content: end; margin-top: 60px;">
+                                        <button [disabled]="resultlist.length < 1 || submitted" (click)="validateSaveEntry()" type="button" class="btn btn-info px-12" style="margin-right: 10px;">Save</button> &nbsp;
+                                        <div class="dropdown">
+                                            <button [disabled]="resultlist.length < 1 && submitted"
+                                                style="height: 48px;  outline: none; border: solid 0.5px #7239ea; padding: 6px 15px;"
+                                                class="dropdown-toggle btn btn-light-info" type="button" id="dropdownMenuButton1"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                Actions
+                                            </button>
+                                            <ul style="padding: 10px;" class="dropdown-menu"
+                                                aria-labelledby="dropdownMenuButton1">
+                                                <li style="margin-bottom: 15px; margin-top: 10px; font-size: 16px;">
+                                                    <a class="dropdown-item"  type="button" data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer">Populate from file</a>
+                                                </li>
+                                                <li style="margin-bottom: 10px; font-size: 16px;"><a class="dropdown-item" (click)="downloadTemplate()">Download Template</a></li>
+                                             
+                                            </ul>
+                                        </div>
+                                        <!-- <button (click)="populateFromFile()" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer">Populate from file</button>
+                                        <button type="button" (click)="downloadTemplate()" class="btn btn-info" style="margin-left: 10px;">Download Template</button> -->
+                                       </div>
+                                    </div>
+                                <!--end::Row-->
+                                
+                                <!--begin::Table wrapper-->
+                                <div class="table-responsive mb-10">
+                                    <!--begin::Table-->
+                                    <table class="table g-5 gs-0 mb-0 fw-bolder text-gray-700" data-kt-element="items">
+                                        <!--begin::Table head-->
+                                        <thead>
+                                            <tr class="border-bottom fs-7 fw-bolder text-gray-700 text-uppercase">
+                                                <th>S/N</th>
+                                                <th class="min-w-250px w-250px" style="background-color: white;">Student Name</th>
+                                                <th class="min-w-150px w-150px">Admission No</th>
+                                                <th *ngIf="caSetupData?.CA1" class="min-w-150px w-150px">{{caSetupData.CA1 ? caSetupData.CA1 : 'CA1'}}</th>
+                                                <th *ngIf="caSetupData?.CA2" class="min-w-150px w-150px">{{caSetupData.CA2 ? caSetupData.CA2 : 'CA2'}}</th>
+                                                <th *ngIf="caSetupData?.CA3" class="min-w-150px w-150px">{{caSetupData.CA3 ? caSetupData.CA3 : 'CA3'}}</th>
+                                                <th *ngIf="caSetupData?.CA4" class="min-w-150px w-150px">{{caSetupData.CA4 ? caSetupData.CA4 : 'CA4'}}</th>
+                                                <th *ngIf="caSetupData?.CA5" class="min-w-150px w-150px">{{caSetupData.CA5 ? caSetupData.CA5 : 'CA5'}}</th>
+                                                <th *ngIf="caSetupData?.CA6" class="min-w-150px w-150px">{{caSetupData.CA6 ? caSetupData.CA6 : 'CA6'}}</th>
+                                                <th *ngIf="caSetupData?.CA7" class="min-w-150px w-150px">{{caSetupData.CA7 ? caSetupData.CA7 : 'CA7'}}</th>
+                                                <th *ngIf="caSetupData?.CA8" class="min-w-150px w-150px">{{caSetupData.CA8 ? caSetupData.CA8 : 'CA8'}}</th>
+                                                <th *ngIf="caSetupData?.CA9" class="min-w-150px w-150px">{{caSetupData.CA9 ? caSetupData.CA9 : 'CA9'}}</th>
+                                                <th *ngIf="caSetupData?.CA10" class="min-w-150px w-150px">{{caSetupData.CA10 ? caSetupData.CA10 : 'CA10'}}</th>
+                                                <th *ngIf="caSetupData?.CA11" class="min-w-150px w-150px">{{caSetupData.CA11 ? caSetupData.CA11 : 'CA11'}}</th>
+                                                <th *ngIf="caSetupData?.CA12" class="min-w-150px w-150px">{{caSetupData.CA12 ? caSetupData.CA12 : 'CA12'}}</th>
+                                                <th *ngIf="caSetupData?.CA13" class="min-w-150px w-150px">{{caSetupData.CA13 ? caSetupData.CA13 : 'CA13'}}</th>
+                                                <th *ngIf="caSetupData?.CA14" class="min-w-150px w-150px">{{caSetupData.CA14 ? caSetupData.CA14 : 'CA14'}}</th>
+                                                <th *ngIf="caSetupData?.CA15" class="min-w-150px w-150px">{{caSetupData.CA15 ? caSetupData.CA15 : 'CA15'}}</th>
+                                                <th class="min-w-150px w-150px">Exam</th>
+                                                <th class="min-w-150px w-150px ">Total Score</th>
+                                                <th class="min-w-150px w-150px ">Grade</th>
+                                                <th class="min-w-150px w-150px ">Remark</th>
+                                                <!-- <th class="min-w-100px w-100px ">Position</th>
+                                                <th class="min-w-150px w-150px ">Lowest Score</th>
+                                                <th class="min-w-150px w-150px ">Highest Score</th>
+                                                <th class="min-w-100px w-100px text-start">Average</th> -->
+                                            </tr>
+                                        </thead>
+                                        <!--end::Table head-->
+                                        <!--begin::Table body-->
+                                        <tbody>
+                                            <tr *ngFor="let result of resultlist; index as u" class="border-bottom border-bottom-dashed" data-kt-element="Name">
+                                             
+                                                <td>{{u + 1}}</td>
+                                                <td class="pe-7 fixed-column-state">
+                                                    <input type="text" class="form-control  form-control-solid mb-2" name="name[]" placeholder="Acholo Nora" value="{{result.studentName ?? ''}}" />
+
+                                                </td>
+                                                <td class="ps-0">
+                                                    <input type="text" class="form-control form-control-solid mb-2" name="name[]" disabled value="{{result.admissionNo ?? ''}}" />
+                                                </td>
+                                                <td *ngIf="caSetupData.CA1">
+                                                    <input #ca1 [value]="result.ca1 ?? ''" type="text" (keyup)="setCa(result.studentId, ca1, 'ca1', $event)" class="form-control form-control-solid text-center" [id]="(u + 1) + 'inp' + 1"  />
+                                                </td>
+                                                <td *ngIf="caSetupData.CA2">
+                                                    <input #ca2 [value]="result.ca2 ?? ''" type="text" (keyup)="setCa(result.studentId, ca2, 'ca2')" class="form-control form-control-solid text-center"  [id]="(u + 1) + 'inp' + 2"/>
+                                                </td>
+                                                <td  *ngIf="caSetupData.CA3">
+                                                    <input #ca3 [value]="result.ca3 ?? ''" type="text" (keydown)="setCa(result.studentId, ca3, 'ca3', $event)"  class="form-control form-control-solid text-center"  [id]="(u + 1) + 'inp' + 3"/>
+                                                </td>
+                                                <td *ngIf="caSetupData.CA4">
+                                                    <input #ca4 [value]="result.ca4 ?? ''" type="text" (keyup)="setCa(result.studentId, ca4, 'ca4')" class="form-control form-control-solid text-center" [id]="(u + 1) + 'inp' + 4"/>
+                                                </td>
+                                                <td *ngIf="caSetupData.CA5">
+                                                    <input #ca5 [value]="result.ca5 ?? ''" type="text" (keyup)="setCa(result.studentId, ca5, 'ca5')" type="text" class="form-control form-control-solid text-center"  [id]="(u + 1) + 'inp' + 5"/>
+                                                </td>
+                                                <td *ngIf="caSetupData.CA6">
+                                                    <input #ca6 [value]="result.ca6 ?? ''" type="text" (keyup)="setCa(result.studentId, ca6, 'ca6')" class="form-control form-control-solid text-center"  [id]="(u + 1) + 'inp' + 6"/>
+                                                </td>
+                                                <td *ngIf="caSetupData.CA7">
+                                                    <input #ca7 [value]="result.ca7 ?? ''" type="text" (keyup)="setCa(result.studentId, ca7, 'ca7')" type="text" class="form-control form-control-solid text-center"  [id]="(u + 1) + 'inp' + 7"/>
+                                                </td>
+                                                <td *ngIf="caSetupData.CA8">
+                                                    <input #ca8 [value]="result.ca8 ?? ''" type="text" (keyup)="setCa(result.studentId, ca8, 'ca8')" type="text" class="form-control form-control-solid text-center"  [id]="(u + 1) + 'inp' + 8"/>
+                                                </td>
+                                                <td *ngIf="caSetupData.CA9">
+                                                    <input #ca9 [value]="result.ca9 ?? ''" type="text" (keyup)="setCa(result.studentId, ca9, 'ca9')" type="text" class="form-control form-control-solid text-center" [id]="(u + 1) + 'inp' + 9"/>
+                                                </td>
+                                                <td *ngIf="caSetupData.CA10">
+                                                    <input #ca10 [value]="result.ca10 ?? ''" type="text" (keyup)="setCa(result.studentId, ca10, 'ca10')" class="form-control form-control-solid text-center" [id]="(u + 1) + 'inp' + 10"/>
+                                                </td>
+                                                <td *ngIf="caSetupData.CA11">
+                                                    <input #ca11 [value]="result.ca11 ?? ''" type="text" (keyup)="setCa(result.studentId, ca11, 'ca11')" type="text" class="form-control form-control-solid text-center" [id]="(u + 1) + 'inp' + 11" />
+                                                </td>
+                                                <td *ngIf="caSetupData.CA12">
+                                                    <input #ca12 [value]="result.ca12 ?? ''" type="text" (keyup)="setCa(result.studentId, ca12, 'ca12')" class="form-control form-control-solid text-center"  [id]="(u + 1) + 'inp' + 12"/>
+                                                </td>
+                                                <td *ngIf="caSetupData.CA13">
+                                                    <input #ca13 [value]="result.ca13 ?? ''" type="text" (keyup)="setCa(result.studentId, ca13, 'ca13')" type="text" class="form-control form-control-solid text-center" [id]="(u + 1) + 'inp' + 13" />
+                                                </td>
+                                                <td *ngIf="caSetupData.CA14">
+                                                    <input #ca14 [value]="result.ca14 ?? ''" type="text" (keyup)="setCa(result.studentId, ca14, 'ca14')" type="text" class="form-control form-control-solid text-center"  [id]="(u + 1) + 'inp' + 14"/>
+                                                </td>
+                                                <td *ngIf="caSetupData.CA15">
+                                                    <input #ca15 [value]="result.ca15 ?? ''" type="text" (keyup)="setCa(result.studentId, ca15, 'ca15')" type="text" class="form-control form-control-solid text-center" [id]="(u + 1) + 'inp' + 15"/>
+                                                </td>
+                                                <td>
+                                                    <input #exam [value]="result.exam ?? ''" type="text" (keyup)="setCa(result.studentId, exam, 'exam')" class="form-control form-control-solid text-center"  [id]="(u + 1) + 'inp' + 16"/>
+                                                </td>
+                                                <td>
+                                                    <span class="form-control form-control-solid text-center">{{result.totalScore ?? ''}}</span>
+                                                </td>
+                                                <td class="pt-5 text-end">
+                                                    <span class="form-control form-control-solid text-center">{{result.grade ?? ''}}</span>
+                                                </td>
+                                                <td>
+                                                    <span class="form-control form-control-solid text-center">{{result.remark ?? ''}}</span>
+                                                </td>
+                                                <!-- <td>
+                                                    <input #position [value]="result.position ?? ''" type="text" (change)="setCa(result.studentId, position.value, 'position')" class="form-control form-control-solid text-center" />
+                                                </td>
+                                                <td>
+                                                    <input #lowestScore [value]="result.lowestScore ?? ''" type="text" (change)="setCa(result.studentId, lowestScore.value, 'lowestScore')" class="form-control form-control-solid text-center" />
+                                                </td>
+                                                <td>
+                                                    <input #highestScore [value]="result.highestScore ?? ''" type="text" (change)="setCa(result.studentId, highestScore.value, 'highestScore')" class="form-control form-control-solid text-center"  />
+                                                </td>
+                                                <td>
+                                                    <input #average [value]="result.average ?? ''" type="text" (change)="setCa(result.studentId, average.value, 'average')" class="form-control form-control-solid text-center"  />
+                                                </td> -->
+                                            </tr>
+                                            
+                                          
+                                        </tbody>
+                                        <!--end::Table body-->
+                                        <!--begin::Table foot-->
+                                        
+                                      
+                                        <style>
+                                            .table {
+                                                width: auto;
+                                            }
+
+                                            .table-responsive {
+                                                overflow-x: auto;
+                                                max-width: 100%;
+                                            }
+
+                                            .fixed-column {
+                                                position: sticky;
+                                                left: 0;
+                                                background-color: #fff; /* Optional: Add a background color to the fixed column */
+                                                z-index: 1;
+                                            }
+                                        
+                                        </style>
+                                    </table>         
+                                
+                            </div>
+                            
+                            <div class="row"><div class="col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start"><div class="dataTables_length" id="kt_customers_table_length"><label><select name="kt_customers_table_length" aria-controls="kt_customers_table" class="form-select form-select-sm form-select-solid"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select></label></div></div><div class="col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end"><div class="dataTables_paginate paging_simple_numbers" id="kt_customers_table_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="kt_customers_table_previous"><a href="#" aria-controls="kt_customers_table" data-dt-idx="0" tabindex="0" class="page-link"><i class="previous"></i></a></li><li class="paginate_button page-item active"><a href="#" aria-controls="kt_customers_table" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item next disabled" id="kt_customers_table_next"><a href="#" aria-controls="kt_customers_table" data-dt-idx="2" tabindex="0" class="page-link"><i class="next"></i></a></li></ul></div></div></div>
+                            </div>
+
+                        </form>
+                    </div>
+                    <!--end::Cardbody-->
+                    
+                </div>
+                <!--end::Carde-->
+                
+                <!--begin::Modal-Customers - Add-->
+                <div class="modal fade" id="kt_modal_add_customer" tabindex="-1" aria-hidden="true">
+                    <!--begin::Modal dialog-->
+                    <div class="modal-dialog modal-dialog-centered mw-650px">
+                        <!--begin::Modal content-->
+                        <div class="modal-content">
+                            <!--begin::Form-->
+                            <form class="form" action="#" id="kt_modal_add_customer_form" data-kt-redirect="../../demo1/dist/apps/customers/list.html">
+                                <!--begin::Modal header-->
+                                <div class="modal-header" id="kt_modal_add_customer_header">
+                                    <!--begin::Modal title-->
+                                    <h2 class="fw-bolder">Upload Result</h2>
+                                    <!--end::Modal title-->
+                                    <!--begin::Close-->
+                                    <div id="kt_modal_add_customer_close" class="btn btn-icon btn-sm btn-active-icon-primary">
+                                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                                        <span class="svg-icon svg-icon-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
+                                                <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor" />
+                                            </svg>
+                                        </span>
+                                        <!--end::Svg Icon-->
+                                    </div>
+                                    <!--end::Close-->
+                                </div>
+                                <!--end::Modal header-->
+                                <!--begin::Modal body-->
+                                <div class="modal-body py-10 px-lg-17">
+                                    <!--begin::Scroll-->
+                                    <div class="scroll-y me-n7 pe-7" id="kt_modal_add_customer_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_customer_header" data-kt-scroll-wrappers="#kt_modal_add_customer_scroll" data-kt-scroll-offset="300px">
+                                        
+                                        <!--begin::Input group-->
+                                        <div class="fv-row mb-7">
+                                            <!--begin::Label-->
+                                            <label class="required fs-6 fw-bold mb-2">Upload Template</label>
+                                            <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Click the button below first to download the template, then upload after the excel sheet has been filled with the necessary data"></i>
+                                            <!--end::Label-->
+                                            <!--begin::Input-->
+                                            <input type="file" class="form-control form-control-solid" placeholder="" name="passport"  (change)="loadExcel($event)"/>
+                                            <!--end::Input-->
+                                        </div>
+                           
+                                        <!--end::download template-->
+                                    </div>
+                                    <!--end::Scroll-->
+                                </div>
+                                <!--end::Modal body-->
+                                <!--begin::Modal footer-->
+                                <div class="modal-footer flex-center">
+                                    <!--begin::Button-->
+                                    <button type="reset" id="kt_modal_add_customer_cancel" class="btn btn-light me-3">Discard</button>
+                                    <!--end::Button-->
+                                    <!--begin::Button-->
+                                    <button type="submit" (click)="populateFromFile()" id="kt_modal_add_customer_submit" data-bs-dismiss="modal" class="btn btn-info">
+                                        <span class="indicator-label">Populate</span>
+                                        <span class="indicator-progress">Please wait...
+                                        <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                                    </button>
+                                    <!--end::Button-->
+                                </div>
+                                <!--end::Modal footer-->
+                            </form>
+                            <!--end::Form-->
+                        </div>
+                    </div>
+                </div>
+                <!--end::Modal - Customers - Add-->
+                
+                <!--end::Modals-->
+            </div>
+            <!--end::Container-->
+        </div>
+        <!--end::Post-->
+    </div>
+    <!--end::Content-->
+    <!--begin::Footer-->
+   
+</div>

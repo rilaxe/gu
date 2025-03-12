@@ -1,0 +1,698 @@
+<!--begin::Aside-->
+
+<!--end::Aside-->
+<!--begin::Wrapper-->
+<div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+
+	<!--end::Header-->
+	<!--begin::Content-->
+	<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+
+		<!--begin::Post-->
+		<div class="post d-flex flex-column-fluid" id="kt_post">
+
+			<!--begin::Container-->
+			<div id="kt_content_container" class="container-xxl">
+
+				<!--begin::Toolbar-->
+				<div class="mt-5 d-flex flex-wrap flex-stack mb-6" style="background-color: white; padding: 10px;">
+					
+					<div class="mt-3 d-flex flex-wrap my-2">
+						
+
+                        <div class="me-4">
+                            
+                            <select [(ngModel)]="currentSessionId" name="classu" aria-label="Select class"
+																data-control="select2" data-placeholder="Select class.."
+																class="form-select form-select-sm w-125px">
+																<option value="">Select Session...</option>
+																<option *ngFor="let session of sessionlist" [value]="session.id">{{session.sessionName}}</option>
+															</select>
+                        </div>
+
+                        <div class="me-4">
+                        
+                         
+                                <select [(ngModel)]="currentTerm" name="clasis" aria-label="Select term"
+                                    data-control="select2" data-placeholder="Select term.."
+                                    class="form-select form-select-sm w-125px">
+                                    <option selected disabled>Select term</option>
+                                    <option value="FIRST">First</option>
+                                    <option value="SECOND">Second</option>
+                                    <option value="THIRD">Third</option>
+                                </select>
+                       
+
+                            
+                        </div>
+                        <div class="me-4">
+					
+                            <select [(ngModel)]="currentClass" name="classy" aria-label="Select class" data-control="select2"
+                                            data-placeholder="Select class.."
+                                            class="form-select form-select-sm w-125px">
+                                            <option value="">Select Class...</option>
+                                            <option *ngFor="let session of schoolClasses" [value]="session.id">{{session.class}}</option>
+                                        </select>
+							<!-- <select name="status" data-control="select2" data-hide-search="true"
+								class="form-select form-select-sm w-125px">
+								<option value="Active" selected="selected">Class</option>
+								<option value="Approved">JSS 1</option>
+								<option value="Declined">JSS 2</option>
+								<option value="In Progress">JSS 3</option>
+							</select> -->
+				
+						</div>
+					</div>
+
+                    <div class="mt-3">
+                        <div>
+                            <button (click)="getAssignments()" class="btn btn-info" style="padding: 10px;">Show Assignment</button>
+                        </div>
+                    </div>
+					<!--end::Actions-->
+				</div>
+                <br>
+				<!--end::Toolbar-->
+				<!--begin::Row-->
+                <button class="btn btn-warning text-dark fs-6 btn-sm me-3" data-bs-toggle="modal" data-bs-target="#kt_modal_add_user">Create New</button>
+				<div class="row g-6 g-xl-9">
+					<!--begin::Col-->
+					<div class="col-md-6 col-xl-4">
+						<!--begin::Card-->
+						<div href="#" class="card border-hover-primary">
+							<!--begin::Card header-->
+							<div class="card-header border-0 pt-9">
+								<div class="card-title m-0">
+									<!--begin::Avatar-->
+									<div class="symbol symbol-50px w-50px bg-light">
+										<div class="symbol-label fs-2 fw-semibold bg-info text-inverse-info">
+											M</div>
+									</div>
+									<!--end::Avatar-->
+								</div>
+								<!--begin::Card toolbar-->
+								<div class="card-toolbar">
+									<span class="badge badge-light-info fw-bold me-auto px-4 py-3">Subject</span>
+								</div>
+								<!--end::Card toolbar-->
+							</div>
+							<!--end:: Card header-->
+							<!--begin:: Card body-->
+							<div class="card-body p-9">
+								<!--begin::Name-->
+								<div class="fs-3 fw-bolder mb-5 text-gray-900">Mathematics</div>
+								<!--end::Name-->
+
+								<!--begin::Info-->
+								<div class="d-flex flex-wrap mb-5">
+									<!--begin::Due-->
+									<div
+										class="border border-gray-300 border-dashed rounded min-w-75px py-3 px-4 me-3 mb-3">
+										<div class="fs-6 text-gray-800 fw-bolder">40</div>
+										<div class="fw-bold text-gray-600">Note</div>
+									</div>
+									<!--end::Due-->
+
+									<!--begin::Budget-->
+									<div class="border border-gray-300 border-dashed rounded min-w-75px py-3 px-4 mb-3">
+										<div class="fs-6 text-gray-800 fw-bolder">6</div>
+										<div class="fw-bold text-gray-600">Assignment</div>
+									</div>
+									<!--end::Budget-->
+
+								</div>
+								<!--end::Info-->
+								<div class="d-flex">
+									
+									<a href="files.html" class=" btn btn-info  w-50 fs-6 btn-sm me-3e">View
+									</a>
+								</div>
+							</div>
+							<!--end:: Card body-->
+						</div>
+						<!--end::Card-->
+					</div>
+					<!--end::Col-->
+					<!--begin::Col-->
+					<div class="col-md-6 col-xl-4">
+						<!--begin::Card-->
+						<div href="#" class="card border-hover-primary">
+							<!--begin::Card header-->
+							<div class="card-header border-0 pt-9">
+								<div class="card-title m-0">
+									<!--begin::Avatar-->
+									<div class="symbol symbol-50px w-50px bg-light">
+										<div class="symbol-label fs-2 fw-semibold bg-info text-inverse-info">
+											C</div>
+									</div>
+									<!--end::Avatar-->
+								</div>
+								<!--begin::Card toolbar-->
+								<div class="card-toolbar">
+									<span class="badge badge-light-info fw-bold me-auto px-4 py-3">Subject</span>
+								</div>
+								<!--end::Card toolbar-->
+							</div>
+							<!--end:: Card header-->
+							<!--begin:: Card body-->
+							<div class="card-body p-9">
+								<!--begin::Name-->
+								<div class="fs-3 fw-bolder mb-5 text-gray-900">Basic Science</div>
+								<!--end::Name-->
+
+								<!--begin::Info-->
+								<div class="d-flex flex-wrap mb-5">
+									<!--begin::Due-->
+									<div
+										class="border border-gray-300 border-dashed rounded min-w-75px py-3 px-4 me-3 mb-3">
+										<div class="fs-6 text-gray-800 fw-bolder">40</div>
+										<div class="fw-bold text-gray-600">Note</div>
+									</div>
+									<!--end::Due-->
+
+									<!--begin::Budget-->
+									<div class="border border-gray-300 border-dashed rounded min-w-75px py-3 px-4 mb-3">
+										<div class="fs-6 text-gray-800 fw-bolder">5</div>
+										<div class="fw-bold text-gray-600">Assignment</div>
+									</div>
+									<!--end::Budget-->
+
+								</div>
+								<!--end::Info-->
+								<div class="d-flex">
+									
+									<a href="files.html" class=" btn btn-info  w-50 fs-6 btn-sm me-3e">View
+									</a>
+								</div>
+							</div>
+							<!--end:: Card body-->
+						</div>
+						<!--end::Card-->
+					</div>
+					<!--end::Col-->
+					<!--begin::Col-->
+					<div class="col-md-6 col-xl-4">
+						<!--begin::Card-->
+						<div href="#" class="card border-hover-primary">
+							<!--begin::Card header-->
+							<div class="card-header border-0 pt-9">
+								<div class="card-title m-0">
+									<!--begin::Avatar-->
+									<div class="symbol symbol-50px w-50px bg-light">
+										<div class="symbol-label fs-2 fw-semibold bg-info text-inverse-info">
+											E</div>
+									</div>
+									<!--end::Avatar-->
+								</div>
+								<!--begin::Card toolbar-->
+								<div class="card-toolbar">
+									<span class="badge badge-light-info fw-bold me-auto px-4 py-3">Subject</span>
+								</div>
+								<!--end::Card toolbar-->
+							</div>
+							<!--end:: Card header-->
+							<!--begin:: Card body-->
+							<div class="card-body p-9">
+								<!--begin::Name-->
+								<div class="fs-3 fw-bolder mb-5 text-gray-900">Economics</div>
+								<!--end::Name-->
+
+								<!--begin::Info-->
+								<div class="d-flex flex-wrap mb-5">
+									<!--begin::Due-->
+									<div
+										class="border border-gray-300 border-dashed rounded min-w-75px py-3 px-4 me-3 mb-3">
+										<div class="fs-6 text-gray-800 fw-bolder">40</div>
+										<div class="fw-bold text-gray-600">Note</div>
+									</div>
+									<!--end::Due-->
+									<!--begin::Budget-->
+									<div class="border border-gray-300 border-dashed rounded min-w-75px py-3 px-4 mb-3">
+										<div class="fs-6 text-gray-800 fw-bolder">0</div>
+										<div class="fw-bold text-gray-600">Assignment</div>
+									</div>
+									<!--end::Budget-->
+
+
+								</div>
+								<!--end::Info-->
+								<div class="d-flex">
+									
+									<a class=" btn btn-info  w-50 fs-6 btn-sm me-3e " id="kt_activities_toggle">View
+									</a>
+								</div>
+							</div>
+							<!--end:: Card body-->
+						</div>
+						<!--end::Card-->
+					</div>
+					<!--end::Col-->
+
+				</div>
+
+
+
+				<!--end::Modal - Customers - Add-->
+				<!--end::Modals-->
+				<!--begin::Modal - Customers - Add-->
+				<div class="modal fade" id="kt_modal_edit_graduate" tabindex="-1" aria-hidden="true">
+					<!--begin::Modal dialog-->
+					<div class="modal-dialog modal-dialog-centered mw-650px">
+						<!--begin::Modal content-->
+						<div class="modal-content">
+							<!--begin::Form-->
+							<form class="form" action="#" id="kt_modal_edit_graduate_form" data-kt-redirect="#">
+								<!--begin::Modal header-->
+								<div class="modal-header" id="kt_modal_edit_graduate_header">
+									<!--begin::Modal title-->
+									<h2 class="fw-bolder">Edit Discipline</h2>
+									<!--end::Modal title-->
+									<!--begin::Close-->
+									<div id="kt_modal_add_graduate_close"
+										class="btn btn-icon btn-sm btn-active-icon-primary">
+										<!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+										<span class="svg-icon svg-icon-1">
+											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+												viewBox="0 0 24 24" fill="none">
+												<rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1"
+													transform="rotate(-45 6 17.3137)" fill="currentColor" />
+												<rect x="7.41422" y="6" width="16" height="2" rx="1"
+													transform="rotate(45 7.41422 6)" fill="currentColor" />
+											</svg>
+										</span>
+										<!--end::Svg Icon-->
+									</div>
+									<!--end::Close-->
+								</div>
+								<!--end::Modal header-->
+								<!--begin::Modal body-->
+								<div class="modal-body py-10 px-lg-17">
+									<!--begin::Scroll-->
+									<div class="scroll-y me-n7 pe-7" id="kt_modal_edit_graduate_scroll"
+										data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}"
+										data-kt-scroll-max-height="auto"
+										data-kt-scroll-dependencies="#kt_modal_add_graduate_header"
+										data-kt-scroll-wrappers="#kt_modal_add_graduate_scroll"
+										data-kt-scroll-offset="300px">
+
+
+
+										<!--begin::Input group-->
+										<div class="row mb-7">
+											<div class="col-12">
+												<!--begin::Label-->
+												<label class="fs-6 fw-bold mb-2">
+													<span class="required">Class</span>
+
+												</label>
+												<!--end::Label-->
+												<!--begin::Input-->
+												<!--begin::Input-->
+												<select data-control="select2" data-placeholder="Select class"
+													data-hide-search="true" name="format"
+													class="form-select form-select-solid">
+													<option value="">Select Class</option>
+													<option value="JSS1">JSS1</option>
+													<option value="JSS3">JSS2</option>
+													<option value="JSS3">JSS3</option>
+													<option value="SSS1">SSS1</option>
+													<option value="SSS2">SSS2</option>
+													<option value="SSS3">SSS3</option>
+
+												</select>
+												<!--end::Input-->
+											</div>
+
+
+										</div>
+										<!--end::Input group-->
+										<!--begin::Input group-->
+										<div class="fv-row mb-7">
+											<!--begin::Label-->
+											<label class="fs-5 fw-bold form-label mb-2">Student</label>
+											<!--end::Label-->
+											<!--begin::Input-->
+											<select data-control="select2" data-placeholder="Select student"
+												data-hide-search="true" name="format"
+												class="form-select form-select-solid">
+												<option value="">Select Student</option>
+												<option value="Silas Oparandu">Silas Oparandu</option>
+												<option value="Acholo Aaron">Acholo Aaron</option>
+												<option value="Jayden Smith">Jayden Smith</option>
+
+											</select>
+											<!--end::Input-->
+										</div>
+										<!--end::Input group-->
+
+										<!--begin::Input group-->
+										<div class="row g-9 mb-7">
+											<!--begin::Col-->
+											<div class="col-md-12 fv-row">
+												<!--begin::Label-->
+												<label class="required fs-6 fw-bold mb-2">Infraction</label>
+												<!--end::Label-->
+												<!--begin::Input-->
+												<input class="form-control form-control-solid" placeholder="" name="" />
+												<!--end::Input-->
+											</div>
+											<!--end::Col-->
+
+										</div>
+										<!--end::Input group-->
+
+										<!--end::Billing toggle-->
+										<!--begin::Billing form-->
+										<div id="kt_modal_edit_graduate_billing_info" class="collapse show">
+
+											<!--begin::Input group-->
+											<div class="row g-9 mb-7">
+												<!--begin::Col-->
+												<div class="col-md-12 fv-row">
+													<!--begin::Label-->
+													<label class="required fs-6 fw-bold mb-2">Date</label>
+													<!--end::Label-->
+													<!--begin::Input-->
+													<input type="date" class="form-control form-control-solid"
+														placeholder="" name="phone" />
+													<!--end::Input-->
+												</div>
+												<!--end::Col-->
+
+											</div>
+											<!--end::Input group-->
+
+
+										</div>
+										<!--end::Billing form-->
+										<!--begin::Input group-->
+										<div class="fv-row mb-7">
+											<!--begin::Label-->
+											<label class="fs-5 fw-bold form-label mb-2">Punishment</label>
+											<!--end::Label-->
+											<!--begin::Input-->
+											<select data-control="select2" data-placeholder="Select Punishment"
+												data-hide-search="true" name="format"
+												class="form-select form-select-solid">
+												<option value="">Select Punishment</option>
+												<option value="Suspension">Suspension</option>
+												<option value="Expulsion">Expulsion</option>
+
+
+											</select>
+											<!--end::Input-->
+										</div>
+										<!--end::Input group-->
+										<!--begin::Input group-->
+										<div class="fv-row mb-7">
+											<!--begin::Label-->
+											<label class="fs-5 fw-bold form-label mb-2">Duration</label>
+											<!--end::Label-->
+											<!--begin::Input-->
+											<select data-control="select2" data-placeholder="Select a format"
+												data-hide-search="true" name="format"
+												class="form-select form-select-solid">
+												<option></option>
+												<option value="1">1 Week</option>
+												<option value="2">2 Weeks</option>
+												<option value="3">3 Weeks</option>
+												<option value="4">1 Month</option>
+												<option value="5">1 Term</option>
+												<option value="5">2 Term</option>
+												<option value="5">1 Session</option>
+
+											</select>
+											<!--end::Input-->
+										</div>
+										<!--end::Input group-->
+									</div>
+									<!--end::Scroll-->
+								</div>
+								<!--end::Modal body-->
+								<!--begin::Modal footer-->
+								<div class="modal-footer flex-center">
+									<!--begin::Button-->
+									<button type="reset" id="kt_modal_edit_graduate_cancel"
+										class="btn btn-light me-3">Discard</button>
+									<!--end::Button-->
+									<!--begin::Button-->
+									<button type="submit" id="kt_modal_edit_graduate_submit" class="btn btn-info">
+										<span class="indicator-label">Submit</span>
+										<span class="indicator-progress">Please wait...
+											<span
+												class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+									</button>
+									<!--end::Button-->
+								</div>
+								<!--end::Modal footer-->
+							</form>
+							<!--end::Form-->
+						</div>
+					</div>
+				</div>
+				<!--end::Modal - Customers - Add-->
+				<!--end::Modals-->
+			</div>
+			<!--end::Container-->
+		</div>
+		<!--end::Post-->
+	</div>
+	<!--end::Content-->
+
+	<!--begin::Footer-->
+	<div class="footer py-4 d-flex flex-lg-column" id="kt_footer">
+		<!--begin::Container-->
+		<div class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
+			<!--begin::Copyright-->
+			<div class="text-dark order-2 order-md-1">
+				<span class="text-muted fw-bold me-1">2022©</span>
+				<a href="https://GradexCloud.com" target="_blank" class="text-gray-800 text-hover-info">gradeX-Cloud</a>
+			</div>
+			<!--end::Copyright-->
+
+
+
+		</div>
+		<!--end::Container-->
+	</div>
+	<!--end::Footer-->
+</div>
+<!--end::Wrapper-->
+<!--end::Root-->
+<!--begin::Drawers-->
+
+
+
+<!--end::Engage drawers-->
+
+<!--begin::Scrolltop-->
+<div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
+	<!--begin::Svg Icon | path: icons/duotune/arrows/arr066.svg-->
+	<span class="svg-icon">
+		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+			<rect opacity="0.5" x="13" y="6" width="13" height="2" rx="1" transform="rotate(90 13 6)"
+				fill="currentColor" />
+			<path
+				d="M12.5657 8.56569L16.75 12.75C17.1642 13.1642 17.8358 13.1642 18.25 12.75C18.6642 12.3358 18.6642 11.6642 18.25 11.25L12.7071 5.70711C12.3166 5.31658 11.6834 5.31658 11.2929 5.70711L5.75 11.25C5.33579 11.6642 5.33579 12.3358 5.75 12.75C6.16421 13.1642 6.83579 13.1642 7.25 12.75L11.4343 8.56569C11.7467 8.25327 12.2533 8.25327 12.5657 8.56569Z"
+				fill="currentColor" />
+		</svg>
+	</span>
+	<!--end::Svg Icon-->
+</div>
+<!--end::Scrolltop-->
+<!--begin::Modals-->
+<!--begin::Modal - Add task-->
+<div class="modal fade" id="kt_modal_add_user" tabindex="-1" aria-hidden="true">
+	<!--begin::Modal dialog-->
+	<div class="modal-dialog modal-dialog-centered mw-650px">
+		<!--begin::Modal content-->
+		<div class="modal-content">
+			<!--begin::Modal header-->
+			<div class="modal-header" id="kt_modal_add_user_header">
+				<!--begin::Modal title-->
+				<h2 class="fw-bold">Upload New File </h2>
+				<!--end::Modal title-->
+
+				<!--begin::Close-->
+				<div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal" data-kt-users-modal-action="close">
+					<!--begin::Svg Icon | path: /var/www/preview.keenthemes.com/keenthemes/metronic/docs/core/html/src/media/icons/duotune/arrows/arr097.svg-->
+					<span class="svg-icon svg-icon-muted svg-icon-2hx"><svg width="32" height="32" viewBox="0 0 32 32"
+							fill="none" xmlns="http://www.w3.org/2000/svg">
+							<rect x="9.39844" y="20.7144" width="16" height="2.66667" rx="1.33333"
+								transform="rotate(-45 9.39844 20.7144)" fill="currentColor" />
+							<rect x="11.2852" y="9.40039" width="16" height="2.66667" rx="1.33333"
+								transform="rotate(45 11.2852 9.40039)" fill="currentColor" />
+						</svg>
+					</span>
+					<!--end::Svg Icon-->
+				</div>
+				<!--end::Close-->
+			</div>
+			<!--end::Modal header-->
+
+			<!--begin::Modal body-->
+			<div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
+				<!--begin::Form-->
+				<form id="kt_modal_add_user_form" class="form" action="#">
+					<!--begin::Scroll-->
+					<div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_user_scroll"
+						data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}"
+						data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_user_header"
+						data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px">
+						<!--begin::Input group-->
+						<div class="fv-row mb-7">
+							<!--begin::Label-->
+							<label class="required fw-semibold fs-6 mb-2">Subject</label>
+							<!--end::Label-->
+							<!--begin::Input-->
+							<!-- <select data-control="select2" data-placeholder="Select" data-hide-search="true"
+								name="format" class="form-select form-select-solid">
+								<option value=""></option>
+								<option value="1"> JSS 1</option>
+								<option value="2">JSS 2</option>
+							</select> -->
+
+                            <select #subj [(ngModel)]="currentSubjectId" name="formato" class="form-select form-select-solid">
+                                <option value="">Select Subject...</option>
+                                <option *ngFor="let session of classSubjects" [value]="session.id">{{session.subjects}}</option>
+                            </select>
+							<!--end::Input-->
+						</div>
+
+                        <!--begin::Input group-->
+						<div class="fv-row mb-7">
+							<!--begin::Label-->
+							<label class="required fw-semibold fs-6 mb-2">Document Title</label>
+							<!--end::Label-->
+							<input type="text" class="form-control form-control-solid" placeholder="Enter Title"
+								value="">
+						</div>
+						<!--end::Input group-->
+						<!--begin::Input group-->
+						<div class="fv-row mb-7">
+							<!--begin::Label-->
+							<label class="required fw-semibold fs-6 mb-2">Select Upload Type</label>
+							<!--end::Label-->
+							<!--begin::Input-->
+							<select id="uploadType" data-control="select2" data-placeholder="Select"
+								data-hide-search="true" name="format" class="form-select form-select-solid">
+								<option value=""></option>
+								<option value="1">Study Notes</option>
+								<option value="2">Assignment</option>
+							</select>
+							<!--end::Input-->
+						</div>
+						<!--end::Input group-->
+
+						<!--begin::Input group-->
+						<div id="deadlineGroup" class="fv-row mb-7" style="display: block;">
+							<!--begin::Label-->
+							<label class="required fw-semibold fs-6 mb-2">Submission Deadline</label>
+							<!--end::Label-->
+							<input type="date" class="form-control form-control-solid" placeholder="Enter date"
+								value="">
+						</div>
+
+
+
+
+                        <div style="flex-wrap: wrap;"
+                                class="d-flex align-items-center border border-dashed border-gray-300 rounded min-w-500px p-5">
+                                <!--begin::Item-->
+                                <div *ngIf="itemo" class="d-flex flex-aligns-center pe-10 pe-lg-5">
+                                    <!--begin::Icon-->
+                                    <div *ngIf="extType(itemo.ext) == 'DOC'"
+                                        style="border: dotted 1px grey; padding: 5px 10px; border-radius: 20px;">
+                                        <img *ngIf="itemo.ext == 'pdf'" alt="" class="w-100px me-3"
+                                            src="assets/media/svg/files/pdf.svg" />
+
+                                        <img *ngIf="itemo.ext == 'xlsx' || itemo.ext == 'xls' || itemo.ext == 'csv'" alt=""
+                                            class="w-100px me-3" src="assets/media/svg/files/xls.svg" />
+
+                                        <img *ngIf="itemo.ext == 'doc' || itemo.ext == 'docx' || itemo.ext == 'txt' || itemo.ext == 'rtf'" alt=""
+                                            class="w-100px me-3" src="assets/media/svg/files/doc.svg" />
+                                        <!--end::Icon-->
+                                        <!--begin::Info-->
+                                        <div class="ms-1 fw-bold">
+                                            <!--begin::Desc-->
+                                            <a href="../../demo1/dist/apps/projects/project.html"
+                                                class="fs-6 text-hover-primary fw-bolder">{{itemo.name}}</a>
+                                            <!--end::Desc-->
+                                            <!--begin::Number-->
+                                        
+                                            <!--end::Number-->
+                                        </div>
+                                    </div>
+
+                                    <div *ngIf="extType(itemo.ext) == 'IMAGE'" class="overlay-wrapper">
+                                        <img alt="img" class="rounded w-150px" [src]="itemo.src" />
+                                    </div>
+                                    <!--begin::Info-->
+                                </div>
+                                <!--end::Item-->
+                                <!--begin::Item-->
+                                <!--end::Item-->
+                            </div>
+
+						<!--end::Input group-->
+						<!--begin::Input group-->
+						<div class="fv-row mb-7">
+							<!--begin::Label-->
+							<label class="required fw-semibold fs-6 mb-2">Upload Material</label>
+							<!--begin::Input group-->
+							<div class="fv-row mt-3 mb-2">
+								<!--begin::Dropzone-->
+								<div (click)="fil.click()" class="dropzone" id="kt_ecommerce_add_product_media">
+									<!--begin::Message-->
+									<div class="dz-message needsclick">
+										<!--begin::Icon-->
+										<i class="bi bi-file-earmark-arrow-up text-primary fs-3x"></i>
+										<!--end::Icon-->
+										<!--begin::Info-->
+										<div class="ms-4">
+											<h3 class="fs-5 fw-bolder text-gray-900 mb-1">Drop files here or click
+												to upload.</h3>
+											<span class="fs-7 fw-bold text-gray-400">Upload your paper to
+												submit</span>
+										</div>
+										<!--end::Info-->
+									</div>
+								</div>
+								<!--end::Dropzone-->
+							</div>
+							<!--end::Input group-->
+						</div>
+
+
+						<!--end::Input group-->
+
+
+					</div>
+
+					<!--end::Dropzone.js initialization script-->
+					<!--begin::Actions-->
+					<div class="text-center pt-15">
+						<button type="reset" class="btn btn-light me-3" data-bs-dismiss="modal" data-kt-users-modal-action="cancel">
+							Discard
+						</button>
+
+						<button type="submit" class="btn btn-primary" data-kt-users-modal-action="submit">
+							<span class="indicator-label">
+								Submit
+							</span>
+							<span class="indicator-progress">
+								Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+							</span>
+						</button>
+					</div>
+					<!--end::Actions-->
+				</form>
+				<!--end::Form-->
+			</div>
+		</div>
+	</div>
+</div>
+			<!--end::Modal body-->
+
+            <input style="display: none;" #fil type="file" multiple
+                                accept=".png, .jpg, .pdf, .xlsx,s .txt, .csv, .xls, .docx, .doc, .rtf" (change)="fileChange($event)" />

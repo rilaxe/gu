@@ -1,0 +1,253 @@
+<div style="margin-top: 3%;" class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+    
+    <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+        <!--begin::Toolbar-->
+
+        <div class="post d-flex flex-column-fluid" id="kt_post">
+            <div id="kt_content_container" class="container-xxl">
+
+                <form id="kt_ecommerce_add_product_form" class="form d-flex flex-column flex-lg-row"
+                    data-kt-redirect="#">
+
+                    <!--begin::Main column-->
+                    <div class="d-flex flex-column flex-row-fluid gap-7 gap-lg-10">
+
+                        <!--begin::Tab content-->
+                        <div class="tab-content">
+                            <!--begin::Tab pane-->
+                            <div class="tab-pane fade show active" id="kt_ecommerce_add_product_general"
+                                role="tab-panel">
+                                <div class="d-flex flex-column gap-7 gap-lg-10">
+                                    <!--begin::General options-->
+                                    <div class="card card-flush py-4">
+
+                                        <!--begin::Card body-->
+                                        <div class="card-body pt-10">
+                                            <!--begin::Row-->
+                                            <div class="row gx-10 mb-5">
+                                                <!--begin::Col-->
+                                                <div class="col-lg-6">
+                                                    <!--begin::Label-->
+                                                    <div class="fv-row mb-10">
+                                                        <label class="fs-6 fw-bold form-label">
+                                                            <span class="required">Class</span>
+                                                        </label>
+                                                        <!--end::Label-->
+                                                        <div class="w-100">
+
+                                                            <!--begin::Input-->
+                                                            <select [(ngModel)]="currentClass" name="classo" aria-label="Class"
+                                                                data-control="select2" data-placeholder="Select class.."
+                                                                class="form-select form-select-solid form-select-lg">
+                                                                <option value="">Select Class...</option>
+																<option *ngFor="let session of schoolClasses" [value]="session.id">{{session.name}}</option>
+                                                            </select>
+                                                            <!--end::Input-->
+
+                                                        </div>
+                                                    </div>
+                                                    <!--begin::Label-->
+                                                    <div class="fv-row mb-10">
+                                                        <label class="fs-6 fw-bold form-label">
+                                                            <span class="required">Session</span>
+                                                        </label>
+                                                        <!--end::Label-->
+                                                        <div class="w-100">
+
+                                                            <input type="text"
+                                                                class=" disable form-control form-control-solid"
+                                                                placeholder="2023/2024" disabled value="{{currentSession}}" />
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                                <!--end::Col-->
+                                                <!--begin::Col-->
+                                                <div class="col-lg-6">
+                                                    <div class="fv-row mb-10">
+                                                        <label class="fs-6 fw-bold form-label">
+                                                            <span class="required">Destination Class</span>
+                                                        </label>
+                                                        <!--end::Label-->
+                                                        <div class="w-100">
+                                                            <!--begin::Input-->
+                                                            <select [(ngModel)]="destinationCurrentClass" name="classo" aria-label="Class"
+                                                                data-control="select2" data-placeholder="Select class.."
+                                                                class="form-select form-select-solid form-select-lg">
+                                                                <option value="">Select Class...</option>
+																<option *ngFor="let session of schoolClasses" [value]="session.id">{{session.name}}</option>
+                                                                <option value="0">GRADUATE</option>
+                                                            </select>
+                                                            <!--end::Input-->
+                                                        </div>
+                                                    </div>
+                                                    <!--begin::Label-->
+                                                    <div class="fv-row mb-10">
+                                                        <label class="fs-6 fw-bold form-label">
+                                                            <span class="required">Placement Type</span>
+                                                        </label>
+                                                        <!--end::Label-->
+                                                        <div class="w-100">
+                                                            <!--begin::Input-->
+                                                            <select [(ngModel)]="placementType" name="placement type" data-control="select2"
+                                                                class="form-select form-select-solid form-select-lg">
+                                                                <option selected value="MANUAL">Manual</option>
+                                                                <option value="NORMAL">Normalize</option>
+                                                                <option value="RANDOM">Randomize</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="fv-row mb-5" style="margin-top: 60px;">
+                                                    <div class="w-100 text-center">
+                                                        <button (click)="getStudents()" class="w-50 btn btn-primary" style="padding: 10px ;">Show Students</button>
+                                                    </div>
+                                                    
+                                                </div>
+
+                                                <div class="card-header border-0 pt-6">
+                                                   
+                                                    <div class="card-title">
+
+                                                        <div class="d-flex align-items-center position-relative my-1">
+
+                                                            <span class="svg-icon svg-icon-1 position-absolute ms-6">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                    height="24" viewBox="0 0 24 24" fill="none">
+                                                                    <rect opacity="0.5" x="17.0365" y="15.1223"
+                                                                        width="8.15546" height="2" rx="1"
+                                                                        transform="rotate(45 17.0365 15.1223)"
+                                                                        fill="currentColor"></rect>
+                                                                    <path
+                                                                        d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z"
+                                                                        fill="currentColor"></path>
+                                                                </svg>
+                                                            </span>
+
+                                                            <input #myInput type="text" (keyup)='genk.searchTable(myInput, myTbody)' data-kt-customer-table-filter="search"
+                                                                class="form-control form-control-solid w-250px ps-15"
+                                                                placeholder="Search Students">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="card-toolbar">
+                                                        <div class="text-end">
+
+                                                            <button (click)="findPlacement()" type="submit" class="me-3 btn btn-info">
+                                                                <span class="indicator-label">Save Placement</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="text-end">
+                                                            <button (click)="findFinalize()" type="submit" class="me-3 btn btn-info btn-danger">
+                                                                <span class="indicator-label">Finalize</span>
+                                                            </button>
+                                                            <!-- <div class="w-100 text-center">
+                                                                <button (click)="finalize()" class="w-30 btn btn-danger" style="padding: 10px ;">Finalize</button>
+                                                            </div> -->
+                                                            <!-- <button (click)="normalize()" type="submit" class="me-3 btn btn-info">
+                                                                <span class="indicator-label">Randomize</span>
+                                                            </button> -->
+                                                        </div>
+                                                        <!--end::Row-->
+                                                    </div>
+                                                    <!--end::Card toolbar-->
+
+                                                </div>
+                                                <!--end::Col-->
+                                                <!--begin::Table wrapper-->
+                                                <div class="table-responsive mb-10">
+                                                    <!--begin::Table-->
+                                                    <table class="table align-middle table-row-dashed fs-6 gy-5"
+                                                        id="kt_customers_table">
+                                                        <!--begin::Table head-->
+                                                        <thead>
+                                                            <!--begin::Table row-->
+                                                            <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+                                                                <th class="min-w-80px">S/N</th>
+                                                                <th class="min-w-250px">Students Name</th>
+
+                                                                <th class="min-w-100px">Gender</th>
+
+                                                                <th class="min-w-125px">Admission No</th>
+                                                                <th class="min-w-125px">Current Class</th>
+                                                                <!-- <th class="min-w-125px">Future Class</th> -->
+                                                                <th class="min-w-125px">New Class</th>
+
+                                                            </tr>
+                                                            <!--end::Table row-->
+                                                        </thead>
+                                                        <!--end::Table head-->
+                                                        <!--begin::Table body-->
+                                                        <tbody #myTbody class="fw-bold text-gray-600">
+                                                            <tr *ngFor="let itema of studentList; index as a">
+                                                                <!--begin::Checkbox-->
+                                                                <td class="text-gray-800 text-bold">
+                                                                {{a + 1}}
+                                                                </td>
+                                                                <!--end::Checkbox-->
+                                                                <!--begin::Name=-->
+                                                                <td>
+                                                                    <a href="View_user.html"
+                                                                        class="text-gray-800 text-hover-info mb-1">{{itema.surname + ' ' + itema.firstName}}</a>
+                                                                </td>
+                                                                <!--end::Name=-->
+                                                                <!--begin::Email=-->
+                                                                <td>
+                                                                    <a href="#"
+                                                                        class="text-gray-600 text-hover-info mb-1">{{itema.sex}}</a>
+                                                                </td>
+                                                                <td>{{itema.admissionNo}}</td>
+                                                                <!--end::Date=-->
+                                                                <td>{{itema.class}}</td>
+                                                                <!-- <td>{{itema.futureClass}}</td> -->
+                                                                <td>
+                                                                    <select #ment [(ngModel)]="itema.futureClassId" (change)="setPlacement(ment.value, itema.id, a)" [name]="'futurecl' + a" class="form-select form-select-solid fw-bolder">
+                                                                    <option disabled>Select Class...</option>
+                                                                    <option *ngFor="let session of destinationClasses" [value]="session.id">{{session.class}}</option>
+                                                                    <option *ngIf="destinationCurrentClass == 0" [value]="0">GRADUATE</option>
+                                                                </select>
+                                                                    <!--begin::Input-->
+                                                                    <!-- <select #ment [(ngModel)]="itema.futureClassId" name="Section" data-control="select2"
+                                                                        data-placeholder="New Class" class="form-select form-select-solid fw-bolder">
+                                                                        <option value="">Select Class...</option>
+																<option *ngFor="let session of destinationClasses" [value]="session.id">{{session.class}}</option>
+                                                                    </select> -->
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>    <!--end::Main column-->
+                </form>
+                <!--end::Form-->
+            </div>
+            <!--end::Container-->
+        </div>
+        <!--end::Post-->
+    </div>
+    <!--end::Content-->
+    <!--begin::Footer-->
+    <div class="footer py-4 d-flex flex-lg-column" id="kt_footer">
+        <!--begin::Container-->
+        <div class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
+            <!--begin::Copyright-->
+            <div class="text-dark order-2 order-md-1">
+                <span class="text-muted fw-bold me-1">2022©</span>
+                <a href="https://GradexCloud.com" target="_blank"
+                    class="text-gray-800 text-hover-primary">GradexCloud</a>
+            </div>
+            <!--end::Copyright-->
+
+        </div>
+        <!--end::Container-->
+    </div>
+    <!--end::Footer-->
+</div>

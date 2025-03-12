@@ -1,0 +1,278 @@
+<div class="card mb-5 mb-xxl-10">
+    <!--begin::Card header-->
+    <div class="card-header">
+        <!--begin::Heading-->
+        <div class="card-title">
+            <div class="col-12">
+                <select #scal [value]="classlevel" name="levelcategory" (change)="changeGradeScale(scal.value)" data-control="select"
+                    data-placeholder="Select Class"
+                    class="form-select form-select-solid fw-bolder">
+                    <option value="">Select Category</option>
+                    <option value="SENIOR">Senior School</option>
+                    <option value="JUNIOR">Junior School</option>
+                    <option value="PRIMARY">Primary School</option>
+                    <option value="NURSERY">Nursery School</option>
+                </select>
+
+                <!--end::Input-->
+            </div>
+        </div>
+        <!--end::Heading-->
+        <!--begin::Toolbar-->
+        <div class="card-toolbar">
+        
+            <a class="btn btn-sm btn-primary my-1"data-bs-toggle="modal" data-bs-target="#kt_modal_new_grade">Add New Grade Scale</a>
+        </div>
+        <!--end::Toolbar-->
+    </div>
+    <!--end::Card header-->
+    <!--begin::Card body-->
+    <div class="card-body p-0">
+        <!--begin::Table wrapper-->
+        <div class="table-responsive">
+            <!--begin::Table-->
+            <table class="table table-flush align-middle table-row-bordered table-row-solid gy-4 gs-9">
+                <!--begin::Thead-->
+                <thead class="border-gray-200 fs-5 fw-bold bg-lighten">
+                    <tr>
+                       
+                        <th class="min-w-200px">Lower Limit</th>
+                        <th class="min-w-200px">Upper Limit</th>
+                        <th class="min-w-150px">Grade</th>
+                        <th class="min-w-250px">Remarks</th>
+                        <th class="min-w-100px">Action</th>
+                    </tr>
+                </thead>
+                <!--end::Thead-->
+                <!--begin::Tbody-->
+                <tbody class="fw-6 fw-bold text-gray-600">
+                    <tr *ngFor="let item of scaleList">
+                        <td>
+                            <a class="text-hover-primary text-gray-600">{{item.begLimit}}</a>
+                        </td>
+                        <td>
+                            <a class="text-hover-primary text-gray-600">{{item.endLimit}}</a>
+                        </td>
+                        <td>{{item.grade}}</td>
+                        <td>{{item.remarks}}</td>
+                        
+                        <td>
+                            <div class="d-flex align-items-center py-2">
+                                <button (click)="saveEdit(item.id)" class="btn btn-sm btn-light-primary btn-active-primary me-3" data-bs-toggle="modal" data-bs-target="#kt_modal_new_card">Edit</button>
+                                <button (click)="deleteGradeScale(item.id)" type="reset" class="btn btn-sm btn-light-danger btn-active-danger me-3">Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+                <!--end::Tbody-->
+            </table>
+            <!--end::Table-->
+        </div>
+        <!--end::Table wrapper-->
+    </div>
+    <!--end::Card body-->
+</div>
+<!--end::Login sessions-->
+
+<!--begin::Login sessions-->
+
+
+
+
+
+<div class="modal fade" id="kt_modal_new_card" tabindex="-1" aria-hidden="true">
+    <!--begin::Modal dialog-->
+    <div class="modal-dialog modal-dialog-centered mw-650px">
+        <!--begin::Modal content-->
+        <div class="modal-content">
+            <!--begin::Modal header-->
+            <div class="modal-header">
+                <!--begin::Modal title-->
+                <h2>Edit Grade Scale</h2>
+                <!--end::Modal title-->
+                <!--begin::Close-->
+                <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                    <span class="svg-icon svg-icon-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
+                            <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor" />
+                        </svg>
+                    </span>
+                    <!--end::Svg Icon-->
+                </div>
+                <!--end::Close-->
+            </div>
+            <!--end::Modal header-->
+            <!--begin::Modal body-->
+            <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
+                <!--begin::Form-->
+                <form id="kt_modal_new_card_form" class="form" (ngSubmit)="editGradeScale()">
+                    <!--begin::Input group-->
+                    <div class="d-flex flex-column mb-7 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
+                            <span class="required">Lower Score Limit</span>
+                        </label>
+                        <!--end::Label-->
+                        <input type="text" class="form-control form-control-solid" name="lowerscoreedit" [(ngModel)]="lowerlimt" />
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Input group-->
+                    <div class="d-flex flex-column mb-7 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
+                            <span class="required">Upper Score Limit</span>
+                            
+                        </label>
+                        <!--end::Label-->
+                        <input type="text" class="form-control form-control-solid" name="upperscoreedit" [(ngModel)]="upperlimit" />
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Input group-->
+                    <div class="d-flex flex-column mb-7 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
+                            <span class="required">Grade</span>
+                            
+                        </label>
+                        <!--end::Label-->
+                        <input type="text" class="form-control form-control-solid" name="gradeedit" [(ngModel)]="grade" />
+                    </div>
+                    <!--end::Input group-->
+                        <!--begin::Input group-->
+                    <div class="d-flex flex-column mb-7 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
+                            <span class="required">Remarks</span>
+                            
+                        </label>
+                        <!--end::Label-->
+                        <input type="text" class="form-control form-control-solid" name="remarkedit" [(ngModel)]="remarks" />
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Actions-->
+                    <div class="text-center pt-15">
+                        <div class="row">
+                            <div class="col-6">
+                                <button data-bs-dismiss="modal" type="reset" id="kt_modal_new_card_cancel" class="btn btn-light me-3 w-100">Discard</button>
+                            </div>
+                            <div class="col-6">
+                                <button type="submit" id="kt_modal_new_card_submit" class="btn btn-primary w-100">
+                                    <span class="indicator-label">Submit</span>
+                                    <span class="indicator-progress d-none">Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!--end::Actions-->
+                </form>
+                <!--end::Form-->
+            </div>
+            <!--end::Modal body-->
+        </div>
+        <!--end::Modal content-->
+    </div>
+    <!--end::Modal dialog-->
+</div>
+<!--end::Modal - New Card-->
+ <!--begin::Modal - New Card-->
+<div class="modal fade" id="kt_modal_new_grade" tabindex="-1" aria-hidden="true">
+    <!--begin::Modal dialog-->
+    <div class="modal-dialog modal-dialog-centered mw-650px">
+        <!--begin::Modal content-->
+        <div class="modal-content">
+            <!--begin::Modal header-->
+            <div class="modal-header">
+                <!--begin::Modal title-->
+                <h2>Add New Grade Scale</h2>
+                <!--end::Modal title-->
+                <!--begin::Close-->
+                <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                    <span class="svg-icon svg-icon-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
+                            <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor" />
+                        </svg>
+                    </span>
+                    <!--end::Svg Icon-->
+                </div>
+                <!--end::Close-->
+            </div>
+            <!--end::Modal header-->
+            <!--begin::Modal body-->
+            <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
+                <!--begin::Form-->
+                <form id="kt_modal_new_grade_form" class="form" (ngSubmit)="saveGradeScale()">
+                    <!--begin::Input group-->
+                    <div class="d-flex flex-column mb-7 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
+                            <span class="required">Lower Score Limit</span>
+                            
+                        </label>
+                        <!--end::Label-->
+                        <input type="text" class="form-control form-control-solid" name="lowerscore" [(ngModel)]="lowerlimt" />
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Input group-->
+                    <div class="d-flex flex-column mb-7 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
+                            <span class="required">Upper Score Limit</span>
+                            
+                        </label>
+                        <!--end::Label-->
+                        <input type="text" class="form-control form-control-solid" name="upperscore" [(ngModel)]="upperlimit" />
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Input group-->
+                    <div class="d-flex flex-column mb-7 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
+                            <span class="required">Grade</span>
+                            
+                        </label>
+                        <!--end::Label-->
+                        <input type="text" class="form-control form-control-solid" name="grade" [(ngModel)]="grade" />
+                    </div>
+                    <!--end::Input group-->
+                        <!--begin::Input group-->
+                    <div class="d-flex flex-column mb-7 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
+                            <span class="required">Remarks</span>
+                            
+                        </label>
+                        <!--end::Label-->
+                        <input type="text" class="form-control form-control-solid" name="remarks" [(ngModel)]="remarks" />
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Actions-->
+                    <div class="text-center pt-15">
+                        <div class="row">
+                            <div class="col-6">
+                                <button type="reset" data-bs-dismiss="modal" id="kt_modal_new_grade_cancel" class="btn btn-light me-3 w-100">Discard</button>
+                            </div>
+                            <div class="col-6">
+                                <button type="submit" id="kt_modal_new_grade_submit" class="btn btn-primary w-100">
+                                    <span class="indicator-label">Submit</span>
+                                    <span class="indicator-progress d-none">Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!--end::Actions-->
+                </form>
+                <!--end::Form-->
+            </div>
+            <!--end::Modal body-->
+        </div>
+        <!--end::Modal content-->
+    </div>
+    <!--end::Modal dialog-->
+</div>

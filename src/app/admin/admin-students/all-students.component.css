@@ -1,0 +1,56 @@
+.container {
+    width: 50%;
+    margin: 20px auto;
+    text-align: center;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .pagination {
+    margin-top: 1px;
+    display: flex;
+    justify-content: center;
+    border: solid 3px rgb(140, 152, 207);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+  }
+
+  .paginationdiv {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-right: 6%;
+  }
+  
+  button {
+    padding: 10px 10px;
+    background-color: rgb(19, 88, 153);
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px rgb(140, 152, 207);
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+
+  /* .icon-button:not(:disabled) i {
+    color: white;
+  }
+  
+  .icon-button:disabled i {
+    color: gray; 
+  } */
+  

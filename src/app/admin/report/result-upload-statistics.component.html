@@ -1,0 +1,924 @@
+<div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+    
+    <div class="content d-flex flex-column flex-column-fluid " id="kt_content">
+
+        <!--begin::Post-->
+        <div class="post d-flex flex-column-fluid" id="kt_post">
+            <!--begin::Container-->
+            <div id="kt_content_container" class="container-xxl">
+
+                <!--begin::Form-->
+                <form id="kt_ecommerce_add_product_form" class="form d-flex flex-column flex-lg-row"
+                    data-kt-redirect="#">
+
+                    <!--begin::Main column-->
+                    <div class="d-flex flex-column flex-row-fluid gap-7 gap-lg-10">
+                        <!--begin:::Tabs-->
+                        <ul
+                            class="nav nav-custom nav-tabs nav-line-tabs nav-line-tabs-2x border-0 fs-4 fw-bold mb-n2">
+                            <!--begin:::Tab item-->
+                            <li class="nav-item">
+                                <a class="nav-link text-active-primary pb-4 active" data-bs-toggle="tab"
+                                    href="#kt_ecommerce_add_product_general">Teachers List</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-active-primary pb-4" data-bs-toggle="tab"
+                                    href="#kt_ecommerce_add_product_advanced">Class List</a>
+                            </li>
+                            <!--end:::Tab item-->
+                            <!--begin:::Tab item-->
+                            <li class="nav-item">
+                                <a class="nav-link text-active-primary pb-4" data-bs-toggle="tab"
+                                    href="#kt_ecommerce_add_product_advanced_lol">Class Subjects</a>
+                            </li>
+                            <!--end:::Tab item-->
+
+
+                        </ul>
+                        <!--end:::Tabs-->
+                        <!--begin::Tab content-->
+                        <div class="tab-content">
+                            <!--begin::Tab pane-->
+                            <div class="tab-pane fade show active" id="kt_ecommerce_add_product_general"
+                                role="tab-panel">
+                                <div class="col-xl-12 mb-5 mb-xl-10">
+                                    <!--begin::Table Widget 4-->
+                                    <div class="card card-flush h-xl-100">
+                                        <!--begin::Card header-->
+                                        <div class="card-header pt-7">
+                                            <!--begin::Title-->
+                                            <h3 class="card-title align-items-start flex-column">
+                                                <span class="card-label fw-bolder text-gray-800">Result
+                                                    Upload Statistics</span>
+
+                                            </h3>
+                                            <!--end::Title-->
+                                            <!--begin::Actions-->
+                                            <div class="card-toolbar">
+                                                <!--begin::Filters-->
+                                                <div class="d-flex flex-stack flex-wrap gap-4">
+
+                                                    <!--begin::Search-->
+                                                    <div class="position-relative my-1">
+                                                        <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
+                                                        <span
+                                                            class="svg-icon svg-icon-2 position-absolute top-50 translate-middle-y ms-4">
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                width="24" height="24" viewBox="0 0 24 24"
+                                                                fill="none">
+                                                                <rect opacity="0.5" x="17.0365" y="15.1223"
+                                                                    width="8.15546" height="2" rx="1"
+                                                                    transform="rotate(45 17.0365 15.1223)"
+                                                                    fill="currentColor" />
+                                                                <path
+                                                                    d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z"
+                                                                    fill="currentColor" />
+                                                            </svg>
+                                                        </span>
+                                                        <!--end::Svg Icon-->
+                                                        <input type="text" data-kt-table-widget-4="search"
+                                                            class="form-control w-150px fs-7 ps-12"
+                                                            placeholder="Search" />
+                                                    </div>
+                                                    <!--end::Search-->
+                                                </div>
+                                                <!--begin::Filters-->
+                                            </div>
+                                            <!--end::Actions-->
+                                        </div>
+                                        <!--end::Card header-->
+                                        <!--begin::Card body-->
+                                        <div class="card-body pt-2">
+                                            <!--begin::Table-->
+                                            <table class="table align-middle table-row-dashed fs-6 gy-3"
+                                                id="kt_table_widget_4_table">
+                                                <!--begin::Table head-->
+                                                <thead>
+                                                    <!--begin::Table row-->
+                                                    <tr
+                                                        class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+                                                        <th class="min-w-50px">S/N</th>
+                                                        <th class="min-w-100px">Staff Name</th>
+                                                        <th class="text-center min-w-100px">Staff ID</th>
+                                                        <th class="text-start min-w-125px">Subject Workload
+                                                        </th>
+                                                        <th class="text-start min-w-100px">Completion Rate
+                                                        </th>
+                                                        <th class="text-end min-w-50px">Action</th>
+
+                                                    </tr>
+                                                    <!--end::Table row-->
+                                                </thead>
+                                                <!--end::Table head-->
+                                                <!--begin::Table body-->
+                                                <tbody class="fw-bolder text-gray-600">
+
+                                                    <tr *ngFor="let subject of subjectStat; let i = index">
+                                                        <td class="text-gray-800">{{i + 1}}</td>
+                                                        <!--begin::Name=-->
+                                                        <td class="d-flex align-items-center">
+                                                            <!--begin:: Avatar -->
+                                                            <div
+                                                                class="symbol symbol-circle symbol-40px overflow-hidden me-3">
+
+                                                                <div class="symbol-label">
+                                                                    <img [src]="genk.setImg(subject.staffPhoto)"
+                                                                        style="object-fit:cover"
+                                                                        alt="Emma Smith" class="w-100">
+                                                                </div>
+
+                                                            </div>
+                                                            <!--end::Avatar-->
+                                                            <!--begin::User details-->
+                                                            <div class="d-flex flex-column">
+                                                                <a href="#"
+                                                                    class="text-gray-800 text-hover-primary mb-1">{{subject.teacherName}}</a>
+
+                                                            </div>
+                                                            <!--begin::User details-->
+                                                        </td>
+                                                        <!--end::Name=-->
+                                                        <td class="text-center">GRD-001</td>
+                                                        <td class="text-start">
+                                                            <a href="#"
+                                                                class="text-gray-600 text-hover-primary">Mathematics
+                                                                (2), Further Math (2) </a>
+                                                        </td>
+
+                                                        <td class="">
+                                                            <div
+                                                                class="d-flex  align-items-center w-100 mw-125px">
+                                                                <!--begin::Progress-->
+                                                                <div
+                                                                    class="progress h-6px w-100 me-2 bg-light-success">
+                                                                    <div class="progress-bar bg-success"
+                                                                        role="progressbar"
+                                                                        style="width: 65%"
+                                                                        aria-valuenow="65" aria-valuemin="0"
+                                                                        aria-valuemax="100"></div>
+                                                                </div>
+                                                                <!--end::Progress-->
+
+                                                                <!--begin::Value-->
+                                                                <span class="text-gray-500 fw-semibold">
+                                                                    65%
+                                                                </span>
+                                                                <!--end::Value-->
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-end">
+                                                            <span
+                                                                class="btn  py-3 px-4 fs-7 btn-light-warning"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#kt_modal_view_users">View
+                                                                Upload Stats</span>
+                                                        </td>
+
+                                                    </tr>
+                                                    
+
+                                                </tbody>
+                                                <!--end::Table body-->
+                                            </table>
+                                            <!--end::Table-->
+                                        </div>
+                                        <!--end::Card body-->
+                                    </div>
+                                    <!--end::Table Widget 4-->
+                                </div>
+                            </div>
+                            <!--end::Tab pane-->
+                            <!--begin::Tab pane-->
+                            <div class="tab-pane fade" id="kt_ecommerce_add_product_advanced"
+                                role="tab-panel">
+                                <!--begin::Col-->
+                                <div class="col-xl-12 mb-5 mb-xl-10">
+                                    <!--begin::Card-->
+                                    <div class="card">
+                                        <!--begin::Card header-->
+                                        <div class="card-header border-0 pt-6">
+                                            <!--begin::Card title-->
+                                            <div class="card-title">
+                                                <!--begin::Search-->
+                                                <div
+                                                    class="d-flex align-items-center position-relative my-1">
+                                                    <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
+                                                    <span
+                                                        class="svg-icon svg-icon-1 position-absolute ms-6">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                            height="24" viewBox="0 0 24 24" fill="none">
+                                                            <rect opacity="0.5" x="17.0365" y="15.1223"
+                                                                width="8.15546" height="2" rx="1"
+                                                                transform="rotate(45 17.0365 15.1223)"
+                                                                fill="currentColor" />
+                                                            <path
+                                                                d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z"
+                                                                fill="currentColor" />
+                                                        </svg>
+                                                    </span>
+                                                    <!--end::Svg Icon-->
+                                                    <input type="text"
+                                                        data-kt-customer-table-filter="search"
+                                                        class="form-control form-control-solid w-250px ps-15"
+                                                        placeholder="Search" />
+                                                </div>
+                                                <!--end::Search-->
+                                            </div>
+                                            <!--begin::Card title-->
+                                            <!--begin::Card toolbar-->
+                                            <div class="card-toolbar">
+                                                <!--begin::Toolbar-->
+                                                <div class="d-flex justify-content-end"
+                                                    data-kt-customer-table-toolbar="base">
+                                                    <select
+                                                        class="form-select text-gray-700 fw-bold form-select-sm form-select-lg w-150px"
+                                                        id="school-select" data-control="select2"
+                                                        data-placeholder="Filter By School"
+                                                        data-hide-search="true">
+                                                        <option value="1"> JSS 1A</option>
+                                                        <option value="2">JSS 1B</option>
+                                                        <option value="3"> JSS 1C</option>
+                                                        <option value="4">JSS 2A</option>
+                                                        <option value="5"> JSS 2B</option>
+                                                        <option value="6">JSS 2C</option>
+                                                        <option value="7"> JSS 3A</option>
+                                                        <option value="8">JSS 3B</option>
+
+                                                    </select>
+                                                    <!--end::Select-->
+
+                                                </div>
+                                                <!--end::Toolbar-->
+
+                                            </div>
+                                            <!--end::Card toolbar-->
+                                        </div>
+                                        <!--end::Card header-->
+                                        <!--begin::Card body-->
+                                        <div class="card-body pt-0">
+                                            <!--begin::Table-->
+                                            <table class="table align-middle table-row-dashed fs-6 gy-5"
+                                                id="kt_customers_table">
+                                                <!--begin::Table head-->
+                                                <thead>
+                                                    <!--begin::Table row-->
+                                                    <tr
+                                                        class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+                                                        <th class="w-20px pe-5">S/N</th>
+                                                        <th class="min-w-150px">Subject</th>
+                                                        <th class="min-w-200px">Subject Teacher</th>
+                                                        <th class="min-w-150px">Result Upload Statistics
+                                                        </th>
+                                                        <th class="text-center min-w-75px">Student Average
+                                                            Score</th>
+                                                        <th class="text-center min-w-75px">Passing Percenage
+                                                        </th>
+                                                    </tr>
+                                                    <!--end::Table row-->
+                                                </thead>
+                                                <!--end::Table head-->
+
+                                                <!--begin::Table body-->
+                                                <tbody class="fw-bold text-gray-600">
+                                                    <!-- Row 1 -->
+                                                    <tr>
+                                                        <td class="text-gray-800 pe-5 text-hover-info">1
+                                                        </td>
+                                                        <td><a href="#"
+                                                                class="text-gray-800 text-hover-info mb-1">Mathematics</a>
+                                                        </td>
+                                                        <td class="d-flex align-items-center">
+                                                            <!--begin:: Avatar -->
+                                                            <div
+                                                                class="symbol symbol-circle symbol-40px overflow-hidden me-3">
+                                                                <div class="symbol-label">
+                                                                    <img src="assets/boy2.jpeg"
+                                                                        style="object-fit:cover"
+                                                                        alt="Jayden Smith" class="w-100">
+                                                                </div>
+                                                            </div>
+                                                            <!--end::Avatar-->
+                                                            <div class="d-flex flex-column">
+                                                                <a href="#"
+                                                                    class="text-gray-800 text-hover-primary mb-1">Jayden
+                                                                    Smith</a>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-end">
+                                                            <div class="d-flex flex-column w-100 me-2">
+                                                                <div class="d-flex flex-stack mb-2">
+                                                                    <span
+                                                                        class="text-dark me-2 fs-7 fw-bold">50/100
+                                                                        (50%)</span>
+                                                                </div>
+                                                                <div class="progress h-6px w-100">
+                                                                    <div class="progress-bar bg-primary"
+                                                                        role="progressbar"
+                                                                        style="width: 50%"
+                                                                        aria-valuenow="50" aria-valuemin="0"
+                                                                        aria-valuemax="100"></div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center text-dark bold">86.2</td>
+                                                        <td class="text-center text-center text-dark bold">
+                                                            100%</td>
+                                                    </tr>
+
+                                                    <!-- Row 2 -->
+                                                    <tr>
+                                                        <td class="text-gray-800 pe-5 text-hover-info">2
+                                                        </td>
+                                                        <td><a href="#"
+                                                                class="text-gray-800 text-hover-info mb-1">English</a>
+                                                        </td>
+                                                        <td class="d-flex align-items-center">
+                                                            <div
+                                                                class="symbol symbol-circle symbol-40px overflow-hidden me-3">
+                                                                <div class="symbol-label">
+                                                                    <img src="assets/media/avatars/300-10.jpg"
+                                                                        style="object-fit:cover"
+                                                                        alt="Sarah Adams" class="w-100">
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-flex flex-column">
+                                                                <a href="#"
+                                                                    class="text-gray-800 text-hover-primary mb-1">Sarah
+                                                                    Adams</a>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-end">
+                                                            <div class="d-flex flex-column w-100 me-2">
+                                                                <div class="d-flex flex-stack mb-2">
+                                                                    <span
+                                                                        class="text-dark me-2 fs-7 fw-bold">100/100
+                                                                        (100%)</span>
+                                                                </div>
+                                                                <div class="progress h-6px w-100">
+                                                                    <div class="progress-bar bg-success"
+                                                                        role="progressbar"
+                                                                        style="width: 100%"
+                                                                        aria-valuenow="75" aria-valuemin="0"
+                                                                        aria-valuemax="100"></div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center text-dark bold">91</td>
+                                                        <td class="text-center text-dark bold">30%</td>
+                                                    </tr>
+
+                                                    <!-- Row 3 -->
+                                                    <tr>
+                                                        <td class="text-gray-800 pe-5 text-hover-info">3
+                                                        </td>
+                                                        <td><a href="#"
+                                                                class="text-gray-800 text-hover-info mb-1">Physics</a>
+                                                        </td>
+                                                        <td class="d-flex align-items-center">
+                                                            <div
+                                                                class="symbol symbol-circle symbol-40px overflow-hidden me-3">
+                                                                <div class="symbol-label">
+                                                                    <img src="assets/media/avatars/300-13.jpg"
+                                                                        style="object-fit:cover"
+                                                                        alt="Dr. Philip Grey" class="w-100">
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-flex flex-column">
+                                                                <a href="#"
+                                                                    class="text-gray-800 text-hover-primary mb-1">Dr.
+                                                                    Philip Grey</a>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-end">
+                                                            <div class="d-flex flex-column w-100 me-2">
+                                                                <div class="d-flex flex-stack mb-2">
+                                                                    <span
+                                                                        class="text-dark me-2 fs-7 fw-bold">30/100
+                                                                        (30%)</span>
+                                                                </div>
+                                                                <div class="progress h-6px w-100">
+                                                                    <div class="progress-bar bg-danger"
+                                                                        role="progressbar"
+                                                                        style="width: 30%"
+                                                                        aria-valuenow="30" aria-valuemin="0"
+                                                                        aria-valuemax="100"></div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center text-dark bold">78.3</td>
+                                                        <td class="text-center text-dark bold">50%</td>
+                                                    </tr>
+
+                                                    <!-- Row 4 -->
+                                                    <tr>
+                                                        <td class="text-gray-800 pe-5 text-hover-info">4
+                                                        </td>
+                                                        <td><a href="#"
+                                                                class="text-gray-800 text-hover-info mb-1">Chemistry</a>
+                                                        </td>
+                                                        <td class="d-flex align-items-center">
+                                                            <div
+                                                                class="symbol symbol-circle symbol-40px overflow-hidden me-3">
+                                                                <div class="symbol-label">
+                                                                    <img src="assets/media/avatars/300-7.jpg"
+                                                                        style="object-fit:cover"
+                                                                        alt="Ms. Olivia White"
+                                                                        class="w-100">
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-flex flex-column">
+                                                                <a href="#"
+                                                                    class="text-gray-800 text-hover-primary mb-1">Mr.
+                                                                    Olivia White</a>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-end">
+                                                            <div class="d-flex flex-column w-100 me-2">
+                                                                <div class="d-flex flex-stack mb-2">
+                                                                    <span
+                                                                        class="text-dark me-2 fs-7 fw-bold">90/100
+                                                                        (90%)</span>
+                                                                </div>
+                                                                <div class="progress h-6px w-100">
+                                                                    <div class="progress-bar bg-primary"
+                                                                        role="progressbar"
+                                                                        style="width: 90%"
+                                                                        aria-valuenow="90" aria-valuemin="0"
+                                                                        aria-valuemax="100"></div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center text-dark bold">96</td>
+                                                        <td class="text-center text-dark bold">80%</td>
+                                                    </tr>
+                                                </tbody>
+                                                <!--end::Table body-->
+                                            </table>
+                                            <!--end::Table-->
+
+                                        </div>
+                                        <!--end::Card body-->
+                                    </div>
+                                    <!--end::Card-->
+                                </div>
+                                <!--end::Col-->
+                            </div>
+                            <!--end::Tab pane-->
+
+                            <div class="tab-pane fade" id="kt_ecommerce_add_product_advanced_lol"
+                                role="tab-panel">
+                                <!--begin::Col-->
+                                <div class="col-xl-12 mb-5 mb-xl-10">
+                                    <!--begin::Card-->
+                                    <div class="card">
+                                        <!--begin::Card header-->
+                                        <div class="card-header border-0 pt-6">
+                                            <!--begin::Card title-->
+                                            <div class="card-title">
+                                                <!--begin::Search-->
+                                                <div
+                                                    class="d-flex align-items-center position-relative my-1">
+                                                    <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
+                                                    <span
+                                                        class="svg-icon svg-icon-1 position-absolute ms-6">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                            height="24" viewBox="0 0 24 24" fill="none">
+                                                            <rect opacity="0.5" x="17.0365" y="15.1223"
+                                                                width="8.15546" height="2" rx="1"
+                                                                transform="rotate(45 17.0365 15.1223)"
+                                                                fill="currentColor" />
+                                                            <path
+                                                                d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z"
+                                                                fill="currentColor" />
+                                                        </svg>
+                                                    </span>
+                                                    <!--end::Svg Icon-->
+                                                    <input type="text"
+                                                        data-kt-customer-table-filter="search"
+                                                        class="form-control form-control-solid w-250px ps-15"
+                                                        placeholder="Search" />
+                                                </div>
+                                                <!--end::Search-->
+                                            </div>
+                                            <!--begin::Card title-->
+                                            <!--begin::Card toolbar-->
+                                            <div class="card-toolbar">
+                                                <!--begin::Toolbar-->
+                                                <div class="d-flex justify-content-end"
+                                                    data-kt-customer-table-toolbar="base">
+                                                    <select
+                                                        class="form-select text-gray-700 fw-bold form-select-sm form-select-lg w-150px"
+                                                        id="school-select" data-control="select2"
+                                                        data-placeholder="Filter By School"
+                                                        data-hide-search="true">
+                                                        <option value="1"> JSS 1A</option>
+                                                        <option value="2">JSS 1B</option>
+                                                        <option value="3"> JSS 1C</option>
+                                                        <option value="4">JSS 2A</option>
+                                                        <option value="5"> JSS 2B</option>
+                                                        <option value="6">JSS 2C</option>
+                                                        <option value="7"> JSS 3A</option>
+                                                        <option value="8">JSS 3B</option>
+
+                                                    </select>
+                                                    <!--end::Select-->
+
+                                                </div>
+                                                <!--end::Toolbar-->
+
+                                            </div>
+                                            <!--end::Card toolbar-->
+                                        </div>
+                                        <!--end::Card header-->
+                                        <!--begin::Card body-->
+                                        <div class="card-body pt-0">
+                                            <!--begin::Table-->
+                                            <table class="table align-middle table-row-dashed fs-6 gy-5"
+                                                id="kt_customers_table">
+                                                <!--begin::Table head-->
+                                                <thead>
+                                                    <!--begin::Table row-->
+                                                    <tr
+                                                        class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+                                                        <th class="w-20px pe-5">S/N</th>
+                                                        <th class="min-w-150px">Subject</th>
+                                                        <th class="min-w-200px">Subject Teacher</th>
+                                                        <th class="min-w-150px">Result Upload Statistics
+                                                        </th>
+                                                        <th class="text-center min-w-75px">Student Average
+                                                            Score</th>
+                                                        <th class="text-center min-w-75px">Passing Percenage
+                                                        </th>
+                                                    </tr>
+                                                    <!--end::Table row-->
+                                                </thead>
+                                                <!--end::Table head-->
+
+                                                <!--begin::Table body-->
+                                                <tbody class="fw-bold text-gray-600">
+                                                    <!-- Row 1 -->
+                                                    <tr>
+                                                        <td class="text-gray-800 pe-5 text-hover-info">1
+                                                        </td>
+                                                        <td><a href="#"
+                                                                class="text-gray-800 text-hover-info mb-1">Mathematics</a>
+                                                        </td>
+                                                        <td class="d-flex align-items-center">
+                                                            <!--begin:: Avatar -->
+                                                            <div
+                                                                class="symbol symbol-circle symbol-40px overflow-hidden me-3">
+                                                                <div class="symbol-label">
+                                                                    <img src="assets/boy2.jpeg"
+                                                                        style="object-fit:cover"
+                                                                        alt="Jayden Smith" class="w-100">
+                                                                </div>
+                                                            </div>
+                                                            <!--end::Avatar-->
+                                                            <div class="d-flex flex-column">
+                                                                <a href="#"
+                                                                    class="text-gray-800 text-hover-primary mb-1">Jayden
+                                                                    Smith</a>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-end">
+                                                            <div class="d-flex flex-column w-100 me-2">
+                                                                <div class="d-flex flex-stack mb-2">
+                                                                    <span
+                                                                        class="text-dark me-2 fs-7 fw-bold">50/100
+                                                                        (50%)</span>
+                                                                </div>
+                                                                <div class="progress h-6px w-100">
+                                                                    <div class="progress-bar bg-primary"
+                                                                        role="progressbar"
+                                                                        style="width: 50%"
+                                                                        aria-valuenow="50" aria-valuemin="0"
+                                                                        aria-valuemax="100"></div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center text-dark bold">86.2</td>
+                                                        <td class="text-center text-center text-dark bold">
+                                                            100%</td>
+                                                    </tr>
+
+                                                    <!-- Row 2 -->
+                                                    <tr>
+                                                        <td class="text-gray-800 pe-5 text-hover-info">2
+                                                        </td>
+                                                        <td><a href="#"
+                                                                class="text-gray-800 text-hover-info mb-1">English</a>
+                                                        </td>
+                                                        <td class="d-flex align-items-center">
+                                                            <div
+                                                                class="symbol symbol-circle symbol-40px overflow-hidden me-3">
+                                                                <div class="symbol-label">
+                                                                    <img src="assets/media/avatars/300-10.jpg"
+                                                                        style="object-fit:cover"
+                                                                        alt="Sarah Adams" class="w-100">
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-flex flex-column">
+                                                                <a href="#"
+                                                                    class="text-gray-800 text-hover-primary mb-1">Sarah
+                                                                    Adams</a>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-end">
+                                                            <div class="d-flex flex-column w-100 me-2">
+                                                                <div class="d-flex flex-stack mb-2">
+                                                                    <span
+                                                                        class="text-dark me-2 fs-7 fw-bold">100/100
+                                                                        (100%)</span>
+                                                                </div>
+                                                                <div class="progress h-6px w-100">
+                                                                    <div class="progress-bar bg-success"
+                                                                        role="progressbar"
+                                                                        style="width: 100%"
+                                                                        aria-valuenow="75" aria-valuemin="0"
+                                                                        aria-valuemax="100"></div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center text-dark bold">91</td>
+                                                        <td class="text-center text-dark bold">30%</td>
+                                                    </tr>
+
+                                                    <!-- Row 3 -->
+                                                    <tr>
+                                                        <td class="text-gray-800 pe-5 text-hover-info">3
+                                                        </td>
+                                                        <td><a href="#"
+                                                                class="text-gray-800 text-hover-info mb-1">Physics</a>
+                                                        </td>
+                                                        <td class="d-flex align-items-center">
+                                                            <div
+                                                                class="symbol symbol-circle symbol-40px overflow-hidden me-3">
+                                                                <div class="symbol-label">
+                                                                    <img src="assets/media/avatars/300-13.jpg"
+                                                                        style="object-fit:cover"
+                                                                        alt="Dr. Philip Grey" class="w-100">
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-flex flex-column">
+                                                                <a href="#"
+                                                                    class="text-gray-800 text-hover-primary mb-1">Dr.
+                                                                    Philip Grey</a>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-end">
+                                                            <div class="d-flex flex-column w-100 me-2">
+                                                                <div class="d-flex flex-stack mb-2">
+                                                                    <span
+                                                                        class="text-dark me-2 fs-7 fw-bold">30/100
+                                                                        (30%)</span>
+                                                                </div>
+                                                                <div class="progress h-6px w-100">
+                                                                    <div class="progress-bar bg-danger"
+                                                                        role="progressbar"
+                                                                        style="width: 30%"
+                                                                        aria-valuenow="30" aria-valuemin="0"
+                                                                        aria-valuemax="100"></div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center text-dark bold">78.3</td>
+                                                        <td class="text-center text-dark bold">50%</td>
+                                                    </tr>
+
+                                                    <!-- Row 4 -->
+                                                    <tr>
+                                                        <td class="text-gray-800 pe-5 text-hover-info">4
+                                                        </td>
+                                                        <td><a href="#"
+                                                                class="text-gray-800 text-hover-info mb-1">Chemistry</a>
+                                                        </td>
+                                                        <td class="d-flex align-items-center">
+                                                            <div
+                                                                class="symbol symbol-circle symbol-40px overflow-hidden me-3">
+                                                                <div class="symbol-label">
+                                                                    <img src="assets/media/avatars/300-7.jpg"
+                                                                        style="object-fit:cover"
+                                                                        alt="Ms. Olivia White"
+                                                                        class="w-100">
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-flex flex-column">
+                                                                <a href="#"
+                                                                    class="text-gray-800 text-hover-primary mb-1">Mr.
+                                                                    Olivia White</a>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-end">
+                                                            <div class="d-flex flex-column w-100 me-2">
+                                                                <div class="d-flex flex-stack mb-2">
+                                                                    <span
+                                                                        class="text-dark me-2 fs-7 fw-bold">90/100
+                                                                        (90%)</span>
+                                                                </div>
+                                                                <div class="progress h-6px w-100">
+                                                                    <div class="progress-bar bg-primary"
+                                                                        role="progressbar"
+                                                                        style="width: 90%"
+                                                                        aria-valuenow="90" aria-valuemin="0"
+                                                                        aria-valuemax="100"></div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center text-dark bold">96</td>
+                                                        <td class="text-center text-dark bold">80%</td>
+                                                    </tr>
+                                                </tbody>
+                                                <!--end::Table body-->
+                                            </table>
+                                            <!--end::Table-->
+
+                                        </div>
+                                        <!--end::Card body-->
+                                    </div>
+                                    <!--end::Card-->
+                                </div>
+                                <!--end::Col-->
+                            </div>
+                            <!--end::Tab pane-->
+
+
+
+
+                        </div>
+                        <!--end::Tab content-->
+
+                    </div>
+                    <!--end::Main column-->
+                </form>
+                <!--end::Form-->
+            </div>
+            <!--end::Col-->
+
+        </div>
+        <!--end::Card-->
+
+
+        
+        <div class="modal fade" id="kt_modal_view_users" tabindex="-1" aria-hidden="true">
+            <!--begin::Modal dialog-->
+            <div class="modal-dialog mw-950px">
+                <!--begin::Modal content-->
+                <div class="modal-content">
+                    <!--begin::Modal header-->
+                    <div class="modal-header pb-0 border-0 justify-content-end">
+                        <!--begin::Close-->
+                        <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                            <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                            <span class="svg-icon svg-icon-1"><svg width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1"
+                                        transform="rotate(-45 6 17.3137)" fill="currentColor" />
+                                    <rect x="7.41422" y="6" width="16" height="2" rx="1"
+                                        transform="rotate(45 7.41422 6)" fill="currentColor" />
+                                </svg>
+
+                            </span>
+                            <!--end::Svg Icon-->
+                        </div>
+                        <!--end::Close-->
+                    </div>
+                    <!--begin::Modal header-->
+
+                    <!--begin::Modal body-->
+                    <div class="modal-body scroll-y mx-5 mx-xl-18 pt-0 pb-15">
+                        <!--begin::Heading-->
+                        <div class="text-center mb-13">
+                            <h1 class="mb-3">Result Upload Statistics</h1>
+                            <div class="text-muted fw-semibold fs-5">
+                                See the result upload statistics for
+                                <a href="#" class="link-primary fw-bold">Amodu David</a>.
+                            </div>
+                        </div>
+                        <!--end::Heading-->
+
+                        <!--begin:::Tabs-->
+                        <ul
+                            class="nav nav-custom nav-tabs nav-line-tabs nav-line-tabs-2x border-0 fs-4 fw-bold mb-n2">
+                            <li class="nav-item">
+                                <a class="nav-link text-active-primary pb-4 active" data-bs-toggle="tab"
+                                    href="#chart-mathematics">Mathematics</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-active-primary pb-4" data-bs-toggle="tab"
+                                    href="#chart-further-math">Further Math</a>
+                            </li>
+                        </ul>
+                        <!--end:::Tabs-->
+
+                        <!--begin:::Tab Content-->
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="chart-mathematics">
+                                <div id="kt_charts_widget_5_mathematics" class="min-h-auto p-3"></div>
+                            </div>
+                            <div class="tab-pane fade" id="chart-further-math">
+                                <div id="kt_charts_widget_5_furthermath" class="min-h-auto p-3"></div>
+                            </div>
+                        </div>
+                        <!--end:::Tab Content-->
+                    </div>
+                    <!--end::Modal body-->
+
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function () {
+                            var mathChart = null;
+                            var furtherMathChart = null;
+
+                            function renderMathChart() {
+                                if (mathChart) mathChart.destroy(); // Destroy old chart instance
+                                var e = document.getElementById("kt_charts_widget_5_mathematics");
+                                if (!e) return;
+
+                                mathChart = new ApexCharts(e, {
+                                    series: [
+                                        { name: "Number of Students", data: [100, 120, 90, 100, 130] },
+                                        { name: "Uploaded Results", data: [80, 100, 90, 80, 100] }
+                                    ],
+                                    chart: { type: "bar", height: 450, toolbar: { show: false } },
+                                    plotOptions: {
+                                        bar: { horizontal: true, barHeight: "60%", borderRadius: 4 }
+                                    },
+                                    dataLabels: {
+                                        enabled: true,
+                                        style: { fontSize: "12px", fontWeight: "bold", colors: ["#FFF"] },
+                                        position: "right"
+                                    },
+                                    legend: { position: "top" },
+                                    colors: ["#3E97FF", "#50cd89"],
+                                    xaxis: {
+                                        categories: ["JSS 1A", "JSS 2A", "JSS 3B", "JSS 3C", "SSS 1A"],
+                                        labels: { style: { fontSize: "12px", fontWeight: "bold" } }
+                                    },
+                                    yaxis: {
+                                        labels: { style: { fontSize: "14px", fontWeight: "600" } }
+                                    },
+                                    grid: { strokeDashArray: 4 }
+                                });
+                                mathChart.render();
+                            }
+
+                            function renderFurtherMathChart() {
+                                if (furtherMathChart) furtherMathChart.destroy(); // Destroy old chart instance
+                                var e = document.getElementById("kt_charts_widget_5_furthermath");
+                                if (!e) return;
+
+                                furtherMathChart = new ApexCharts(e, {
+                                    series: [
+                                        { name: "Number of Students", data: [90, 110, 85, 95,] },
+                                        { name: "Uploaded Results", data: [70, 95, 80, 75,] }
+                                    ],
+                                    chart: { type: "bar", height: 380, toolbar: { show: false } },
+                                    plotOptions: {
+                                        bar: { horizontal: true, barHeight: "60%", borderRadius: 4 }
+                                    },
+                                    dataLabels: {
+                                        enabled: true,
+                                        style: { fontSize: "12px", fontWeight: "bold", colors: ["#FFF"] },
+                                        position: "right"
+                                    },
+                                    legend: { position: "top" },
+                                    colors: ["#3E97FF", "#50cd89"],
+                                    xaxis: {
+                                        categories: ["JSS 2B", "SSS 1A", "SSS 2B", "SSS 3A",],
+                                        labels: { style: { fontSize: "12px", fontWeight: "bold" } }
+                                    },
+                                    yaxis: {
+                                        labels: { style: { fontSize: "14px", fontWeight: "600" } }
+                                    },
+                                    grid: { strokeDashArray: 4 }
+                                });
+                                furtherMathChart.render();
+                            }
+
+                            // Initialize the first chart on page load
+                            renderMathChart();
+
+                            // Re-render charts when tabs are clicked
+                            document.querySelectorAll('[data-bs-toggle="tab"]').forEach(tab => {
+                                tab.addEventListener("shown.bs.tab", function (event) {
+                                    var targetTab = event.target.getAttribute("href");
+                                    if (targetTab === "#chart-mathematics") {
+                                        renderMathChart();
+                                    } else if (targetTab === "#chart-further-math") {
+                                        renderFurtherMathChart();
+                                    }
+                                });
+                            });
+                        });
+                    </script>
+                </div>
+                <!--end::Modal content-->
+            </div>
+            <!--end::Modal dialog-->
+        </div>
+        <!--end::Modal - View Users-->
+        <!--end::Modals-->
+    </div>
+    <!--end::Container-->
+</div>
+<

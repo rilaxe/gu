@@ -1,0 +1,433 @@
+<div>
+  <!--begin::Modal dialog-->
+  <div>
+      <!--begin::Modal content-->
+      <div class="modal-content">
+          <!--begin::Modal header-->
+          <div class="modal-header">
+              <!--begin::Modal title-->
+              <h2>Register Staff</h2>
+          </div>
+          
+          <div class="modal-body px-lg-10">
+              <!--begin::Stepper-->
+              <div class="stepper stepper-pills stepper-column d-flex flex-column flex-xl-row flex-row-fluid"
+                  id="kt_modal_create_app_stepper">
+                  <!--begin::Aside-->
+                  <div
+                      class="d-flex justify-content-center justify-content-xl-start flex-row-auto w-100 w-xl-300px ">
+                      <!--begin::Nav-->
+                      <div class="stepper-nav ps-lg-10 fixed-">
+                          <!--begin::Step 1-->
+                          <div [ngClass]="step1 ? 'stepper-item' : 'stepper-item current'">
+                              <!--begin::Line-->
+                              <div class="stepper-line w-40px"></div>
+                              <!--end::Line-->
+                              <!--begin::Icon-->
+                              <div class="stepper-icon w-40px h-40px">
+                                  <i class="stepper-check fas fa-check"></i>
+                                  <span class="stepper-number">1</span>
+                              </div>
+                             
+                              <div class="stepper-label">
+                                  <h3 class="stepper-title">Staffs' Bio</h3>
+                                  <div class="stepper-desc"></div>
+                              </div>
+                              
+                          </div>
+                          
+                          <div class="stepper-item ">
+                              <!--begin::Line-->
+                              <div class="stepper-line w-40px"></div>
+                            
+                              <div class="stepper-icon w-40px h-40px">
+                                  <i class="stepper-check fas fa-check"></i>
+                                  <span class="stepper-number">2</span>
+                              </div>
+                              <div class="stepper-label">
+                                  <h3 class="stepper-title">Contact Information</h3>
+                                  <div class="stepper-desc"></div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <div class="flex-row-fluid py-lg-5 px-lg-15">
+                      <!--begin::Form-->
+                      <form (ngSubmit)="saveStaff(f)" #f="ngForm" class="form">
+                          <!--begin::Step 1-->
+                          <div class="current" *ngIf="step1">
+                              <div class="w-100">
+                                  <div class="fv-row mb-7">
+                                      <!--begin::Label-->
+                                      <label class="d-block fw-bold fs-6 mb-5">Staff Picture</label>
+                                      <!-- src="../../../assets/boy2.jpeg" -->
+                                      <div>
+                                         <div #magdiv style="display: flex;">
+                                          <img style="width: 250px;" #mag [src]="genk.imag || genk.blankimg">
+                                         </div>
+                                          <label style="margin-top: 10px;">
+                                              <input #dile type="file"
+                                          class="intbox"
+                                          accept=".jpg, .jpeg, .png, .gif, .tif"
+                                          (change)="genk.showPreview($event, mag)" />
+                                          </label>
+                                         
+                                      </div>
+                                      <!--end::Image input-->
+                                      <!--begin::Hint-->
+                                      <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
+                                      <!--end::Hint-->
+                                  </div>
+                                  <!--begin::Input group-->
+                                  <div class="row mb-10">
+                                      <div class="col-12 mb-10">
+                                          <!--begin::Label-->
+                                          <label class="d-flex align-items-center fs-5 fw-bold ">
+                                              <span class="required">Surname</span>
+
+                                          </label>
+                                          <!--end::Label-->
+                                          <!--begin::Input-->
+                                          <input type="text"
+                                              class="form-control form-control-lg form-control-solid" placeholder="" name="surname" [(ngModel)]="staff.surname" />
+                                          <!--end::Input-->
+                                      </div>
+                                      <div class="col-12 mb-10">
+                                          <!--begin::Label-->
+                                          <label class="d-flex align-items-center fs-5 fw-bold mb-2">
+                                              <span class="required">First Name</span>
+                                          </label>
+                                        
+                                          <input type="text"
+                                              class="form-control form-control-lg form-control-solid" name="name"
+                                              placeholder="" name="firstname" [(ngModel)]="staff.firstName"  />
+                                          <!--end::Input-->
+                                      </div>
+                                      <div class="col-12">
+                                          <!--begin::Label-->
+                                          <label class="d-flex align-items-center fs-5 fw-bold mb-2">
+                                              <span class="">Middle Name</span>
+                                          </label>
+                                       
+                                          <input type="text"
+                                              class="form-control form-control-lg form-control-solid" name="name"
+                                              placeholder="" name="middlename" [(ngModel)]="staff.middleName"/>
+                                          <!--end::Input-->
+                                      </div>
+
+                                  </div>
+                                  
+                                  <div class="row mb-10">
+                                      <div class="col-6">
+                                          <!--begin::Label-->
+                                          <label class="fs-6 fw-bold mb-2">
+                                              <span class="required">Gender</span>
+
+                                          </label>
+                                          <!--end::Label-->
+                                          <!--begin::Input-->
+                                          <select name="Section" data-control="select" name="gender" [(ngModel)]="staff.gender"
+                                              data-placeholder="Select Section..."
+                                              class="form-select form-select-solid fw-bolder">
+                                              <option value="">Select Gender...</option>
+                                              <option value="Male">Male</option>
+                                              <option value="Female">Female</option>
+                                          </select>
+                                          <!--end::Input-->
+                                      </div>
+
+                                      <div class="col-6">
+                                          <!--begin::Label-->
+                                          <label class="d-flex align-items-center fs-5 fw-bold mb-2">
+                                              <span class="required">Staff Id-Card-No</span>
+
+                                          </label>
+                                          <!--end::Label-->
+                                          <!--begin::Input-->
+                                          <input type="mail"
+                                              class="form-control form-control-lg form-control-solid" name="idCardNo"
+                                              placeholder="" [(ngModel)]="staff.idCardNo"/>
+                                          <!--end::Input-->
+                                      </div>
+
+                                  </div>
+                                  <!--end::Input group-->
+                                  <!--begin::Input group-->
+                                  <div class="row mb-10">
+                                      <div class="col-6">
+                                          <!--begin::Label-->
+                                          <label class="d-flex align-items-center fs-5 fw-bold mb-2">
+                                              <span class="required">Date Of Birth</span>
+
+                                          </label>
+                                          <!--end::Label-->
+                                          <!--begin::Input-->
+                                          <input type="date"
+                                              class="form-control form-control-lg form-control-solid" name="dob"
+                                              placeholder="" [(ngModel)]="staff.birthDate"/>
+                                          <!--end::Input-->
+                                      </div>
+                                      <div class="col-6">
+                                          <!--begin::Label-->
+                                          <label class="d-flex align-items-center fs-5 fw-bold mb-2">
+                                              <span class="required">Staff Category</span>
+
+                                          </label>
+                                          <!--end::Label-->
+                                          <!--begin::Input-->
+                                          <select name="Section" data-control="select" name="category" [(ngModel)]="staff.category"
+                                              data-placeholder="Select Category..."
+                                              class="form-select form-select-solid fw-bolder">
+                                              <option value="">Select category...</option>
+                                              <option value="Academic Staff">Academic Staff</option>
+                                              <option value="Non Academic Staff">Non Academic Staff </option>
+
+
+                                          </select>
+                                          <!--end::Input-->
+                                      </div>
+
+
+
+                                  </div>
+                                  <!--end::Input group-->
+
+
+                                  <!--begin::Input group-->
+                                  <div class="row mb-10">
+                                      <div class="col-6">
+                                          <!--begin::Label-->
+                                          <label class="fs-6 fw-bold mb-2">
+                                              <span class="required">Department</span>
+
+                                          </label>
+                                          <!--end::Label-->
+                                          <!--begin::Input-->
+                                          <select name="Section" data-control="select" name="department" [(ngModel)]="staff.department"
+                                              data-placeholder="Select Section..."
+                                              class="form-select form-select-solid fw-bolder">
+                                              <option value="">Select Department...</option>
+                                              <option value="Humanities I">Humanities I</option>
+                                              <option value="Humanities II">Humanities II </option>
+                                              <option value="Business"> Business </option>
+                                              <option value=" Mathematics & Computer Science">Mathematics &
+                                                  Computer Science</option>
+                                              <option value="Vocational & Technology Studies">Vocational &
+                                                  Technology Studies </option>
+                                              <option value="Science">Science </option>
+                                              <option value="Clerical">Clerical </option>
+                                              <option value="Utility">Utility</option>
+                                              <option value="Ground Staff">Ground Staff</option>
+                                              <option value="Vocation and technical Department">Vocation and
+                                                  technical Department</option>
+                                          </select>
+                                          <!--end::Input-->
+                                      </div>
+                                      <div class="col-6">
+                                          <!--begin::Label-->
+                                          <label class="fs-6 fw-bold mb-2">
+                                              <span class="required">Position</span>
+
+                                          </label>
+                                          <!--end::Label-->
+                                          <!--begin::Input-->
+                                          <select data-control="select" name="position" [(ngModel)]="staff.position"
+                                              data-placeholder="Select Section..."
+                                              class="form-select form-select-solid fw-bolder">
+                                              <option value="">Select Position...</option>
+                                              <option value="Vice Principal Administration">Vice Principal
+                                                  Administration</option>
+                                              <option value="Vice Principal Academics">Vice Principal Academics
+                                              </option>
+                                              <option value="Human Resource Officer I">Human Resource Officer I
+                                              </option>
+                                              <option value="Human Resource Officer II">Human Resource Officer II
+                                              </option>
+                                              <option value="Exam Officer (Internal)">Exam Officer (Internal)
+                                              </option>
+                                              <option value="Exam Officer (External)">Exam Officer (External)
+                                              </option>
+                                              <option value="Matron">Matron</option>
+                                              <option value="Cook">Cook</option>
+                                              <option value="Sewing">Sewing</option>
+                                              <option value="Crèche">Crèche</option>
+                                              <option value="Driver">Driver</option>
+                                              <option value="Nurses">Nurses</option>
+                                              <option value="Gardeners">Gardeners</option>
+                                              <option value="Canteen">Canteen</option>
+                                              <option value="Bakery">Bakery</option>
+                                              <option value="Teacher">Teacher</option>
+                                              <option value="Receptionist">Receptionist</option>
+                                              <option value="Electrician">Electrician</option>
+                                              <option value="Plumber">Plumber</option>
+                                              <option value="Class Teacher">Class Teacher</option>
+                                              <option value="ICT Staff">ICT Staff</option>
+                                              <option value="Facility Manager">Facility Manager</option>
+                                              <option value="Head of Department">Head of Department</option>
+                                              <option value="Academic Support and Foreign Admission Officer">
+                                                  Academic Support and Foreign Admission Officer</option>
+                                              <option value="Accountant">Accountant</option>
+                                              <option value="Store Keeper">Store Keeper</option>
+                                              <option value="Procurement">Procurement</option>
+                                              <option value="Principal">Principal</option>
+                                              <option value="Laboratory scientist">Laboratory scientist</option>
+                                              <option value="Chief Security 1">Chief Security 1</option>
+                                              <option value="Chief Security 2">Chief Security 2</option>
+                                              <option value="Counselor 1">Counselor 1</option>
+                                              <option value="Counselor 2">Counselor 2</option>
+                                              <option value="Chief Nurse">Chief Nurse</option>
+                                              <option value="Cleaner">Cleaner</option>
+                                              <option value="Chief Librarian">Chief Librarian</option>
+                                              <option value="Executive Assistant">Executive Assistant</option>
+                                              <option value="Librarian">Librarian</option>
+                                              <option value="Administration Assistant">Administration Assistant
+                                              </option>
+                                          </select>
+                                          <!--end::Input-->
+                                      </div>
+                                  </div>
+                                  <!--end::Input group-->
+
+                              </div>
+                          </div>
+                          <!--end::Step 1-->
+                          <!--begin::Step 2-->
+                          <div *ngIf="step2">
+                              <div class="w-100">
+
+                                  <div class="row mb-10">
+                                      <div class="col-12">
+                                          <!--begin::Label-->
+                                          <label class="d-flex align-items-center fs-5 fw-bold mb-2">
+                                              <span class="required">Email</span>
+
+                                          </label>
+                                          <!--end::Label-->
+                                          <!--begin::Input-->
+                                          <input type="text"
+                                              class="form-control form-control-lg form-control-solid" 
+                                              placeholder="Enter Home Address" name="homeAddress" [(ngModel)]="staff.email" />
+                                          <!--end::Input-->
+                                      </div>
+
+                                  </div>
+                                  <!--end::Input group-->
+                                  <!--begin::Input group-->
+                                  <div class="row mb-10">
+
+
+                                      <div class="col-12">
+                                          <!--begin::Label-->
+                                          <label class="d-flex align-items-center fs-5 fw-bold mb-2">
+                                              <span class="required">Phone Number</span>
+
+                                          </label>
+                                          <!--end::Label-->
+                                          <!--begin::Input-->
+                                          <input type="mail"
+                                              class="form-control form-control-lg form-control-solid" 
+                                              placeholder="Enter Phone number" name="phone" [(ngModel)]="staff.phone" />
+                                          <!--end::Input-->
+                                      </div>
+
+                                  </div>
+                                  <!--end::Input group-->
+                                  <!--begin::Input group-->
+                                  <div class="row mb-10">
+                                      <div class="col-12">
+                                          <!--begin::Label-->
+                                          <label class="d-flex align-items-center fs-5 fw-bold mb-2">
+                                              <span class="required">Address</span>
+
+                                          </label>
+                                          <!--end::Label-->
+                                          <!--begin::Input-->
+                                          <textarea class="form-control form-control-solid" row="5"
+                                              placeholder="Enter Email Address" name="address" [(ngModel)]="staff.homeAddress"></textarea>
+                                          <!--end::Input-->
+                                      </div>
+
+
+
+                                  </div>
+                                  <!--end::Input group-->
+                              </div>
+                          </div>
+                          <!--end::Step 2-->
+                          <!--begin::Step 3-->
+
+                          <!--end::Step 3-->
+                          <!--begin::Step 4-->
+
+                          <!--end::Step 4-->
+                          <!--begin::Step 5-->
+
+                          <!--end::Step 5-->
+                          <!--begin::Actions-->
+                          <div class="d-flex flex-stack pt-10">
+                              <!--begin::Wrapper-->
+                              <!-- [ngStyle]="{'visibility': step1 ? 'hidden' : '' }" -->
+                              <div class="me-2" [ngStyle]="{'visibility': step1 ? 'hidden' : '' }">
+                                  <button (click)="moveToOne()" type="button" class="btn btn-lg btn-light-info me-3">
+                                      <!--begin::Svg Icon | path: icons/duotune/arrows/arr063.svg-->
+                                      <span class="svg-icon svg-icon-3 me-1">
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                              viewBox="0 0 24 24" fill="none">
+                                              <rect opacity="0.5" x="6" y="11" width="13" height="2" rx="1"
+                                                  fill="currentColor" />
+                                              <path
+                                                  d="M8.56569 11.4343L12.75 7.25C13.1642 6.83579 13.1642 6.16421 12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75L5.70711 11.2929C5.31658 11.6834 5.31658 12.3166 5.70711 12.7071L11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25C13.1642 17.8358 13.1642 17.1642 12.75 16.75L8.56569 12.5657C8.25327 12.2533 8.25327 11.7467 8.56569 11.4343Z"
+                                                  fill="currentColor" />
+                                          </svg>
+                                      </span>
+                                      Back</button>
+                              </div>
+                              <!--end::Wrapper-->
+                              <!--begin::Wrapper-->
+                              <div>
+                                  <button *ngIf="step2" type="submit" class="btn btn-lg btn-info">
+                                      <span class="indicator-label">Submit
+                                          <!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg-->
+                                          <span class="svg-icon svg-icon-3 ms-2 me-0">
+                                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                  viewBox="0 0 24 24" fill="none">
+                                                  <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1"
+                                                      transform="rotate(-180 18 13)" fill="currentColor" />
+                                                  <path
+                                                      d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z"
+                                                      fill="currentColor" />
+                                              </svg>
+                                          </span>
+                                      </span>
+                                      
+                                  </button>
+                                  <button *ngIf="step1" type="button" class="btn btn-lg btn-info" style="margin-left: auto;" (click)="moveToTwo()">Continue
+                                      <span class="svg-icon svg-icon-3 ms-1 me-0">
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                              viewBox="0 0 24 24" fill="none">
+                                              <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1"
+                                                  transform="rotate(-180 18 13)" fill="currentColor" />
+                                              <path
+                                                  d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z"
+                                                  fill="currentColor" />
+                                          </svg>
+                                      </span>
+                                      </button>
+                              </div>
+                              <!--end::Wrapper-->
+                          </div>
+                          <!--end::Actions-->
+                      </form>
+                      <!--end::Form-->
+                  </div>
+                  <!--end::Content-->
+              </div>
+              <!--end::Stepper-->
+          </div>
+          <!--end::Modal body-->
+      </div>
+      <!--end::Modal content-->
+  </div>
+  <!--end::Modal dialog-->
+</div>

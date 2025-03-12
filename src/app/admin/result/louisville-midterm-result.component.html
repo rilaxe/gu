@@ -1,0 +1,147 @@
+<div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+    <!--end::Header-->
+    <!--begin::Content-->
+   
+    <div class="content d-flex flex-column flex-column-fluid " id="kt_content">
+        <div style="text-align: end; margin: 10px 30px;">
+            <button style="padding: 10px 50px; border: none; outline: none; background-color: dodgerblue; color: white; border-radius: 20px; box-shadow: 1px 1px 3px rgb(0, 0, 0, 0.3);" (click)="convertToPDFLouis()"><i class="fonticon-printer" style="margin-right: 6px; color: white; font-size: 16px;"></i> Print</button>
+        </div>
+        <!--begin::Post-->
+        <div class="post d-flex flex-column-fluid" id="kt_post">
+            <!--begin::Container-->
+            <div id="kt_content_container" class="container-xxl" >
+                <!--begin::Card-->
+                <div  #prin class="card mb-10" >
+                    <!--begin::Card body-->
+                    <div class="card-body p-12">
+                            <div style="font-family: 'Poppins-Medium'">
+                                <div style="text-align: center; margin-bottom: 20px;">
+                                    <span style="font-size: 39px; color: rgb(36, 91, 143); font-weight: 900;">{{myschool?.schoolName}}</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; font-size: 16px;">
+                                    <div class="col-4">
+                                        <span style="font-weight: 600;">Postal Address:</span><br>
+                                        <span>{{myschool?.address}}</span>
+                                    </div>
+                                    <div class="col-4 text-center">
+                                        <img [src]="setImg(myschool?.schoolLogo)" style="object-fit:cover; height: 100px; width: 100px; border-radius: 100%;"/>
+                                    </div>
+                                    <div class="col-4">
+                                        <span style="font-weight: 600;">Email: </span><span>{{myschool?.email}}</span><br>
+                                        <span style="font-weight: 600;">Phone: </span><span>{{myschool?.phoneOne}}</span><br>
+                                        <span style="font-weight: 600;">website: </span><span>{{myschool?.website}}</span>
+                                    </div>
+                                </div>
+                                <div style="height: 6px; background-color: rgb(36, 91, 143); margin-top: 30px;"></div>
+                                <div style="display: flex; justify-content: space-between; font-size: 17px;">
+                                    <div>
+                                        <span style="font-weight: 600;">STUDENTS NAME: </span><span>{{((studentobj?.surname ?? '') + ' ' + (studentobj?.middleName ?? '') + ' ' + (studentobj?.firstName ?? '')).trim()}}</span><br>
+                                        <span style="font-weight: 600;">CLASS NAME: </span><span>{{studentobj?.class}}</span><br>
+                                        <span style="font-weight: 600;">NO. IN CLASS: </span><span>{{noInClass}}</span><br>
+                                        <span style="font-weight: 600;">AVERAGE SCORE: </span><span>{{average}}</span><br>
+                                        <span style="font-weight: 600;">POSITION IN CLASS: </span><span>{{position}}</span>
+                                    </div>
+                                    <div class="col-4">
+                                        <span style="font-weight: 600;">TERM:  </span><span>{{currentTerm}}</span><br>
+                                        <span style="font-weight: 600;">SESSION:  </span><span>{{currentSession}}</span><br>
+                                        <span style="font-weight: 600;">ADMISSION NO.:  </span><span>{{studentobj?.admissionNo}}</span><br>
+                                        <span style="font-weight: 600;">NEXT TERM BEGINS:</span>
+                                    </div>
+                                </div>
+                               <div style="text-align: center; margin-top: 10px;">
+                                <h1>MID TERM RESULT FOR JUNIOR SECONDARY SCHOOL</h1>
+                               </div> 
+                               <div>
+                               
+                               </div>
+                            </div>
+
+
+                            <table #tabl id="customerslouismidterm">
+                                <thead>
+                                    <tr>
+                                        <th>Subject</th>
+                                        <!-- <th *ngIf="caSetupData?.CA1">{{caSetupData.CA1 ? caSetupData.CA1 : 'CA1'}}</th>
+                                        <th *ngIf="caSetupData?.CA2">{{caSetupData.CA2 ? caSetupData.CA2 : 'CA2'}}</th>
+                                        <th *ngIf="caSetupData?.CA3">{{caSetupData.CA3 ? caSetupData.CA3 : 'CA3'}}</th>
+                                        <th *ngIf="caSetupData?.CA4">{{caSetupData.CA4 ? caSetupData.CA4 : 'CA4'}}</th>
+                                        <th *ngIf="caSetupData?.CA5">{{caSetupData.CA5 ? caSetupData.CA5 : 'CA5'}}</th>
+                                        <th *ngIf="caSetupData?.CA6">{{caSetupData.CA6 ? caSetupData.CA6 : 'CA6'}}</th>
+                                        <th *ngIf="caSetupData?.CA7">{{caSetupData.CA7 ? caSetupData.CA7 : 'CA7'}}</th>
+                                        <th *ngIf="caSetupData?.CA8">{{caSetupData.CA8 ? caSetupData.CA8 : 'CA8'}}</th>
+                                        <th *ngIf="caSetupData?.CA9">{{caSetupData.CA9 ? caSetupData.CA9 : 'CA9'}}</th>
+                                        <th *ngIf="caSetupData?.CA10">{{caSetupData.CA10 ? caSetupData.CA10 : 'CA10'}}</th>
+                                        <th *ngIf="caSetupData?.CA11">{{caSetupData.CA11 ? caSetupData.CA11 : 'CA11'}}</th>
+                                        <th *ngIf="caSetupData?.CA12">{{caSetupData.CA12 ? caSetupData.CA12 : 'CA12'}}</th>
+                                        <th *ngIf="caSetupData?.CA13">{{caSetupData.CA13 ? caSetupData.CA13 : 'CA13'}}</th>
+                                        <th *ngIf="caSetupData?.CA14">{{caSetupData.CA14 ? caSetupData.CA14 : 'CA14'}}</th>
+                                        <th *ngIf="caSetupData?.CA15">{{caSetupData.CA15 ? caSetupData.CA15 : 'CA15'}}</th> -->
+                                        <th>{{'Score' + '(' + midtermMaxValue +  '%' +')'}}</th>
+                                        <th>Grade</th>
+                                        <!-- <th>Remark</th> -->
+                                      
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let result of resultlist; index as u" class="border-bottom border-bottom-dashed">
+                                        <td>{{result.subject}}</td>
+                                        <!-- <td *ngIf="caSetupData.CA1">{{result.Ca1 ?? ''}}</td>
+                                        <td *ngIf="caSetupData.CA2">{{result.Ca2 ?? ''}}</td>
+                                        <td *ngIf="caSetupData.CA3">{{result.Ca3 ?? ''}}</td>
+                                        <td *ngIf="caSetupData.CA4">{{result.Ca4 ?? ''}}</td>
+                                        <td *ngIf="caSetupData.CA5">{{result.Ca5 ?? ''}}</td>
+                                        <td *ngIf="caSetupData.CA6">{{result.Ca6 ?? ''}}</td>
+                                        <td *ngIf="caSetupData.CA7">{{result.Ca7 ?? ''}}</td>
+                                        <td *ngIf="caSetupData.CA8">{{result.Ca8 ?? ''}}</td>
+                                        <td *ngIf="caSetupData.CA9">{{result.Ca9 ?? ''}}</td>
+                                        <td *ngIf="caSetupData.CA10">{{result.Ca10 ?? ''}}</td>
+                                        <td *ngIf="caSetupData.CA11">{{result.Ca11 ?? ''}}</td>
+                                        <td *ngIf="caSetupData.CA12">{{result.Ca12 ?? ''}}</td>
+                                        <td *ngIf="caSetupData.CA13">{{result.Ca13 ?? ''}}</td>
+                                        <td *ngIf="caSetupData.CA14">{{result.Ca14 ?? ''}}</td>
+                                        <td *ngIf="caSetupData.CA15">{{result.Ca15 ?? ''}}</td> -->
+                                        <td>{{toNumber(result.totalScore)  ?? ''}}</td>
+                                        <td>{{calMinGrade(toNumber(result.totalScore))?.grade ?? ''}}</td>
+                                        <!-- <td>{{calMinGrade(toNumber(result.totalScore))?.remark ?? ''}}</td> -->
+                                    </tr>
+                                </tbody>
+                              </table>
+
+                              <!-- <div style="margin: 50px 0 30px 0;">
+                                <table id="mykey" style="width: 100%; border: 1px solid black; border-collapse: collapse;">
+                                    <tr>
+                                      <th style="border: 1px solid black; border-collapse: collapse; width: 200px; text-align: center; padding: 10px 0;">KEY TO GRADE:</th>
+                                      <td style="border: 1px solid black; border-collapse: collapse; padding: 10px 10px;">
+                                        <span *ngFor="let gradescaletext of gradescaletextlist; index as u">
+                                            <span>{{gradescaletext}}</span> &nbsp;&nbsp;
+                                        </span> 
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                      <th style="border: 1px solid black; border-collapse: collapse; width: 200px; text-align: center; padding: 5px 0;">KEY TO RATINGS:</th>
+                                      <td style="border: 1px solid black; border-collapse: collapse; padding: 5px 10px;">1 = Very Poor &nbsp;&nbsp; 2 = Poor &nbsp;&nbsp; 3 = Fair &nbsp;&nbsp; 4 = Good &nbsp;&nbsp; 5 = Excellent</td> 
+                                    </tr>
+                                  </table>
+                              </div>
+
+                              <div>
+                                <div style="margin-bottom: 40px;">
+                                    <span style="font-size: 15px; font-weight: 600; color: rgb(75, 73, 73);">Form Teacher's Comment:</span> &nbsp;&nbsp;
+                                    <span style="font-size: 15px; color: rgb(9, 95, 182); font-style: italic;">{{resultComment?.formTeacherComment}}</span>
+                                </div>
+                                <div>
+                                    <span style="font-size: 15px; font-weight: 600; color: rgb(75, 73, 73);">Principal's Comment:</span> &nbsp;&nbsp;
+                                    <span style="font-size: 15px; color: rgb(9, 95, 182); font-style: italic;">{{resultComment?.principalComment}}</span>
+                                </div>
+                              </div> -->
+                    </div>
+
+                    
+                    <!--end::Card body-->
+                </div>
+            </div>
+            <!--end::Container-->
+        </div>
+        <!--end::Post-->
+    </div>
+</div>

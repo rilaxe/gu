@@ -1,0 +1,144 @@
+<div class="row">
+    <div style="margin: 0 auto;" class="col-lg-8 col-md-9 col-sm-12">
+      <!--begin::Basic info-->
+      <div class="card mb-5 mb-xl-10">
+        <!--begin::Card header-->
+        <div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse" data-bs-target="#kt_account_profile_details" aria-expanded="true" aria-controls="kt_account_profile_details">
+            <!--begin::Card title-->
+            <div class="card-title m-0">
+                <h3 class="fw-bolder m-0">Special CA Setup</h3>
+            </div>
+
+            <div style="display: flex; align-items: center;">
+                <select #cat name="levelcategory" [value]="levelCategory" (change)="setCategory(cat.value)" data-control="select" data-placeholder="Select Class"
+                    class="form-select form-select-solid fw-bolder">
+                    <option disabled [value]="levelCategory" selected>Select Exam Type</option>
+                    <option value="REGULAR">Regular</option>
+                    <option value="MOCK">Mock</option>
+                    <option value="PRESS1">Pre-SS1</option>
+                </select>
+            </div>
+            <!--end::Card title-->
+        </div>
+        <!--begin::Card header-->
+        <!--begin::Content-->
+        <div id="kt_account_settings_profile_details">
+            <!--begin::Form-->
+            <form id="kt_account_profile_details_form" class="form" (ngSubmit)="saveData()">
+                <!--begin::Card body-->
+                <div class="card-body border-top col-lg-12">
+                 
+                    <!--begin::Input group-->
+                    <div class="row mb-6">
+                        
+                        <div class=" col-lg-4  mt-8 form-check form-check-sm form-check-custom form-check-solid">
+                            <input class="me-3 form-check-input" type="checkbox" name="ca1jun" [checked]="CA1Sen.state"  [value]="CA1Sen.state" (change)="onSelect($event.target.checked, CA1Sen, 'CA1')" />
+                             
+                        <label class="col-form-label fw-bold  fs-6">Enable CA 1</label>
+                        <!--end::Label-->
+                        </div> 
+                                <div class="col-lg-5 fv-row">
+                                    <label class="d-flex align-items-center fs-6 mb-3 fw-bold ">
+                                        <span class="">CA Caption</span>
+                                        
+                                    </label>
+                                    <!--begin::Col-->
+                                    <input type="text" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"  name="actualNameJunior1" [(ngModel)]="CA1Sen.actualName" />
+                                </div>
+                                <!--end::Col-->
+                                
+                                <div class="col-lg-3 fv-row">
+                                    <label class="d-flex align-items-center fs-6 mb-3 fw-bold ">
+                                        <span class="">Max Score</span>
+                                        
+                                    </label>
+                                    <!--begin::Col-->
+                                    <input type="number" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" name="maxScoreJunior1" [(ngModel)]="CA1Sen.maxScore" />
+                                </div>
+                    </div>
+                    
+                     
+                    <div class="row mb-6">
+                        <div class=" col-lg-4 form-check form-check-sm form-check-custom form-check-solid">
+                            <input class="me-3 form-check-input" type="checkbox" [checked]="CA2Sen.state" [value]="CA2Sen.state" (change)="onSelect($event.target.checked, CA2Sen, 'CA2')" />
+                             
+                        <label class="col-form-label fw-bold fs-6">Enable CA 2</label>
+                        <!--end::Label-->
+                        </div>
+                        <!--begin::Label-->
+                        <!--begin::Col-->
+                        <div class="col-lg-5 fv-row">
+                            <input type="text" class="form-control form-control-lg form-control-solid" name="actualNameJunior2"  [(ngModel)]="CA2Sen.actualName" />
+                        </div>
+                        <!--end::Col-->
+                          <!--begin::Col-->
+                          <div class="col-lg-3 fv-row">
+                            <input type="number"  class="form-control form-control-lg form-control-solid" name="maxScoreJunior2" [(ngModel)]="CA2Sen.maxScore" />
+                        </div>
+                        <!--end::Col-->
+                        
+                    </div>
+                    <!--end::Input group-->
+                     <!--begin::Input group-->
+                     <div class="row mb-6">
+                        <div class=" col-lg-4 form-check form-check-sm form-check-custom form-check-solid">
+                            <input class="me-3 form-check-input" type="checkbox" [checked]="CA3Sen.state" [value]="CA3Sen.state" (change)="onSelect($event.target.checked, CA3Sen, 'CA3')" />
+                             
+                        <label class="col-form-label fw-bold fs-6">Enable CA 3</label>
+                        <!--end::Label-->
+                        </div>
+                        <!--begin::Label-->
+                        <!--begin::Col-->
+                        <div class="col-lg-5 fv-row">
+                            <input type="text" class="form-control form-control-lg form-control-solid" name="actualNameJunior3" [(ngModel)]="CA3Sen.actualName" />
+                        </div>
+                        <!--end::Col-->
+                          <!--begin::Col-->
+                          <div class="col-lg-3 fv-row">
+                            <input type="number"  class="form-control form-control-lg form-control-solid" name="maxScoreJunior3" [(ngModel)]="CA3Sen.maxScore" />
+                        </div>
+                        <!--end::Col-->
+                        
+                    </div>
+                    
+                  
+                    <!--begin::Input group-->
+                    <div class="row mb-6">
+                        <!--begin::Label-->
+                        <label class="col-lg-4 col-form-label fw-bold fs-6">Exam Score</label>
+                        <!--end::Label-->
+                        <!--begin::Col-->
+                        <div class="col-lg-8 fv-row">
+                            <input #examJuni type="number" class="form-control form-control-lg form-control-solid" name="examJunior" [value]="examSen.maxScore" (change)="onExam(examSen, examJuni.value)" />
+                        </div>
+                        <!--end::Col-->
+                    </div>
+                    <!--end::Input group-->
+                       <!--begin::Input group-->
+                       <div class="row mb-6">
+                        <!--begin::Label-->
+                        <label class="col-lg-4 col-form-label fw-bold fs-6">Total Score</label>
+                        <!--end::Label-->
+                        <!--begin::Col-->
+                        <div class="col-lg-8 fv-row">
+                            <input type="number"  class="form-control form-control-lg form-control-solid" placeholder="" value="100" disabled />
+                        </div>
+                        <!--end::Col-->
+                    </div>
+                    <!--end::Input group-->
+                
+                </div>
+                <!--end::Card body-->
+                <!--begin::Actions-->
+                <div class="card-footer d-flex justify-content-end py-6 px-9">
+                   
+                    <button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Save Changes</button>
+                </div>
+                <!--end::Actions-->
+            </form>
+            <!--end::Form-->
+        </div>
+        <!--end::Content-->
+    </div>
+    <!--end::Basic info-->
+</div>

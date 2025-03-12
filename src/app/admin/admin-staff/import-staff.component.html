@@ -1,0 +1,81 @@
+<header style="background-color: white; padding: 10px 25px; box-shadow: 0 2px 6px rgb(0, 0, 0, 0.3);">
+    <h3>Import Students</h3>
+</header>
+<div style="padding: 30px 30px;">
+    <button class="impbtn" (click)="dile.click()">Import file</button>
+    <button class="impbtn" style="margin-left: 5%; background-color: rgb(199, 65, 65);">Download Template</button>
+</div>
+<input #dile type="file" style="display: none;" accept=".xls,.xlsx,.ods" (change)="loadExcel($event)">
+
+<!-- <br>
+<br>
+<div>
+    <h1>NgFor Table Example</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Customer Name</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of excelData">
+                <th>{{ item.Country }}</th>
+                <td>{{ item.Gender }}</td>
+                <td>{{ item['First Name'] }}</td>
+                <td>
+                    <button type="button" >Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <h1>NgFor Table Example</h1>
+    <table>
+        <thead>
+            <tr >
+                <th *ngFor="let column of columnArray">{{column}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of excelData">
+                <td *ngFor="let column of columnArray">{{ item[column] }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div> -->
+
+<br>
+<div *ngIf="excelData.length">
+    <div style="display: flex;">
+        <div style="width: 80vw; overflow-x: scroll; margin: 0 30px 0 30px;  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);">
+            <table class="table-fill">
+                <thead>
+                <tr >
+                    <th *ngFor="let column of columnArray" class="text-left">{{column}}</th>
+                </tr>
+                </thead>
+                <tbody class="table-hover">
+                    <tr *ngFor="let item of excelData">
+                        <td *ngFor="let column of columnArray" class="text-left">{{ item[column] }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            
+            
+        </div>
+        
+    </div>
+    <div style="margin: 50px 30px 100px auto; text-align: end;">
+        <button class="impbtn" style="background-color: dodgerblue; color: white;">Save Students</button>
+    </div>
+</div>
+
+<div style="margin: 0 10px 0 30px;" *ngIf="!excelData.length">
+    <img src="../../../assets/sheet1.png" />
+</div>

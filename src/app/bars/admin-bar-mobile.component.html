@@ -1,0 +1,317 @@
+<div>
+    <div style="display: flex;">
+        <div
+            style="overflow-y: scroll; z-index: 6; position: fixed; background-color: white; color: black; height: 100vh;">
+            <div>
+                <div class="aside-logo flex-column-auto"
+                    style="background-color: #ffff; display: flex; justify-content: space-between; align-items: center; margin: 10px 30px 10px 30px;"
+                    id="kt_aside_logo">
+
+                    <div style="margin-right: 90px;">
+                        <img alt="Logo" src="assets/media/logos/logo1-new.svg" class="h-50px logo" />
+                    </div>
+
+                    <a id="kt_aside_toggle" style="margin-top: 15px; margin-left: auto;"
+                        class="btn btn-icon w-auto  px-0 btn-color-dark aside-toggle" data-kt-toggle="true"
+                        data-kt-toggle-state="active" data-kt-toggle-target="body" data-kt-toggle-name="aside-minimize">
+                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr079.svg-->
+                        <span class="svg-icon svg-icon-3hx rotate-180" (click)="genk.mobileModal = !genk.mobileModal">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <path opacity="0.5"
+                                    d="M14.2657 11.4343L18.45 7.25C18.8642 6.83579 18.8642 6.16421 18.45 5.75C18.0358 5.33579 17.3642 5.33579 16.95 5.75L11.4071 11.2929C11.0166 11.6834 11.0166 12.3166 11.4071 12.7071L16.95 18.25C17.3642 18.6642 18.0358 18.6642 18.45 18.25C18.8642 17.8358 18.8642 17.1642 18.45 16.75L14.2657 12.5657C13.9533 12.2533 13.9533 11.7467 14.2657 11.4343Z"
+                                    fill="currentColor" />
+                                <path
+                                    d="M8.2657 11.4343L12.45 7.25C12.8642 6.83579 12.8642 6.16421 12.45 5.75C12.0358 5.33579 11.3642 5.33579 10.95 5.75L5.40712 11.2929C5.01659 11.6834 5.01659 12.3166 5.40712 12.7071L10.95 18.25C11.3642 18.6642 12.0358 18.6642 12.45 18.25C12.8642 17.8358 12.8642 17.1642 12.45 16.75L8.2657 12.5657C7.95328 12.2533 7.95328 11.7467 8.2657 11.4343Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </span>
+                        <!--end::Svg Icon-->
+                    </a>
+                </div>
+
+                <div id="accordion" class="accordion" style="overflow-y: scroll; height: 73vh;">
+
+                    <li [class.active]="obj.menus[0].active">
+                      <div class="menu" (click)="obj.toggle(0)" [routerLink]="['/' + 'admin', 'dashboard']"
+                        routerLinkActive="routactive">
+                        <i class="fa-brands fa-microsoft"></i>
+                        Dashboard
+                      </div>
+                    </li>
+              
+                    <li [class.active]="obj.menus[1].active">
+                      <div class="menu" (click)="obj.toggleStatic(1, 'results', submenustaffresult.clientHeight)">
+                        <i class="fa fa-user"></i>
+                        Students
+                        <i class="fa fa-chevron-down"></i>
+                      </div>
+                      <div class="submenu" #submenustudent [style.height.px]="obj.menus[1].active ? submenustudent.scrollHeight : 0">
+                        <li>
+                          <a [routerLink]="['/' + 'admin', 'admin-students', 'all-students']" routerLinkActive="routactive">All
+                            Students</a>
+                        </li>
+                        <li>
+                          <a [routerLink]="['/' + 'admin', 'admin-students', 'graduated-students']" routerLinkActive="routactive">Graduated
+                            Students</a>
+                        </li>
+                        <li>
+                          <a [routerLink]="['/' + 'admin', 'admin-students', 'deactivated-students']"
+                            routerLinkActive="routactive">Deactivated
+                            Students</a>
+                        </li>
+                      
+                        <li>
+                          <a [routerLink]="['/' + 'admin', 'admin-students', 'student-directory']"
+                            routerLinkActive="routactive">Student-Directory</a>
+                        </li>
+                        <li>
+                          <a [routerLink]="['/' + 'admin', 'admin-students', 'bodymass']" routerLinkActive="routactive">Student Body
+                            Mass Index</a>
+                        </li>
+                        <li>
+                          <a [routerLink]="['/' + 'admin', 'admin-students', 'estimatedattendance']" routerLinkActive="routactive">Estimated
+                            Attendance</a>
+                        </li>
+                        <li>
+                          <a [routerLink]="['/' + 'admin', 'admin-students', 'house']" routerLinkActive="routactive">View House</a>
+                        </li>
+                        <li>
+                          <a [routerLink]="['/' + 'admin', 'admin-students', 'assign-house']" routerLinkActive="routactive">Assign
+                            House</a>
+                        </li>
+                      </div>
+                    </li>
+              
+              
+              
+                  <li [class.active]="obj.menus[2].active">
+                    <div class="menuopen" (click)="obj.toggleStatic(2, 'results', submenustaffresult.clientHeight)">
+                      <i class="fa-solid fa-stamp"></i>
+                      Staff
+                      <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <div class="submenu" #submenustaffclass
+                      [style.height.px]="obj.menus[2].active ? submenustaffclass.scrollHeight : 0">
+                  <li>
+                    <a [routerLink]="['/' + 'admin', 'admin-staff', 'all-staff']" routerLinkActive="submenuactive">All Staff</a>
+                  </li>
+                  <li>
+                    <a [routerLink]="['/' + 'admin', 'admin-staff', 'deactivated-staff']" routerLinkActive="submenuactive">Deactivated
+                      Staff</a>
+                  </li>
+                </div>
+                </li>
+              
+              
+                <li [class.active]="obj.menus[3].active">
+                  <div class="menuopen" (click)="obj.toggleStatic(3, 'results', submenustaffresult.clientHeight)">
+                    <i class="fa-solid fa-clone"></i>
+                    Classes
+                    <i class="fa fa-chevron-down"></i>
+                  </div>
+                  <div class="submenu" #submenustaffclass
+                    [style.height.px]="obj.menus[3].active ? submenustaffclass.scrollHeight : 0">
+                <li>
+                  <a [routerLink]="['/' + 'admin', 'admin-staff', 'view-classes']" routerLinkActive="submenuactive">All
+                    Classes</a>
+                </li>
+                <li>
+                  <a [routerLink]="['/' + 'admin', 'admin-staff', 'class-placement']" routerLinkActive="submenuactive">Class
+                    Placement</a>
+                </li>
+              </div>
+              </li>
+              
+              
+              
+              <li [class.active]="obj.menus[4].active">
+                <div class="menuopen" (click)="obj.toggleStatic(4, 'results', submenustaffresult.clientHeight)">
+                  <i class="fa fa-database"></i>
+                  Results
+                  <i class="fa fa-chevron-down"></i>
+                </div>
+                <div class="submenu" #submenustaffresult
+                  [style.height.px]="obj.menus[4].active ? submenustaffresult.scrollHeight : 0">
+              <li>
+                <a [routerLink]="['/' + 'admin', 'result', 'result-entry']" routerLinkActive="submenuactive">Result Entry</a>
+              </li>
+              <li>
+                <a [routerLink]="['/' + 'admin', 'result', 'view-result']" routerLinkActive="submenuactive">View Result</a>
+              </li>
+              <li>
+                <a [routerLink]="['/' + 'admin', 'result', 'special-result-entry']" routerLinkActive="submenuactive">Special Result Entry</a>
+              </li>
+              <li>
+                <a [routerLink]="['/' + 'admin', 'result', 'view-special-result']" routerLinkActive="submenuactive">View Special Result</a>
+              </li>
+              <li>
+                <a [routerLink]="['/' + 'admin', 'result', 'view-midterm-result']" routerLinkActive="submenuactive">View Midterm
+                  Result</a>
+              </li>
+              <li>
+                <a [routerLink]="['/' + 'admin', 'result', 'weeekly-result-entry']" routerLinkActive="submenuactive">Practice
+                  Result Entry</a>
+              </li>
+              <li>
+                <a [routerLink]="['/' + 'admin', 'result', 'comment']" routerLinkActive="submenuactive">Comment</a>
+              </li>
+              <li>
+                <a [routerLink]="['/' + 'admin', 'result', 'special-comment']" routerLinkActive="submenuactive">Special Comment</a>
+              </li>
+              <li>
+                <a [routerLink]="['/' + 'admin', 'result', 'subject-result']" routerLinkActive="submenuactive">Subject Result</a>
+              </li>
+              <li>
+                <a [routerLink]="['/' + 'admin', 'result', 'mastersheet']" routerLinkActive="submenuactive">Mastersheet</a>
+              </li>
+              <li>
+                <a [routerLink]="['/' + 'admin', 'result', 'weekly-mastersheet']" routerLinkActive="submenuactive">Practice Test
+                  Mastersheet</a>
+              </li>
+              <li>
+                <a [routerLink]="['/' + 'admin', 'result', 'psycomotor-entry']" routerLinkActive="submenuactive">Psychomotor
+                  Entry</a>
+              </li>
+              <li>
+                <a [routerLink]="['/' + 'admin', 'result', 'publish-result']" routerLinkActive="submenuactive">Publish Result</a>
+              </li>
+              <li>
+                <a [routerLink]="['/' + 'admin', 'result', 'block-result']" routerLinkActive="submenuactive">Block Result</a>
+              </li>
+              <li>
+                <a [routerLink]="['/' + 'admin', 'result', 'process-midterm']" routerLinkActive="submenuactive">Process
+                  Midterm</a>
+              </li>
+              </div>
+              </li>
+              
+              
+              
+              
+              <li [class.active]="obj.menus[5].active">
+                <div class="menu" (click)="obj.toggleStatic(5, 'results', submenustaffresult.clientHeight)"
+                  [routerLink]="['/' + 'admin', 'settings']" routerLinkActive="routactive">
+                  <i class="fa-brands fa-pix"></i>
+                  Setting
+                </div>
+              </li>
+              
+              <li [class.active]="obj.menus[6].active">
+                <div class="menu" (click)="obj.toggle(6)" [routerLink]="['/' + 'admin', 'payment']" routerLinkActive="routactive">
+                  <i class="fa-solid fa-money-bill"></i>
+                  Payment
+                </div>
+              </li>
+              
+              <li [class.active]="obj.menus[7].active">
+                <div class="menu" (click)="obj.toggleStatic(7, 'results', submenustaffresult.clientHeight)"
+                  [routerLink]="['/' + 'admin', 'discipline']" routerLinkActive="routactive">
+                  <i class="fa-brands fa-sellsy"></i>
+                  Discipline
+                </div>
+              </li>
+              
+              <li [class.active]="obj.menus[8].active">
+                <div class="menuopen" (click)="obj.toggleStatic(8, 'reports', submenustaffresult.clientHeight)">
+                  <i class="fa-brands fa-leanpub"></i>
+                  Report
+                  <i class="fa fa-chevron-down"></i>
+                </div>
+                <div class="submenu" #submenustaffreport
+                  [style.height.px]="obj.menus[8].active ? submenustaffreport.scrollHeight : 0">
+              <li>
+                <a [routerLink]="['/' + 'admin', 'report', 'award-listing']" routerLinkActive="submenuactive">Award Listings</a>
+              </li>
+              <li>
+                <a [routerLink]="['/' + 'admin', 'report', 'performance-report']" routerLinkActive="submenuactive">Performance
+                  Report</a>
+              </li>
+              <li>
+                <a [routerLink]="['/' + 'admin', 'report', 'result-upload-statistics']" routerLinkActive="submenuactive">Result
+                  Upload Statistics</a>
+              </li>
+              <li>
+                <a [routerLink]="['/' + 'admin', 'report', 'allocation-overview']" routerLinkActive="submenuactive">Allocation
+                  Overview</a>
+              </li>
+              </div>
+              </li>
+              
+              <li [class.active]="obj.menus[9].active">
+                <div class="menu" (click)="obj.toggleStatic(9, 'results', submenustaffresult.clientHeight)"
+                  [routerLink]="['/' + 'admin', 'access-pin']" routerLinkActive="routactive">
+                  <i class="fa-brands fa-pied-piper-pp"></i>
+                  Access Pin
+                </div>
+              </li>
+              
+              <li [class.active]="obj.menus[10].active">
+                <div class="menu" (click)="obj.toggleStatic(10, 'results', submenustaffresult.clientHeight)"
+                  [routerLink]="['/' + 'calendar']" routerLinkActive="routactive">
+                  <i class="fa-solid fa-calendar-days"></i>
+                  Calendar
+                </div>
+              </li>
+              
+              <li [class.active]="obj.menus[11].active">
+                <div class="menu" (click)="obj.toggleStatic(11, 'results', submenustaffresult.clientHeight)"
+                  [routerLink]="['/' + 'attendance']" routerLinkActive="routactive">
+                  <i class="fa fa-th-large"></i>
+                  Attendance
+                </div>
+              </li>
+              
+              
+              
+              
+              
+              <li [class.active]="obj.menus[12].active">
+                <div class="menu" (click)="obj.toggleStatic(12, 'results', submenustaffresult.clientHeight)"
+                  [routerLink]="['/' + 'medicals']" routerLinkActive="routactive">
+                  <i class="fa-brands fa-medrt"></i>
+                  Medicals
+                </div>
+              </li>
+              
+              <li [class.active]="obj.menus[13].active">
+                <div class="menu" (click)="obj.toggleStatic(13, 'results', submenustaffresult.clientHeight)"
+                  [routerLink]="['/' + 'chat']" routerLinkActive="routactive">
+                  <i class="fa-brands fa-stack-exchange"></i>
+                  Messages
+                </div>
+              </li>
+              
+              <li [class.active]="obj.menus[14].active">
+                <div class="menu" (click)="obj.toggleStatic(14, 'results', submenustaffresult.clientHeight)"
+                  [routerLink]="['/' + 'notice']" routerLinkActive="routactive">
+                  <i class="fa-brands fa-neos"></i>
+                  Notice Board
+                </div>
+              </li>
+              
+              <li [class.active]="obj.menus[15].active">
+                <div class="menu" (click)="obj.toggleStatic(15, 'results', submenustaffresult.clientHeight)"
+                  [routerLink]="['/' + 'assignment']" routerLinkActive="routactive">
+                  <i class="fa-solid fa-bookmark"></i>
+                  Assignment
+                </div>
+              </li>
+              </div>
+              <div class="aside-footer flex-column-auto pt-5 pb-7 px-5" style="background-color: #ffff;" id="kt_aside_footer">
+                <div class="card d-flex align-items-center px-5 py-2 border-radius: 10px" style=" background:#7239ea">
+              
+                  <img src="assets/cloud.png" width="20" height="20" alt="">
+              
+              
+                  <h6 class="text-white fw-bolder mt-2 mb-2">gradeX-Cloud</h6>
+              
+                  <a (click)="logout()" class="btn btn-light-info btn-light-info w-100">
+                    <span class="btn-label">Log out</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>

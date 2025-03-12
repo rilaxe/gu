@@ -1,0 +1,102 @@
+<form (ngSubmit)="savePersonalInfo()" #f="ngForm">
+    <div style="margin: 40px 20px 20px 30px;">
+        <div>
+            <div class="inputdiv">
+                <span class="labele">Admission No</span>
+                <div class="col-lg-7 col-sm-10 inpute">
+                  <input  type="text" name="admissionNo" [(ngModel)]="student.admissionNo" placeholder="Admission Number" class="inputele">
+                </div>
+              </div>
+
+              <div class="inputdiv">
+                <span class="labele">Class</span>
+                <div class="col-lg-7 col-sm-10 inpute">
+                    <select class="inputele" name="classlevel" [(ngModel)]="student.Class">
+                        <option value="Red House">JS 1A</option>
+                        <option value="Blue House">JS 2A</option>
+                        <option value="White House">JS 3A</option>
+                        <option value="Yellow House">SS 1A</option>
+                        <option value="Green House">SS 1B</option>
+                        <option value="Purple House">SS 1C</option>
+    
+                    </select>
+                </div>
+            </div>
+
+            <div class="inputdiv">
+                <span class="labele">Surname:</span>
+                <div class="col-lg-7 col-sm-10 inpute">
+                    <input type="text" required="" name="surname" [(ngModel)]="student.surname" placeholder="Surname"
+                        class="inputele">
+                </div>
+            </div>
+            <div class="inputdiv">
+                <span class="labele">First Name:</span>
+                <div class="col-lg-7 col-sm-10 inpute">
+                    <input type="text" required="" name="firstname" [(ngModel)]="student.firstName" placeholder="Fisrt Name"
+                        class="inputele">
+                </div>
+            </div>
+            <div class="inputdiv">
+                <span class="labele">Middle Name</span>
+                <div class="col-lg-7 col-sm-10 inpute">
+                    <input type="text" name="middlename" [(ngModel)]="student.middleName" placeholder="Middle Name"
+                        class="inputele">
+                </div>
+            </div>
+            <div class="inputdiv">
+                <span class="labele">Gender</span>
+                <div class="inputeradio">
+                    <div style="padding-top: 5px;">
+                        <input type="radio" name="gender" value="Female" (click)="student.sex = 'Female'"><label style="color: rgb(24, 84, 143); font-weight: 500;">Female</label>&nbsp; &nbsp; &nbsp;
+                        <input type="radio" name="gender" value="Male" (click)="student.sex = 'Male'"><label style="color: rgb(24, 84, 143); font-weight: 500;">Male</label>
+                    </div>
+                </div>
+            </div>
+            <div class="inputdiv">
+                <span class="labele">Birth Date</span>
+                <div class="col-lg-7 col-sm-10 inpute">
+                    <input type="date" required="" name="birthdate" [(ngModel)]="student.birthDate" class="inputele">
+                </div>
+            </div>
+            <div class="inputdiv">
+                <span class="labele">Student Type</span>
+                <div class="col-lg-7 col-sm-10 inpute">
+                    <select class="inputele" name="studenttype" [(ngModel)]="student.typeofStudent">
+                        <option value="DAY">DAY</option>
+                        <option value="BOARDER">BOARDER</option>
+                    </select>
+                </div>
+            </div>
+    
+            <div class="inputdiv">
+                <span class="labele">House</span>
+                <div class="col-lg-7 col-sm-10 inpute">
+                    <select class="inputele" name="house" [(ngModel)]="student.house">
+                        <option value="Red House">Red House</option>
+                        <option value="Blue House">Blue House</option>
+                        <option value="White House">White House</option>
+                        <option value="Yellow House">Yellow House</option>
+                        <option value="Green House">Green House</option>
+                        <option value="Purple House">Purple House</option>
+    
+                    </select>
+                </div>
+            </div>
+    
+            <div class="inputdiv">
+                <span class="labele">Passport</span>
+                <div class="col-lg-7 col-sm-10 inpute">
+                    <input type="file" class="inputele" accept=".jpg, .jpeg, .png, .gif" (change)="showPreview($event)">
+                </div>
+            </div>
+        </div>
+    
+    
+    
+    
+        <div style="text-align: center;">
+            <button type="submit" style="border: none; background-color: dodgerblue; color: white; padding: 9px 40px; border-radius: 20px;">Submit</button>
+        </div>
+    </div>
+</form>

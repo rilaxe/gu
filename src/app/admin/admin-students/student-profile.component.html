@@ -1,0 +1,1865 @@
+<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+
+    <!--begin::Post-->
+    <div class="post d-flex flex-column-fluid" id="kt_post">
+        <!--begin::Container-->
+        <div id="kt_content_container" class="container-xxl">
+            <!--begin::Navbar-->
+            <div class="card mb-5 mb-xl-10">
+                <div class="card-body pt-9 pb-0">
+                    <!--begin::Details-->
+                    <div class="d-flex flex-wrap flex-sm-nowrap mb-3">
+                        <!--begin: Pic-->
+                        <div class="me-7 mb-4">
+                            <div class="symbol symbol-100px cover symbol-lg-160px symbol-fixed position-relative">
+                                <img [src]="genk.setImgRemote(studentobj?.passport)" alt="image" style="object-fit: cover;" />
+                            </div>
+                        </div>
+                        <!--end::Pic-->
+                        <!--begin::Info-->
+                        <div class="flex-grow-1">
+                            <!--begin::Title-->
+                            <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
+                                <!--begin::User-->
+                                <div class="d-flex flex-column">
+                                    <!--begin::Name-->
+                                    <div class="d-flex align-items-center mb-2">
+                                        <a href="#"
+                                            class="text-gray-900 text-hover-primary fs-2 fw-bolder me-1">{{((studentobj?.surname
+                                            ?? '') + ' ' + (studentobj?.firstName ?? '') + ' ' + (studentobj?.middleName
+                                            ?? '')).trim()}}</a>
+                                        <a href="#">
+                                            <!--begin::Svg Icon | path: icons/duotune/general/gen026.svg-->
+                                            <span class="svg-icon svg-icon-1 svg-icon-primary">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                    viewBox="0 0 24 24">
+                                                    <path
+                                                        d="M10.0813 3.7242C10.8849 2.16438 13.1151 2.16438 13.9187 3.7242V3.7242C14.4016 4.66147 15.4909 5.1127 16.4951 4.79139V4.79139C18.1663 4.25668 19.7433 5.83365 19.2086 7.50485V7.50485C18.8873 8.50905 19.3385 9.59842 20.2758 10.0813V10.0813C21.8356 10.8849 21.8356 13.1151 20.2758 13.9187V13.9187C19.3385 14.4016 18.8873 15.491 19.2086 16.4951V16.4951C19.7433 18.1663 18.1663 19.7433 16.4951 19.2086V19.2086C15.491 18.8873 14.4016 19.3385 13.9187 20.2758V20.2758C13.1151 21.8356 10.8849 21.8356 10.0813 20.2758V20.2758C9.59842 19.3385 8.50905 18.8873 7.50485 19.2086V19.2086C5.83365 19.7433 4.25668 18.1663 4.79139 16.4951V16.4951C5.1127 15.491 4.66147 14.4016 3.7242 13.9187V13.9187C2.16438 13.1151 2.16438 10.8849 3.7242 10.0813V10.0813C4.66147 9.59842 5.1127 8.50905 4.79139 7.50485V7.50485C4.25668 5.83365 5.83365 4.25668 7.50485 4.79139V4.79139C8.50905 5.1127 9.59842 4.66147 10.0813 3.7242V3.7242Z"
+                                                        fill="#00A3FF" />
+                                                    <path class="permanent"
+                                                        d="M14.8563 9.1903C15.0606 8.94984 15.3771 8.9385 15.6175 9.14289C15.858 9.34728 15.8229 9.66433 15.6185 9.9048L11.863 14.6558C11.6554 14.9001 11.2876 14.9258 11.048 14.7128L8.47656 12.4271C8.24068 12.2174 8.21944 11.8563 8.42911 11.6204C8.63877 11.3845 8.99996 11.3633 9.23583 11.5729L11.3706 13.4705L14.8563 9.1903Z"
+                                                        fill="white" />
+                                                </svg>
+                                            </span>
+                                            <!--end::Svg Icon-->
+                                        </a>
+
+                                    </div>
+                                    <!--end::Name-->
+                                    <!--begin::Info-->
+                                    <div class="d-flex flex-wrap fw-bold fs-6 mb-4 pe-2">
+
+                                        <a href="#" class="badge badge-light-primary fw-bolder ms-2 fs-8 py-1 px-3">
+                                            {{studentobj?.sex}}</a>
+                                    </div>
+                                    <!--end::Info-->
+                                </div>
+                                <!--end::User-->
+                                <!--begin::Actions-->
+                                <div class="d-flex my-4">
+
+                                    <a href="#" class="btn btn-sm btn-primary me-2" data-bs-toggle="modal"
+                                        data-bs-target="#kt_modal_offer_a_deal"> <i class="fonticon-printer"></i> Print
+                                        Profile</a>
+
+                                </div>
+                                <!--end::Actions-->
+                            </div>
+                            <!--end::Title-->
+                            <!--begin::Stats-->
+                            <div class="d-flex flex-wrap flex-stack">
+                                <!--begin::Wrapper-->
+                                <div class="d-flex flex-column flex-grow-1 pe-8">
+                                    <!--begin::Stats-->
+                                    <div class="d-flex flex-wrap">
+                                        <!--begin::Stat-->
+
+
+                                        <div
+                                            class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                                            <div class="fw-bold fs-7 text-gray-400">Class</div>
+                                            <!--begin::Number-->
+                                            <div class="d-flex align-items-center">
+
+                                                <div class="badge-light-danger fs-5 fw-bolder">{{studentobj?.class}}
+                                                </div>
+                                            </div>
+                                            <!--end::Number-->
+                                            <!--begin::Label-->
+
+                                            <!--end::Label-->
+                                        </div>
+                                        <!--end::Stat-->
+                                        <!--begin::Stat-->
+                                        <div
+                                            class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                                            <div class="fw-bold fs-7 text-gray-400">Admission No.</div>
+                                            <!--begin::Number-->
+                                            <div class="d-flex align-items-center">
+
+                                                <!--end::Svg Icon-->
+                                                <div class="fs-5 fw-bolder" data-kt-countup="true"
+                                                    data-kt-countup-value="5">{{studentobj?.admissionNo}}</div>
+                                            </div>
+                                            <!--end::Number-->
+                                            <!--begin::Label-->
+
+                                            <!--end::Label-->
+                                        </div>
+
+                                    </div>
+                                    <!--end::Stats-->
+                                </div>
+                                <!--end::Wrapper-->
+                                <!--begin::Progress-->
+
+                            </div>
+                            <!--end::Stats-->
+                        </div>
+                        <!--end::Info-->
+                    </div>
+                    <!--end::Details-->
+                    <!--begin::Navs-->
+                    <ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bolder">
+                        <!--begin::Nav item-->
+                        <li class="nav-item mt-2">
+                            <a class="nav-link text-active-primary ms-0 me-10 py-5 active" data-bs-toggle="tab"
+                                href="#kt_ecommerce_add_product_general">Student Personal Information</a>
+                        </li>
+                        <!--end::Nav item-->
+                        <!--begin::Nav item-->
+                        <li class="nav-item mt-2">
+                            <a class="nav-link text-active-primary ms-0 me-10 py-5 " data-bs-toggle="tab"
+                                href="#kt_ecommerce_add_product_advanced">Parent | Guardian Information</a>
+                        </li>
+                        <!--end::Nav item-->
+                        <!--begin::Nav item-->
+                        <li class="nav-item mt-2">
+                            <a class="nav-link text-active-primary ms-0 me-10 py-5" data-bs-toggle="tab"
+                                href="#kt_ecommerce_add_product_new" (click)="loadChart()">Academic Records</a>
+                        </li>
+
+                        <li class="nav-item mt-2">
+                            <a class="nav-link text-active-primary ms-0 me-10 py-5" data-bs-toggle="tab"
+                                href="#kt_ecommerce_add_product_medical" (click)="loadChart()">Medical Records</a>
+                        </li>
+                    </ul>
+                    <!--begin::Navs-->
+
+                </div>
+            </div>
+            <!--end::Navbar-->
+            <!--begin::Tab content-->
+            <div class="tab-content">
+                <!--begin::Tab pane-->
+                <div class="tab-pane fade show active" id="kt_ecommerce_add_product_general" role="tab-panel">
+                    <div class="d-flex flex-column gap-7 gap-lg-10">
+                        <!--begin::Basic info-->
+                        <div class="card mb-2 mb-xl-5">
+                            <!--begin::Card header-->
+                            <div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse"
+                                data-bs-target="#kt_account_profile_details" aria-expanded="true"
+                                aria-controls="kt_account_profile_details">
+                                <!--begin::Card title-->
+                                <div class="card-title m-0">
+                                    <h3 class="fw-bolder m-0">Profile Details</h3>
+                                </div>
+                                <!--end::Card title-->
+                            </div>
+                            <!--begin::Card header-->
+                            <!--begin::Content-->
+                            <div id="kt_account_settings_profile_details" class="collapse show">
+                                <!--begin::Form-->
+                                <form id="kt_account_profile_details_form" class="form" (ngSubmit)="updateStudent()">
+                                    <!--begin::Card body-->
+                                    <div class="card-body border-top p-9">
+
+                                        <div class="fv-row mb-7">
+                                            <!--begin::Label-->
+                                            <label class="d-block fw-bold fs-6 mb-5">Student Picture</label>
+                                            <!-- src="../../../assets/boy2.jpeg" -->
+                                            <div>
+                                                <div #magdiv style="display: flex;">
+                                                    <img style="width: 120px;" #mag
+                                                        [src]="genk.imag || genk.setImgRemote(student?.passport)">
+                                                </div>
+                                                <label style="margin-top: 10px;">
+                                                    <input #dile type="file" class="intbox"
+                                                        accept=".jpg, .jpeg, .png, .gif, .tif"
+                                                        (change)="genk.showPreview($event, mag)" />
+                                                </label>
+
+                                            </div>
+
+                                            <!--end::Image input-->
+                                            <!--begin::Hint-->
+                                            <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
+                                            <!--end::Hint-->
+                                        </div>
+
+                                        
+
+                                       
+
+                                        <!--end::Input group-->
+                                        <!--begin::Input group-->
+                                        <div class="row mb-6">
+                                            <!--begin::Label-->
+                                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Full
+                                                Name</label>
+                                            <!--end::Label-->
+                                            <!--begin::Col-->
+                                            <div class="col-lg-8">
+                                                <!--begin::Row-->
+                                                <div class="row">
+                                                    <!--begin::Col-->
+                                                    <div class="col-lg-4 fv-row">
+                                                        <input type="text"
+                                                            class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                                                            placeholder="Surname" name="surname"
+                                                            [(ngModel)]="student.surname" />
+                                                    </div>
+                                                    <!--end::Col-->
+                                                    <!--begin::Col-->
+                                                    <div class="col-lg-4 fv-row">
+                                                        <input type="text"
+                                                            class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                                                            placeholder="Firstname" name="firstname"
+                                                            [(ngModel)]="student.firstName" />
+                                                    </div>
+                                                    <!--end::Col-->
+                                                    <!--begin::Col-->
+                                                    <div class="col-lg-4 fv-row">
+                                                        <input type="text"
+                                                            class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                                                            placeholder="Middlename" name="middlename"
+                                                            [(ngModel)]="student.middleName" />
+                                                    </div>
+                                                    <!--end::Col-->
+
+                                                </div>
+                                                <!--end::Row-->
+                                            </div>
+                                            <!--end::Col-->
+                                        </div>
+                                        <!--end::Input group-->
+                                        <!--begin::Input group-->
+                                        <div class="row mb-6">
+                                            <!--begin::Label-->
+                                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Admission
+                                                Number</label>
+                                            <!--end::Label-->
+                                            <!--begin::Col-->
+                                            <div class="col-lg-8 fv-row">
+                                                <input type="text"
+                                                    class="form-control form-control-lg form-control-solid"
+                                                    placeholder="" name="admissionNo"
+                                                    [(ngModel)]="student.admissionNo" />
+                                            </div>
+                                            <!--end::Col-->
+                                        </div>
+
+
+                                        <div class="row mb-6">
+                                            <!--begin::Label-->
+                                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Gender</label>
+                                            <select name="gender" [(ngModel)]="student.sex" data-control="select"
+                                                data-placeholder="Select Session..."
+                                                class="form-select form-select-solid fw-bolder">
+                                                <option value="">Select Gender...</option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                            </select>
+                                            <!--end::Label-->
+                                            <!--begin::Col-->
+                                            <!-- <div class="col-lg-8 fv-row">
+                                                <input type="text"
+                                                    class="form-control form-control-lg form-control-solid"
+                                                    placeholder="" name="admissionNo"
+                                                    [(ngModel)]="student.admissionNo" />
+                                            </div> -->
+                                            <!--end::Col-->
+                                        </div>
+                                        <!--end::Input group-->
+                                        <!--begin::Input group-->
+
+                                        <!--end::Input group-->
+                                        <!--begin::Input group-->
+
+                                        <div class="row mb-6">
+                                       
+                                            <label class="col-lg-4 col-form-label fw-bold fs-6">Date of Birth</label>
+                                          
+                                            <div class="col-lg-8 fv-row">
+                                                <input type="date"
+                                                    class="form-control form-control-lg form-control-solid"
+                                                    name="birthdate" [(ngModel)]="student.birthDate" />
+                                            </div>
+                                          
+                                        </div>
+                                        <!--end::Input group-->
+                                        <!--begin::Input group-->
+                                        <div class="row mb-6">
+                                            <!--begin::Label-->
+                                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Class</label>
+                                            <!--end::Label-->
+                                            <!--begin::Col-->
+                                            <div class="col-lg-8 fv-row">
+                                                <!--begin::Input-->
+                                                <select [(ngModel)]="student.classId" name="Section"
+                                                    aria-label="Select a class" data-control="select2"
+                                                    data-placeholder="Select a class..."
+                                                    class="form-select form-select-solid form-select-lg">
+                                                    <option value="">Select class...</option>
+                                                    <option *ngFor="let session of schoolClasses" [value]="session.id">
+                                                        {{session.class}}</option>
+                                                </select>
+                                                <!--end::Input-->
+
+                                            </div>
+                                            <!--end::Col-->
+                                        </div>
+                                        <!--end::Input group-->
+                                        <!--begin::Input group-->
+                                        <div class="row mb-6">
+                                            <!--begin::Label-->
+                                            <label class="col-lg-4 col-form-label fw-bold fs-6">Date Admitted</label>
+                                            <!--end::Label-->
+                                            <!--begin::Col-->
+                                            <div class="col-lg-8 fv-row">
+                                                <input type="date" name="dateAdmitted"
+                                                    class="form-control form-control-lg form-control-solid"
+                                                    [(ngModel)]="student.dateAdmitted" />
+                                            </div>
+                                            <!--end::Col-->
+                                        </div>
+                                        <!--end::Input group-->
+                                        <!--begin::Input group-->
+                                        <div class="row mb-6">
+                                            <!--begin::Label-->
+                                            <label class="col-lg-4 col-form-label fw-bold fs-6">Email Address</label>
+                                            <!--end::Label-->
+                                            <!--begin::Col-->
+                                            <div class="col-lg-8">
+                                                <!--begin::Row-->
+                                                <div class="row">
+                                                    <!--begin::Col-->
+                                                    <div class="col-lg-12 fv-row">
+                                                        <input type="email" name="fname"
+                                                            class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                                                            [(ngModel)]="student.email" />
+                                                    </div>
+                                                    <!--end::Col-->
+
+                                                </div>
+                                                <!--end::Row-->
+                                            </div>
+                                            <!--end::Col-->
+                                        </div>
+                                        <!--end::Input group-->
+                                        <!--begin::Input group-->
+                                        <div class="row mb-6">
+                                            <!--begin::Label-->
+                                            <label class="col-lg-4 col-form-label required fw-bold fs-6">State of
+                                                Origin</label>
+                                            <!--end::Label-->
+                                            <!--begin::Col-->
+                                            <div class="col-lg-8">
+                                                <!--begin::Row-->
+                                                <div class="row">
+                                                    <!--begin::Col-->
+                                                    <div class="col-lg-12 fv-row">
+                                                        <!--begin::Input-->
+                                                        <select #st [value]="student.stateofOrigin" name="states"
+                                                            (change)="setLGA(st.value)" aria-label="Select a state"
+                                                            data-control="select2" data-placeholder="Select state..."
+                                                            class="form-select form-select-solid form-select-lg">
+                                                            <option selected disabled value="">State</option>
+                                                            <option *ngFor="let cat of states" [value]="cat">{{cat}}
+                                                            </option>
+                                                        </select>
+                                                        <!--end::Input-->
+                                                    </div>
+                                                    <!--end::Col-->
+
+                                                </div>
+                                                <!--end::Row-->
+                                            </div>
+                                            <!--end::Col-->
+                                        </div>
+                                        <!--end::Input group-->
+                                        <!--begin::Input group-->
+                                        <div class="row mb-6">
+                                            <!--begin::Label-->
+                                            <label class="col-lg-4 col-form-label fw-bold fs-6">Local Government
+                                                Area</label>
+                                            <!--end::Label-->
+                                            <!--begin::Col-->
+                                            <div class="col-lg-8">
+                                                <!--begin::Row-->
+                                                <div class="row">
+                                                    <!--begin::Col-->
+                                                    <div class="col-lg-12 fv-row">
+                                                        <!--begin::Input-->
+                                                        <select #lges (change)="selectLG(lges.value)"
+                                                            aria-label="Select " data-control="select2"
+                                                            data-placeholder="Select LGA..."
+                                                            class="form-select form-select-solid form-select-lg">
+                                                            <option selected disabled value="">LGA</option>
+                                                            <option *ngFor="let lg of lgs" [value]="lg">{{lg}}</option>
+                                                        </select>
+                                                        <!--end::Input-->
+                                                    </div>
+                                                    <!--end::Col-->
+
+                                                </div>
+                                                <!--end::Row-->
+                                            </div>
+                                            <!--end::Col-->
+                                        </div>
+                                        <!--end::Input group-->
+
+                                        <!--begin::Input group-->
+                                        <div class="row mb-6">
+                                            <!--begin::Label-->
+                                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Home
+                                                address</label>
+                                            <!--end::Label-->
+                                            <!--begin::Col-->
+                                            <div class="col-lg-8">
+                                                <!--begin::Row-->
+                                                <div class="row">
+                                                    <!--begin::Col-->
+                                                    <div class="col-lg-12 fv-row">
+                                                        <textarea name="address" [(ngModel)]="student.guardianAddress"
+                                                            class="form-control form-control-solid" rows="3"
+                                                            placeholder=""></textarea>
+                                                    </div>
+                                                    <!--end::Col-->
+
+                                                </div>
+                                                <!--end::Row-->
+                                            </div>
+                                            <!--end::Col-->
+                                        </div>
+
+                                        <!-- <div>
+                                            <button [routerLink]="['/' + 'admin', 'admin-students', 'student-idcard', 5]" style="background-color: rgb(245, 170, 9); color: black; border: none; outline: none; border-radius: 10px; padding: 10px 20px;">Print Student ID-CARD</button>
+                                        </div> -->
+                                        <!--end::Input group-->
+
+
+
+                                    </div>
+                                    <!--end::Card body-->
+                                    <!--begin::Actions-->
+                                    <div class="card-footer d-flex justify-content-end py-6 px-9">
+
+                                        <button type="submit" class="btn btn-primary"
+                                            id="kt_account_profile_details_submit">Save Changes</button>
+                                    </div>
+                                    <!--end::Actions-->
+                                </form>
+                                <!--end::Form-->
+                            </div>
+                            <!--end::Content-->
+                        </div>
+                        <!--end::Basic info-->
+
+                        <!--begin::Deactivate Account-->
+                        <div class="card">
+                            <!--begin::Card header-->
+                            <div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse"
+                                data-bs-target="#kt_account_deactivate" aria-expanded="true"
+                                aria-controls="kt_account_deactivate">
+                                <div class="card-title m-0">
+                                    <h3 class="fw-bolder m-0">Deactivate Student Profile</h3>
+                                </div>
+                            </div>
+                            <!--end::Card header-->
+                            <!--begin::Content-->
+                            <div id="kt_account_settings_deactivate" class="collapse show">
+                                <!--begin::Form-->
+                                <form id="kt_account_deactivate_form" class="form">
+                                    <!--begin::Card body-->
+                                    <div class="card-body border-top p-9">
+                                        <!--begin::Notice-->
+                                        <div
+                                            class="notice d-flex bg-light-warning rounded border-warning border border-dashed mb-9 p-6">
+                                            <!--begin::Icon-->
+                                            <!--begin::Svg Icon | path: icons/duotune/general/gen044.svg-->
+                                            <span class="svg-icon svg-icon-2tx svg-icon-warning me-4">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none">
+                                                    <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10"
+                                                        fill="currentColor" />
+                                                    <rect x="11" y="14" width="7" height="2" rx="1"
+                                                        transform="rotate(-90 11 14)" fill="currentColor" />
+                                                    <rect x="11" y="17" width="2" height="2" rx="1"
+                                                        transform="rotate(-90 11 17)" fill="currentColor" />
+                                                </svg>
+                                            </span>
+                                            <!--end::Svg Icon-->
+                                            <!--end::Icon-->
+                                            <!--begin::Wrapper-->
+                                            <div class="d-flex flex-stack flex-grow-1">
+                                                <!--begin::Content-->
+                                                <div *ngIf="student.status == 'ACTIVE'" class="fw-bold">
+                                                    <h4 class="text-gray-900 fw-bolder">You Are Deactivating this
+                                                        Student Profile</h4>
+                                                    <div class="fs-6 text-gray-700">Before you proceed with deactivating
+                                                        this student profile, please note that once the deletion process
+                                                        is initiated, the profile of this student cannot be retrieved.
+                                                        <br />
+                                                    </div>
+                                                </div>
+
+                                                <div *ngIf="student.status == 'DEACTIVATED'" class="fw-bold">
+                                                    <h4 class="text-gray-900 fw-bolder">You Are Activating this Student
+                                                        Profile</h4>
+                                                    <div class="fs-6 text-gray-700">Before you proceed with activating
+                                                        this student profile, please note that once the activation
+                                                        process is initiated, the profile of this student will be
+                                                        restored.
+                                                        <br />
+                                                    </div>
+                                                </div>
+                                                <!--end::Content-->
+                                            </div>
+                                            <!--end::Wrapper-->
+                                        </div>
+                                        <!--end::Notice-->
+                                        <!--begin::Form input row-->
+                                        <!-- <div class="form-check form-check-solid fv-row">
+                                <input name="deactivate" class="form-check-input" type="checkbox" value="" id="deactivate" />
+                                <label class="form-check-label fw-bold ps-2 fs-6" for="deactivate"> Confirm Student Profile Deactivation</label>
+                            </div> -->
+                                        <!--end::Form input row-->
+                                    </div>
+                                    <!--end::Card body-->
+                                    <!--begin::Card footer-->
+
+                                    <!-- <div *ngIf="student.status == 'ACTIVE'"
+                                        class="card-footer d-flex justify-content-end py-6 px-9">
+                                        <button id="kt_account_deactivate_account_submit" data-bs-toggle="modal"
+                                            data-bs-target="#kt_modal_add_customer" class="btn btn-danger fw-bold">
+                                            Deactivate Account</button>
+                                    </div> -->
+                                    <div *ngIf="student.status == 'ACTIVE'"
+                                    class="card-footer d-flex justify-content-end py-6 px-9">
+                                    <button type="button" data-bs-toggle="modal"
+                                    data-bs-target="#kt_modal_add_graduate" class="btn btn-danger fw-bold">
+                                        Deactivate Account</button>
+                                </div>
+
+                                    <div *ngIf="student.status == 'DEACTIVATED'"
+                                        class="card-footer d-flex justify-content-end py-6 px-9">
+                                        <button id="kt_account_deactivate_account_submit"
+                                            (click)="activateAccount(student.id)" class="btn btn-success fw-bold">
+                                            Activate Account</button>
+                                    </div>
+
+                                   
+
+                                    <!-- <button type="button" data-bs-toggle="modal"
+                            data-bs-target="#kt_modal_add_graduate" class="btn btn-info me-3">Deactivate Account</button> -->
+                                    <!--end::Card footer-->
+                                </form>
+                                <!--end::Form-->
+                            </div>
+                            <!--end::Content-->
+                        </div>
+                        <!--end::Deactivate Account-->
+                    </div>
+                </div>
+                <!--end::Tab pane-->
+                <!--begin::Tab pane-->
+                <div class="tab-pane fade" id="kt_ecommerce_add_product_advanced" role="tab-panel">
+                    <div class="d-flex flex-column gap-7 gap-lg-10">
+                        <!--begin::Basic info-->
+                        <div class="card mb-5 mb-xl-5">
+                            <!--begin::Card header-->
+                            <div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse"
+                                data-bs-target="#kt_account_profile_details" aria-expanded="true"
+                                aria-controls="kt_account_profile_details">
+                                <!--begin::Card title-->
+                                <div class="card-title m-0">
+                                    <h3 class="fw-bolder m-0">Parent Details</h3>
+                                </div>
+                                <!--end::Card title-->
+                            </div>
+                            <!--begin::Card header-->
+                            <!--begin::Content-->
+                            <div id="kt_account_settings_profile_details" class="collapse show">
+                                <!--begin::Form-->
+                                <form id="kt_account_profile_details_form" class="form" (ngSubmit)="updateStudent()">
+                                    <!--begin::Card body-->
+                                    <div class="card-body border-top p-9">
+
+                                        <!--begin::Input group-->
+                                        <div class="row mb-6">
+                                            <!--begin::Label-->
+                                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Father's
+                                                Name</label>
+                                            <!--end::Label-->
+                                            <!--begin::Col-->
+                                            <div class="col-lg-8">
+                                                <!--begin::Row-->
+                                                <div class="row">
+                                                    <!--begin::Col-->
+                                                    <div class="col-lg-12 fv-row">
+                                                        <input type="text" name="fathername"
+                                                            class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                                                            placeholder="First name" [(ngModel)]="student.fatherName" />
+                                                    </div>
+                                                    <!--end::Col-->
+
+                                                </div>
+                                                <!--end::Row-->
+                                            </div>
+                                            <!--end::Col-->
+                                        </div>
+                                        <!--end::Input group-->
+
+                                        <!--begin::Input group-->
+                                        <div class="row mb-6">
+                                            <!--begin::Label-->
+                                            <label class="col-lg-4 col-form-label fw-bold fs-6">
+                                                <span class="required">Father's Contact Phone</span>
+                                                <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip"
+                                                    title="Phone number must be active"></i>
+                                            </label>
+                                            <!--end::Label-->
+                                            <!--begin::Col-->
+                                            <div class="col-lg-8 fv-row">
+                                                <input type="tel" name="fatherphone"
+                                                    class="form-control form-control-lg form-control-solid"
+                                                    placeholder="Phone number" [(ngModel)]="student.fatherPhone" />
+                                            </div>
+                                            <!--end::Col-->
+                                        </div>
+                                        <!--end::Input group-->
+
+                                        <div class="row mb-6">
+                                            <!--begin::Label-->
+                                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Mother's
+                                                Name</label>
+                                            <!--end::Label-->
+                                            <!--begin::Col-->
+                                            <div class="col-lg-8">
+                                                <!--begin::Row-->
+                                                <div class="row">
+                                                    <!--begin::Col-->
+                                                    <div class="col-lg-12 fv-row">
+                                                        <input type="text" name="parentname"
+                                                            class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                                                            placeholder="First name" [(ngModel)]="student.motherName" />
+                                                    </div>
+                                                    <!--end::Col-->
+
+                                                </div>
+                                                <!--end::Row-->
+                                            </div>
+                                            <!--end::Col-->
+                                        </div>
+                                        <!--end::Input group-->
+
+                                        <!--begin::Input group-->
+                                        <div class="row mb-6">
+                                            <!--begin::Label-->
+                                            <label class="col-lg-4 col-form-label fw-bold fs-6">
+                                                <span class="required">Mother's Contact Phone</span>
+                                                <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip"
+                                                    title="Phone number must be active"></i>
+                                            </label>
+                                            <!--end::Label-->
+                                            <!--begin::Col-->
+                                            <div class="col-lg-8 fv-row">
+                                                <input type="tel" name="parentphone"
+                                                    class="form-control form-control-lg form-control-solid"
+                                                    placeholder="Phone number" [(ngModel)]="student.motherPhone" />
+                                            </div>
+                                            <!--end::Col-->
+                                        </div>
+
+                                        <!--begin::Input group-->
+                                        <div class="row mb-6">
+                                            <!--begin::Label-->
+                                            <label class="col-lg-4 col-form-label fw-bold fs-6">Father's
+                                                Occupation</label>
+                                            <!--end::Label-->
+                                            <!--begin::Col-->
+                                            <div class="col-lg-8">
+                                                <!--begin::Row-->
+                                                <div class="row">
+                                                    <!--begin::Col-->
+                                                    <div class="col-lg-12 fv-row">
+                                                        <input type="text" name="foccp"
+                                                            class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                                                            placeholder="" [(ngModel)]="student.fatherOccp" />
+                                                    </div>
+                                                    <!--end::Col-->
+
+                                                </div>
+                                                <!--end::Row-->
+                                            </div>
+                                            <!--end::Col-->
+                                        </div>
+                                        <!--end::Input group-->
+                                        <!--begin::Input group-->
+                                        <div class="row mb-6">
+                                            <!--begin::Label-->
+                                            <label class="col-lg-4 col-form-label fw-bold fs-6">Mother's
+                                                Occupation</label>
+                                            <!--end::Label-->
+                                            <!--begin::Col-->
+                                            <div class="col-lg-8">
+                                                <!--begin::Row-->
+                                                <div class="row">
+                                                    <!--begin::Col-->
+                                                    <div class="col-lg-12 fv-row">
+                                                        <input type="text" name="moccp"
+                                                            class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                                                            placeholder="" [(ngModel)]="student.motherOccp" />
+                                                    </div>
+                                                    <!--end::Col-->
+
+                                                </div>
+                                                <!--end::Row-->
+                                            </div>
+                                            <!--end::Col-->
+                                        </div>
+                                        <!--end::Input group-->
+
+                                        <!--begin::Input group-->
+                                        <div class="row mb-6">
+                                            <!--begin::Label-->
+                                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Parent Contact
+                                                Address</label>
+                                            <!--end::Label-->
+                                            <!--begin::Col-->
+                                            <div class="col-lg-8">
+                                                <!--begin::Row-->
+                                                <div class="row">
+                                                    <!--begin::Col-->
+                                                    <div class="col-lg-12 fv-row">
+                                                        <textarea name="paddress"
+                                                            class="form-control form-control-solid" rows="3"
+                                                            placeholder=""
+                                                            [(ngModel)]="student.parentAddress"></textarea>
+                                                    </div>
+                                                    <!--end::Col-->
+
+                                                </div>
+                                                <!--end::Row-->
+                                            </div>
+                                            <!--end::Col-->
+                                        </div>
+                                        <!--end::Input group-->
+
+
+
+                                    </div>
+                                    <!--end::Card body-->
+                                    <!--begin::Actions-->
+                                    <div class="card-footer d-flex justify-content-end py-6 px-9">
+
+                                        <button type="submit" class="btn btn-primary"
+                                            id="kt_account_profile_details_submit">Save Changes</button>
+                                    </div>
+                                    <!--end::Actions-->
+                                </form>
+                                <!--end::Form-->
+                            </div>
+                            <!--end::Content-->
+                        </div>
+                        <!--end::Basic info-->
+                        <!--begin::Basic info-->
+                        <div class="card mb-5 mb-xl-10">
+                            <!--begin::Card header-->
+                            <div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse"
+                                data-bs-target="#kt_account_profile_details" aria-expanded="true"
+                                aria-controls="kt_account_profile_details">
+                                <!--begin::Card title-->
+                                <div class="card-title m-0">
+                                    <h3 class="fw-bolder m-0">Guardian Details</h3>
+                                </div>
+                                <!--end::Card title-->
+                            </div>
+                            <!--begin::Card header-->
+                            <!--begin::Content-->
+                            <div id="kt_account_settings_profile_details" class="collapse show">
+                                <!--begin::Form-->
+                                <form id="kt_account_profile_details_form" class="form" (ngSubmit)="updateStudent()">
+                                    <!--begin::Card body-->
+                                    <div class="card-body border-top p-9">
+
+                                        <!--begin::Input group-->
+                                        <div class="row mb-6">
+                                            <!--begin::Label-->
+                                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Guardian Full
+                                                Name</label>
+                                            <!--end::Label-->
+                                            <!--begin::Col-->
+                                            <div class="col-lg-8">
+                                                <!--begin::Row-->
+                                                <div class="row">
+                                                    <!--begin::Col-->
+                                                    <div class="col-lg-12 fv-row">
+                                                        <input type="text"
+                                                            class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                                                            placeholder="First name" name="gname"
+                                                            [(ngModel)]="student.guardianName" />
+                                                    </div>
+                                                    <!--end::Col-->
+                                                </div>
+                                                <!--end::Row-->
+                                            </div>
+                                            <!--end::Col-->
+                                        </div>
+                                        <!--end::Input group-->
+
+                                        <div class="row mb-6">
+                                            <!--begin::Label-->
+                                            <label class="col-lg-4 col-form-label fw-bold fs-6">
+                                                <span class="required">Guardian Phone</span>
+                                                <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip"
+                                                    title="Phone number must be active"></i>
+                                            </label>
+                                            <!--end::Label-->
+                                            <!--begin::Col-->
+                                            <div class="col-lg-8 fv-row">
+                                                <input type="tel"
+                                                    class="form-control form-control-lg form-control-solid"
+                                                    placeholder="Phone number" name="gphoneNumber"
+                                                    [(ngModel)]="student.guardianPhone" />
+                                            </div>
+                                            <!--end::Col-->
+                                        </div>
+
+                                        <!--begin::Input group-->
+                                        <div class="row mb-6">
+                                            <!--begin::Label-->
+                                            <label class="col-lg-4 col-form-label required fw-bold fs-6"> Guardian
+                                                Address</label>
+                                            <!--end::Label-->
+                                            <!--begin::Col-->
+                                            <div class="col-lg-8">
+                                                <!--begin::Row-->
+                                                <div class="row">
+                                                    <!--begin::Col-->
+                                                    <div class="col-lg-12 fv-row">
+                                                        <textarea class="form-control form-control-solid" rows="3"
+                                                            placeholder="" name="gaddress"
+                                                            [(ngModel)]="student.guardianAddress"></textarea>
+                                                    </div>
+                                                    <!--end::Col-->
+
+                                                </div>
+                                                <!--end::Row-->
+                                            </div>
+                                            <!--end::Col-->
+                                        </div>
+                                        <!--end::Input group-->
+
+
+
+                                    </div>
+                                    <!--end::Card body-->
+                                    <!--begin::Actions-->
+                                    <div class="card-footer d-flex justify-content-end py-6 px-9">
+
+                                        <button type="submit" class="btn btn-primary"
+                                            id="kt_account_profile_details_submit">Save Changes</button>
+                                    </div>
+                                    <!--end::Actions-->
+                                </form>
+                                <!--end::Form-->
+                            </div>
+                            <!--end::Content-->
+                        </div>
+                        <!--end::Basic info-->
+
+                    </div>
+                </div>
+                <!--end::Tab pane-->
+
+                <!--begin::Tab pane-->
+                <div class="tab-pane fade" id="kt_ecommerce_add_product_new" role="tab-panel">
+                    <div class="d-flex flex-column gap-7 gap-lg-10">
+                        <!--begin::Row-->
+                        <div *ngIf="isViewChart" class="row g-xxl-9">
+
+                            <app-academic-record [studentId]="studentId"></app-academic-record>
+                            <!--begin::Col-->
+                            
+                        </div>
+                        <!--end::Row-->
+                    </div>
+                </div>
+
+
+                <div class="tab-pane fade" id="kt_ecommerce_add_product_medical" role="tab-panel">
+                    <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+                        <!--begin::Header-->
+                        <!--begin::Content-->
+                        <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+                            <!--begin::Post-->
+                            <div class="post d-flex flex-column-fluid" id="kt_post">
+                                <!--begin::Container-->
+                                <div id="kt_content_container" class="container-xxl">
+                                    <!--begin::Col-->
+                                    <div class="col-xl- mb-5 mb-xl-10">
+                                        <!--begin::Tables Widget 13-->
+                                        <div class="card mb-5 mb-xl-8">
+                                            <!--begin::Header-->
+                                            <div class="card-header border-0 pt-5">
+                                                <!--begin::Card title-->
+                                                <div class="card-title">
+                                                    <!--begin::Search-->
+                                                    <div class="d-flex align-items-center position-relative my-1">
+                                                        <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
+                                                        <span class="svg-icon svg-icon-1 position-absolute ms-6">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                                viewBox="0 0 24 24" fill="none">
+                                                                <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546"
+                                                                    height="2" rx="1" transform="rotate(45 17.0365 15.1223)"
+                                                                    fill="currentColor" />
+                                                                <path
+                                                                    d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z"
+                                                                    fill="currentColor" />
+                                                            </svg>
+                                                        </span>
+                                                        <!--end::Svg Icon-->
+                                                        <input type="text" data-kt-customer-table-filter="search"
+                                                            class="form-control form-control-solid w-250px ps-15"
+                                                            placeholder="Search Patients" />
+                                                    </div>
+                                                    <!--end::Search-->
+                                                </div>
+                                                <!--begin::Card title-->
+        
+                                            </div>
+                                            <!--end::Header-->
+                                            <!--begin::Body-->
+                                            <div class="card-body py-3">
+                                                <!--begin::Table container-->
+                                                <div class="table-responsive">
+                                                    <!--begin::Table-->
+                                                    <table
+                                                        class="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3">
+                                                        <!--begin::Table head-->
+                                                        <thead>
+                                                            <tr class="fw-bolder text-muted">
+                                                                <th class="w-25px">
+                                                                    <div
+                                                                        class="form-check form-check-sm form-check-custom form-check-solid">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="1" data-kt-check="true"
+                                                                            data-kt-check-target=".widget-13-check" />
+                                                                    </div>
+                                                                </th>
+                                                                <th class="min-w-170px">Name</th>
+                                                                <th class="min-w-100px">Class</th>
+                                                                <th class="min-w-100px">Gender</th>
+                                                                <th class="min-w-150px">Date Checked In</th>
+                                                                <th class="min-w-150px">Ailment</th>
+                                                                <th class="min-w-100px">Status</th>
+                                                                <th class="min-w-80px text-end">Actions</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <!--end::Table head-->
+                                                        <!--begin::Table body-->
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <div
+                                                                        class="form-check form-check-sm form-check-custom form-check-solid">
+                                                                        <input class="form-check-input widget-13-check"
+                                                                            type="checkbox" value="1" />
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="" data-bs-toggle="modal"
+                                                                        data-bs-target="#kt_customers_export_modal"
+                                                                        class="text-dark fw-bolder text-hover-primary fs-6">Adeola
+                                                                        Adeyemi</a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#"
+                                                                        class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">SS
+                                                                        3</a>
+        
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#"
+                                                                        class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">Male</a>
+        
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#"
+                                                                        class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">05/28/2020</a>
+        
+        
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#"
+                                                                        class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">Malaria</a>
+        
+                                                                </td>
+                                                                <td>
+                                                                    <span class="badge badge-light-warning">On Medication</span>
+                                                                </td>
+                                                                <td class="text-end">
+                                                                    <a href="#" class="btn btn-sm btn-light-primary btn-primary"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#kt_customers_export_modal">
+                                                                        View
+                                                                    </a>
+        
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div
+                                                                        class="form-check form-check-sm form-check-custom form-check-solid">
+                                                                        <input class="form-check-input widget-13-check"
+                                                                            type="checkbox" value="1" />
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="" data-bs-toggle="modal"
+                                                                        data-bs-target="#kt_customers_export_modal"
+                                                                        class="text-dark fw-bolder text-hover-primary fs-6">Adeola
+                                                                        Adeyemi</a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#"
+                                                                        class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">SS
+                                                                        3</a>
+        
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#"
+                                                                        class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">Male</a>
+        
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#"
+                                                                        class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">05/28/2020</a>
+        
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#"
+                                                                        class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">Malaria</a>
+        
+                                                                </td>
+                                                                <td>
+                                                                    <span class="badge badge-light-danger">Transferred</span>
+                                                                </td>
+                                                                <td class="text-end">
+                                                                    <a href="#" class="btn btn-sm btn-light-primary btn-primary"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#kt_customers_export_modal">
+                                                                        View
+                                                                    </a>
+        
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div
+                                                                        class="form-check form-check-sm form-check-custom form-check-solid">
+                                                                        <input class="form-check-input widget-13-check"
+                                                                            type="checkbox" value="1" />
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="" data-bs-toggle="modal"
+                                                                        data-bs-target="#kt_customers_export_modal"
+                                                                        class="text-dark fw-bolder text-hover-primary fs-6">Adeola
+                                                                        Adeyemi</a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#"
+                                                                        class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">SS
+                                                                        3</a>
+        
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#"
+                                                                        class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">Male</a>
+        
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#"
+                                                                        class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">05/28/2020</a>
+        
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#"
+                                                                        class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">Malaria</a>
+        
+                                                                </td>
+                                                                <td>
+                                                                    <span class="badge badge-light-success">Recovered</span>
+                                                                </td>
+                                                                <td class="text-end">
+                                                                    <a href="#" class="btn btn-sm btn-light-primary btn-primary"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#kt_customers_export_modal">
+                                                                        View
+                                                                    </a>
+        
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div
+                                                                        class="form-check form-check-sm form-check-custom form-check-solid">
+                                                                        <input class="form-check-input widget-13-check"
+                                                                            type="checkbox" value="1" />
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="" data-bs-toggle="modal"
+                                                                        data-bs-target="#kt_customers_export_modal"
+                                                                        class="text-dark fw-bolder text-hover-primary fs-6">Adeola
+                                                                        Adeyemi</a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#"
+                                                                        class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">SS
+                                                                        3</a>
+        
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#"
+                                                                        class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">Male</a>
+        
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#"
+                                                                        class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">05/28/2020</a>
+        
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#"
+                                                                        class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">Malaria</a>
+        
+                                                                </td>
+                                                                <td>
+                                                                    <span class="badge badge-light-danger">Transferred</span>
+                                                                </td>
+                                                                <td class="text-end">
+                                                                    <a href="#" class="btn btn-sm btn-light-primary btn-primary"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#kt_customers_export_modal">
+                                                                        View
+                                                                    </a>
+        
+                                                                </td>
+                                                            </tr>
+        
+                                                        </tbody>
+                                                        <!--end::Table body-->
+                                                    </table>
+                                                    <!--end::Table-->
+                                                </div>
+                                                <!--end::Table container-->
+                                            </div>
+                                            <!--begin::Body-->
+                                        </div>
+                                        <!--end::Tables Widget 13-->
+                                    </div>
+                                    <!--end::Col-->
+                                    <!--begin::Modals-->
+                                    <!--begin::Modal - Customers - Add-->
+                                    <div class="modal fade" id="kt_modal_add_customer" tabindex="-1" aria-hidden="true">
+                                        <!--begin::Modal dialog-->
+                                        <div class="modal-dialog modal-dialog-centered mw-650px">
+                                            <!--begin::Modal content-->
+                                            <div class="modal-content">
+                                                <!--begin::Form-->
+                                                <form class="form" action="#" id="kt_modal_add_customer_form"
+                                                    data-kt-redirect="../../demo1/dist/apps/customers/list.html">
+                                                    <!--begin::Modal header-->
+                                                    <div class="modal-header" id="kt_modal_add_customer_header">
+                                                        <!--begin::Modal title-->
+                                                        <h2 class="fw-bolder">Add New Patients</h2>
+                                                        <!--end::Modal title-->
+                                                        <!--begin::Close-->
+                                                        <div id="kt_modal_add_customer_close"
+                                                            class="btn btn-icon btn-sm btn-active-icon-primary">
+                                                            <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                                                            <span class="svg-icon svg-icon-1">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                                    viewBox="0 0 24 24" fill="none">
+                                                                    <rect opacity="0.5" x="6" y="17.3137" width="16" height="2"
+                                                                        rx="1" transform="rotate(-45 6 17.3137)"
+                                                                        fill="currentColor" />
+                                                                    <rect x="7.41422" y="6" width="16" height="2" rx="1"
+                                                                        transform="rotate(45 7.41422 6)" fill="currentColor" />
+                                                                </svg>
+                                                            </span>
+                                                            <!--end::Svg Icon-->
+                                                        </div>
+                                                        <!--end::Close-->
+                                                    </div>
+                                                    <!--end::Modal header-->
+                                                    <!--begin::Modal body-->
+                                                    <div class="modal-body py-10 px-lg-17">
+                                                        <!--begin::Scroll-->
+                                                        <div class="scroll-y me-n7 pe-7" id="kt_modal_add_customer_scroll"
+                                                            data-kt-scroll="true"
+                                                            data-kt-scroll-activate="{default: false, lg: true}"
+                                                            data-kt-scroll-max-height="auto"
+                                                            data-kt-scroll-dependencies="#kt_modal_add_customer_header"
+                                                            data-kt-scroll-wrappers="#kt_modal_add_customer_scroll"
+                                                            data-kt-scroll-offset="300px">
+        
+        
+        
+                                                            <!--begin::Input group-->
+                                                            <div class="row g-9 mb-7">
+                                                                <!--begin::Col-->
+                                                                <div class="col-md-6 fv-row">
+                                                                    <!--begin::Label-->
+                                                                    <label class="fs-6 fw-bold mb-2">
+                                                                        <span class="">Class</span>
+        
+                                                                    </label>
+                                                                    <!--end::Label-->
+                                                                    <!--begin::Input-->
+                                                                    <select name="country" aria-label="Select a Class"
+                                                                        data-control="select2"
+                                                                        data-placeholder="Select Class..."
+                                                                        data-dropdown-parent="#kt_modal_add_customer"
+                                                                        class="form-select form-select-solid fw-bolder">
+                                                                        <option value="">Select Class...</option>
+                                                                        <option value="M">JSS1</option>
+                                                                        <option value="F">JSS2</option>
+                                                                        <option value="M">JSS3</option>
+                                                                        <option value="F">SSS2</option>
+                                                                        <option value="M">SSS1</option>
+                                                                        <option value="F">SSS2</option>
+                                                                    </select>
+                                                                    <!--end::Input-->
+                                                                </div>
+                                                                <!--end::Col-->
+                                                                <!--begin::Col-->
+                                                                <div class="col-md-6 fv-row">
+                                                                    <!--begin::Label-->
+                                                                    <label class="fs-6 fw-bold mb-2">
+                                                                        <span class="">Gender</span>
+        
+                                                                    </label>
+                                                                    <!--end::Label-->
+                                                                    <!--begin::Input-->
+                                                                    <select name="country" aria-label="Select a Country"
+                                                                        data-control="select2"
+                                                                        data-placeholder="Select Gender..."
+                                                                        data-dropdown-parent="#kt_modal_add_customer"
+                                                                        class="form-select form-select-solid fw-bolder">
+                                                                        <option value="">Select gender...</option>
+                                                                        <option value="M">Male</option>
+                                                                        <option value="F">Female</option>
+                                                                    </select>
+                                                                    <!--end::Input-->
+                                                                </div>
+                                                                <!--end::Col-->
+                                                            </div>
+                                                            <!--end::Input group-->
+                                                            <!--begin::Input group-->
+                                                            <div class="row g-9 mb-7">
+                                                                <!--begin::Col-->
+                                                                <div class="col-md-12 fv-row">
+                                                                    <!--begin::Label-->
+                                                                    <label class=" fs-6 fw-bold mb-2">Student Name</label>
+                                                                    <!--end::Label-->
+                                                                    <!--begin::Input-->
+                                                                    <input type="text" class="form-control form-control-solid"
+                                                                        placeholder="" Value="Adeola Adeyemi" name=""
+                                                                        disabled />
+                                                                    <!--end::Input-->
+                                                                </div>
+                                                                <!--end::Col-->
+        
+                                                            </div>
+                                                            <!--end::Input group-->
+                                                            <div class="fv-row mb-7">
+                                                                <!--begin::Label-->
+                                                                <label class="fs-6 fw-bold mb-2">
+                                                                    <span class="">Ailment</span>
+                                                                    <i class="fas fa-exclamation-circle ms-1 fs-7"
+                                                                        data-bs-toggle="tooltip"
+                                                                        title="Describe student ailment"></i>
+                                                                </label>
+                                                                <!--end::Label-->
+                                                                <!--begin::Input-->
+                                                                <textarea class="form-control form-control-solid" row="10"
+                                                                    placeholder="Type Description" name=""></textarea>
+                                                                <!--end::Input-->
+                                                            </div>
+                                                            <div class="fv-row mb-7">
+                                                                <!--begin::Label-->
+                                                                <label class="fs-6 fw-bold mb-2">
+                                                                    <span class="">Prescribe Drugs</span>
+                                                                    <i class="fas fa-exclamation-circle ms-1 fs-7"
+                                                                        data-bs-toggle="tooltip"
+                                                                        title="Prescribed drugs details"></i>
+                                                                </label>
+                                                                <!--end::Label-->
+                                                                <!--begin::Input-->
+                                                                <textarea class="form-control form-control-solid" row="10"
+                                                                    placeholder="Type In Prescribe Drugs" name=""></textarea>
+                                                                <!--end::Input-->
+                                                            </div>
+        
+                                                            <!--begin::Input group-->
+                                                            <div class="row g-9 mb-7">
+                                                                <!--begin::Col-->
+                                                                <div class="col-md-12 fv-row">
+                                                                    <!--begin::Label-->
+                                                                    <label class=" fs-6 fw-bold mb-2">Status</label>
+                                                                    <!--end::Label-->
+                                                                    <!--begin::Input-->
+                                                                    <select name="status" data-control="select2"
+                                                                        data-placeholder="Select Status"
+                                                                        data-dropdown-parent="#kt_modal_add_customer"
+                                                                        class="form-select form-select-solid fw-bolder">
+                                                                        <option value="">Select Status...</option>
+                                                                        <option value="M">On Medication</option>
+                                                                        <option value="F">Transferred</option>
+                                                                        <option value="R">Recovered</option>
+                                                                    </select>
+                                                                    <!--end::Input-->
+                                                                </div>
+                                                                <!--end::Col-->
+        
+                                                            </div>
+                                                            <!--end::Input group-->
+                                                            <!--begin::Col-->
+                                                            <!--begin::Input group-->
+                                                            <div class="row g-9 mb-7">
+                                                                <!--begin::Col-->
+                                                                <div class="col-md-6 fv-row">
+                                                                    <!--begin::Label-->
+                                                                    <label class=" fs-6 fw-bold mb-2">Date Checked In</label>
+                                                                    <!--end::Label-->
+                                                                    <!--begin::Input-->
+                                                                    <input type="date" class="form-control form-control-solid"
+                                                                        placeholder="" name="birthday" />
+                                                                    <!--end::Input-->
+                                                                </div>
+                                                                <!--end::Col-->
+                                                                <!--begin::Col-->
+                                                                <div class="col-md-6 fv-row">
+                                                                    <!--begin::Label-->
+                                                                    <label class=" fs-6 fw-bold mb-2">Date Discharged</label>
+                                                                    <!--end::Label-->
+                                                                    <!--begin::Input-->
+                                                                    <input type="date" class="form-control form-control-solid"
+                                                                        placeholder="" name="birthday" />
+                                                                    <!--end::Input-->
+                                                                </div>
+                                                                <!--end::Col-->
+                                                            </div>
+                                                            <!--end::Input group-->
+        
+        
+                                                            <!--begin::Billing form-->
+                                                            <div id="kt_modal_add_customer_billing_info" class="collapse show">
+                                                                <!--begin::Input group-->
+                                                                <div class="d-flex flex-column mb-7 fv-row">
+                                                                    <!--begin::Label-->
+                                                                    <label class=" fs-6 fw-bold mb-2">Hostel</label>
+                                                                    <!--end::Label-->
+                                                                    <!--begin::Input-->
+                                                                    <input class="form-control form-control-solid"
+                                                                        placeholder="" name="address1"
+                                                                        value="101, Collins Street" />
+                                                                    <!--end::Input-->
+                                                                </div>
+                                                                <!--end::Input group-->
+        
+        
+        
+        
+        
+                                                            </div>
+                                                            <!--end::Billing form-->
+                                                        </div>
+        
+                                                        <!--end::Scroll-->
+                                                    </div>
+                                                    <!--end::Modal body-->
+                                                    <!--begin::Modal footer-->
+                                                    <div class="modal-footer flex-center">
+                                                        <!--begin::Button-->
+                                                        <button type="reset" id="kt_modal_add_customer_cancel"
+                                                            class="btn btn-light me-3">Discard</button>
+                                                        <!--end::Button-->
+                                                        <!--begin::Button-->
+                                                        <button type="submit" id="kt_modal_add_customer_submit"
+                                                            class="btn btn-info">
+                                                            <span class="indicator-label">Submit</span>
+                                                            <span class="indicator-progress">Please wait...
+                                                                <span
+                                                                    class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                                                        </button>
+                                                        <!--end::Button-->
+                                                    </div>
+                                                    <!--end::Modal footer-->
+                                                </form>
+                                                <!--end::Form-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end::Modal - Customers - Add-->
+                                    <!--begin::Modal - Adjust Balance-->
+                                    <div class="modal fade" id="kt_customers_export_modal" tabindex="-1" aria-hidden="true">
+                                        <!--begin::Modal dialog-->
+                                        <div class="modal-dialog modal-dialog-centered mw-650px">
+                                            <!--begin::Modal content-->
+                                            <div class="modal-content">
+                                                <!--begin::Form-->
+                                                <form class="form" action="#" id="kt_modal_add_customer_form"
+                                                    data-kt-redirect="../../demo1/dist/apps/customers/list.html">
+                                                    <!--begin::Modal header-->
+                                                    <div class="modal-header" id="kt_modal_add_customer_header">
+                                                        <!--begin::Modal title-->
+                                                        <h2 class="fw-bolder">Patients Profile</h2>
+                                                        <!--end::Modal title-->
+                                                        <!--begin::Close-->
+                                                        <div id="kt_modal_add_customer_close"
+                                                            class="btn btn-icon btn-sm btn-active-icon-primary">
+                                                            <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                                                            <span class="svg-icon svg-icon-1">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                                    viewBox="0 0 24 24" fill="none">
+                                                                    <rect opacity="0.5" x="6" y="17.3137" width="16" height="2"
+                                                                        rx="1" transform="rotate(-45 6 17.3137)"
+                                                                        fill="currentColor" />
+                                                                    <rect x="7.41422" y="6" width="16" height="2" rx="1"
+                                                                        transform="rotate(45 7.41422 6)" fill="currentColor" />
+                                                                </svg>
+                                                            </span>
+                                                            <!--end::Svg Icon-->
+                                                        </div>
+                                                        <!--end::Close-->
+                                                    </div>
+                                                    <!--end::Modal header-->
+                                                    <!--begin::Modal body-->
+                                                    <div class="modal-body py-10 px-lg-17">
+                                                        <!--begin::Scroll-->
+                                                        <div class="scroll-y me-n7 pe-7" id="kt_modal_add_customer_scroll"
+                                                            data-kt-scroll="true"
+                                                            data-kt-scroll-activate="{default: false, lg: true}"
+                                                            data-kt-scroll-max-height="auto"
+                                                            data-kt-scroll-dependencies="#kt_modal_add_customer_header"
+                                                            data-kt-scroll-wrappers="#kt_modal_add_customer_scroll"
+                                                            data-kt-scroll-offset="300px">
+        
+        
+        
+                                                            <!--begin::Input group-->
+                                                            <div class="row g-9 mb-7">
+                                                                <!--begin::Col-->
+                                                                <div class="col-md-6 fv-row">
+                                                                    <!--begin::Label-->
+                                                                    <label class="fs-6 fw-bold mb-2">
+                                                                        <span class="">Class</span>
+        
+                                                                    </label>
+                                                                    <!--end::Label-->
+                                                                    <!--begin::Input-->
+                                                                    <select name="country" aria-label="Select a Class"
+                                                                        data-control="select2"
+                                                                        data-placeholder="Select Class..."
+                                                                        data-dropdown-parent="#kt_modal_add_customer"
+                                                                        class="form-select form-select-solid fw-bolder">
+                                                                        <option value="">Select Class...</option>
+                                                                        <option value="M">JSS1</option>
+                                                                        <option value="F">JSS2</option>
+                                                                        <option value="M">JSS3</option>
+                                                                        <option value="F">SSS2</option>
+                                                                        <option value="M">SSS1</option>
+                                                                        <option value="F">SSS2</option>
+                                                                    </select>
+                                                                    <!--end::Input-->
+                                                                </div>
+                                                                <!--end::Col-->
+                                                                <!--begin::Col-->
+                                                                <div class="col-md-6 fv-row">
+                                                                    <!--begin::Label-->
+                                                                    <label class="fs-6 fw-bold mb-2">
+                                                                        <span class="">Gender</span>
+        
+                                                                    </label>
+                                                                    <!--end::Label-->
+                                                                    <!--begin::Input-->
+                                                                    <select name="country" aria-label="Select a Country"
+                                                                        data-control="select2"
+                                                                        data-placeholder="Select Gender..."
+                                                                        data-dropdown-parent="#kt_modal_add_customer"
+                                                                        class="form-select form-select-solid fw-bolder">
+                                                                        <option value="">Select gender...</option>
+                                                                        <option value="M">Male</option>
+                                                                        <option value="F">Female</option>
+                                                                    </select>
+                                                                    <!--end::Input-->
+                                                                </div>
+                                                                <!--end::Col-->
+                                                            </div>
+                                                            <!--end::Input group-->
+                                                            <!--begin::Input group-->
+                                                            <div class="row g-9 mb-7">
+                                                                <!--begin::Col-->
+                                                                <div class="col-md-12 fv-row">
+                                                                    <!--begin::Label-->
+                                                                    <label class=" fs-6 fw-bold mb-2">Student Name</label>
+                                                                    <!--end::Label-->
+                                                                    <!--begin::Input-->
+                                                                    <input type="text" class="form-control form-control-solid"
+                                                                        placeholder="" Value="Adeola Adeyemi" name=""
+                                                                        disabled />
+                                                                    <!--end::Input-->
+                                                                </div>
+                                                                <!--end::Col-->
+        
+                                                            </div>
+                                                            <!--end::Input group-->
+                                                            <div class="fv-row mb-7">
+                                                                <!--begin::Label-->
+                                                                <label class="fs-6 fw-bold mb-2">
+                                                                    <span class="">Ailment</span>
+                                                                    <i class="fas fa-exclamation-circle ms-1 fs-7"
+                                                                        data-bs-toggle="tooltip"
+                                                                        title="Describe student ailment"></i>
+                                                                </label>
+                                                                <!--end::Label-->
+                                                                <!--begin::Input-->
+                                                                <textarea class="form-control form-control-solid" row="10"
+                                                                    placeholder="Type Description" name=""></textarea>
+                                                                <!--end::Input-->
+                                                            </div>
+                                                            <div class="fv-row mb-7">
+                                                                <!--begin::Label-->
+                                                                <label class="fs-6 fw-bold mb-2">
+                                                                    <span class="">Prescribe Drugs</span>
+                                                                    <i class="fas fa-exclamation-circle ms-1 fs-7"
+                                                                        data-bs-toggle="tooltip"
+                                                                        title="Prescribed drugs details"></i>
+                                                                </label>
+                                                                <!--end::Label-->
+                                                                <!--begin::Input-->
+                                                                <textarea class="form-control form-control-solid" row="10"
+                                                                    placeholder="Type In Prescribe Drugs" name=""></textarea>
+                                                                <!--end::Input-->
+                                                            </div>
+        
+                                                            <!--begin::Input group-->
+                                                            <div class="row g-9 mb-7">
+                                                                <!--begin::Col-->
+                                                                <div class="col-md-12 fv-row">
+                                                                    <!--begin::Label-->
+                                                                    <label class=" fs-6 fw-bold mb-2">Status</label>
+                                                                    <!--end::Label-->
+                                                                    <!--begin::Input-->
+                                                                    <select name="status" data-control="select2"
+                                                                        data-placeholder="Select Status"
+                                                                        data-dropdown-parent="#kt_modal_add_customer"
+                                                                        class="form-select form-select-solid fw-bolder">
+                                                                        <option value="">Select Status...</option>
+                                                                        <option value="M">On Medication</option>
+                                                                        <option value="F">Transferred</option>
+                                                                        <option value="R">Recovered</option>
+                                                                    </select>
+                                                                    <!--end::Input-->
+                                                                </div>
+                                                                <!--end::Col-->
+        
+                                                            </div>
+                                                            <!--end::Input group-->
+                                                            <!--begin::Col-->
+                                                            <!--begin::Input group-->
+                                                            <div class="row g-9 mb-7">
+                                                                <!--begin::Col-->
+                                                                <div class="col-md-6 fv-row">
+                                                                    <!--begin::Label-->
+                                                                    <label class=" fs-6 fw-bold mb-2">Date Checked In</label>
+                                                                    <!--end::Label-->
+                                                                    <!--begin::Input-->
+                                                                    <input type="date" class="form-control form-control-solid"
+                                                                        placeholder="" name="birthday" />
+                                                                    <!--end::Input-->
+                                                                </div>
+                                                                <!--end::Col-->
+                                                                <!--begin::Col-->
+                                                                <div class="col-md-6 fv-row">
+                                                                    <!--begin::Label-->
+                                                                    <label class=" fs-6 fw-bold mb-2">Date Discharged</label>
+                                                                    <!--end::Label-->
+                                                                    <!--begin::Input-->
+                                                                    <input type="date" class="form-control form-control-solid"
+                                                                        placeholder="" name="birthday" />
+                                                                    <!--end::Input-->
+                                                                </div>
+                                                                <!--end::Col-->
+                                                            </div>
+                                                            <!--end::Input group-->
+        
+        
+                                                            <!--begin::Billing form-->
+                                                            <div id="kt_modal_add_customer_billing_info" class="collapse show">
+                                                                <!--begin::Input group-->
+                                                                <div class="d-flex flex-column mb-7 fv-row">
+                                                                    <!--begin::Label-->
+                                                                    <label class=" fs-6 fw-bold mb-2">Hostel</label>
+                                                                    <!--end::Label-->
+                                                                    <!--begin::Input-->
+                                                                    <input class="form-control form-control-solid"
+                                                                        placeholder="" name="address1"
+                                                                        value="101, Collins Street" />
+                                                                    <!--end::Input-->
+                                                                </div>
+                                                                <!--end::Input group-->
+        
+        
+        
+        
+        
+                                                            </div>
+                                                            <!--end::Billing form-->
+                                                        </div>
+        
+                                                        <!--end::Scroll-->
+                                                    </div>
+                                                    <!--end::Modal body-->
+                                                    <!--begin::Modal footer-->
+                                                    <div class="modal-footer flex-center">
+                                                        <!--begin::Button-->
+                                                        <button type="reset" id="kt_modal_add_customer_cancel"
+                                                            class="btn btn-light me-3">Cancel</button>
+                                                        <!--end::Button-->
+                                                        <!--begin::Button-->
+                                                        <button type="submit" id="kt_modal_add_customer_submit"
+                                                            class="btn btn-info">
+                                                            <span class="indicator-label">Save</span>
+                                                            <span class="indicator-progress">Please wait...
+                                                                <span
+                                                                    class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                                                        </button>
+                                                        <!--end::Button-->
+                                                    </div>
+                                                    <!--end::Modal footer-->
+                                                </form>
+                                                <!--end::Form-->
+                                            </div>
+                                        </div>
+                                        <!--end::Modal dialog-->
+                                    </div>
+                                    <!--end::Modal - New Card-->
+                                    <!--end::Modals-->
+                                </div>
+                                <!--end::Container-->
+                            </div>
+                            <!--end::Post-->
+                        </div>
+                    </div>
+                </div>
+                <!--end::Tab pane-->
+            </div>
+            <!--end::Tab content-->
+
+
+            <!--end::Modal - Two-factor authentication-->
+            <!--end::Modals-->
+        </div>
+        <!--end::Container-->
+    </div>
+    <!--end::Post-->
+</div>
+
+
+<!-- <div class="modal fade" id="kt_modal_add_customer" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered mw-650px">
+        <div class="modal-content">
+            <form class="form" action="#" id="kt_modal_add_customer_form"
+                data-kt-redirect="../../demo1/dist/apps/customers/list.html">
+                <div class="modal-header" id="kt_modal_add_customer_header">
+                    <h2 class="fw-bolder">Reason for Deactivation</h2>
+                    <div id="kt_modal_add_customer_close" class="btn btn-icon btn-sm btn-active-icon-primary">
+                        <span class="svg-icon svg-icon-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1"
+                                    transform="rotate(-45 6 17.3137)" fill="currentColor" />
+                                <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)"
+                                    fill="currentColor" />
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <div class="modal-body py-10 px-lg-17">
+                    <div class="scroll-y me-n7 pe-7">
+                        <label class="fs-6 fw-bold mb-2">
+                            <span class="required">Reason</span>
+                            <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip"
+                                title="Reason why student result is blocked"></i>
+                        </label>
+
+                        <select #reas id="reason-select" name="reason" [value]="topreason"
+                            (change)="changeReason(reas.value)" data-control="select2" data-placeholder="Select ..."
+                            class="form-select form-select-solid fw-bolder">
+                            <option selected disabled>Select ...</option>
+                            <option value="GRADUATED">Graduated</option>
+                            <option value="EXPELLED">Expelled</option>
+                            <option value="LEFT">Left</option>
+                            <option>Others</option>
+                        </select>
+
+                        <div class="fv-row mt-5 mb-3">
+                        
+                            <label class="fs-6 fw-bold mb-2">
+                                <span class="required"> if Others, State reason</span>
+                                <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip"
+                                    title="Reason why student result is blocked"></i>
+                            </label>
+                    
+                            <textarea #sa class="form-control form-control-solid" rows="3" name="target_details-reason"
+                                placeholder="Type Reason" spellcheck="false" [value]="topreason"
+                                (change)="changeReason(sa.value)"></textarea>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="modal-footer flex-center">
+        
+                    <button type="reset" id="kt_modal_add_customer_cancel" class="btn btn-light me-3">Discard</button>
+                
+                    <button (click)="deactivateAccount(student.id)" data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer"
+                        class="btn btn-info">
+                        <span class="indicator-label">Submit</span>
+                        <span class="indicator-progress">Please wait...
+                            <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                    </button>
+            
+                </div>
+        
+            </form>
+
+        </div>
+    </div>
+</div> -->
+
+
+
+
+
+
+
+<div class="modal fade" id="kt_modal_add_graduate" tabindex="-1" aria-hidden="true">
+    <!--begin::Modal dialog-->
+    <div class="modal-dialog modal-dialog-centered mw-650px">
+        <!--begin::Modal content-->
+        <div class="modal-content">
+            <!--begin::Form-->
+            <form class="form" action="#" id="kt_modal_add_graduate_form"
+                data-kt-redirect="../../demo1/dist/apps/customers/list.html">
+                <!--begin::Modal header-->
+                <div class="modal-header" id="kt_modal_add_graduate_header">
+                    <!--begin::Modal title-->
+                    <h2 class="fw-bolder">Reason for Deactivation</h2>
+                    <!--end::Modal title-->
+                    <!--begin::Close-->
+                    <div id="kt_modal_add_graduate_close"
+                        class="btn btn-icon btn-sm btn-active-icon-primary">
+                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                        <span class="svg-icon svg-icon-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none">
+                                <rect opacity="0.5" x="6" y="17.3137" width="16" height="2"
+                                    rx="1" transform="rotate(-45 6 17.3137)"
+                                    fill="currentColor" />
+                                <rect x="7.41422" y="6" width="16" height="2" rx="1"
+                                    transform="rotate(45 7.41422 6)" fill="currentColor" />
+                            </svg>
+                        </span>
+                        <!--end::Svg Icon-->
+                    </div>
+                    <!--end::Close-->
+                </div>
+                <!--end::Modal header-->
+                <!--begin::Modal body-->
+                <div class="modal-body py-10 px-lg-17">
+                    <!--begin::Scroll-->
+                    <div class="scroll-y me-n7 pe-7" id="kt_modal_add_graduate_scroll"
+                        data-kt-scroll="true"
+                        data-kt-scroll-activate="{default: false, lg: true}"
+                        data-kt-scroll-max-height="auto"
+                        data-kt-scroll-dependencies="#kt_modal_add_graduate_header"
+                        data-kt-scroll-wrappers="#kt_modal_add_graduate_scroll"
+                        data-kt-scroll-offset="300px">
+
+                        <!--begin::Input group-->
+                        <div class="row g-9 mb-7">
+                            <!--begin::Col-->
+                            <div class="col-md-12 fv-row">
+                                <!--begin::Label-->
+                                <label class="fs-5 fw-bold form-label mb-2">Reason</label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <select #reas id="reason-select" name="reason" [value]="topreason"
+                                (change)="changeReason(reas.value)" data-control="select2" data-placeholder="Select ..."
+                                class="form-select form-select-solid fw-bolder">
+                                <option selected disabled>Select ...</option>
+                                <option value="GRADUATED">Graduated</option>
+                                <option value="EXPELLED">Expelled</option>
+                                <option value="LEFT">Left</option>
+                                <option>Others</option>
+                            </select>
+                                <!--end::Input-->
+                            </div>
+                            <!--end::Col-->
+
+                        </div>
+
+
+                        
+
+                        
+
+
+
+                        <!--end::Billing toggle-->
+                        <!--begin::Billing form-->
+                        
+
+                    </div>
+                    <!--end::Scroll-->
+                </div>
+                <!--end::Modal body-->
+                <!--begin::Modal footer-->
+                <div class="modal-footer flex-center">
+                    <!--begin::Button-->
+                    <button type="reset" id="kt_modal_add_graduate_cancel" data-bs-dismiss="modal"
+                        class="btn btn-light me-3">Discard</button>
+                    <!--end::Button-->
+                    <!--begin::Button-->
+                    <button (click)="deactivateAccount(student.id)" id="kt_modal_add_graduate_submit" data-bs-dismiss="modal"
+                        class="btn btn-info">
+                        <span class="indicator-label">Submit</span>
+                        <span class="indicator-progress">Please wait...
+                            <span
+                                class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                    </button>
+                    <!--end::Button-->
+                </div>
+                <!--end::Modal footer-->
+            </form>
+            <!--end::Form-->
+        </div>
+    </div>
+</div>

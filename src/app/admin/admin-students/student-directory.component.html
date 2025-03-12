@@ -1,0 +1,774 @@
+<div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+    <!--begin::Header-->
+
+    <!--end::Header-->
+    <!--begin::Content-->
+    <div style="margin-top: 3%;">
+        <!--begin::Post-->
+        <div class="post d-flex flex-column-fluid" id="kt_post">
+            <!--begin::Container-->
+            <div id="kt_content_container" class="container-xxl">
+                <!--begin::Tables Widget 9-->
+                <div class="card mb-5  mb-xl-8">
+                    <!--begin::Header-->
+                    <div class="card-header border-0 pt-5">
+                        <h3 class="card-title align-items-start flex-column">
+                            <span class="card-label text-uppercase fw-bold fs-3 mb-1">Select the Fields you
+                                want to View</span>
+
+
+                        </h3>
+
+                    </div>
+                    <!--end::Header-->
+                    <div class="row d-flex">
+                        <!--begin::Body-->
+                        <div class="card-body d-flex col-6 py-3">
+
+                            <!--begin::Table container-->
+                            <div class="table-responsive  ">
+
+                                <!--begin::Table-->
+                                <table class="table table-row-dashed col-6 table-row-gray-300 align-middle gs-0 gy-4">
+                                    <!--begin::Table head-->
+                                    <thead>
+                                        <tr class="fw-bold text-muted">
+                                            <th class="w-25px">
+                                                <!-- <div
+                                                    class="form-check form-check-sm form-check-custom form-check-solid">
+                                                    <input class="form-check-input" type="checkbox" value="1"
+                                                        data-kt-check="true" data-kt-check-target=".widget-9-check" />
+                                                </div> -->
+                                            </th>
+                                            <th class="min-w-200px">Field</th>
+                                            <th class="min-w-150px">Filter Value</th>
+
+                                        </tr>
+                                    </thead>
+                                    <!--end::Table head-->
+
+                                    <!--begin::Table body-->
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div
+                                                    class="form-check form-check-sm form-check-custom form-check-solid">
+                                                    <input #sur class="form-check-input widget-9-check" type="checkbox"
+                                                    [checked]="sur.checked" (change)="setDir('surname', sur.checked)" />
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="d-flex align-items-center">
+
+                                                    <div class="d-flex justify-content-start flex-column">
+                                                        <a
+                                                            class="text-dark fw-bold text-hover-primary fs-6">Surname</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <input #surt type="text" (keyup)="filtercolumn('surname', surt.value)" name="mysurt" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0">
+                                            </td>
+
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <div
+                                                    class="form-check form-check-sm form-check-custom form-check-solid">
+                                                    <input #fir class="form-check-input widget-9-check" type="checkbox"
+                                                    [checked]="fir.checked" (change)="setDir('firstName', fir.checked)" />
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="d-flex align-items-center">
+
+                                                    <div class="d-flex justify-content-start flex-column">
+                                                        <a
+                                                            class="text-dark fw-bold text-hover-primary fs-6">Firstname</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <input #firs type="text" (keyup)="filtercolumn('firstName', firs.value)" name="myfirs"
+                                                    class="form-control form-control-lg form-control-solid mb-3 mb-lg-0">
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div
+                                                    class="form-check form-check-sm form-check-custom form-check-solid">
+                                                    <input #mid class="form-check-input widget-9-check" type="checkbox"
+                                                    [checked]="mid.checked" (change)="setDir('middleName', mid.checked)" />
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="d-flex align-items-center">
+
+                                                    <div class="d-flex justify-content-start flex-column">
+                                                        <a class="text-dark fw-bold text-hover-primary fs-6">Middlename</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <input #midd type="text" (keyup)="filtercolumn('middleName', midd.value)" name="mymidd"
+                                                    class="form-control form-control-lg form-control-solid mb-3 mb-lg-0">
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div
+                                                    class="form-check form-check-sm form-check-custom form-check-solid">
+                                                    <input #cla class="form-check-input widget-9-check" type="checkbox"
+                                                    [checked]="cla.checked" (change)="setDir('class', cla.checked)" />
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="d-flex align-items-center">
+
+                                                    <div class="d-flex justify-content-start flex-column">
+                                                        <a
+                                                            class="text-dark fw-bold text-hover-primary fs-6">Class</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <input #clas type="text" (keyup)="filtercolumn('class', clas.value)" name="myclas"
+                                                    class="form-control form-control-lg form-control-solid mb-3 mb-lg-0">
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div
+                                                    class="form-check form-check-sm form-check-custom form-check-solid">
+                                                    <input #sta class="form-check-input widget-9-check" type="checkbox"
+                                                    [checked]="sta.checked" (change)="setDir('status', sta.checked)" />
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="d-flex align-items-center">
+
+                                                    <div class="d-flex justify-content-start flex-column">
+                                                        <a
+                                                            class="text-dark fw-bold text-hover-primary fs-6">Status</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <input #stat type="text" (keyup)="filtercolumn('status', stat.value)" name="mystat"
+                                                    class="form-control form-control-lg form-control-solid mb-3 mb-lg-0">
+                                            </td>
+
+                                        </tr>
+
+
+                                        <tr>
+                                            <td>
+                                                <div
+                                                    class="form-check form-check-sm form-check-custom form-check-solid">
+                                                    <input #soo class="form-check-input widget-9-check" type="checkbox"
+                                                    [checked]="soo.checked" (change)="setDir('stateofOrigin', soo.checked)" />
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="d-flex align-items-center">
+
+                                                    <div class="d-flex justify-content-start flex-column">
+                                                        <a
+                                                            class="text-dark fw-bold text-hover-primary fs-6">State
+                                                            of Origin</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <input #stor type="text" (keyup)="filtercolumn('stateofOrigin', stor.value)" name="mystor"
+                                                    class="form-control form-control-lg form-control-solid mb-3 mb-lg-0">
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div
+                                                    class="form-check form-check-sm form-check-custom form-check-solid">
+                                                    <input #lga class="form-check-input widget-9-check" type="checkbox"
+                                                    [checked]="lga.checked" (change)="setDir('lga', lga.checked)" />
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="d-flex align-items-center">
+
+                                                    <div class="d-flex justify-content-start flex-column">
+                                                        <a
+                                                            class="text-dark fw-bold text-hover-primary fs-6">LGA</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <input #loga type="text" (keyup)="filtercolumn('lga', loga.value)" name="myloga"
+                                                    class="form-control form-control-lg form-control-solid mb-3 mb-lg-0">
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div
+                                                    class="form-check form-check-sm form-check-custom form-check-solid">
+                                                    <input #sex class="form-check-input widget-9-check" type="checkbox"
+                                                    [checked]="sex.checked" (change)="setDir('sex', sex.checked)" />
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="d-flex align-items-center">
+
+                                                    <div class="d-flex justify-content-start flex-column">
+                                                        <a
+                                                            class="text-dark fw-bold text-hover-primary fs-6">Sex</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <input #gend type="text" (keyup)="filtercolumn('sex', gend.value)" name="mygend"
+                                                    class="form-control form-control-lg form-control-solid mb-3 mb-lg-0">
+                                            </td>
+
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <div
+                                                    class="form-check form-check-sm form-check-custom form-check-solid">
+                                                    <input #bir class="form-check-input widget-9-check" type="checkbox"
+                                                    [checked]="bir.checked" (change)="setDir('birthDate', bir.checked)" />
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="d-flex align-items-center">
+
+                                                    <div class="d-flex justify-content-start flex-column">
+                                                        <a
+                                                            class="text-dark fw-bold text-hover-primary fs-6">Birthdate</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <input #birt type="text" (keyup)="filtercolumn('birthDate', birt.value)" name="mybirt"
+                                                    class="form-control form-control-lg form-control-solid mb-3 mb-lg-0">
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div
+                                                    class="form-check form-check-sm form-check-custom form-check-solid">
+                                                    <input #nat class="form-check-input widget-9-check" type="checkbox"
+                                                    [checked]="nat.checked" (change)="setDir('nationality', nat.checked)" />
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="d-flex align-items-center">
+
+                                                    <div class="d-flex justify-content-start flex-column">
+                                                        <a
+                                                            class="text-dark fw-bold text-hover-primary fs-6">Nationality</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <input #natl type="text" (keyup)="filtercolumn('nationality', natl.value)" name="mynatl"
+                                                    class="form-control form-control-lg form-control-solid mb-3 mb-lg-0">
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div
+                                                    class="form-check form-check-sm form-check-custom form-check-solid">
+                                                    <input #pad class="form-check-input widget-9-check" type="checkbox"
+                                                    [checked]="pad.checked" (change)="setDir('parentAddress', pad.checked)" />
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="d-flex align-items-center">
+
+                                                    <div class="d-flex justify-content-start flex-column">
+                                                        <a
+                                                            class="text-dark fw-bold text-hover-primary fs-6">Home
+                                                            Address</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <input #natl type="text" (keyup)="filtercolumn('nationality', natl.value)" name="mynatl"
+                                                    class="form-control form-control-lg form-control-solid mb-3 mb-lg-0">
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div
+                                                    class="form-check form-check-sm form-check-custom form-check-solid">
+                                                    <input #gry class="form-check-input widget-9-check" type="checkbox"
+                                                    [checked]="gry.checked" (change)="setDir('graduatedYear', gry.checked)" />
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="d-flex align-items-center">
+
+                                                    <div class="d-flex justify-content-start flex-column">
+                                                        <a class="text-dark fw-bold text-hover-primary fs-6">Graduated
+                                                            Year</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <input #gray type="text" (keyup)="filtercolumn('graduatedYear', gray.value)" name="mygray"
+                                                    class="form-control form-control-lg form-control-solid mb-3 mb-lg-0">
+                                            </td>
+
+                                        </tr>
+
+
+
+                                    </tbody>
+                                    <!--end::Table body-->
+                                </table>
+                                <!--end::Table-->
+
+                            </div>
+
+                            <!--end::Table container-->
+
+                        </div>
+                        <!--begin::Body-->
+
+                        <!--begin::Body-->
+                        <div class="card-body d-flex col-6 py-3">
+
+                            <!--begin::Table container-->
+                            <div class="table-responsive  ">
+
+                                <!--begin::Table-->
+                                <table class="table table-row-dashed col-6 table-row-gray-300 align-middle gs-0 gy-4">
+                                    <!--begin::Table head-->
+                                    <thead>
+                                        <tr class="fw-bold text-muted">
+                                            <th class="w-25px">
+                                                <!-- <div
+                                                    class="form-check form-check-sm form-check-custom form-check-solid">
+                                                    <input class="form-check-input" type="checkbox" value="1"
+                                                        data-kt-check="true" data-kt-check-target=".widget-9-check" />
+                                                </div> -->
+                                            </th>
+                                            <th class="min-w-200px">Field</th>
+                                            <th class="min-w-150px">Filter Value</th>
+
+                                        </tr>
+                                    </thead>
+                                    <!--end::Table head-->
+
+                                    <!--begin::Table body-->
+                                    <tbody>
+
+                                        <tr>
+                                            <td>
+                                                <div
+                                                    class="form-check form-check-sm form-check-custom form-check-solid">
+                                                    <input #adn class="form-check-input widget-9-check" type="checkbox"
+                                                    [checked]="adn.checked" (change)="setDir('admissionNo', adn.checked)" />
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="d-flex align-items-center">
+
+                                                    <div class="d-flex justify-content-start flex-column">
+                                                        <a
+                                                            class="text-dark fw-bold text-hover-primary fs-6">Admission
+                                                            Number</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <input #adsn type="text" (keyup)="filtercolumn('admissionNo', adsn.value)" name="myadsn"
+                                                    class="form-control form-control-lg form-control-solid mb-3 mb-lg-0">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div
+                                                    class="form-check form-check-sm form-check-custom form-check-solid">
+                                                    <input #dad class="form-check-input widget-9-check" type="checkbox"
+                                                    [checked]="dad.checked" (change)="setDir('dateAdmitted', dad.checked)" />
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="d-flex align-items-center">
+
+                                                    <div class="d-flex justify-content-start flex-column">
+                                                        <a
+                                                            class="text-dark fw-bold text-hover-primary fs-6">Date
+                                                            Admitted</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <input #dadt type="text" (keyup)="filtercolumn('admissionNo', dadt.value)" name="mydadt"
+                                                    class="form-control form-control-lg form-control-solid mb-3 mb-lg-0">
+                                            </td>
+
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <div
+                                                    class="form-check form-check-sm form-check-custom form-check-solid">
+                                                    <input #fan class="form-check-input widget-9-check" type="checkbox"
+                                                    [checked]="fan.checked" (change)="setDir('fatherName', fan.checked)" />
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="d-flex align-items-center">
+
+                                                    <div class="d-flex justify-content-start flex-column">
+                                                        <a
+                                                            class="text-dark fw-bold text-hover-primary fs-6">Father's
+                                                            Name</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <input #fatr type="text" (keyup)="filtercolumn('fatherName', fatr.value)" name="myfatr"
+                                                    class="form-control form-control-lg form-control-solid mb-3 mb-lg-0">
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div
+                                                    class="form-check form-check-sm form-check-custom form-check-solid">
+                                                    <input #fph class="form-check-input widget-9-check" type="checkbox"
+                                                    [checked]="fph.checked" (change)="setDir('fatherPhone', fph.checked)" />
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="d-flex align-items-center">
+
+                                                    <div class="d-flex justify-content-start flex-column">
+                                                        <a
+                                                            class="text-dark fw-bold text-hover-primary fs-6">Father's
+                                                            Phone Number</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <input #fatp type="text" (keyup)="filtercolumn('fatherPhone', fatp.value)" name="myfatp"
+                                                    class="form-control form-control-lg form-control-solid mb-3 mb-lg-0">
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div
+                                                    class="form-check form-check-sm form-check-custom form-check-solid">
+                                                    <input #foc class="form-check-input widget-9-check" type="checkbox"
+                                                    [checked]="foc.checked" (change)="setDir('fatherOccp', foc.checked)" />
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="d-flex align-items-center">
+
+                                                    <div class="d-flex justify-content-start flex-column">
+                                                        <a
+                                                            class="text-dark fw-bold text-hover-primary fs-6">Father's
+                                                            Occupation</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <input #fato type="text" (keyup)="filtercolumn('fatherOccp', fato.value)" name="myfato"
+                                                    class="form-control form-control-lg form-control-solid mb-3 mb-lg-0">
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div
+                                                    class="form-check form-check-sm form-check-custom form-check-solid">
+                                                    <input #mot class="form-check-input widget-9-check" type="checkbox"
+                                                    [checked]="mot.checked" (change)="setDir('motherName', mot.checked)" />
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="d-flex align-items-center">
+
+                                                    <div class="d-flex justify-content-start flex-column">
+                                                        <a
+                                                            class="text-dark fw-bold text-hover-primary fs-6">Mother's
+                                                            Name</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <input #motn type="text" (keyup)="filtercolumn('motherName', motn.value)" name="mymotn"
+                                                    class="form-control form-control-lg form-control-solid mb-3 mb-lg-0">
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div
+                                                    class="form-check form-check-sm form-check-custom form-check-solid">
+                                                    <input #mop class="form-check-input widget-9-check" type="checkbox"
+                                                    [checked]="mop.checked" (change)="setDir('motherPhone', mop.checked)" />
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="d-flex align-items-center">
+
+                                                    <div class="d-flex justify-content-start flex-column">
+                                                        <a
+                                                            class="text-dark fw-bold text-hover-primary fs-6">Mother's
+                                                            Phone Number</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <input #motp type="text" (keyup)="filtercolumn('motherPhone', motp.value)" name="mymotp"
+                                                    class="form-control form-control-lg form-control-solid mb-3 mb-lg-0">
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div
+                                                    class="form-check form-check-sm form-check-custom form-check-solid">
+                                                    <input #moc class="form-check-input widget-9-check" type="checkbox"
+                                                    [checked]="moc.checked" (change)="setDir('motherOccp', moc.checked)" />
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="d-flex align-items-center">
+
+                                                    <div class="d-flex justify-content-start flex-column">
+                                                        <a
+                                                            class="text-dark fw-bold text-hover-primary fs-6">Mother's
+                                                            Occupation</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <input #moto type="text" (keyup)="filtercolumn('motherOccp', moto.value)" name="mymoto"
+                                                    class="form-control form-control-lg form-control-solid mb-3 mb-lg-0">
+                                            </td>
+                                        <tr>
+                                            <td>
+                                                <div
+                                                    class="form-check form-check-sm form-check-custom form-check-solid">
+                                                    <input #gun class="form-check-input widget-9-check" type="checkbox"
+                                                    [checked]="gun.checked" (change)="setDir('guardianName', gun.checked)" />
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="d-flex align-items-center">
+
+                                                    <div class="d-flex justify-content-start flex-column">
+                                                        <a
+                                                            class="text-dark fw-bold text-hover-primary fs-6">Guardian's
+                                                            Name</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <input #gunn type="text" (keyup)="filtercolumn('guardianName', gunn.value)" name="mygunn"
+                                                    class="form-control form-control-lg form-control-solid mb-3 mb-lg-0">
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div
+                                                    class="form-check form-check-sm form-check-custom form-check-solid">
+                                                    <input #gup class="form-check-input widget-9-check" type="checkbox"
+                                                    [checked]="gup.checked" (change)="setDir('guardianPhone', gup.checked)" />
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="d-flex align-items-center">
+
+                                                    <div class="d-flex justify-content-start flex-column">
+                                                        <a
+                                                            class="text-dark fw-bold text-hover-primary fs-6">Guardian's
+                                                            Phone Number</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <input #gunp type="text" (keyup)="filtercolumn('guardianPhone', gunp.value)" name="mygunp"
+                                                    class="form-control form-control-lg form-control-solid mb-3 mb-lg-0">
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div
+                                                    class="form-check form-check-sm form-check-custom form-check-solid">
+                                                    <input #gua class="form-check-input widget-9-check" type="checkbox"
+                                                    [checked]="gua.checked" (change)="setDir('guardianAddress', gua.checked)" />
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="d-flex align-items-center">
+
+                                                    <div class="d-flex justify-content-start flex-column">
+                                                        <a
+                                                            class="text-dark fw-bold text-hover-primary fs-6">Guardian's
+                                                            Address</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <input #guad type="text" (keyup)="filtercolumn('guardianAddress', guad.value)" name="myguad"
+                                                    class="form-control form-control-lg form-control-solid mb-3 mb-lg-0">
+                                            </td>
+
+                                        </tr>
+
+
+
+                                    </tbody>
+                                    <!--end::Table body-->
+                                </table>
+                                <!--end::Table-->
+                                <!--begin::Action-->
+                                <a (click)="getAllStudents()" class="btn btn-primary col-8 px-6 w-100 d-block  text-nowrap" align="center"
+                                    data-bs-toggle="modal" data-bs-target="#kt_modal_new_card">
+                                    Show Students </a>
+                                <!--end::Action-->
+                            </div>
+
+                            <!--end::Table container-->
+
+                        </div>
+                        <!--begin::Body-->
+                    </div>
+                    
+                </div>
+                <!-- <div #divTable class="card-body pt-0" style=" overflow-x: auto;">
+                    <table #myTable class="table align-middle table-row-dashed fs-6 gy-5" id="kt_customers_table">
+                        <thead>
+                            <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+                                <th>true love</th>
+                            </tr>
+                        </thead>
+                        <tbody #myTbody>
+                            <tr>
+                                <td>
+                                    Love is true
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div> -->
+
+                <br>
+                <br>
+
+                <div *ngIf="dynamicColumn.length">
+                    <div style="text-align: end;">
+                        <button class="btn btn-primary" (click)="exportObj(myTable)">Download</button>
+                    </div>
+    
+                    <div class="card">
+            <div  #divTable style="overflow-x: auto;">
+                <table #myTable cellPadding="10" class="table table-responsive table-bordered table-hover table-striped fs-6 " id="kt_customers_table">
+                    <thead>
+                        <tr class="fw-bolder fs-5 bg-primary">
+                            <th style="padding-left: 10px;">S/N</th>
+                            <th *ngFor="let h of dynamicColumn">
+                                {{h.header}}
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody #myTbody style="padding-left: 10px;">
+                        <tr *ngFor="let row of arrayRows; index as u" style="border: 1px solid rgb(216, 216, 216); ">
+                            <td style="padding-left: 10px;">{{u + 1}}</td> 
+                            <td *ngFor="let h of dynamicColumn" style="padding-left: 10px;">
+                                {{row[h.columnDef]}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div> 
+                </div>
+                <!--end::Tables Widget 9-->
+
+                <!--end::Modals-->
+            </div>
+            <!--end::Container-->
+        </div>
+        <!--end::Post-->
+
+    
+    </div>
+
+
+    
+
+    
+    
+    <!--end::Content-->
+    <!--begin::Footer-->
+    
+    <!--end::Footer-->
+</div>
+<!--end::Wrapper-->
+

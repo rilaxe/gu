@@ -1,0 +1,517 @@
+<div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+    
+    <!--end::Header-->
+    <!--begin::Content-->
+    <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+        <!--begin::Post-->
+        <div class="post d-flex flex-column-fluid" id="kt_post">
+            <!--begin::Container-->
+            <div id="kt_content_container" class="container-xxl">
+
+                <div class="card mb-5 mb-xxl-10">
+                    <!--begin::Card header-->
+                    <div class="card-header">
+                        <!--begin::Heading-->
+                        <div class="card-title">
+                            <h3> Comment Entry Setup</h3>
+                            <div class="card-title">
+                                <div class="col-12">
+                                    <select #scal [value]="classlevel" name="levelcategory" (change)="changeGradeScale(scal.value)" data-control="select"
+                                        data-placeholder="Select Class"
+                                        class="form-select form-select-solid fw-bolder">
+                                        <option value="">Select Category</option>
+                                        <option value="SENIOR">Senior School</option>
+                                        <option value="JUNIOR">Junior School</option>
+                                        <option value="PRIMARY">Primary School</option>
+                                        <option value="NURSERY">Nursery School</option>
+                                    </select>
+                    
+                                    <!--end::Input-->
+                                </div>
+                            </div>
+                        </div>
+                        <!--end::Heading-->
+                        <!--begin::Toolbar-->
+                        <div class="card-toolbar">
+                            <div class="my-1 me-4">
+                                <!--begin::Select-->
+                                <select #cmt [(ngModel)]="commentType" name="comtype" class="form-select form-select-sm form-select-solid w-125px"
+                                    data-control="select2" data-placeholder="Select Hours"
+                                    data-hide-search="true">
+                                    <option value="formTeacherComment">Form Teacher</option>
+                                    <option value="hostelPortalComment">Hostel Supervisor</option>
+                                    <option value="principalComment">Principal</option>
+
+                                </select>
+                                <!--end::Select-->
+                            </div>
+                            <a href="#" class="btn btn-sm btn-primary my-1" data-bs-toggle="modal"
+                                data-bs-target="#kt_modal_new_grade">Add New Comment Setup</a>
+                        </div>
+                        <!--end::Toolbar-->
+                    </div>
+                    <!--end::Card header-->
+                    <!--begin::Card body-->
+                    <div class="card-body p-0">
+                        <!--begin::Table wrapper-->
+                        <div class="table-responsive">
+                            <!--begin::Table-->
+                            <table
+                                class="table table-flush align-middle table-row-bordered table-row-solid gy-4 gs-9">
+                                <!--begin::Thead-->
+                                <thead class="border-gray-200 fs-5 fw-bold bg-lighten">
+                                    <tr>
+
+                                        <th class="min-w-200px">Lower Limit</th>
+                                        <th class="min-w-200px">Upper Limit</th>
+
+                                        <th class="min-w-250px">Comment</th>
+                                        <th class="min-w-100px">Action</th>
+                                    </tr>
+                                </thead>
+                                <!--end::Thead-->
+                                <!--begin::Tbody-->
+                                <tbody class="fw-6 fw-bold text-gray-600">
+                                    <tr *ngFor="let item of scaleList">
+                                        <td>
+                                            <a class="text-hover-primary text-gray-600">{{item.begLimit}}</a>
+                                        </td>
+                                        <td>
+                                            <a class="text-hover-primary text-gray-600">{{item.endLimit}}</a>
+                                        </td>
+                                        <td>{{item[commentType]}}</td>
+                                        
+                                        
+                                        <td>
+                                            <div class="d-flex align-items-center py-2">
+                                                <button (click)="saveEdit(item.id)" class="btn btn-sm btn-light-primary btn-active-primary me-3" data-bs-toggle="modal" data-bs-target="#kt_modal_new_card">Edit</button>
+                                                <button (click)="confirmCommentDelete(item.id)" type="reset" class="btn btn-sm btn-light-danger btn-active-danger me-3">Delete</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    
+                                </tbody>
+
+
+                                <!--end::Tbody-->
+                            </table>
+                            <!--end::Table-->
+                        </div>
+                        <!--end::Table wrapper-->
+                    </div>
+                    <!--end::Card body-->
+                    <div class="card-footer d-flex justify-content-end py-6 px-9">
+
+                        <button type="submit" class="btn btn-info me-3" data-bs-toggle="modal"
+                            data-bs-target="#kt_modal_add_customer">Publish Comments </button>
+                    </div>
+                </div>
+                <!--end::Login sessions-->
+
+                <!--begin::Modal - New Card-->
+                <div class="modal fade" id="kt_modal_new_card" tabindex="-1" aria-hidden="true">
+                    <!--begin::Modal dialog-->
+                    <div class="modal-dialog modal-dialog-centered mw-650px">
+                        <!--begin::Modal content-->
+                        <div class="modal-content">
+                            <!--begin::Modal header-->
+                            <div class="modal-header">
+                                <!--begin::Modal title-->
+                                <h2>Edit Comment Entry</h2>
+                                <!--end::Modal title-->
+                                <!--begin::Close-->
+                                <div class="btn btn-sm btn-icon btn-active-color-primary"
+                                    data-bs-dismiss="modal">
+                                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                                    <span class="svg-icon svg-icon-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none">
+                                            <rect opacity="0.5" x="6" y="17.3137" width="16" height="2"
+                                                rx="1" transform="rotate(-45 6 17.3137)"
+                                                fill="currentColor" />
+                                            <rect x="7.41422" y="6" width="16" height="2" rx="1"
+                                                transform="rotate(45 7.41422 6)" fill="currentColor" />
+                                        </svg>
+                                    </span>
+                                    <!--end::Svg Icon-->
+                                </div>
+                                <!--end::Close-->
+                            </div>
+                            <!--end::Modal header-->
+                            <!--begin::Modal body-->
+                            <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
+                                <!--begin::Form-->
+                                <form id="kt_modal_new_card_form" class="form" (ngSubmit)="editGradeScale()">
+                                    <!--begin::Input group-->
+                                    <div class="d-flex flex-column mb-7 fv-row">
+                                        <!--begin::Label-->
+                                        <label
+                                            class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
+                                            <span class="required">Lower Score Limit</span>
+                                        </label>
+                                        <!--end::Label-->
+                                        <input type="text" class="form-control form-control-solid" name="lowercasedit"
+                                        [(ngModel)]="lowerlimt" />
+                                    </div>
+                                    <!--end::Input group-->
+                                    <!--begin::Input group-->
+                                    <div class="d-flex flex-column mb-7 fv-row">
+                                        <!--begin::Label-->
+                                        <label
+                                            class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
+                                            <span class="required">Upper Score Limit</span>
+
+                                        </label>
+                                        <!--end::Label-->
+                                        <input type="text" class="form-control form-control-solid"
+                                        name="uppercasedit" [(ngModel)]="upperlimit"/>
+                                    </div>
+                                    <!--end::Input group-->
+                                    <!--begin::Input group-->
+                                    <div class="d-flex flex-column mb-7 fv-row">
+                                        <!--begin::Label-->
+                                        <label
+                                            class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
+                                            <span class="required">Form Teacher's Comment</span>
+
+                                        </label>
+                                        <!--end::Label-->
+                                        <input type="text" class="form-control form-control-solid"
+                                        name="formTeacheredit" [(ngModel)]="formTeacherComment"/>
+                                    </div>
+                                    <!--end::Input group-->
+                                    <!--begin::Input group-->
+                                    <div class="d-flex flex-column mb-7 fv-row">
+                                        <!--begin::Label-->
+                                        <label
+                                            class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
+                                            <span class="required">Hostel Supervisor's Comment</span>
+
+                                        </label>
+                                        <!--end::Label-->
+                                        <input type="text" class="form-control form-control-solid"
+                                        name="hostelPortaledit" [(ngModel)]="hostelPortalComment" />
+                                    </div>
+                                    <!--end::Input group-->
+                                    <!--begin::Input group-->
+                                    <div class="d-flex flex-column mb-7 fv-row">
+                                        <!--begin::Label-->
+                                        <label
+                                            class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
+                                            <span class="required">Principal's Comment</span>
+
+                                        </label>
+                                        <!--end::Label-->
+                                        <input type="text" class="form-control form-control-solid"
+                                        name="principaledit" [(ngModel)]="principalComment"/>
+                                    </div>
+                                    <!--end::Input group-->
+                                    <!--begin::Actions-->
+                                    <div class="text-center pt-15">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <button type="reset" id="kt_modal_new_card_cancel"
+                                                    class="btn btn-light me-3 w-100">Discard</button>
+                                            </div>
+                                            <div class="col-6">
+                                                <button type="submit" id="kt_modal_new_card_submit"
+                                                    class="btn btn-primary w-100">
+                                                    <span class="indicator-label">Submit</span>
+                                                    <span class="indicator-progress d-none">Please wait...
+                                                        <span
+                                                            class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--end::Actions-->
+                                </form>
+                                <!--end::Form-->
+                            </div>
+                            <!--end::Modal body-->
+                        </div>
+                        <!--end::Modal content-->
+                    </div>
+                    <!--end::Modal dialog-->
+                </div>
+                <!--end::Modal - New Card-->
+                <!--begin::Modal - New Card-->
+                <div class="modal fade" id="kt_modal_new_grade" tabindex="-1" aria-hidden="true">
+                    <!--begin::Modal dialog-->
+                    <div class="modal-dialog modal-dialog-centered mw-650px">
+                        <!--begin::Modal content-->
+                        <div class="modal-content">
+                            <!--begin::Modal header-->
+                            <div class="modal-header">
+                                <!--begin::Modal title-->
+                                <h2>New Comment Entry Setup</h2>
+                                <!--end::Modal title-->
+                                <!--begin::Close-->
+                                <div class="btn btn-sm btn-icon btn-active-color-primary"
+                                    data-bs-dismiss="modal">
+                                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                                    <span class="svg-icon svg-icon-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none">
+                                            <rect opacity="0.5" x="6" y="17.3137" width="16" height="2"
+                                                rx="1" transform="rotate(-45 6 17.3137)"
+                                                fill="currentColor" />
+                                            <rect x="7.41422" y="6" width="16" height="2" rx="1"
+                                                transform="rotate(45 7.41422 6)" fill="currentColor" />
+                                        </svg>
+                                    </span>
+                                    <!--end::Svg Icon-->
+                                </div>
+                                <!--end::Close-->
+                            </div>
+                            <!--end::Modal header-->
+                            <!--begin::Modal body-->
+                            <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
+                                <!--begin::Form-->
+                                <form id="kt_modal_new_grade_form" class="form"  (ngSubmit)="createAutoComment()">
+                                    <!--begin::Input group-->
+                                    <div class="d-flex flex-column mb-7 fv-row">
+                                        <!--begin::Label-->
+                                        <label
+                                            class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
+                                            <span class="required">Lower Score Limit</span>
+
+                                        </label>
+                                        <!--end::Label-->
+                                        <input type="text" class="form-control form-control-solid"
+                                        name="lowerscore" [(ngModel)]="lowerlimt"/>
+                                    </div>
+                                    <!--end::Input group-->
+                                    <!--begin::Input group-->
+                                    <div class="d-flex flex-column mb-7 fv-row">
+                                        <!--begin::Label-->
+                                        <label
+                                            class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
+                                            <span class="required">Upper Score Limit</span>
+
+                                        </label>
+                                        <!--end::Label-->
+                                        <input type="text" class="form-control form-control-solid"
+                                        name="upperscore" [(ngModel)]="upperlimit"/>
+                                    </div>
+                                    <!--end::Input group-->
+                                    <!--begin::Input group-->
+                                    <div class="d-flex flex-column mb-7 fv-row">
+                                        <!--begin::Label-->
+                                        <label
+                                            class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
+                                            <span class="required">Form Teacher's Comment</span>
+
+                                        </label>
+                                        <!--end::Label-->
+                                        <input type="text" class="form-control form-control-solid"
+                                         name="formTeacher" [(ngModel)]="formTeacherComment"/>
+                                    </div>
+                                    <!--end::Input group-->
+
+
+                                    <!--begin::Input group-->
+                                    <div class="d-flex flex-column mb-7 fv-row">
+                                        <!--begin::Label-->
+                                        <label
+                                            class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
+                                            <span class="required">Hostel Supervisor's Comment</span>
+
+                                        </label>
+                                        <!--end::Label-->
+                                        <input type="text" class="form-control form-control-solid"
+                                        name="hostelPortal" [(ngModel)]="hostelPortalComment" />
+                                    </div>
+                                    <!--end::Input group-->
+                                    <!--begin::Input group-->
+                                    <div class="d-flex flex-column mb-7 fv-row">
+                                        <!--begin::Label-->
+                                        <label
+                                            class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
+                                            <span class="required">Principal's Comment</span>
+
+                                        </label>
+                                        <!--end::Label-->
+                                        <input type="text" class="form-control form-control-solid"
+                                        name="principal" [(ngModel)]="principalComment"/>
+                                    </div>
+                                    <!--end::Input group-->
+                                    <!--begin::Actions-->
+                                    <div class="text-center pt-15">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <button type="reset" id="kt_modal_new_grade_cancel"
+                                                    class="btn btn-light me-3 w-100">Discard</button>
+                                            </div>
+                                            <div class="col-6">
+                                                <button type="submit" id="kt_modal_new_grade_submit"
+                                                    class="btn btn-primary w-100">
+                                                    <span class="indicator-label">Submit</span>
+                                                    <span class="indicator-progress d-none">Please wait...
+                                                        <span
+                                                            class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--end::Actions-->
+                                </form>
+                                <!--end::Form-->
+                            </div>
+                            <!--end::Modal body-->
+                        </div>
+                        <!--end::Modal content-->
+                    </div>
+                    <!--end::Modal dialog-->
+                </div>
+                <!--end::Modal - New Card-->
+                <!--end::Modals-->
+                <!--begin::Modal - Customers - Add-->
+                <div class="modal fade" id="kt_modal_add_customer" tabindex="-1" aria-hidden="true">
+                    <!--begin::Modal dialog-->
+                    <div class="modal-dialog modal-dialog-centered mw-650px">
+                        <!--begin::Modal content-->
+                        <div class="modal-content">
+                            <!--begin::Form-->
+                            <form class="form" action="#" id="kt_modal_add_customer_form" (ngSubmit)="confirmPublishAutoComment()">
+                                <!--begin::Modal header-->
+                                <div class="modal-header" id="kt_modal_add_customer_header">
+                                    <!--begin::Modal title-->
+                                    <h2 class="fw-bolder">Publish Comments</h2>
+                                    <!--end::Modal title-->
+                                    <!--begin::Close-->
+                                    <div id="kt_modal_add_customer_close"
+                                        class="btn btn-icon btn-sm btn-active-icon-primary">
+                                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                                        <span class="svg-icon svg-icon-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <rect opacity="0.5" x="6" y="17.3137" width="16" height="2"
+                                                    rx="1" transform="rotate(-45 6 17.3137)"
+                                                    fill="currentColor" />
+                                                <rect x="7.41422" y="6" width="16" height="2" rx="1"
+                                                    transform="rotate(45 7.41422 6)" fill="currentColor" />
+                                            </svg>
+                                        </span>
+                                        <!--end::Svg Icon-->
+                                    </div>
+                                    <!--end::Close-->
+                                </div>
+                                <!--end::Modal header-->
+                                <!--begin::Modal body-->
+                                <div class="modal-body py-10 px-lg-17">
+                                    <!--begin::Scroll-->
+                                    <div class="scroll-y me-n7 pe-7" id="kt_modal_add_customer_scroll"
+                                        data-kt-scroll="true"
+                                        data-kt-scroll-activate="{default: false, lg: true}"
+                                        data-kt-scroll-max-height="auto"
+                                        data-kt-scroll-dependencies="#kt_modal_add_customer_header"
+                                        data-kt-scroll-wrappers="#kt_modal_add_customer_scroll"
+                                        data-kt-scroll-offset="300px">
+
+                                        <div class="d-flex flex-column mb-7 fv-row">
+                                            <!--begin::Label-->
+                                            <label class="fs-6 fw-bold mb-2">
+                                                <span class="required">Category</span>
+                                                <!--begin::Input-->
+                                                <select #plev [(ngModel)]="publishClassType" name="pubcategory" data-control="select"
+                                                data-placeholder="Select Class"
+                                                class="form-select form-select-solid fw-bolder">
+                                                <option value="SENIOR">Senior School</option>
+                                                <option value="JUNIOR">Junior School</option>
+                                                <option value="PRIMARY">Primary School</option>
+                                                <option value="NURSERY">Nursery School</option>
+                                            </select>
+                                                <!--end::Input-->
+                                            </label>
+
+                                        </div>
+
+                                        <!--begin::Input group-->
+                                        <div class="d-flex flex-column mb-7 fv-row">
+                                            <!--begin::Label-->
+                                            <label class="fs-6 fw-bold mb-2">
+                                                <span class="required">Session </span>
+                                                <!--begin::Input-->
+                                                <select [(ngModel)]="currentSessionId" name="classu"
+                                                    data-control="select2" data-placeholder="Select class.."
+                                                    class="form-select form-select-solid fw-bolder">
+                                                    <option value="">Select Session...</option>
+                                                    <option *ngFor="let session of sessionlist" [value]="session.id">{{session.sessionName}}</option>
+                                                </select>
+                                                <!--end::Input-->
+                                            </label>
+
+                                        </div>
+                                        <!--begin::Input group-->
+                                        <div class="d-flex flex-column mb-7 fv-row">
+                                            <!--begin::Label-->
+                                            <label class="fs-6 fw-bold mb-2">
+                                                <span class="required">Term</span>
+
+                                            </label>
+                                            <!--end::Label-->
+                                            <select [(ngModel)]="currentTerm" name="clasis" aria-label="Select term"
+                                            data-control="select2" data-placeholder="Select term.."
+                                            class="form-select form-select-solid fw-bolder">
+                                            <option selected disabled>Select term</option>
+                                            <option value="FIRST">First</option>
+                                            <option value="SECOND">Second</option>
+                                            <option value="THIRD">Third</option>
+                                            <option value="ANNUAL">Annual</option>
+                                        </select>
+                                            <!--end::Input-->
+                                        </div>
+                                    </div>
+                                    <!--end::Scroll-->
+                                </div>
+                                <!--end::Modal body-->
+                                <!--begin::Modal footer-->
+                                <div class="modal-footer flex-center">
+                                    <!--begin::Button-->
+                                    <button type="reset" id="kt_modal_add_customer_cancel"
+                                        class="btn btn-light me-3">Discard</button>
+                                    <!--end::Button-->
+                                    <!--begin::Button-->
+                                    <button type="submit" id="kt_modal_add_customer_submit"
+                                        class="btn btn-info">
+                                        <span class="indicator-label">Publish</span>
+                                        <span class="indicator-progress">Please wait...
+                                            <span
+                                                class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                                    </button>
+                                    <!--end::Button-->
+                                </div>
+                                <!--end::Modal footer-->
+                            </form>
+                            <!--end::Form-->
+                        </div>
+                    </div>
+                </div>
+                <!--end::Modal - Customers - Add-->
+            </div>
+            <!--end::Container-->
+        </div>
+        <!--end::Post-->
+    </div>
+    <!--end::Content-->
+    <!--begin::Footer-->
+    <div class="footer py-4 d-flex flex-lg-column" id="kt_footer">
+        <!--begin::Container-->
+        <div
+            class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
+            <!--begin::Copyright-->
+            <div class="text-dark order-2 order-md-1">
+                <span class="text-muted fw-bold me-1">2022©</span>
+                <a href="https://GradexCloud.com" target="_blank"
+                    class="text-gray-800 text-hover-info">gradeX-Cloud</a>
+            </div>
+            <!--end::Copyright-->
+
+        </div>
+        <!--end::Container-->
+    </div>
+    <!--end::Footer-->
+</div>

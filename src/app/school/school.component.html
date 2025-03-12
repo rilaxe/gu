@@ -1,0 +1,74 @@
+<div style="width: 100%;">
+  <div style="display: flex; align-items: center; background-color: rgb(55, 68, 82); padding: 10px 20px;">
+    <img [src]="schoolObj.schoolLogo ? (genk.imgurl + schoolObj.schoolLogo) : '../assets/images/school-logo.jpg'" style="height: 40px; width: 40px; border-radius: 100%; margin-right: 10px;" />
+    <span style="font-family: 'Poppins-Medium'; font-size: 18px; color: white;">{{schoolObj.schoolName}}</span>
+    <div style="margin-left: auto;">
+      <div style="display: flex; color: white; padding: 0px 30px;">
+        
+        <div class="regbar" (click)="toggleUser('Student-Login')" [ngClass]="tabActive == 'Student-Login' && genk.isLogin ? 'regbar regbaractive' : 'regbar'">
+          <a>Student-Login</a></div>
+        <div class="regbar" (click)="toggleStaff('Staff-Login')" [ngClass]="tabActive == 'Staff-Login' && genk.isAdminLogin? 'regbar regbaractive' : 'regbar'">
+          <a>Staff-Login</a></div>
+       
+      </div>
+      <!-- <button style="border: none; background-color: rgb(10, 108, 161); color: white; padding: 7px 13px; font-weight: 700; border-radius: 5px; box-shadow: 1px 1px 4px rgb(60, 69, 72);">Log In</button>  -->
+    </div>
+  </div>
+  <div class="overlapbox">
+    <img class="imgo" [src]="schoolObj.bannerPhoto ? (genk.imgurl + schoolObj.bannerPhoto) : '../assets/images/school_image.jpg'" style="height: 500px; width: 100%; object-fit: cover;" />
+    <div class="overlapdiv" style="background-color: rgb(0, 0, 0, 0.4); display: flex; justify-content: center; align-items: center;">
+      <div style="color: white; justify-content: center; text-align: center; width: 80%;">
+        <div style="margin-bottom: 50px;">
+          <img class="imgo" [src]="schoolObj.schoolLogo ? (genk.imgurl + schoolObj.schoolLogo) : '../assets/images/school-logo.jpg'" style=" height: 120px; width: 120px; border-radius: 100%; margin: 0 auto;" />
+        <span style="text-shadow: 6px 6px 6px rgba(22, 23, 23, 0.8); font-family: 'Poppins-Bold'; font-size: 55px;">{{schoolObj.schoolName}}</span>
+        </div>
+
+        <div style="text-align: center;">
+          <span style="font-size: 18px; font-family: 'Poppins-Medium'; text-shadow: 2px 2px 6px rgb(0, 0, 0, 0.4); background-color: dodgerblue; padding: 5px 20px; border-radius: 10px 10px 0 0;">Login</span>
+         <div style="display: flex; justify-content: center;">
+          <button (click)="toggleUser('Student-Login')" style="border-top: solid 5px dodgerblue; border-bottom: solid 5px dodgerblue; border-left: solid 5px dodgerblue; border-right: solid 4px dodgerblue; border-radius: 20px 0 0 20px; background-color: gainsboro; width: 150px; padding: 10px 5px; box-shadow: 1px 1px 4px rgb(0, 0, 0, 0.3); font-weight: 700; font-family: 'Poppins-Medium'; font-size: 20px;">Student</button>
+          <button (click)="toggleStaff('Staff-Login')" style="border-top: solid 5px dodgerblue; border-bottom: solid 5px dodgerblue; border-left: solid 4px dodgerblue; border-right: solid 5px dodgerblue;  border-radius: 0 20px 20px 0; background-color: gainsboro; width: 150px; padding: 10px 5px; box-shadow: 1px 1px 4px rgb(0, 0, 0, 0.3); font-weight: 700; font-family: 'Poppins-Medium'; font-size: 20px;">Staff</button>
+        </div> 
+        </div>
+      </div>
+    </div> 
+  </div>
+
+  
+
+  <div class="row">
+    <div style=" background-color: gainsboro; text-align: center; padding: 3% 5%;" class="col-lg-6 col-sm-12">
+      <h2 style="font-weight: 500; font-family: 'Poppins-Medium';">About Us</h2>
+      <div style="font-weight: 400; font-family: 'Poppins-Medium';">
+        {{schoolObj.aboutUs}}
+      </div>
+    </div>
+    <div style="background-color: rgb(55, 68, 82); color: white; text-align: center; padding: 20px 0;" class="col-lg-6 col-sm-12">
+      <div style="width: 90%; margin: 0 auto;">
+        <h2 style="font-weight: 500; font-family: 'Poppins-Medium';">Contact Us</h2>
+        <div style="font-family: 'Poppins-Regular'">
+          <div *ngIf="schoolObj.address"><strong>Address: </strong> {{schoolObj.address}}</div>
+          <div *ngIf="schoolObj.phoneOne"><strong>Phone No:</strong> {{schoolObj.phoneOne}}</div>
+          <div *ngIf="schoolObj.phoneTwo"><strong>Phone No:</strong> {{schoolObj.phoneTwo}}</div>
+          <div *ngIf="schoolObj.email"><strong>Email:</strong> {{schoolObj.email}}</div>
+        </div> 
+      </div>
+    </div>
+  </div>
+
+  <!-- background-color:rgb(1,65,111); -->
+  
+  
+  <div *ngIf="genk.isAdminLogin" class="modale" style="background-color: rgb(0, 0, 0, 0.3);">
+    <div class="modalboxe">
+      <app-admin-login></app-admin-login>
+    </div>
+  </div>
+  
+  <div *ngIf="genk.isLogin" class="modale" style="background-color: rgb(0, 0, 0, 0.3);">
+    <div class="modalboxe">
+      <app-login></app-login>
+    </div>
+  </div>
+  
+</div>

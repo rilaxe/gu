@@ -1,0 +1,93 @@
+<div class="tuo" style="font-family: 'Poppins-Medium'; display: flex; align-items: center; background-color: white; box-shadow: 1px 1px 3px rgb(0, 0, 0, 0.1); color: black;  padding: 12px 20px;">
+    <div class="bare" style="left: 0; color: black; margin-right: 20px;" (click)="genk.mobileModal = !genk.mobileModal">
+        <i class="fa fa-bars " style="font-size: 30px;"></i>
+    </div>
+    <div>
+        <h1 class="text-dark">
+            <h1 style="color: black;" class="fw-bolder mx-5;">{{topdata}}</h1>
+        </h1>
+    </div>
+    <!-- <div style="display: flex; align-items: center; padding: 5px 20px; text-align: center;">
+        <img src="../assets/images/school-logo.jpg"
+            style="height: 40px; width: 40px; border-radius: 100%; margin-right: 10px;" />
+        <div style="margin-top: 5px;">
+            <span style=" font-weight: 700; font-size: 18px; color: rgb(245, 243, 240);">{{genk.cutSchool('Stellar Maris International School')}}</span>
+        </div>
+    </div> -->
+    <div style="display: flex; align-items: center; margin-left: auto;">
+        <!-- <div style="margin-right: 40px; background-color: gainsboro; padding: 10px; border-radius: 30px;"><i
+            class="fa fa-bell-o" style="font-size: 25px;"></i></div> -->
+        <div style="display: flex; align-items: center; justify-content: end;">
+            <div style="line-height: 120%; margin-right: 20px;" class="navname">
+                <span style="font-size: 17px; font-weight: 700; color: rgb(53, 52, 52);">{{userName}}</span><br>
+                <small style="font-weight: 600; color: green;">{{adminStatus}}</small>
+            </div>
+            <div>
+                <img [src]="setImg" style="width: 45px; height: 45px; border-radius: 25px;" />
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- <div *ngIf="mobileModal" class="modale" [@wavein]>
+    <div (click)="mobileModal = !mobileModal">
+        <div class="modalboxe">
+            <div>
+               
+                <app-admin-bar-mobile></app-admin-bar-mobile>
+            </div>
+        </div>
+    </div>
+</div> -->
+<div *ngIf="adminStatus === 'Admin'">
+    <div *ngIf="genk.mobileModal" class="modale"  [@wavein]>
+        <div>
+            <div class="modalboxe d-flex">
+                <div>
+                    <app-admin-bar-mobile></app-admin-bar-mobile>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="adminStatus === 'Staff'">
+    <div *ngIf="genk.mobileModal" class="modale"  [@wavein]>
+        <div>
+            <div class="modalboxe d-flex">
+                <div>
+                    <app-staff-bar-mobile></app-staff-bar-mobile>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="adminStatus === 'Student'">
+    <div *ngIf="genk.mobileModal" class="modale"  [@wavein]>
+        <div>
+            <div class="modalboxe d-flex">
+                <div>
+                    <app-user-bar-mobile></app-user-bar-mobile>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div *ngIf="adminStatus === 'MEMBER'">
+    <div *ngIf="mobileModal" class="modale" (click)="mobileModal = !mobileModal" [@wavein]>
+        <div>
+            <div class="modalboxe" >
+                <div>
+                    <admin-bar></admin-bar>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- <div background-color: rgb(68, 107, 147)></background-color:> -->

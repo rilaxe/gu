@@ -1,0 +1,190 @@
+<!--begin::Tab pane-->
+<div>
+    <div>
+        <!--begin::Row-->
+        <div>
+            <!--begin::Col-->
+            <div style="padding: 20px;">
+                <div class="card card-xxl-stretch mb-5 mb-xl-10">
+                    <!--begin::Header-->
+                    <div style="padding: 20px;">
+                        <!--begin::Title-->
+                        <div class="card-title">
+                            <h3 class="m-0 text-gray-900">Academic Performance</h3>
+                        </div>
+                        <!--end::Title-->
+                        <!--begin::Toolbar-->
+                        <div class="card-toolbar">
+                            <ul class="nav nav-tabs nav-line-tabs nav-stretch border-transparent fs-5 fw-bolder" id="kt_security_summary_tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link text-active-primary" (click)="changeTerm('FIRST')" [ngClass]="academicTerm == 'FIRST' ? 'active': ''" data-kt-countup-tabs="true" data-bs-toggle="tab">First Term</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-active-primary" (click)="changeTerm('SECOND')" [ngClass]="academicTerm == 'SECOND' ? 'active': ''" data-kt-countup-tabs="true" data-bs-toggle="tab" >Second Term</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-active-primary" (click)="changeTerm('THIRD')" [ngClass]="academicTerm == 'THIRD' ? 'active': ''" data-kt-countup-tabs="true" data-bs-toggle="tab">Third Term</a>
+                                </li>
+                                <li class="nav-item">
+                                <div class="nav-link">
+                                    <select #ses [(ngModel)]="currentSessionId" (change)="changeSession(ses.value.toString())" name="classu" class=" me-2 form-select form-select-sm form-select-solid w-125px" data-control="select2" data-placeholder="Select Hours" data-hide-search="true">
+                                    <option value="">Select Session...</option>
+                                    <option *ngFor="let session of sessionlist" [value]="session.id">{{session.sessionName}}</option>
+                                </select>
+                                    <!--begin::Select-->
+                                    <!-- <select class=" me-2 form-select form-select-sm form-select-solid w-125px" data-control="select2" data-placeholder="Select Hours" data-hide-search="true">
+                                        <option value="1" selected="selected">Year</option>
+                                        <option value="2">2024</option>
+                                        <option value="3">2023</option>
+                                        <option value="4">2022</option>
+                                    </select> -->
+                                    <!--end::Select-->
+                                   
+                                </div>
+                            </li>
+                            </ul>
+                            
+                                
+                            
+                        </div>
+                        <!--end::Toolbar-->
+                       
+                    </div>
+                    <!--end::Header-->
+                    <!--begin::Body-->
+                    <div *ngIf="isResult" class="card-body pt-7 pb-0 px-0">
+                        <!--begin::Tab content-->
+                        <div class="tab-content">
+                            <!--begin::Tab panel-->
+                            <div class="tab-pane fade active show" role="tabpanel">
+                                <!--begin::Row-->
+                                <div class="row p-0 mb-5 px-9">
+                                    <!--begin::Col-->
+                                    <div class="col">
+                                        <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-4 pb-2 my-3">
+                                            <span class="fs-4 fw-bold text-success d-block">Highest Average</span>
+                                            <span class="fs-2hx fw-bolder text-gray-900" data-kt-countup="true" data-kt-countup-value="89.2">{{numget(highestave)}}</span>
+                                        </div>
+                                    </div>
+                                    <!--end::Col-->
+                                    <!--begin::Col-->
+                                    <div class="col">
+                                        <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-4 pb-2 my-3">
+                                            <span class="fs-4 fw-bold text-primary d-block">Student Average</span>
+                                            <span class="fs-2hx fw-bolder text-gray-900" data-kt-countup="true" data-kt-countup-value="74.4">{{numget(myave)}}</span>
+                                        </div>
+                                    </div>
+                                    <!--end::Col-->
+                                    <!--begin::Col-->
+                                    <div class="col">
+                                        <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-4 pb-2 my-3">
+                                            <span class="fs-4 fw-bold text-danger d-block">Lowest Average</span>
+                                            <span class="fs-2hx fw-bolder text-gray-900" data-kt-countup="true" data-kt-countup-value="56.0">{{numget(lowestave)}}</span>
+                                        </div>
+                                    </div>
+                                    <!--end::Col-->
+                                </div>
+                                <!--end::Row-->
+                                <!--begin::Container-->
+                                <div class="pt-2">
+                                    <!--begin::Tabs-->
+                                    <div class="d-flex align-items-center pb-6 px-9">
+                                        <!--begin::Title-->
+                                        <h3 class="m-0 text-gray-900 flex-grow-1">Result Chart</h3>
+                                        <!--end::Title-->
+                                        <!--begin::Nav pills-->
+                                    
+                                            
+                                                <a class="nav-link btn btn-active-light btn-active-color-gray-700 btn-color-gray-400 py-2 px-5 fs-6 fw-bold" data-bs-toggle="tab" id="kt_security_summary_tab_hours_agents" href="#kt_security_summary_tab_pane_hours_agents"></a>
+                                        
+                                        
+                                                <a class="nav-link btn btn-active-light btn-active-color-gray-700 btn-color-gray-400 py-2 px-5 fs-6 fw-bold" data-bs-toggle="tab" id="kt_security_summary_tab_hours_clients" href="#kt_security_summary_tab_pane_hours_clients"></a>
+                                            
+                                    
+                                        <!--end::Nav pills-->
+                                        <!--begin::Nav pills-->
+                                        
+                                    
+                                            
+                                      
+                                                <a class="nav-link btn btn-active-light btn-active-color-gray-700 btn-color-gray-400 py-2 px-5 fs-6 fw-bold" data-bs-toggle="tab" id="kt_security_summary_tab_day_clients" href="#kt_security_summary_tab_pane_day_clients"></a>
+                                            
+                                                
+                                        <!--end::Nav pills-->
+                                    </div>
+
+                                    <div style="text-align:center">
+                                        <apx-chart
+                                          [series]="chartDoubleOptions.series"
+                                          [chart]="chartDoubleOptions.chart"
+                                          [dataLabels]="chartDoubleOptions.dataLabels"
+                                          [yaxis]="chartDoubleOptions.yaxis"
+                                          [xaxis]="chartDoubleOptions.xaxis"
+                                          [legend]="chartDoubleOptions.legend"
+                                          [plotOptions]="chartDoubleOptions.plotOptions"
+                                          [fill]="chartDoubleOptions.fill"
+                                          [tooltip]="chartDoubleOptions.tooltip"
+                                        ></apx-chart>
+                                      </div>
+                                    <!--end::Tabs-->
+                                    <!--begin::Tab content-->
+                                    
+                                    <!--end::Tab content-->
+                                </div>
+                                <!--end::Container-->
+                            </div>
+                            <!--end::Tab panel-->
+                            <!--begin::Tab panel-->
+                            
+                            <!--end::Tab panel-->
+                            <!--begin::Tab panel-->
+                            
+                            <!--end::Tab panel-->
+                        </div>
+                        <!--end::Tab content-->
+                    </div>
+                    <!--end::Body-->
+                </div>
+                <!--begin::Security summary-->
+                <!--end::Security summary-->
+            </div>
+            <!--end::Col-->
+
+        </div>
+        <!--end::Row-->
+    </div>
+</div>
+
+
+
+
+<div *ngIf="reasonForNoResult" style="padding: 0 50px;">
+    <div
+                                    class="notice d-flex bg-light-danger rounded border-danger border border-dashed mb-9 p-6">
+                                    <!--begin::Icon-->
+                                    <!--begin::Svg Icon | path: icons/duotune/art/art006.svg-->
+                                    <span class="svg-icon svg-icon-2tx svg-icon-danger me-4">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none">
+                                            <path opacity="0.3"
+                                                d="M22 19V17C22 16.4 21.6 16 21 16H8V3C8 2.4 7.6 2 7 2H5C4.4 2 4 2.4 4 3V19C4 19.6 4.4 20 5 20H21C21.6 20 22 19.6 22 19Z"
+                                                fill="currentColor"></path>
+                                            <path
+                                                d="M20 5V21C20 21.6 19.6 22 19 22H17C16.4 22 16 21.6 16 21V8H8V4H19C19.6 4 20 4.4 20 5ZM3 8H4V4H3C2.4 4 2 4.4 2 5V7C2 7.6 2.4 8 3 8Z"
+                                                fill="currentColor"></path>
+                                        </svg>
+                                    </span>
+                                    <!--end::Svg Icon-->
+                                    <!--end::Icon-->
+                                    <!--begin::Wrapper-->
+                                    <div class="d-flex flex-stack flex-grow-1">
+                                        <!--begin::Content-->
+                                        <div class="fw-bold">
+                                            <div class="fs-4 text-dark">{{reasonForNoResult}}
+                                            </div>
+                                        </div>
+                                        <!--end::Content-->
+                                    </div>
+                                    <!--end::Wrapper-->
+                                </div>
+</div>

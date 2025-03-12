@@ -1,0 +1,380 @@
+<div class="card mb-5 mb-xl-10">
+    <!--begin::Card header-->
+    <div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse" data-bs-target="#kt_account_connected_accounts" aria-expanded="true" aria-controls="kt_account_connected_accounts">
+        <div class="card-title m-0">
+            <h3 class="fw-bolder m-0">Result by Class/Level</h3>
+        </div>
+    </div>
+    <!--end::Card header-->
+    <!--begin::Content-->
+    <div id="kt_account_settings_connected_accounts" class="collapse show">
+        <!--begin::Card body-->
+        <div class="card-body border-top p-9 mb-5">
+            <!--begin::Notice-->
+            <div class="notice d-flex bg-light-primary rounded border-primary border border-dashed mb-9 p-6">
+                <!--begin::Icon-->
+                <!--begin::Svg Icon | path: icons/duotune/art/art006.svg-->
+                <span class="svg-icon svg-icon-2tx svg-icon-primary me-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path opacity="0.3" d="M22 19V17C22 16.4 21.6 16 21 16H8V3C8 2.4 7.6 2 7 2H5C4.4 2 4 2.4 4 3V19C4 19.6 4.4 20 5 20H21C21.6 20 22 19.6 22 19Z" fill="currentColor" />
+                        <path d="M20 5V21C20 21.6 19.6 22 19 22H17C16.4 22 16 21.6 16 21V8H8V4H19C19.6 4 20 4.4 20 5ZM3 8H4V4H3C2.4 4 2 4.4 2 5V7C2 7.6 2.4 8 3 8Z" fill="currentColor" />
+                    </svg>
+                </span>
+                <!--end::Svg Icon-->
+                <!--end::Icon-->
+                <!--begin::Wrapper-->
+                <div class="d-flex flex-stack flex-grow-1">
+                    <!--begin::Content-->
+                    <div class="fw-bold">
+                        <div class="fs-6 text-gray-700">Result positioning where a student's result can be processed either by class arm (e.g., JSS 1A only) or by class level (e.g., the whole of JSS 1 classes)
+                      </div>
+                    </div>
+                    <!--end::Content-->
+                </div>
+                <!--end::Wrapper-->
+            </div>
+            <!--end::Notice-->
+            <!--begin::Options-->
+            <div class="mb-0">
+                <!--begin:Option-->
+                <label class="d-flex flex-stack ms-5 mb-5 cursor-pointer">
+                    <!--begin:Label-->
+                    <span class="d-flex align-items-center mr-10">
+                    
+                        <!--begin::Description-->
+                        <span class="d-flex me-10 flex-column">
+                            <span class="fw-bolder text-gray-800 mb-1 fs-4">Set Result data by Class</span>
+                            <span class="fs-6 text-gray-600"> Calculate student positions and ranks based on their scores within that class. (e.g., JSS 1A only)</span>
+                        </span>
+                        <!--end:Description-->
+                    </span>
+                    <!--end:Label-->
+                    <!--begin:Input-->
+                    <span class="form-check me-10 form-check-custom form-check-solid">
+                        <input #armone class="form-check-input" type="radio" name="account_plan" value="1" [checked]="classArm == 1" (click)="setResultField(armone.checked, 1, 'ARM')" />
+                    </span>
+                    <!--end:Input-->
+                </label>
+                <!--end::Option-->
+                <div class='separator separator-dashed my-5'></div>
+                    <!--begin:Option-->
+                    <label class="d-flex flex-stack ms-5 mb-5 cursor-pointer">
+                        <!--begin:Label-->
+                        <span class="d-flex align-items-center ">
+                        
+                            <!--begin::Description-->
+                            <span class="d-flex  flex-column">
+                                <span class="fw-bolder text-gray-800 mb-1 fs-4">Set Result data by Level</span>
+                                <span class="fs-6 text-gray-600"> Calculate students positions and ranks based on their scores across all classes within that class level.  (e.g., JSS 1, JSS 1, etc.)</span>
+                            </span>
+                            <!--end:Description-->
+                        </span>
+                        <!--end:Label-->
+                        <!--begin:Input-->
+                        <span class="form-check me-10 form-check-custom form-check-solid">
+                            <input #armtwo class="form-check-input" type="radio" name="account_plan" value="2" [checked]="classArm == 2" (click)="setResultField(armtwo.checked, 2, 'LEVEL')"/>
+                        </span>
+                        <!--end:Input-->
+                    </label>
+                    <!--end::Option-->
+            </div>
+            <!--end::Options-->
+
+            <!-- <div class="form-check form-check-solid">
+                <input #stsur class="form-check-input" type="checkbox" [checked]="isPhoto" (change)="setPhotoField(stsur.checked)" />
+                <label style="font-size: 16px; color: black;">Add Student Photo to result</label>
+            </div> -->
+        </div>
+
+        
+       
+        <!--end::Card footer-->
+    </div>
+
+    
+    <!--end::Content-->
+</div>
+        <br>
+        <br>
+        <div class="card mb-5 mb-xl-10">
+            <div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse" data-bs-target="#kt_account_connected_accounts" aria-expanded="true" aria-controls="kt_account_connected_accounts">
+                <div class="card-title m-0">
+                    <h3 class="fw-bolder m-0">Result Photo</h3>
+                </div>
+            </div>
+            <div class="card-body border-top p-9">
+                <!--begin::Notice-->
+                <div class="notice d-flex bg-light-primary rounded border-primary border border-dashed mb-9 p-6">
+                    <!--begin::Icon-->
+                    <!--begin::Svg Icon | path: icons/duotune/art/art006.svg-->
+                    <span class="svg-icon svg-icon-2tx svg-icon-primary me-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path opacity="0.3" d="M22 19V17C22 16.4 21.6 16 21 16H8V3C8 2.4 7.6 2 7 2H5C4.4 2 4 2.4 4 3V19C4 19.6 4.4 20 5 20H21C21.6 20 22 19.6 22 19Z" fill="currentColor" />
+                            <path d="M20 5V21C20 21.6 19.6 22 19 22H17C16.4 22 16 21.6 16 21V8H8V4H19C19.6 4 20 4.4 20 5ZM3 8H4V4H3C2.4 4 2 4.4 2 5V7C2 7.6 2.4 8 3 8Z" fill="currentColor" />
+                        </svg>
+                    </span>
+                    <!--end::Svg Icon-->
+                    <!--end::Icon-->
+                    <!--begin::Wrapper-->
+                    <div class="d-flex flex-stack flex-grow-1">
+                        <!--begin::Content-->
+                        <div class="fw-bold">
+                            <div class="fs-6 text-gray-700">Check this box to ensure that result design has the student photo or a placeholder.
+                          </div>
+                        </div>
+                        <!--end::Content-->
+                    </div>
+                    <!--end::Wrapper-->
+                </div>
+                <!--end::Notice-->
+                <!--begin::Options-->
+                
+    
+                <div class="form-check form-check-solid" style="display: flex; justify-content: space-between; margin-right: 20px;">
+                    <label style="font-size: 16px; color: black; font-weight: 600; color: rgb(81, 81, 81);">Add Student Photo to result</label>
+                    <input #stsur class="form-check-input" type="checkbox" [checked]="isPhoto" (change)="setPhotoField(stsur.checked)" />
+                    
+                </div>
+            </div>
+
+            
+        </div>
+
+        <br>
+        <br>
+        <div class="card mb-5 mb-xl-10">
+            <div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse" data-bs-target="#kt_account_connected_accounts" aria-expanded="true" aria-controls="kt_account_connected_accounts">
+                <div class="card-title m-0">
+                    <h3 class="fw-bolder m-0">Auto-Comment</h3>
+                </div>
+            </div>
+            
+            <div class="card-body border-top p-9">
+                <!--begin::Notice-->
+                <div class="notice d-flex bg-light-primary rounded border-primary border border-dashed mb-9 p-6">
+                    <!--begin::Icon-->
+                    <!--begin::Svg Icon | path: icons/duotune/art/art006.svg-->
+                    <span class="svg-icon svg-icon-2tx svg-icon-primary me-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path opacity="0.3" d="M22 19V17C22 16.4 21.6 16 21 16H8V3C8 2.4 7.6 2 7 2H5C4.4 2 4 2.4 4 3V19C4 19.6 4.4 20 5 20H21C21.6 20 22 19.6 22 19Z" fill="currentColor" />
+                            <path d="M20 5V21C20 21.6 19.6 22 19 22H17C16.4 22 16 21.6 16 21V8H8V4H19C19.6 4 20 4.4 20 5ZM3 8H4V4H3C2.4 4 2 4.4 2 5V7C2 7.6 2.4 8 3 8Z" fill="currentColor" />
+                        </svg>
+                    </span>
+                    <!--end::Svg Icon-->
+                    <!--end::Icon-->
+                    <!--begin::Wrapper-->
+                    <div class="d-flex flex-stack flex-grow-1">
+                        <!--begin::Content-->
+                        <div class="fw-bold">
+                            <div class="fs-6 text-gray-700">Check this box to allow Auto-Comment to override previous comments.
+                          </div>
+                        </div>
+                        <!--end::Content-->
+                    </div>
+                    <!--end::Wrapper-->
+                </div>
+                <!--end::Notice-->
+                <!--begin::Options-->
+                
+    
+                <div class="form-check form-check-solid" style="display: flex; justify-content: space-between; margin-right: 20px;">
+                    <label style="font-size: 16px; color: black; font-weight: 600; color: rgb(81, 81, 81);">Allow Comments Override</label>
+                    <input #comove class="form-check-input" type="checkbox" [checked]="isOverride" (change)="setAutoCommentField(comove.checked)" />
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card mb-5 mb-xl-10">
+            <!--begin::Card header-->
+            <div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse" data-bs-target="#kt_account_connected_accounts" aria-expanded="true" aria-controls="kt_account_connected_accounts">
+                <div class="card-title m-0">
+                    <h3 class="fw-bolder m-0">Mastersheet by Class/Level</h3>
+                </div>
+            </div>
+            <!--end::Card header-->
+            <!--begin::Content-->
+            <div id="kt_account_settings_connected_accounts" class="collapse show">
+                <!--begin::Card body-->
+                <div class="card-body border-top p-9 mb-5">
+                    <!--begin::Notice-->
+                    <div class="notice d-flex bg-light-primary rounded border-primary border border-dashed mb-9 p-6">
+                        <!--begin::Icon-->
+                        <!--begin::Svg Icon | path: icons/duotune/art/art006.svg-->
+                        <span class="svg-icon svg-icon-2tx svg-icon-primary me-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path opacity="0.3" d="M22 19V17C22 16.4 21.6 16 21 16H8V3C8 2.4 7.6 2 7 2H5C4.4 2 4 2.4 4 3V19C4 19.6 4.4 20 5 20H21C21.6 20 22 19.6 22 19Z" fill="currentColor" />
+                                <path d="M20 5V21C20 21.6 19.6 22 19 22H17C16.4 22 16 21.6 16 21V8H8V4H19C19.6 4 20 4.4 20 5ZM3 8H4V4H3C2.4 4 2 4.4 2 5V7C2 7.6 2.4 8 3 8Z" fill="currentColor" />
+                            </svg>
+                        </span>
+                        <!--end::Svg Icon-->
+                        <!--end::Icon-->
+                        <!--begin::Wrapper-->
+                        <div class="d-flex flex-stack flex-grow-1">
+                            <!--begin::Content-->
+                            <div class="fw-bold">
+                                <div class="fs-6 text-gray-700">Result positioning where a student's result can be processed either by class arm (e.g., JSS 1A only) or by class level (e.g., the whole of JSS 1 classes)
+                              </div>
+                            </div>
+                            <!--end::Content-->
+                        </div>
+                        <!--end::Wrapper-->
+                    </div>
+                    <!--end::Notice-->
+                    <!--begin::Options-->
+                    <div class="mb-0">
+                        <!--begin:Option-->
+                        <label class="d-flex flex-stack ms-5 mb-5 cursor-pointer">
+                            <!--begin:Label-->
+                            <span class="d-flex align-items-center mr-10">
+                            
+                                <!--begin::Description-->
+                                <span class="d-flex me-10 flex-column">
+                                    <span class="fw-bolder text-gray-800 mb-1 fs-4">Set Mastersheet by Class</span>
+                                    <span class="fs-6 text-gray-600"> Calculate Mastersheet and ranks based on their scores within that class. (e.g., JSS 1A only)</span>
+                                </span>
+                                <!--end:Description-->
+                            </span>
+                            <!--end:Label-->
+                            <!--begin:Input-->
+                            <span class="form-check me-10 form-check-custom form-check-solid">
+                                <input #sheetarmone class="form-check-input" type="radio" name="sheetaccount_plan" value="1" [checked]="mastersheetClassArm == 1" (click)="setMasterSheetField(sheetarmone.checked, 1, 'ARM')" />
+                            </span>
+                            <!--end:Input-->
+                        </label>
+                        <!--end::Option-->
+                        <div class='separator separator-dashed my-5'></div>
+                            <!--begin:Option-->
+                            <label class="d-flex flex-stack ms-5 mb-5 cursor-pointer">
+                                <!--begin:Label-->
+                                <span class="d-flex align-items-center ">
+                                
+                                    <!--begin::Description-->
+                                    <span class="d-flex  flex-column">
+                                        <span class="fw-bolder text-gray-800 mb-1 fs-4">Set Mastersheet by Level</span>
+                                        <span class="fs-6 text-gray-600"> Calculate Mastersheet and ranks based on their scores across all classes within that class level.  (e.g., JSS 1, JSS 2, etc.)</span>
+                                    </span>
+                                    <!--end:Description-->
+                                </span>
+                                <!--end:Label-->
+                                <!--begin:Input-->
+                                <span class="form-check me-10 form-check-custom form-check-solid">
+                                    <input #sheetarmtwo class="form-check-input" type="radio" name="sheetaccount_plan" value="2" [checked]="mastersheetClassArm == 2" (click)="setMasterSheetField(sheetarmtwo.checked, 2, 'LEVEL')"/>
+                                </span>
+                                <!--end:Input-->
+                            </label>
+                            <!--end::Option-->
+                    </div>
+                    <!--end::Options-->
+        
+                    <!-- <div class="form-check form-check-solid">
+                        <input #stsur class="form-check-input" type="checkbox" [checked]="isPhoto" (change)="setPhotoField(stsur.checked)" />
+                        <label style="font-size: 16px; color: black;">Add Student Photo to result</label>
+                    </div> -->
+                </div>
+        
+                
+               
+                <!--end::Card footer-->
+            </div>
+        </div>
+
+
+        <div class="card mb-5 mb-xl-10">
+            <!--begin::Card header-->
+            <div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse" data-bs-target="#kt_account_connected_accounts" aria-expanded="true" aria-controls="kt_account_connected_accounts">
+                <div class="card-title m-0">
+                    <h3 class="fw-bolder m-0">Admission Number Settings</h3>
+                </div>
+            </div>
+            <!--end::Card header-->
+            <!--begin::Content-->
+            <div id="kt_account_settings_connected_accounts" class="collapse show">
+                <!--begin::Card body-->
+                <div class="card-body border-top p-9 mb-5">
+                    <!--begin::Notice-->
+                    <div class="notice d-flex bg-light-primary rounded border-primary border border-dashed mb-9 p-6">
+                        <!--begin::Icon-->
+                        <!--begin::Svg Icon | path: icons/duotune/art/art006.svg-->
+                        <span class="svg-icon svg-icon-2tx svg-icon-primary me-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path opacity="0.3" d="M22 19V17C22 16.4 21.6 16 21 16H8V3C8 2.4 7.6 2 7 2H5C4.4 2 4 2.4 4 3V19C4 19.6 4.4 20 5 20H21C21.6 20 22 19.6 22 19Z" fill="currentColor" />
+                                <path d="M20 5V21C20 21.6 19.6 22 19 22H17C16.4 22 16 21.6 16 21V8H8V4H19C19.6 4 20 4.4 20 5ZM3 8H4V4H3C2.4 4 2 4.4 2 5V7C2 7.6 2.4 8 3 8Z" fill="currentColor" />
+                            </svg>
+                        </span>
+                        <!--end::Svg Icon-->
+                        <!--end::Icon-->
+                        <!--begin::Wrapper-->
+                        <div class="d-flex flex-stack flex-grow-1">
+                            <!--begin::Content-->
+                            <div class="fw-bold">
+                                <div class="fs-6 text-gray-700">Result positioning where a student's result can be processed either by class arm (e.g., JSS 1A only) or by class level (e.g., the whole of JSS 1 classes)
+                              </div>
+                            </div>
+                            <!--end::Content-->
+                        </div>
+                        <!--end::Wrapper-->
+                    </div>
+                    <!--end::Notice-->
+                    <!--begin::Options-->
+                    <div class="mb-0">
+                        <!--begin:Option-->
+                        <label class="d-flex flex-stack ms-5 mb-5 cursor-pointer">
+                            <!--begin:Label-->
+                            <span class="d-flex align-items-center mr-10">
+                            
+                                <!--begin::Description-->
+                                <span class="d-flex me-10 flex-column">
+                                    <span class="fw-bolder text-gray-800 mb-1 fs-4">Set Mastersheet by Class</span>
+                                    <span class="fs-6 text-gray-600"> Calculate Mastersheet and ranks based on their scores within that class. (e.g., JSS 1A only)</span>
+                                </span>
+                                <!--end:Description-->
+                            </span>
+                            <!--end:Label-->
+                            <!--begin:Input-->
+                            <span class="form-check me-10 form-check-custom form-check-solid">
+                                <input #sheetarmone class="form-check-input" type="radio" name="sheetaccount_plan" value="1" [checked]="mastersheetClassArm == 1" (click)="setMasterSheetField(sheetarmone.checked, 1, 'ARM')" />
+                            </span>
+                            <!--end:Input-->
+                        </label>
+                        <!--end::Option-->
+                        <div class='separator separator-dashed my-5'></div>
+                            <!--begin:Option-->
+                            <label class="d-flex flex-stack ms-5 mb-5 cursor-pointer">
+                                <!--begin:Label-->
+                                <span class="d-flex align-items-center ">
+                                
+                                    <!--begin::Description-->
+                                    <span class="d-flex  flex-column">
+                                        <span class="fw-bolder text-gray-800 mb-1 fs-4">Set Mastersheet by Level</span>
+                                        <span class="fs-6 text-gray-600"> Calculate Mastersheet and ranks based on their scores across all classes within that class level.  (e.g., JSS 1, JSS 2, etc.)</span>
+                                    </span>
+                                    <!--end:Description-->
+                                </span>
+                                <!--end:Label-->
+                                <!--begin:Input-->
+                                <span class="form-check me-10 form-check-custom form-check-solid">
+                                    <input #sheetarmtwo class="form-check-input" type="radio" name="sheetaccount_plan" value="2" [checked]="mastersheetClassArm == 2" (click)="setMasterSheetField(sheetarmtwo.checked, 2, 'LEVEL')"/>
+                                </span>
+                                <!--end:Input-->
+                            </label>
+                            <!--end::Option-->
+                    </div>
+                    <!--end::Options-->
+        
+                    <!-- <div class="form-check form-check-solid">
+                        <input #stsur class="form-check-input" type="checkbox" [checked]="isPhoto" (change)="setPhotoField(stsur.checked)" />
+                        <label style="font-size: 16px; color: black;">Add Student Photo to result</label>
+                    </div> -->
+                </div>
+        
+                
+               
+                <!--end::Card footer-->
+            </div>
+        
+            
+            
+        </div>
+        
+        

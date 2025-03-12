@@ -1,0 +1,117 @@
+#customers {
+  font-family: 'Poppins';
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* #customers th {
+  padding: 4px;
+  font-size: 9px;
+  font-weight: 700;
+} */
+
+#customers td {
+  border: 1px solid rgb(199, 202, 203);
+  padding: 3px 4px;
+  font-size: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding: 4px;
+  font-size: 9px;
+  font-weight: 700;
+  text-align: left;
+  background-color: rgb(36, 91, 143); 
+  color: white;
+  border: 1px solid rgb(188, 182, 182);
+}
+
+.heitable th, td {
+  border: 1px solid rgb(186, 187, 190);
+  padding: 2px 5px;
+} 
+
+.resprint {
+  padding: 10px 50px; 
+  border: none; 
+  outline: none; 
+  background-color: dodgerblue; 
+  color: white; 
+  border-radius: 20px; 
+  box-shadow: 1px 1px 3px rgb(0, 0, 0, 0.3);
+}
+
+.resprintdisabled {
+  padding: 10px 50px; 
+  border: none; 
+  outline: none; 
+  background-color: rgb(160, 163, 166); 
+  color: black; 
+  border-radius: 20px; 
+  box-shadow: 1px 1px 3px rgb(0, 0, 0, 0.3);
+}
+
+#customerslouismidterm {
+  font-family: 'Poppins';
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* #customers th {
+  padding: 4px;
+  font-size: 9px;
+  font-weight: 700;
+} */
+
+#customerslouismidterm td {
+  border: 1px solid rgb(199, 202, 203);
+  padding: 3px 4px;
+  font-size: 11px;
+}
+
+#customerslouismidterm th {
+  padding: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: left;
+  background-color: rgb(36, 91, 143); 
+  color: white;
+  border: 1px solid rgb(188, 182, 182);
+}
+
+
+#customerstrail {
+  font-family: 'Poppins';
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* #customers th {
+  padding: 4px;
+  font-size: 9px;
+  font-weight: 700;
+} */
+
+#customerstrail td {
+  border: 1px solid rgb(199, 202, 203); 
+  padding: 4px 4px;
+  font-size: 10px;
+}
+
+#customerstrail tr:nth-child(even){background-color: #f2f2f2;}
+
+#customerstrail tr:hover {background-color: #ddd;}
+
+#customerstrail th {
+  padding: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  text-align: left;
+  background-color: rgb(36, 91, 143); 
+  color: white;
+  border: 1px solid rgb(188, 182, 182);
+}

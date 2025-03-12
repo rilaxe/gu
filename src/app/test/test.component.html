@@ -1,0 +1,35 @@
+<button (click)="sumWeekly()" style="padding: 20px; background-color: dodgerblue; color: white; margin-top: 40px;">Do it</button>
+
+
+
+
+
+  <!-- <button (click)="generateAndDisplayPDF()">Generate PDF</button>
+<br><br>
+<embed *ngIf="pdfSrc" [src]="pdfSrc" type="application/pdf" width="60%" height="500px">
+
+  <pdf-viewer [src]="pdfSource"
+  [original-size]="false"
+></pdf-viewer>
+
+
+<pdf-viewer 
+  [src]="pdfSource" 
+  [page]="page" 
+  [original-size]="false"
+  [show-all]="false"
+  [zoom]="zoom"
+  (after-load-complete)="onLoadComplete($event)">
+</pdf-viewer> -->
+
+<div style="text-align: center;">
+  <button (click)="zoomIn()">+</button>
+  <button (click)="zoomOut()">-</button>
+</div>
+
+<pdf-viewer [src]="pdfSource"
+              [render-text]="true"
+              [original-size]="false"
+              [zoom]="zoom"
+              style="width: 400px; height: 500px"
+  ></pdf-viewer>

@@ -1,0 +1,130 @@
+<div class="flex-lg-row-fluid mb-10 mb-lg-0 me-lg-7 me-xl-10">
+    <!--begin::Card-->
+    <div class="card">
+        <!--begin::Card header-->
+<div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse" data-bs-target="#kt_account_profile_details" aria-expanded="true" aria-controls="kt_account_profile_details">
+<!--begin::Card title-->
+<div class="card-title m-0">
+    <h3 class="fw-bolder m-0">Psychomotor Setup</h3>
+</div>
+<!--end::Card title-->
+</div>
+<!--begin::Card header-->
+        <!--begin::Card body-->
+        <div class="card-body border-top p-9">
+            <!--begin::Form-->
+            
+                <!--begin::Wrapper-->
+                <div class="mb-0">
+                    
+                    <!--begin::Table wrapper-->
+                    <div class="table-responsive mb-10">
+                        <form action="" id="kt_invoice_form" (ngSubmit)="saveMotor()" class="card-body border-bottom p-9">
+                        <div style="display: flex;" class="mb-9">
+                            <div class="min-w-300px w-475px pe-7">
+                               <label style="font-weight: bold; color: black;">Name</label> 
+                                <input #inpu type="text" class="form-control form-control-solid mb-2" name="name[]" placeholder="Pyschomotor Name" [(ngModel)]="name" />
+                            </div>
+                            <div class="ps-0">
+                                <label style="font-weight: bold; color: black;">Maximum score</label>
+                                <input class="form-control form-control-solid" type="number" min="1" name="quantity[]" placeholder="1" [(ngModel)]="maxScore"  />
+                            </div>
+                        </div>
+
+                        <div class="text-primary">
+                            <button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Save Psychomotor</button>
+                        </div>
+                    </form>
+                        <!--begin::Table-->
+                        <table class="table g-5 gs-0 mb-0 text-gray-700" data-kt-element="items">
+                            <!--begin::Table head-->
+                            <thead>
+                                <tr class="border-bottom fs-7 fw-bolder text-gray-700 text-uppercase">
+                                    <th class="min-w-250px w-375px">Name</th>
+                                    
+                                    <th class="min-w-150px w-150px">Maximum Score</th>
+                                    
+                                    <th class="min-w-75px w-75px text-end">Action</th>
+                                </tr>
+                            </thead>
+                            <!--end::Table head-->
+                            <!--begin::Table body-->
+                            <tbody #tibo>
+                                <tr *ngFor="let item of motorlist" class="border-bottom border-bottom-dashed" data-kt-element="item" >
+                                    <td class="pe-7">
+                                        <!-- <input #inpu type="text" class="form-control form-control-solid mb-2" name="name[]" placeholder="Pyschomotor Name" [value]="psycoList[0].name" /> -->
+                                        {{item.skills}}
+                                    </td>
+                                    <td>
+                                        {{item.maxScore}}
+                                        <!-- <input class="form-control form-control-solid" type="number" min="1" name="quantity[]" placeholder="1" [value]="psycoList[0].maxlimit"  /> -->
+                                    </td>
+
+                                    <td class="pt-5 text-end">
+                                        <button (click)="deleteMotor(item.id)" type="button" class="btn btn-sm btn-icon btn-active-color-primary" data-kt-element="remove-item">
+                                            <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
+                                            <span class="svg-icon svg-icon-3">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                    <path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor" />
+                                                    <path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor" />
+                                                    <path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor" />
+                                                </svg>
+                                            </span>
+                                            <!--end::Svg Icon-->
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <!--end::Table body-->
+                            <!--begin::Table foot-->
+                           
+                            <!--end::Table foot-->
+                        </table>
+                         <!--begin::Actions-->
+    
+    <!--end::Actions-->
+                    </div>
+                    <!--end::Table-->
+                    <!--begin::Item template-->
+                    <table class="table d-none" data-kt-element="item-template">
+                        <tr class="border-bottom border-bottom-dashed" data-kt-element="item">
+                            <td class="pe-7">
+                                <input type="text" class="form-control form-control-solid mb-2" name="name[]" placeholder="Pyschomotor Name" />
+                            
+                            </td>
+                            <td class="ps-0">
+                                <input class="form-control form-control-solid" type="number" min="1" name="quantity[]" placeholder="" value=""  />
+                            </td>
+
+                            <td class="pt-5 text-end">
+                                <button type="button" class="btn btn-sm btn-icon btn-active-color-primary" data-kt-element="remove-item">
+                                    <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
+                                    <span class="svg-icon svg-icon-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor" />
+                                            <path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor" />
+                                            <path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor" />
+                                        </svg>
+                                    </span>
+                                    <!--end::Svg Icon-->
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
+                    <table class="table d-none" data-kt-element="empty-template">
+                        <tr data-kt-element="empty">
+                            <th colspan="5" class="text-muted text-center py-10">No items</th>
+                        </tr>
+                    </table>
+                    <!--end::Item template-->
+                    
+                </div>
+                <!--end::Wrapper-->
+        
+            <!--end::Form-->
+        </div>
+        <!--end::Card body-->
+    </div>
+    <!--end::Card-->
+</div>
+<!--end::Content-->

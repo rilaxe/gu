@@ -1,0 +1,124 @@
+<div>
+    <!--end::Header-->
+    <!--begin::Content-->
+    <div>
+        <!--begin::Post-->
+        <div>
+            <!--begin::Container-->
+            <div>
+                <!--begin::Navbar-->
+
+                <!--end::Navbar-->
+
+                <!--begin::Security summary-->
+                <div class="card card-xxl-stretch mb-5 mb-xl-10">
+                    <!--begin::Header-->
+                    <div class="card-header card-header-stretch">
+                        <!--begin::Title-->
+                        <div class="card-title">
+                            <h3 class="m-0 text-gray-900">Promotion by Core Subject</h3>
+
+                        </div>
+                        <!--end::Title-->
+
+
+                        <!--begin::Toolbar-->
+                        <div class="card-toolbar">
+
+
+                            <li class="nav-item">
+                                <div class="nav-link">
+                                    <!--begin::Select-->
+                                    <select #wed [value]="currentClassLevelId" (change)="getClassByLevel(wed.value)"
+                                        class=" me-2 form-select form-select-sm form-select-solid w-125px"
+                                        data-control="select2" data-placeholder="Select Hours" data-hide-search="true">
+                                        <option value="" selected="selected">Class Level</option>
+                                        <option *ngFor="let level of schoolLevels" [value]="level.id">{{level.name}}
+                                        </option>
+                                    </select>
+                                    <!--end::Select-->
+                                </div>
+                            </li>
+
+                        </div>
+                        <!--end::Toolbar-->
+                    </div>
+                    <!--end::Header-->
+                    <!--begin::Body-->
+                    <div class="card-body pt-7 pb-0 px-0">
+                        <!--begin::Tab content-->
+                        <div>
+                            <!--begin::Tab panel-->
+                            <div >
+                                <!--begin::Row-->
+                                <div class="row p-0 mb-5 px-9 ">
+                                    <!--begin::Input group-->
+                                    <div *ngFor="let item of schoolClasses; index as i" class="row mb-15">
+                                        <!--begin::Label-->
+                                        <label class="col-md-3 col-sm-12" style="font-size: 18px; font-family: 'Trebuchet MS'; font-weight: 500; color: black;">{{item.class}}</label>
+                                        <!--end::Label-->
+                                        <!--begin::Col-->
+                                        <div class="col-md-8 col-sm-12">
+                                            <!--begin::Row-->
+
+
+                                            
+                           
+
+
+
+                                            <div>
+                                                <!--begin::Col-->
+                                                <div class="col-lg-9 fv-row">
+                                                    <!--begin::Label-->
+                                                    <label class="mb-2" style="font-size: 18px; font-family: 'Trebuchet MS'; font-weight: 500; color: black;">
+                                                        <span>Set Core Subject</span>
+                                                        <i class="fas fa-exclamation-circle ms-2 fs-7"
+                                                            data-bs-toggle="tooltip" title="Specify Core Subject"></i>
+                                                    </label>
+
+                                                    <!--end::Label-->
+                                                    <!-- Select input with Select2 -->
+                                                    <ng-select style="background-color: rgb(235, 239, 245)"
+                                                        [items]="classSubjects" bindLabel="name" placeholder="Select Category"
+                                                        appendTo="body" [multiple]="true" [(ngModel)]="mydata[i].subjects">
+                                                    </ng-select>
+                                                </div>
+                                                <!--end::Col-->
+                                                
+                                            </div>
+                                            <!--end::Row-->
+
+                                        </div>
+                                        <!--end::Col-->
+                                    </div>
+
+                                </div>
+                                
+                                <!--end::Row-->
+                                <!--begin::Actions-->
+                                <div class="card-footer d-flex justify-content-end py-6 px-9">
+                                    <button type="reset"
+                                        class="btn btn-light btn-active-light-primary me-2">Discard</button>
+                                    <button type="submit" (click)="savePlacement()" class="btn btn-primary"
+                                        id="kt_account_profile_details_submit">Save Changes</button>
+                                </div>
+                                <!--end::Actions-->
+                            </div>
+                            <!--end::Tab panel-->
+
+
+                        </div>
+                        <!--end::Tab content-->
+                    </div>
+                    <!--end::Body-->
+                </div>
+                <!--end::Security summary-->
+                <!--end::Modals-->
+
+            </div>
+            <!--end::Container-->
+        </div>
+        <!--end::Post-->
+    </div>
+</div>

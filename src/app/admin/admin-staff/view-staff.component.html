@@ -1,0 +1,1129 @@
+<div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+    <!--begin::Header-->
+    <div id="kt_header">
+        <!--begin::Container-->
+        <div class="container-fluid d-flex align-items-stretch justify-content-between">
+            <!--begin::Aside mobile toggle-->
+            
+            <!--end::Aside mobile toggle-->
+            <!--begin::Mobile logo-->
+      
+            <!--end::Mobile logo-->
+            <!--begin::Wrapper-->
+            <div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1">
+                <!--begin::Navbar-->
+               
+                <!--end::Navbar-->
+                <!--begin::Toolbar wrapper-->
+                <div class="d-flex align-items-stretch flex-shrink-0">
+                    
+                    
+                    <!--end::Activities-->
+                    
+                    
+                    <!--end::Header menu toggle-->
+                </div>
+                <!--end::Toolbar wrapper-->
+            </div>
+            <!--end::Wrapper-->
+        </div>
+        <!--end::Container-->
+    </div>
+    <!--end::Header-->
+    <!--begin::Content-->
+    <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+        
+        <!--begin::Post-->
+        <div class="post d-flex flex-column-fluid" id="kt_post">
+            <!--begin::Container-->
+            <div id="kt_content_container" class="container-xxl">
+                <!--begin::Navbar-->
+                <div class="card mb-5 mb-xl-10">
+                    <div class="card-body pt-9 pb-0">
+                        <!--begin::Details-->
+                        <div class="d-flex flex-wrap flex-sm-nowrap mb-3">
+                            <!--begin: Pic-->
+                            <div class="me-7 mb-4">
+                                <div class="symbol symbol-100px cover symbol-lg-160px symbol-fixed position-relative">
+                                    <img [src]="genk.setImgRemote(staff.photo)" style="object-fit: cover;" />
+                                </div>
+                            </div>
+                            <!--end::Pic-->
+                            <!--begin::Info-->
+                            <div class="flex-grow-1">
+                                <!--begin::Title-->
+                                <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
+                                    <!--begin::User-->
+                                    <div class="d-flex flex-column">
+                                        <!--begin::Name-->
+                                        <div class="d-flex align-items-center mb-2">
+                                            <a href="#" class="text-gray-900 text-hover-primary fs-2 fw-bolder me-1">{{((studentobj.surname ?? '') + ' ' + (studentobj.otherNames ?? '')).trim()}}</a>
+                                            <a href="#">
+                                                <!--begin::Svg Icon | path: icons/duotune/general/gen026.svg-->
+                                                <span class="svg-icon svg-icon-1 svg-icon-primary">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24">
+                                                        <path d="M10.0813 3.7242C10.8849 2.16438 13.1151 2.16438 13.9187 3.7242V3.7242C14.4016 4.66147 15.4909 5.1127 16.4951 4.79139V4.79139C18.1663 4.25668 19.7433 5.83365 19.2086 7.50485V7.50485C18.8873 8.50905 19.3385 9.59842 20.2758 10.0813V10.0813C21.8356 10.8849 21.8356 13.1151 20.2758 13.9187V13.9187C19.3385 14.4016 18.8873 15.491 19.2086 16.4951V16.4951C19.7433 18.1663 18.1663 19.7433 16.4951 19.2086V19.2086C15.491 18.8873 14.4016 19.3385 13.9187 20.2758V20.2758C13.1151 21.8356 10.8849 21.8356 10.0813 20.2758V20.2758C9.59842 19.3385 8.50905 18.8873 7.50485 19.2086V19.2086C5.83365 19.7433 4.25668 18.1663 4.79139 16.4951V16.4951C5.1127 15.491 4.66147 14.4016 3.7242 13.9187V13.9187C2.16438 13.1151 2.16438 10.8849 3.7242 10.0813V10.0813C4.66147 9.59842 5.1127 8.50905 4.79139 7.50485V7.50485C4.25668 5.83365 5.83365 4.25668 7.50485 4.79139V4.79139C8.50905 5.1127 9.59842 4.66147 10.0813 3.7242V3.7242Z" fill="#00A3FF" />
+                                                        <path class="permanent" d="M14.8563 9.1903C15.0606 8.94984 15.3771 8.9385 15.6175 9.14289C15.858 9.34728 15.8229 9.66433 15.6185 9.9048L11.863 14.6558C11.6554 14.9001 11.2876 14.9258 11.048 14.7128L8.47656 12.4271C8.24068 12.2174 8.21944 11.8563 8.42911 11.6204C8.63877 11.3845 8.99996 11.3633 9.23583 11.5729L11.3706 13.4705L14.8563 9.1903Z" fill="white" />
+                                                    </svg>
+                                                </span>
+                                                <!--end::Svg Icon-->
+                                            </a>
+                                            
+                                        </div>
+                                        <!--end::Name-->
+                                        <!--begin::Info-->
+                                        <div class="d-flex flex-wrap fw-bold fs-6 mb-4 pe-2">
+                                            <a class="badge badge-light-primary fw-bolder ms-2 fs-8 py-1 px-3">{{studentobj.gender}}</a> &nbsp;&nbsp;&nbsp;
+                                            <a class="d-flex align-items-center text-gray-400 text-hover-primary me-5 mb-2">
+                                            <!--begin::Svg Icon | path: icons/duotune/communication/com006.svg-->
+                                            <span class="svg-icon svg-icon-4 me-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                    <path opacity="0.3" d="M21 18.3V4H20H5C4.4 4 4 4.4 4 5V20C10.9 20 16.7 15.6 19 9.5V18.3C18.4 18.6 18 19.3 18 20C18 21.1 18.9 22 20 22C21.1 22 22 21.1 22 20C22 19.3 21.6 18.6 21 18.3Z" fill="currentColor"></path>
+                                                    <path d="M22 4C22 2.9 21.1 2 20 2C18.9 2 18 2.9 18 4C18 4.7 18.4 5.29995 18.9 5.69995C18.1 12.6 12.6 18.2 5.70001 18.9C5.30001 18.4 4.7 18 4 18C2.9 18 2 18.9 2 20C2 21.1 2.9 22 4 22C4.8 22 5.39999 21.6 5.79999 20.9C13.8 20.1 20.1 13.7 20.9 5.80005C21.6 5.40005 22 4.8 22 4Z" fill="currentColor"></path>
+                                                </svg>
+                                            </span>
+                                            <!--end::Svg Icon-->Teacher</a>
+                                            
+                                            
+                                        </div>
+                                        <!--end::Info-->
+                                    </div>
+
+
+
+
+                                    <!--end::User-->
+                                    <!--begin::Actions-->
+                                    <div class="d-flex my-4">
+                                    
+                                        <a href="#" class="btn btn-sm btn-primary me-2"          data-bs-toggle="modal" data-bs-target="#kt_modal_offer_a_deal">  <i class="fonticon-printer"></i> Print Profile</a>
+                                        
+                                    </div>
+                                    <!--end::Actions-->
+                                </div>
+
+                                
+                                <div class="d-flex flex-wrap flex-stack">
+                                    <!--begin::Wrapper-->
+                                    <div class="d-flex flex-column flex-grow-1 pe-8">
+                                        <!--begin::Stats-->
+                                        <div class="d-flex flex-wrap">
+                                            <!--begin::Stat-->
+                                            
+    
+                                            <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                                                <div class="fw-bold fs-7 text-gray-400">ID No.</div>
+                                                <!--begin::Number-->
+                                                <div class="d-flex align-items-center">
+                                                
+                                                    <div class="badge-light-danger fs-5 fw-bolder">{{studentobj.idCardNo}}</div>
+                                                </div>
+                                                <!--end::Number-->
+                                                <!--begin::Label-->
+                                                
+                                                <!--end::Label-->
+                                            </div>
+                                            <!--end::Stat-->
+                                            <!--begin::Stat-->
+                                            <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                                                <div class="fw-bold fs-7 text-gray-400">Phone</div>
+                                                <!--begin::Number-->
+                                                <div class="d-flex align-items-center">
+                                                    
+                                                    <!--end::Svg Icon-->
+                                                    <div class="fs-5 fw-bolder" data-kt-countup="true" data-kt-countup-value="5">{{studentobj.phone}}</div>
+                                                </div>
+                                                <!--end::Number-->
+                                                <!--begin::Label-->
+                                                
+                                                <!--end::Label-->
+                                            </div>
+            
+                                        </div>
+                                        <!--end::Stats-->
+                                    </div>
+                                    <!--end::Wrapper-->
+                                    <!--begin::Progress-->
+    
+                                </div>
+                              
+                                <!--end::Stats-->
+                            </div>
+                            <!--end::Info-->
+                        </div>
+                        <!--end::Details-->
+                        <!--begin::Navs-->
+                        <ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bolder">
+                            <!--begin::Nav item-->
+                            <li class="nav-item mt-2">
+                                <a class="nav-link text-active-primary ms-0 me-10 py-5 active" data-bs-toggle="tab" href="#kt_ecommerce_add_product_general">Staff Personal Information</a>
+                            </li>
+                            <!--end::Nav item-->
+                            <!--begin::Nav item-->
+                            <li class="nav-item mt-2">
+                                <a class="nav-link text-active-primary ms-0 me-10 py-5 " data-bs-toggle="tab" href="#kt_ecommerce_add_product_advanced">Next of Kin Details</a>
+                            </li>
+                            <!--end::Nav item-->
+                            <!--begin::Nav item-->
+                            <li class="nav-item mt-2">
+                                <a class="nav-link text-active-primary ms-0 me-10 py-5" data-bs-toggle="tab"  href="#kt_ecommerce_add_product_new" >Educational Details</a>
+                            </li>
+                            <!--end::Nav item-->
+                            <!--begin::Nav item-->
+                            <li class="nav-item mt-2">
+                                <a class="nav-link text-active-primary ms-0 me-10 py-5" data-bs-toggle="tab"  href="#kt_ecommerce_add_product_new1" >Subject Listing</a>
+                            </li>
+                            <!--end::Nav item-->
+                        
+                        
+                            
+                            
+                        </ul>
+                        <!--begin::Navs-->
+                     
+                    </div>
+                </div>
+                <!--end::Navbar-->
+                 <!--begin::Tab content-->
+                 <div class="tab-content">
+                    <!--begin::Tab pane-->
+                    <div class="tab-pane fade show active" id="kt_ecommerce_add_product_general" role="tab-panel">
+                        <div class="d-flex flex-column gap-7 gap-lg-10">
+                           <!--begin::Basic info-->
+                <div class="card mb-2 mb-xl-5">
+                    <!--begin::Card header-->
+                    <div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse" data-bs-target="#kt_account_profile_details" aria-expanded="true" aria-controls="kt_account_profile_details">
+                        <!--begin::Card title-->
+                        <div class="card-title m-0">
+                            <h3 class="fw-bolder m-0">Profile Details</h3>
+                        </div>
+                        <!--end::Card title-->
+                    </div>
+                    <!--begin::Card header-->
+                    <!--begin::Content-->
+                    <div id="kt_account_settings_profile_details" class="collapse show">
+                        <!--begin::Form-->
+                        <form id="kt_account_profile_details_form" class="form" (ngSubmit)="updateStaff()">
+                            <!--begin::Card body-->
+                            <div class="card-body border-top p-9">
+                                <!--begin::Input group-->
+                                <div class="fv-row mb-7">
+                                    <!--begin::Label-->
+                                    <label class="d-block fw-bold fs-6 mb-5">Staff Picture</label>
+                                    <!-- src="../../../assets/boy2.jpeg" -->
+                                    <div>
+                                       <div #magdiv style="display: flex;">
+                                        <img style="width: 120px;" #mag [src]="genk.imag || genk.setImgRemote(staff.photo)">
+                                       </div>
+                                        <label style="margin-top: 10px;">
+                                            <input #dile type="file"
+                                        class="intbox"
+                                        accept=".jpg, .jpeg, .png, .gif, .tif"
+                                        (change)="genk.showPreview($event, mag)" />
+                                        </label>
+                                       
+                                    </div>
+                                    
+                                    <!--end::Image input-->
+                                    <!--begin::Hint-->
+                                    <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
+                                    <!--end::Hint-->
+                                </div>
+                                <!--end::Input group-->
+                                <!--begin::Input group-->
+                                <div class="row mb-6">
+                                    <!--begin::Label-->
+                                    <label class="col-lg-4 col-form-label required fw-bold fs-6">Full Name</label>
+                                    <!--end::Label-->
+                                    <!--begin::Col-->
+                                    <div class="col-lg-8">
+                                        <!--begin::Row-->
+                                        <div class="row">
+                                            <!--begin::Col-->
+                                            <div class="col-lg-4 fv-row">
+                                                <input type="text" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Surname" name="surname" [(ngModel)]="staff.surname"  />
+                                            </div>
+                                            <!--end::Col-->
+                                            <!--begin::Col-->
+                                            <div class="col-lg-4 fv-row">
+                                                <input type="text" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="First Name" name="firstname" [(ngModel)]="staff.firstName" />
+                                            </div>
+                                            <!--end::Col-->
+                                            <!--begin::Col-->
+                                            <div class="col-lg-4 fv-row">
+                                                <input type="text" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Middle Name" name="middlename" [(ngModel)]="staff.middleName"/>
+                                            </div>
+                                            <!--end::Col-->
+                                        
+                                        </div>
+                                        <!--end::Row-->
+                                    </div>
+                                    <!--end::Col-->
+                                </div>
+                                <!--end::Input group-->
+                                <!--begin::Input group-->
+                                <div class="row mb-6">
+                                    <!--begin::Label-->
+                                    <label class="col-lg-4 col-form-label required fw-bold fs-6">Staff ID</label>
+                                    <!--end::Label-->
+                                    <!--begin::Col-->
+                                    <div class="col-lg-8 fv-row">
+                                        <input type="text" name="company" class="form-control form-control-lg form-control-solid" placeholder="" name="staffId" [(ngModel)]="staff.idCardNo" />
+                                    </div>
+                                    <!--end::Col-->
+                                </div>
+                                <!--end::Input group-->
+                                <!--begin::Input group-->
+                                <div class="row mb-6">
+                                    <!--begin::Label-->
+                                    <label class="col-lg-4 col-form-label fw-bold fs-6">
+                                        <span class="required">Contact Phone</span>
+                                        <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Phone number must be active"></i>
+                                    </label>
+                                    <!--end::Label-->
+                                    <!--begin::Col-->
+                                    <div class="col-lg-8 fv-row">
+                                        <input type="tel" class="form-control form-control-lg form-control-solid" placeholder="Phone number" name="phone" [(ngModel)]="staff.phone" />
+                                    </div>
+                                    <!--end::Col-->
+                                </div>
+                                <!--end::Input group-->
+                               
+                                <!--begin::Input group-->
+                                <div class="row mb-6">
+                                    <!--begin::Label-->
+                                    <label class="col-lg-4 col-form-label fw-bold fs-6">Date of Birth</label>
+                                    <!--end::Label-->
+                                    <!--begin::Col-->
+                                    <div class="col-lg-8 fv-row">
+                                        <input type="date" class="form-control form-control-lg form-control-solid"  placeholder="Date of birth" name="dob" [(ngModel)]="staff.birthDate"/>
+                                    </div>
+                                    <!--end::Col-->
+                                </div>
+            <!--begin::Input group-->
+            <div class="row mb-6">
+                <!--begin::Label-->
+                <label class="col-lg-4 col-form-label required fw-bold fs-6">Category</label>
+                <!--end::Label-->
+                <!--begin::Col-->
+                <div class="col-lg-8 fv-row">
+                    <!--begin::Input-->
+                    <select aria-label="Select a category " data-control="select2" data-placeholder="Select Category.." class="form-select form-select-solid form-select-lg" name="category" [(ngModel)]="staff.category">
+                        <option value="">Select Category..</option>
+                        <option value="Academic Staff">Academic</option>
+                        <option value="Non Academic Staff">Non-Academic</option>
+
+                    </select>
+                    <!--end::Input-->
+                
+                </div>
+                <!--end::Col-->
+            </div>
+            <!--end::Input group-->
+                                    <!--begin::Input group-->
+                                <div class="row mb-6">
+                                    <!--begin::Label-->
+                                    <label class="col-lg-4 col-form-label required fw-bold fs-6">Department</label>
+                                    <!--end::Label-->
+                                    <!--begin::Col-->
+                                    <div class="col-lg-8 fv-row">
+                                        <!--begin::Input-->
+                                        <select aria-label="Select a department" data-control="select2" data-placeholder="Select Department.." name="department" [(ngModel)]="staff.department" class="form-select form-select-solid form-select-lg">
+                                            <option value="">Select Department...</option>
+                                              <option value="Humanities I">Humanities I</option>
+                                              <option value="Humanities II">Humanities II </option>
+                                              <option value="Business"> Business </option>
+                                              <option value=" Mathematics & Computer Science">Mathematics &
+                                                  Computer Science</option>
+                                              <option value="Vocational & Technology Studies">Vocational &
+                                                  Technology Studies </option>
+                                              <option value="Science">Science </option>
+                                              <option value="Clerical">Clerical </option>
+                                              <option value="Utility">Utility</option>
+                                              <option value="Ground Staff">Ground Staff</option>
+                                              <option value="Vocation and technical Department">Vocation and
+                                                  technical Department</option>
+                                        </select>
+                                        <!--end::Input-->
+                                    
+                                    </div>
+                                    <!--end::Col-->
+                                </div>
+                                <!--end::Input group-->
+                                <!--begin::Input group-->
+            <div class="row mb-6">
+                <!--begin::Label-->
+                <label class="col-lg-4 col-form-label required fw-bold fs-6">Position</label>
+                <!--end::Label-->
+                <!--begin::Col-->
+                <div class="col-lg-8 fv-row">
+                    <!--begin::Input-->
+                    <select aria-label="Select a position" data-control="select2" data-placeholder="Select position.." name="position" [(ngModel)]="staff.position" class="form-select form-select-solid form-select-lg">
+                        <option value="">Select Position...</option>
+                                              <option value="Vice Principal Administration">Vice Principal
+                                                  Administration</option>
+                                              <option value="Vice Principal Academics">Vice Principal Academics
+                                              </option>
+                                              <option value="Human Resource Officer I">Human Resource Officer I
+                                              </option>
+                                              <option value="Human Resource Officer II">Human Resource Officer II
+                                              </option>
+                                              <option value="Exam Officer (Internal)">Exam Officer (Internal)
+                                              </option>
+                                              <option value="Exam Officer (External)">Exam Officer (External)
+                                              </option>
+                                              <option value="Matron">Matron</option>
+                                              <option value="Cook">Cook</option>
+                                              <option value="Sewing">Sewing</option>
+                                              <option value="Crèche">Crèche</option>
+                                              <option value="Driver">Driver</option>
+                                              <option value="Nurses">Nurses</option>
+                                              <option value="Gardeners">Gardeners</option>
+                                              <option value="Canteen">Canteen</option>
+                                              <option value="Bakery">Bakery</option>
+                                              <option value="Teacher">Teacher</option>
+                                              <option value="Receptionist">Receptionist</option>
+                                              <option value="Electrician">Electrician</option>
+                                              <option value="Plumber">Plumber</option>
+                                              <option value="Class Teacher">Class Teacher</option>
+                                              <option value="ICT Staff">ICT Staff</option>
+                                              <option value="Facility Manager">Facility Manager</option>
+                                              <option value="Head of Department">Head of Department</option>
+                                              <option value="Academic Support and Foreign Admission Officer">
+                                                  Academic Support and Foreign Admission Officer</option>
+                                              <option value="Accountant">Accountant</option>
+                                              <option value="Store Keeper">Store Keeper</option>
+                                              <option value="Procurement">Procurement</option>
+                                              <option value="Principal">Principal</option>
+                                              <option value="Laboratory scientist">Laboratory scientist</option>
+                                              <option value="Chief Security 1">Chief Security 1</option>
+                                              <option value="Chief Security 2">Chief Security 2</option>
+                                              <option value="Counselor 1">Counselor 1</option>
+                                              <option value="Counselor 2">Counselor 2</option>
+                                              <option value="Chief Nurse">Chief Nurse</option>
+                                              <option value="Cleaner">Cleaner</option>
+                                              <option value="Chief Librarian">Chief Librarian</option>
+                                              <option value="Executive Assistant">Executive Assistant</option>
+                                              <option value="Librarian">Librarian</option>
+                                              <option value="Administration Assistant">Administration Assistant
+                                              </option>
+                   </select>
+                    <!--end::Input-->
+                
+                </div>
+                <!--end::Col-->
+            </div>
+            <!--end::Input group-->
+                                <!--begin::Input group-->
+                                <div class="row mb-6">
+                                    <!--begin::Label-->
+                                    <label class="col-lg-4 col-form-label fw-bold fs-6">Date Employed</label>
+                                    <!--end::Label-->
+                                    <!--begin::Col-->
+                                    <div class="col-lg-8 fv-row">
+                                        <input type="date" class="form-control form-control-lg form-control-solid" name="dateemployed" [(ngModel)]="staff.dateEmployed" />
+                                    </div>
+                                    <!--end::Col-->
+                                </div>
+                                <!--end::Input group-->
+                                <!--begin::Input group-->
+                                <div class="row mb-6">
+                                    <!--begin::Label-->
+                                    <label class="col-lg-4 col-form-label fw-bold fs-6">Email Address</label>
+                                    <!--end::Label-->
+                                    <!--begin::Col-->
+                                    <div class="col-lg-8">
+                                        <!--begin::Row-->
+                                        <div class="row">
+                                            <!--begin::Col-->
+                                            <div class="col-lg-12 fv-row">
+                                                <input type="email"class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="" name="homeAddress" [(ngModel)]="staff.email"  />
+                                            </div>
+                                            <!--end::Col-->
+                                        
+                                        </div>
+                                        <!--end::Row-->
+                                    </div>
+                                    <!--end::Col-->
+                                </div>
+                                <!--end::Input group-->
+                                  <!--begin::Input group-->
+                                  <div class="row mb-6">
+                                    <!--begin::Label-->
+                                    <label class="col-lg-4 col-form-label required fw-bold fs-6">State of Origin</label>
+                                    <!--end::Label-->
+                                    <!--begin::Col-->
+                                    <div class="col-lg-8">
+                                        <!--begin::Row-->
+                                        <div class="row">
+                                            <!--begin::Col-->
+                                            <div class="col-lg-12 fv-row">
+                                                                        <!--begin::Input-->
+                                        <select #st [value]="staff.state" name="states" (change)="setLGA(st.value)" aria-label="Select a state" data-control="select2" data-placeholder="Select state..." class="form-select form-select-solid form-select-lg">
+                                        
+                                            <option *ngFor="let cat of states" [selected]="cat == staff.state" [value]="cat">{{cat}}</option>
+                                        </select>
+                                        <!--end::Input-->
+                                            </div>
+                                            <!--end::Col-->
+                                        
+                                        </div>
+                                        <!--end::Row-->
+                                    </div>
+                                    <!--end::Col-->
+                                </div>
+                                <!--end::Input group-->
+                                <!--begin::Input group-->
+                                <div class="row mb-6">
+                                    <!--begin::Label-->
+                                    <label class="col-lg-4 col-form-label fw-bold fs-6">Local Government Area</label>
+                                    <!--end::Label-->
+                                    <!--begin::Col-->
+                                    <div class="col-lg-8">
+                                        <!--begin::Row-->
+                                        <div class="row">
+                                            <!--begin::Col-->
+                                            <div class="col-lg-12 fv-row">
+                                                                                <!--begin::Input-->
+                                        <select #lges [value]="staff.lga" (change)="selectLG(lges.value)" aria-label="Select " data-control="select2" data-placeholder="Select LGA..." class="form-select form-select-solid form-select-lg">
+                                        
+                                            <option *ngFor="let lg of lgs" [selected]="lg == staff.lga" [value]="lg">{{lg}}</option>
+                                        </select>
+                                        <!--end::Input-->
+                                            </div>
+                                            <!--end::Col-->
+                                        
+                                        </div>
+                                        <!--end::Row-->
+                                    </div>
+                                    <!--end::Col-->
+                                </div>
+                                <!--end::Input group-->
+                              
+                                    <!--begin::Input group-->
+                                    <div class="row mb-6">
+                                        <!--begin::Label-->
+                                        <label class="col-lg-4 col-form-label required fw-bold fs-6">Home address</label>
+                                        <!--end::Label-->
+                                        <!--begin::Col-->
+                                        <div class="col-lg-8">
+                                            <!--begin::Row-->
+                                            <div class="row">
+                                                <!--begin::Col-->
+                                                <div class="col-lg-12 fv-row">
+                                                    <textarea class="form-control form-control-solid" rows="3" placeholder="" name="address" [(ngModel)]="staff.homeAddress" ></textarea>
+                                                </div>
+                                                <!--end::Col-->
+                                            
+                                            </div>
+                                            <!--end::Row-->
+                                        </div>
+                                        <!--end::Col-->
+                                    </div>
+                                    <!--end::Input group-->
+                            
+                            
+                        
+                            </div>
+                            <!--end::Card body-->
+                            <!--begin::Actions-->
+                            <div class="card-footer d-flex justify-content-end py-6 px-9">
+
+                                <button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Save Changes</button>
+                            </div>
+                            <!--end::Actions-->
+                        </form>
+                        <!--end::Form-->
+                    </div>
+                    <!--end::Content-->
+                </div>
+                <!--end::Basic info-->
+                            
+                <!--begin::Deactivate Account-->
+                <div class="card">
+                    <!--begin::Card header-->
+                    <div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse" data-bs-target="#kt_account_deactivate" aria-expanded="true" aria-controls="kt_account_deactivate">
+                        <div class="card-title m-0">
+                            <h3 class="fw-bolder m-0">Deactivate Staff Profile</h3>
+                        </div>
+                    </div>
+                    <!--end::Card header-->
+                    <!--begin::Content-->
+                    <div id="kt_account_settings_deactivate" class="collapse show">
+                        <!--begin::Form-->
+                        <form id="kt_account_deactivate_form" class="form">
+                            <!--begin::Card body-->
+                            <div class="card-body border-top p-9">
+                                <!--begin::Notice-->
+                                <div class="notice d-flex bg-light-warning rounded border-warning border border-dashed mb-9 p-6">
+                                    <!--begin::Icon-->
+                                    <!--begin::Svg Icon | path: icons/duotune/general/gen044.svg-->
+                                    <span class="svg-icon svg-icon-2tx svg-icon-warning me-4">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
+                                            <rect x="11" y="14" width="7" height="2" rx="1" transform="rotate(-90 11 14)" fill="currentColor" />
+                                            <rect x="11" y="17" width="2" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor" />
+                                        </svg>
+                                    </span>
+                                    <!--end::Svg Icon-->
+                                    <!--end::Icon-->
+                                    <!--begin::Wrapper-->
+                                    <div class="d-flex flex-stack flex-grow-1">
+                                        <!--begin::Content-->
+                                        <div *ngIf="staff.status == 'DEACTIVATED'" class="fw-bold">
+                                            <h4 class="text-gray-900 fw-bolder">You Are Activating this Staff Profile</h4>
+                                            <div class="fs-6 text-gray-700">Before you proceed with activating this staff profile, please note that once the activation process is initiated, this staff can be assigned subjects. 
+                                            <br />
+                                            </div>
+                                        </div>
+
+                                        <div *ngIf="staff.status == 'ACTIVE'" class="fw-bold">
+                                            <h4 class="text-gray-900 fw-bolder">You Are Deactivating this Staff Profile</h4>
+                                            <div class="fs-6 text-gray-700">Before you proceed with deactivating this staff profile, please note that once the deactivation process is initiated, this staff cannot be assigned subjects. 
+                                            <br />
+                                            </div>
+                                        </div>
+                                        <!--end::Content-->
+                                    </div>
+                                    <!--end::Wrapper-->
+                                </div>
+                                <!--end::Notice-->
+                                <!--begin::Form input row-->
+                               
+                                <!--end::Form input row-->
+                            </div>
+                            <!--end::Card body-->
+                            <!--begin::Card footer-->
+                          
+                            <div *ngIf="staff.status == 'DEACTIVATED'" class="card-footer d-flex justify-content-end py-6 px-9">
+                                <button id="kt_account_deactivate_account_submit" (click)="activateAccount(staff.id)" class="btn btn-success fw-bold">Activate Account</button>
+                            </div>
+
+                            <div *ngIf="staff.status == 'ACTIVE'" class="card-footer d-flex justify-content-end py-6 px-9" (click)="deactivateAccount(staff.id)">
+                                <button id="kt_account_deactivate_account_submit" type="submit" class="btn btn-danger fw-bold">Deactivate Account</button>
+                            </div>
+                            <!--end::Card footer-->
+                        </form>
+                        <!--end::Form-->
+                    </div>
+                    <!--end::Content-->
+                </div>
+                <!--end::Deactivate Account-->
+                        </div>
+                    </div>
+                    <!--end::Tab pane-->
+                         <!--begin::Tab pane-->
+                         <div class="tab-pane fade" id="kt_ecommerce_add_product_advanced" role="tab-panel">
+                            <div class="d-flex flex-column gap-7 gap-lg-10">
+                               <!--begin::Basic info-->
+                <div class="card mb-5 mb-xl-5">
+                    <!--begin::Card header-->
+                    <div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse" data-bs-target="#kt_account_profile_details" aria-expanded="true" aria-controls="kt_account_profile_details">
+                        <!--begin::Card title-->
+                        <div class="card-title m-0">
+                            <h3 class="fw-bolder m-0">Next of Kin Details</h3>
+                        </div>
+                        <!--end::Card title-->
+                    </div>
+                    <!--begin::Card header-->
+                    <!--begin::Content-->
+                    <div id="kt_account_settings_profile_details" class="collapse show">
+                        <!--begin::Form-->
+                        <form id="kt_account_profile_details_form" (ngSubmit)="updateStaff()" class="form">
+                            <!--begin::Card body-->
+                            <div class="card-body border-top p-9">
+                            
+                                <!--begin::Input group-->
+                                <div class="row mb-6">
+                                    <!--begin::Label-->
+                                    <label class="col-lg-4 col-form-label required fw-bold fs-6">Full Name</label>
+                                    <!--end::Label-->
+                                    <!--begin::Col-->
+                                    <div class="col-lg-8">
+                                        <!--begin::Row-->
+                                        <div class="row">
+                                            <!--begin::Col-->
+                                            <div class="col-lg-12 fv-row">
+                                                <input type="text" name="fullname" [(ngModel)]="staff.nokFullName" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="First name" />
+                                            </div>
+                                            <!--end::Col-->
+                                        
+                                        </div>
+                                        <!--end::Row-->
+                                    </div>
+                                    <!--end::Col-->
+                                </div>
+                                <!--end::Input group-->
+                                
+                                <!--begin::Input group-->
+                                <div class="row mb-6">
+                                    <!--begin::Label-->
+                                    <label class="col-lg-4 col-form-label fw-bold fs-6">
+                                        <span class="required">Contact Phone</span>
+                                        <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Phone number must be active"></i>
+                                    </label>
+                                    <!--end::Label-->
+                                    <!--begin::Col-->
+                                    <div class="col-lg-8 fv-row">
+                                        <input type="tel" name="nokphone" [(ngModel)]="staff.nokContactPhone" class="form-control form-control-lg form-control-solid" placeholder="Phone number"/>
+                                    </div>
+                                    <!--end::Col-->
+                                </div>
+                                <!--end::Input group-->
+                            
+                                <!--begin::Input group-->
+                                <div class="row mb-6">
+                                    <!--begin::Label-->
+                                    <label class="col-lg-4 col-form-label fw-bold fs-6">Occupation</label>
+                                    <!--end::Label-->
+                                    <!--begin::Col-->
+                                    <div class="col-lg-8">
+                                        <!--begin::Row-->
+                                        <div class="row">
+                                            <!--begin::Col-->
+                                            <div class="col-lg-12 fv-row">
+                                                <input type="text" name="occupation" [(ngModel)]="staff.nokOccupation"  class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="" />
+                                            </div>
+                                            <!--end::Col-->
+                                        
+                                        </div>
+                                        <!--end::Row-->
+                                    </div>
+                                    <!--end::Col-->
+                                </div>
+                                <!--end::Input group-->
+                                <!--begin::Input group-->
+                                <div class="row mb-6">
+                                    <!--begin::Label-->
+                                    <label class="col-lg-4 col-form-label fw-bold fs-6">Relationship</label>
+                                    <!--end::Label-->
+                                    <!--begin::Col-->
+                                    <div class="col-lg-8">
+                                        <!--begin::Row-->
+                                        <div class="row">
+                                            <!--begin::Col-->
+                                            <div class="col-lg-12 fv-row">
+                                                <input type="text" name="relationship" [(ngModel)]="staff.nokRelationship"  class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder=""/>
+                                            </div>
+                                            <!--end::Col-->
+                                        
+                                        </div>
+                                        <!--end::Row-->
+                                    </div>
+                                    <!--end::Col-->
+                                </div>
+                                <!--end::Input group-->
+                               
+                                    <!--begin::Input group-->
+                                    <div class="row mb-6">
+                                        <!--begin::Label-->
+                                        <label class="col-lg-4 col-form-label required fw-bold fs-6"> Contact Address</label>
+                                        <!--end::Label-->
+                                        <!--begin::Col-->
+                                        <div class="col-lg-8">
+                                            <!--begin::Row-->
+                                            <div class="row">
+                                                <!--begin::Col-->
+                                                <div class="col-lg-12 fv-row">
+                                                    <textarea name="nokaddress" [(ngModel)]="staff.nokContactAddress" class="form-control form-control-solid" rows="3" placeholder=""></textarea>
+                                                </div>
+                                                <!--end::Col-->
+                                            
+                                            </div>
+                                            <!--end::Row-->
+                                        </div>
+                                        <!--end::Col-->
+                                    </div>
+                                    <!--end::Input group-->
+                            
+                            
+                        
+                            </div>
+                            <!--end::Card body-->
+                            <!--begin::Actions-->
+                            <div class="card-footer d-flex justify-content-end py-6 px-9">
+
+                                <button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Save Changes</button>
+                            </div>
+                            <!--end::Actions-->
+                        </form>
+                        <!--end::Form-->
+                    </div>
+                    <!--end::Content-->
+                </div>
+                
+                                
+                            </div>
+                        </div>
+                        <!--end::Tab pane-->
+
+                          <!--begin::Tab pane-->
+                          <div class="tab-pane fade" id="kt_ecommerce_add_product_new" role="tab-panel">
+                            <div class="d-flex flex-column gap-7 gap-lg-10">
+                          <!--begin::Basic info-->
+                <div class="card mb-5 mb-xl-5">
+                    <!--begin::Card header-->
+                    <div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse" data-bs-target="#kt_account_profile_details" aria-expanded="true" aria-controls="kt_account_profile_details">
+                        <!--begin::Card title-->
+                        <div class="card-title m-0">
+                            <h3 class="fw-bolder m-0">Educational Details</h3>
+                        </div>
+                        <!--end::Card title-->
+                    </div>
+                    <!--begin::Card header-->
+                    <!--begin::Content-->
+                    <div id="kt_account_settings_profile_details" class="collapse show">
+                        <!--begin::Form-->
+                        <form id="kt_account_profile_details_form" class="form" (ngSubmit)="updateStaff()">
+                            <!--begin::Card body-->
+                            <div class="card-body border-top p-9">
+                            
+                                <!--begin::Input group-->
+                                <div class="row mb-6">
+                                    <!--begin::Label-->
+                                    <label class="col-lg-4 col-form-label required fw-bold fs-6">Institution</label>
+                                    <!--end::Label-->
+                                    <!--begin::Col-->
+                                    <div class="col-lg-8">
+                                        <!--begin::Row-->
+                                        <div class="row">
+                                            <!--begin::Col-->
+                                            <div class="col-lg-12 fv-row">
+                                                <input type="text" name="institution" [(ngModel)]="staff.institution" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Enter Institution Name"  />
+                                            </div>
+                                            <!--end::Col-->
+                                        
+                                        </div>
+                                        <!--end::Row-->
+                                    </div>
+                                    <!--end::Col-->
+                                </div>
+                                <!--end::Input group-->
+                                
+                                <!--begin::Input group-->
+                                <div class="row mb-6">
+                                    <!--begin::Label-->
+                                    <label class="col-lg-4 col-form-label fw-bold fs-6">
+                                        <span class="required">Course of Study</span>
+                                        
+                                    </label>
+                                    <!--end::Label-->
+                                    <!--begin::Col-->
+                                    <div class="col-lg-8 fv-row">
+                                        <input type="text" name="courseofstudy" [(ngModel)]="staff.courseOfStudy" class="form-control form-control-lg form-control-solid" placeholder="Course of study"  />
+                                    </div>
+                                    <!--end::Col-->
+                                </div>
+                                <!--end::Input group-->
+                            
+                                <!--begin::Input group-->
+                                <div class="row mb-6">
+                                    <!--begin::Label-->
+                                    <label class="col-lg-4 col-form-label fw-bold fs-6">Year Admitted</label>
+                                    <!--end::Label-->
+                                    <!--begin::Col-->
+                                    <div class="col-lg-8">
+                                        <!--begin::Row-->
+                                        <div class="row">
+                                            <!--begin::Col-->
+                                            <div class="col-lg-12 fv-row">
+                                                <input type="date" name="yearadmitted" [(ngModel)]="staff.yearAdmitted" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Year Admitted"  />
+                                            </div>
+                                            <!--end::Col-->
+                                        
+                                        </div>
+                                        <!--end::Row-->
+                                    </div>
+                                    <!--end::Col-->
+                                </div>
+                                <!--end::Input group-->
+                                <!--begin::Input group-->
+                                <!--begin::Input group-->
+                                <div class="row mb-6">
+                                    <!--begin::Label-->
+                                    <label class="col-lg-4 col-form-label fw-bold fs-6">Year Graduated</label>
+                                    <!--end::Label-->
+                                    <!--begin::Col-->
+                                    <div class="col-lg-8">
+                                        <!--begin::Row-->
+                                        <div class="row">
+                                            <!--begin::Col-->
+                                            <div class="col-lg-12 fv-row">
+                                                <input type="date" name="yeargraduated" [(ngModel)]="staff.yearGraduated" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Year Graduated"  />
+                                            </div>
+                                            <!--end::Col-->
+                                        
+                                        </div>
+                                        <!--end::Row-->
+                                    </div>
+                                    <!--end::Col-->
+                                </div>
+                                <!--end::Input group-->
+                                <div class="row mb-6">
+                                    <!--begin::Label-->
+                                    <label class="col-lg-4 col-form-label fw-bold fs-6">Certificate</label>
+                                    <!--end::Label-->
+                                    <!--begin::Col-->
+                                    <div class="col-lg-8">
+                                        <!--begin::Row-->
+                                        <div class="row">
+                                            <!--begin::Col-->
+                                            <div class="col-lg-12 fv-row">
+                                                <input type="text" name="certificate" [(ngModel)]="staff.certificate" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="" />
+                                            </div>
+                                            <!--end::Col-->
+                                        
+                                        </div>
+                                        <!--end::Row-->
+                                    </div>
+                                    <!--end::Col-->
+                                </div>
+                                <!--end::Input group-->
+                               
+                            </div>
+                            <!--end::Card body-->
+                            <!--begin::Actions-->
+                            <div class="card-footer d-flex justify-content-end py-6 px-9">
+
+                                <button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Save Changes</button>
+                            </div>
+                            <!--end::Actions-->
+                        </form>
+                        <!--end::Form-->
+                    </div>
+                    <!--end::Content-->
+                </div>
+                            </div>
+                        </div>
+                        <!--end::Tab pane-->
+                         <!--begin::Tab pane-->
+                         <div class="tab-pane fade" id="kt_ecommerce_add_product_new1" role="tab-panel">
+                            <div class="d-flex flex-column gap-7 gap-lg-10">
+               
+                <!--begin::Card-->
+                <div class="card">
+                    <!--begin::Card header-->
+                    <div class="card-header border-0 pt-6">
+                        <!--begin::Card title-->
+                        <div class="card-title">
+                            <!--begin::Search-->
+                            <div class="d-flex align-items-center position-relative my-1">
+                                <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
+                                <span class="svg-icon svg-icon-1 position-absolute ms-6">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="currentColor" />
+                                        <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="currentColor" />
+                                    </svg>
+                                </span>
+                                <!--end::Svg Icon-->
+                                <input type="text" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search" />
+                            </div>
+                            <!--end::Search-->
+                        </div>
+                        <!--begin::Card title-->
+                        <!--begin::Card toolbar-->
+                        <div class="card-toolbar">
+                            <!--begin::Toolbar-->
+                            <div class="d-flex justify-content-end" data-kt-customer-table-toolbar="base">
+                                
+                                
+                                <!--begin::Add customer-->
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#kt_modal_create_app" class="btn btn-info me-3">Add Subject</button>
+                                <!--end::Add customer-->
+
+                            
+                            </div>
+                            <!--end::Toolbar-->
+                            
+                        </div>
+                        <!--end::Card toolbar-->
+                    </div>
+                    <!--end::Card header-->
+                    <!--begin::Card body-->
+                    <div class="card-body pt-0">
+                        <!--begin::Table-->
+                        <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_customers_table">
+                            <!--begin::Table head-->
+                            <thead>
+                                <!--begin::Table row-->
+                                <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+                                    <th class="w-200px pe-5">
+                                        S/N
+                                    </th>
+                                    <th class="min-w-125px">Class</th>
+                                    <th class="min-w-125px">Subject</th>
+                                    
+                                    
+                                    <th class="text-end min-w-70px">Actions</th>
+                                </tr>
+                                <!--end::Table row-->
+                            </thead>
+                            <!--end::Table head-->
+                            <!--begin::Table body-->
+                            <tbody class="fw-bold text-gray-600">
+                                <tr *ngFor="let mystaff of staffSubjectList; index as i">
+                                    <!--begin::Checkbox-->
+                                    <td class="text-gray-800 pe-5 text-hover-info">
+                                        {{i + 1}}
+                                    </td>
+                                    <!--end::Checkbox-->
+                                    <!--begin::Name=-->
+                                    <td>
+                                        <a href="#" class="text-gray-800 text-hover-info mb-1">{{mystaff.class}}</a>
+                                    </td>
+                                    <!--end::Name=-->
+                                    <!--begin::Email=-->
+                                    <td>
+                                        <a href="#" class="text-gray-800 text-hover-info mb-1">{{mystaff.subjects}}</a>
+                                    </td>
+                                    <!--end::Email=-->
+                                    
+                                    
+                                        
+                                        <!--end::Date=-->
+                                    <!--begin::Action=-->
+                                    <td class="text-end">
+                                        <a class="btn btn-sm btn-light-danger btn-danger" (click)="deleteStaffSubjects(mystaff.id)">
+                                          Remove
+                                          </a>
+                                    </td>
+                                    <!--end::Action=-->
+                                </tr>
+                            </tbody>
+                            <!--end::Table body-->
+                        </table>
+                        <!--end::Table-->
+                    </div>
+                    <!--end::Card body-->
+                </div>
+
+                            </div>
+                        </div>
+                        <!--end::Tab pane-->
+                </div>
+                <!--end::Tab content-->
+            
+            </div>
+            <!--end::Container-->
+        </div>
+        <!--end::Post-->
+    </div>
+
+</div>
+
+
+<!--begin::Modal - Create App-->
+<div class="modal fade" id="kt_modal_create_app" tabindex="-1" aria-hidden="true">
+    <!--begin::Modal dialog-->
+    <div class="modal-dialog modal-dialog-centered mw-700px">
+        <!--begin::Modal content-->
+        <div class="modal-content">
+            <!--begin::Modal header-->
+            <div class="modal-header">
+                <!--begin::Modal title-->
+                <h2> Select Class </h2>
+                <!--end::Modal title-->
+                <!--begin::Close-->
+                <div class="btn btn-sm btn-icon btn-active-color-info" data-bs-dismiss="modal">
+                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                    <span class="svg-icon svg-icon-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
+                            <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor" />
+                        </svg>
+                    </span>
+                    <!--end::Svg Icon-->
+                </div>
+                <!--end::Close-->
+            </div>
+            <!--end::Modal header-->
+            <!--begin::Modal body-->
+            <div class="modal-body py-lg-10 px-lg-10 h-350px scroll-y">
+                <!--begin::Stepper-->
+                <div class="stepper stepper-pills stepper-column d-flex flex-column flex-xl-row flex-row-fluid" id="kt_modal_create_app_stepper">
+                    <!--begin::Aside-->
+                    
+                    <!--begin::Aside-->
+                    <!--begin::Content-->
+                    <div class="flex-row-fluid py-lg-5 px-lg-15">
+                        <!--begin::Form-->
+                        <form class="form" (ngSubmit)="createStaffSubject(subjectId, classid)" novalidate="novalidate" id="kt_modal_create_app_form">
+                            <!--begin::Step 1-->
+                            <div class="current" data-kt-stepper-element="content">
+                                <div class="w-100">
+                                    <!--begin::Input group-->
+
+                                    <div class="row mb-10">
+                                        <div class="col-12">
+                                            <!--begin::Label-->
+                                            <label class="fs-6 fw-bold mb-2">
+                                                <span class="">Class</span>
+                                                
+                                            </label>
+                                            <!--end::Label-->
+                                            <!--begin::Input-->
+                                            <select [(ngModel)]="classid" name="classid" data-control="select" data-placeholder="Select Class" class="form-select form-select-solid fw-bolder">
+                                                <option value="">Select Class...</option>
+                                                <option *ngFor="let session of schoolClasses" [value]="session.id">{{session.class}}</option>
+                                            </select>
+                                            
+                                            <!--end::Input-->
+                                            </div>
+                                    </div>
+                                        
+                                    <div class="row mb-10">
+                                        <div class="col-12">
+                                            <!--begin::Label-->
+                                            <label class="fs-6 fw-bold mb-2">
+                                                <span class="">Subject</span>
+                                                
+                                            </label>
+                                            <!--end::Label-->
+                                            <!--begin::Input-->
+                                            <select [(ngModel)]="subjectId" name="subjectId" data-control="select2" data-placeholder="Select Subject" class="form-select  form-select-solid fw-bolder">
+                                                <option value="">Select Subject</option>
+                                                <option *ngFor="let session of subjectList" [value]="session.id">{{session.subjects}}</option>
+                                            </select>
+                                            
+                                            
+                                            <!--end::Input-->
+                                            </div>
+                                    </div>
+
+                                                                            
+                                </div>
+
+                                
+                            </div>
+                   
+                            
+
+                            
+                        
+                             
+                            <div>
+                                <div class="d-flex justify-content-center flex-row-fluid ">
+                                    <button type="reset" class="btn btn-light me-3" data-bs-dismiss="modal">Cancel</button>
+                                    <button type="submit" class="btn btn-info">Submit</button>
+                                </div>																			
+                            </div>
+                                <!--end::Wrapper-->
+                                <!--begin::Wrapper-->
+                                
+                                <!--end::Wrapper-->
+                        
+                            <!--end::Actions-->
+                    
+                        <!--end::Form-->
+                    
+            </form>
+                    <!--end::Content-->
+                </div>
+                <!--end::Stepper-->
+            </div>
+            <!--end::Modal body-->
+        </div>
+        <!--end::Modal content-->
+    </div>
+    <!--end::Modal dialog-->
+</div>

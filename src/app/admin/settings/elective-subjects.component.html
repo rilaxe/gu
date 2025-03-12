@@ -1,0 +1,55 @@
+<div class="card mb-5 mb-xxl-10">
+    <!--begin::Card header-->
+    <div class="card-header">
+        <!--begin::Heading-->
+        <div class="card-title">
+            <h3>Elective Subject</h3>
+        </div>
+        <!--end::Heading-->
+
+    </div>
+    <!--end::Card header-->
+    <!--begin::Card body-->
+    <div class="card-body p-0">
+        <!--begin::Table wrapper-->
+        <div class="table-responsive">
+            <!--begin::Table-->
+            <table class="table table-flush align-middle table-row-bordered table-row-solid gy-4 gs-9">
+                <!--begin::Thead-->
+                <thead class="border-gray-200 fs-5 fw-bold bg-lighten">
+                    <tr>
+                        <th class="min-w-50px">S/N</th>
+                        <th class="min-w-250px">Subject Name</th>
+                        <th class="min-w-100px">No of Student</th>
+                        <th class="min-w-200px">Action</th>
+                    </tr>
+                </thead>
+                <!--end::Thead-->
+                <!--begin::Tbody-->
+                <tbody *ngFor="let item of subjectList; index as i" class="fw-6 fw-bold text-gray-600">
+                    <tr>
+                        <td>{{i + 1}}</td>
+                        <td>
+                            <a href="#" class="text-hover-primary text-gray-600">{{item.subject}}</a>
+                        </td>
+                        <td>
+                            <a href="#" class="text-hover-primary text-gray-600">{{item.studentCount}}</a>
+                        </td>
+                        
+                        
+                        <td>
+                            <div class="d-flex align-items-center py-2">
+                                <a [routerLink]="['/' + 'admin', 'admin-students', 'enroll-students', item.id]" class="btn btn-sm btn-light-primary btn-active-primary me-3">Enroll Student</a>
+                                <a [routerLink]="['/' + 'admin', 'admin-students', 'view-enroll', item.id]" class="btn btn-sm  btn-light btn-active-primary  me-3">View Student</a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+                <!--end::Tbody-->
+            </table>
+            <!--end::Table-->
+        </div>
+        <!--end::Table wrapper-->
+    </div>
+    <!--end::Card body-->
+</div>

@@ -1,0 +1,14 @@
+.btnact {
+    background-color: rgb(16, 171, 35); 
+    color: white; 
+    font-weight: 600;
+    padding: 10px 20px; 
+    border-radius: 30px;
+  }
+  
+  .nobtnact {
+    color: rgb(16, 171, 35); 
+    font-weight: 600;
+    padding: 10px 20px; 
+    border-radius: 30px;
+  }

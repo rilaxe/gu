@@ -1,0 +1,16 @@
+<div id="chart">
+    <apx-chart
+      [series]="chartOptions.series"
+      [chart]="chartOptions.chart"
+      [xaxis]="chartOptions.xaxis"
+      [yaxis]="chartOptions.yaxis"
+      [title]="chartOptions.title"
+      [colors]="chartOptions.colors"
+      [dataLabels]="chartOptions.dataLabels"
+      [stroke]="chartOptions.stroke"
+      [legend]="chartOptions.legend"
+    ></apx-chart>
+  </div>
+
+  <canvas id="myChart" width="2400" height="1200" style="display:none;"></canvas>
+  <button (click)="renderPdfChart()">Download PDF</button>

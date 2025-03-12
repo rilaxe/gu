@@ -1,0 +1,163 @@
+<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+
+    <!--begin::Post-->
+    <div class="post d-flex flex-column-fluid" id="kt_post">
+        <!--begin::Container-->
+        <div id="kt_content_container" class="container-xxl">
+            <!--begin::Row-->
+            <div class="row g-xxl-9">
+
+                <!--begin::Col-->
+                <div class="col-xxl-12">
+                    <!--begin::Invoices-->
+                    <div class="card card-xxl-stretch mb-5 mb-xxl-10">
+                        <!--begin::Header-->
+                        <div class="card-header">
+                            <div class="card-title">
+                                <h3 class="text-gray-800">{{resulttype}} Result</h3>
+                            </div>
+                        </div>
+                        <!--end::Header-->
+                        <!--begin::Body-->
+                        <div class="card-body">
+                            <span class="fs-5 fw-bold text-gray-600 pb-6 d-block">Select a session and
+                                term to print result</span>
+                            <div class="row">
+                                <div class="mb-5 col-12 col-md-6 align-self-center">
+                                    <div class="flex-grow-1 me-3">
+                                        <!--begin::Select-->
+                                        <select [(ngModel)]="currentSessionId" name="classu" aria-label="Select class"
+                                        data-control="select2" data-placeholder="Select class.."
+                                        class="form-select form-select-solid form-select-lg">
+                                        <option value="">Select Session...</option>
+                                        <option *ngFor="let session of sessionlist" [value]="session.id">{{session.sessionName}}</option>
+                                    </select>
+                                        <!--end::Select-->
+                                    </div>
+                                </div>
+                                <div class="mb-5 col-12 col-md-6 align-self-center">
+                                    <div class="flex-grow-1 me-3">
+                                        <!--begin::Select-->
+                                        <select [(ngModel)]="currentTerm" name="clasis" aria-label="Select term"
+                                                    data-control="select2" data-placeholder="Select term.."
+                                                    class="form-select form-select-solid form-select-lg">
+                                                    <option selected disabled>Select term</option>
+                                                    <option value="FIRST">First</option>
+                                                    <option value="SECOND">Second</option>
+                                                    <option value="THIRD">Third</option>
+                                                </select>
+                                        <!--end::Select-->
+                                    </div>
+                                </div>
+
+                            
+                            </div>
+                            <br>
+                            <div class="row" style="justify-content: space-around;">
+                                <!-- <div class="mb-5 col-12 col-md-6 align-self-center">
+                                    <div class="flex-grow-1 me-3">
+                                    
+                                        <select [(ngModel)]="currentClassId" name="classy" aria-label="Select class" data-control="select2"
+                                        data-placeholder="Select class.."
+                                        class="form-select form-select-solid form-select-lg">
+                                        <option value="">Select Class...</option>
+                                        <option *ngFor="let session of schoolClasses" [value]="session.id">{{session.class}}</option>
+                                    </select>
+                                        
+                                    </div>
+                                </div> -->
+                                <div class="mb-5 col-12 col-md-5 align-self-center">
+                                    <div class="flex-grow-1 me-3">
+                                        <a style="width: 100%;" (click)="viewResult()"
+                                                class="btn btn-primary mt-5 align-self-center text-nowrap">VIEW RESULT</a>
+                                    </div>
+                                </div>
+
+                                <!-- <div class="mb-5 col-12 col-md-5 align-self-center">
+                                    <div class="flex-grow-1 me-3">
+                                        <a style="width: 100%;" (click)="viewResult()"
+                                                class="btn btn-warning mt-5 align-self-center text-nowrap">VIEW PERFORMANCE ANALYSIS</a>
+                                    </div>
+                                </div> -->
+
+
+                                <!-- <div *ngIf="currentTerm != 'ANNUAL'" class="mb-5 col-12 col-md-6 align-self-center">
+                                    <div class="flex-grow-1 me-3">
+                                        <button *ngIf="getresultUrl == 'student-result'" class="btn btn-sm btn-light-primary btn-active-primary me-3" (click)="student_result.createResult(studentId, currentTerm, currentSessionId, currentSession, currentClassId, average, position)"  class="btn btn-sm btn-light-primary btn-active-primary me-3">Download</button>
+
+                                        <button *ngIf="getresultUrl == 'notre-dame-result'" class="btn btn-sm btn-light-primary btn-active-primary me-3" (click)="notre_dame_result.createResult(studentId, currentTerm, currentSessionId, currentSession, currentClassId, average, classAverage, position)"  class="btn btn-sm btn-light-primary btn-active-primary me-3">Download</button>
+                                        <button *ngIf="getresultUrl == 'notre-dame-result'" class="btn btn-sm btn-light-primary btn-active-primary me-3"  (click)="notre_dame_result.loadPdfChart(studentId, currentTerm, currentSessionId, currentSession, currentClassId, average, classAverage, mychart, mychartdiv)">Performance Analysis</button>
+
+                                    </div>
+                                    
+                                    <button *ngIf="getresultUrl != 'student-result' && getresultUrl != 'notre-dame-result'" [routerLink]="['/' + 'admin', 'result', getresultUrl, item.studentId]" [queryParams]="{term: currentTerm, currentSessionId: currentSessionId, currentSession: currentSession, classId: currentClass, average: item.average, classAverage: classAverage,  position: item.average ? formatPosition(i + 1) : ''}"
+                                    class="btn btn-sm btn-light-primary btn-active-primary me-3">View result</button>
+                                </div>
+                                <div *ngIf="currentTerm == 'ANNUAL'">
+                                    <div class="flex-grow-1 me-3">
+                                        <button [routerLink]="['/' + 'admin', 'result', getannualResultUrl, item.studentId]" [queryParams]="{term: currentTerm, currentSessionId: currentSessionId, currentSession: currentSession, classId: currentClassId, average: item.average, classAverage: classAverage, position: item.average ? formatPosition(i + 1) : ''}"
+                                        class="btn btn-sm btn-light-primary btn-active-primary me-3">View result</button>
+                                    </div>
+                                    
+                                </div> -->
+                                <!--end::Action-->
+                            </div>
+
+                            <!--end::Left Section-->
+
+
+                        </div>
+                        <!--end::Body-->
+                    </div>
+                    <!--end::Invoices-->
+                </div>
+                <!--end::Col-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="reasonForNoResult" style="padding: 0 50px;">
+    <div
+                                    class="notice d-flex bg-light-danger rounded border-danger border border-dashed mb-9 p-6">
+                                    <!--begin::Icon-->
+                                    <!--begin::Svg Icon | path: icons/duotune/art/art006.svg-->
+                                    <span class="svg-icon svg-icon-2tx svg-icon-danger me-4">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none">
+                                            <path opacity="0.3"
+                                                d="M22 19V17C22 16.4 21.6 16 21 16H8V3C8 2.4 7.6 2 7 2H5C4.4 2 4 2.4 4 3V19C4 19.6 4.4 20 5 20H21C21.6 20 22 19.6 22 19Z"
+                                                fill="currentColor"></path>
+                                            <path
+                                                d="M20 5V21C20 21.6 19.6 22 19 22H17C16.4 22 16 21.6 16 21V8H8V4H19C19.6 4 20 4.4 20 5ZM3 8H4V4H3C2.4 4 2 4.4 2 5V7C2 7.6 2.4 8 3 8Z"
+                                                fill="currentColor"></path>
+                                        </svg>
+                                    </span>
+                                    <!--end::Svg Icon-->
+                                    <!--end::Icon-->
+                                    <!--begin::Wrapper-->
+                                    <div class="d-flex flex-stack flex-grow-1">
+                                        <!--begin::Content-->
+                                        <div class="fw-bold">
+                                            <div class="fs-4 text-dark">{{reasonForNoResult}}
+                                            </div>
+                                        </div>
+                                        <!--end::Content-->
+                                    </div>
+                                    <!--end::Wrapper-->
+                                </div>
+</div>
+
+
+<canvas #pdfCanvas></canvas>
+
+
+
+
+
+
+
+<!-- Notre Dame Performance Analysis Chart -->
+<div #mychartdiv id="chartdiv">
+    <canvas #mychart id="myChart" width="3600" height="1800" style="display:none;"></canvas>
+</div>

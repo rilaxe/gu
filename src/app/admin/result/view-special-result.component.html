@@ -1,0 +1,489 @@
+<div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+   
+    <!--end::Header-->
+    <!--begin::Content-->
+    <div class="content d-flex flex-column flex-column-fluid " id="kt_content">
+
+        <!--begin::Post-->
+        <div class="post d-flex flex-column-fluid" id="kt_post">
+            <!--begin::Container-->
+            <div id="kt_content_container" class="container-xxl">
+                <!--begin::Card-->
+                <div class="card mb-10">
+                    <!--begin::Card body-->
+                    <div class="card-body p-12">
+                        <!-- <div style="display: flex; margin-left: 15px;">
+                            <div style="box-shadow: 2px 2px 10px rgb(0, 0, 0, 0.2); background-color: white; display: flex; align-items: center; border-radius: 10px; padding: 6px;">
+                                <div [ngClass]="genk.isResultSession ? 'nobtnact' : 'btnact'" (click)="switchCat('class')">Class Based</div>
+                                <div [ngClass]="genk.isResultSession ? 'btnact' : 'nobtnact'" (click)="switchCat('session')">Session Based</div>
+                            </div>
+                        </div> -->
+                        <!--begin::Form-->
+                        <form action="" id="kt_invoice_form">
+                            <!--begin::Wrapper-->
+                            <div class="d-flex flex-column align-items-start flex-xxl-row">
+
+                                <!--begin::Input group -->
+                                <div class="d-flex flex-center flex-equal fw-row text-nowrap order-1 order-xxl-2 me-4"
+                                    data-bs-toggle="tooltip" data-bs-trigger="hover" title="Enter invoice number">
+                                    <span class="fs-2x fw-bolder text-gray-800">Students Result</span>
+
+                                </div>
+                                <!--end::Input group-->
+
+                            </div>
+                            <!--end::Top-->
+                            <!--begin::Separator-->
+                            <div class="separator separator-dashed my-10"></div>
+                            <!--end::Separator-->
+                            <!--begin::Wrapper-->
+                            <div class="mb-0">
+                                <!--begin::Row-->
+                                <div class="row gx-10 mb-5">
+                                    <!--begin::Col-->
+                                    <div class="col-lg-6">
+                                        <!--begin::Label-->
+                                        <div class="fv-row mb-10">
+                                            <label class="fs-6 fw-bold form-label mt-3">
+                                                <span class="required">Select Class</span>
+                                            </label>
+                                            <!--end::Label-->
+                                            <div class="w-100">
+
+                                                <!--begin::Input-->
+                                                <select [(ngModel)]="currentClass" name="classy" aria-label="Select class" data-control="select2"
+                                                    data-placeholder="Select class.."
+                                                    class="form-select form-select-solid form-select-lg">
+                                                    <option value="">Select Class...</option>
+                                                    <option *ngFor="let session of schoolClasses" [value]="session.id">{{session.class}}</option>
+                                                </select>
+                                                <!--end::Input-->
+
+                                            </div>
+                                        </div>
+                                        <!--begin::Label-->
+                                        <div class="fv-row mb-5">
+                                            <label class="fs-6 fw-bold form-label ">
+                                                <span class="required">Session</span>
+                                            </label>
+                                            <div class="w-100">
+                                                <select [(ngModel)]="currentSessionId" name="classu" aria-label="Select class"
+                                                    data-control="select2" data-placeholder="Select class.."
+                                                    class="form-select form-select-solid form-select-lg">
+                                                    <option value="">Select Session...</option>
+                                                    <option *ngFor="let session of sessionlist" [value]="session.id">{{session.sessionName}}</option>
+                                                </select>
+                                                <!-- <input type="text"
+                                                    class=" disable form-control form-control-solid"
+                                                    placeholder="2023/2024" disabled="" value="2023/2024"> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end::Col-->
+                                    <!--begin::Col-->
+                                    <div class="col-lg-6">
+                                        <!--begin::Label-->
+                                        <div class="fv-row mb-10">
+                                            <label class="fs-6 fw-bold form-label mt-3">
+                                                <span class="required">Term</span>
+                                            </label>
+                                            <!--end::Label-->
+                                            <div class="w-100">
+
+                                                <!--begin::Input-->
+                                                <select [(ngModel)]="currentTerm" name="clasis" aria-label="Select term"
+                                                    data-control="select2" data-placeholder="Select term.."
+                                                    class="form-select form-select-solid form-select-lg">
+                                                    <option selected disabled>Select term</option>
+                                                    <option value="FIRST">First</option>
+                                                    <option value="SECOND">Second</option>
+                                                    <option value="THIRD">Third</option>
+                                                    <option value="ANNUAL">Annual</option>
+                                                </select>
+                                                <!--end::Input-->
+                                            </div>
+                                        </div>
+
+                                        <div [style.display]="!examType ? 'block' : 'none'"  class="fv-row mb-5">
+                                            <label class="fs-6 fw-bold form-label ">
+                                                <span>Exam Type</span>
+                                            </label>
+                                            <!--end::Label-->
+                                            <div class="w-100">
+                                                
+                        <!--begin::Input-->
+                        <select #exty [(ngModel)]="examType" name="examtypeclass" aria-label="Select Term" data-control="select2" data-placeholder="Select Term.." class="form-select form-select-solid form-select-lg">
+                            <option value="REGULAR">Regular</option>
+                            <option value="MOCK">Mock</option>
+                            <option value="PRESS1">Pre-SS1</option>
+                        </select>
+                       
+                        <!--end::Input-->
+                                                
+                                            </div>
+                                        </div>
+
+                                        
+
+                                    </div>
+
+                                    <div class="fv-row mb-5" style="margin-top: 60px;">
+                                        <div class="w-100" style="text-align: center;">
+                                            <button (click)="getResultsAverageBySession()" class="w-50 btn btn-primary" style="padding: 10px ;">Show Results</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-header border-0 pt-6">
+                                        <!--begin::Card title-->
+                                        <div class="card-title">
+                                            <!--begin::Search-->
+                                            <div class="d-flex align-items-center position-relative my-1">
+                                                <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
+                                                <span class="svg-icon svg-icon-1 position-absolute ms-6">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24" fill="none">
+                                                        <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546"
+                                                            height="2" rx="1" transform="rotate(45 17.0365 15.1223)"
+                                                            fill="currentColor"></rect>
+                                                        <path
+                                                            d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z"
+                                                            fill="currentColor"></path>
+                                                    </svg>
+                                                </span>
+                                                <!--end::Svg Icon-->
+                                                <input #myInput type="text" (keyup)='genk.searchTable(myInput, myTbody)' data-kt-customer-table-filter="search"
+                                                    class="form-control form-control-solid w-250px ps-15"
+                                                    placeholder="Search Students">
+                                            </div>
+                                            <!--end::Search-->
+                                        </div>
+                                        <!--begin::Card title-->
+                                        <!--begin::Card toolbar-->
+                                        <div class="card-toolbar">
+                                            <div class="text-end">
+
+                                                <button *ngIf="getresultUrl == 'student-result'" class="btn btn-sm btn-light-primary btn-active-primary me-3" (click)="result_multiple.createResult(currentTerm, currentSessionId, currentSession, currentClass, currentClassName)"  class="btn btn-sm btn-light-primary btn-active-primary me-3">Download All Result</button>
+                                                
+                                                <!-- <button type="button" class="btn btn-info">Download All Result</button> -->
+                                                <button *ngIf="getresultUrl != 'student-result'" [routerLink]="['/' + 'admin', 'result', currentTerm == 'ANNUAL' ? getAnnualResultMultipleUrl : getresultMultipleUrl]" [queryParams]="{term: currentTerm, currentSessionId: currentSessionId, currentSession: currentSession, classId: currentClass, className: currentClassName, classAverage: classAverage, averageObj: averageObj}"
+                                                [state]="{ data: averageObj }" class="btn btn-sm btn-light-primary btn-active-primary me-3">Download All Result</button>
+                                            </div>
+                                        </div>
+                                        <!--end::Row-->
+                                    </div>
+                                    <!--end::Card toolbar-->
+                                </div>
+                                <!--end::Col-->
+
+
+                                <!--begin::Table wrapper-->
+                                <div class="table-responsive mb-10">
+                                    <!--begin::Table-->
+                                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_customers_table">
+                                        <!--begin::Table head-->
+                                        <thead>
+                                            <!--begin::Table row-->
+                                            <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+                                                <th class="w-10px pe-2">
+                                                    S/N
+                                                </th>
+                                                <th class="min-w-150px">Students Name</th>
+                                                <th class="min-w-100px">Gender</th>
+                                                <th class="min-w-150px">Admission No</th>
+                                                <th class="min-w-125px">Class</th>
+                                                <th class="min-w-125px">Average</th>
+                                                <th class="min-w-100px">Position</th>
+                                                <th class="min-w-100px">Actions</th>
+                                            </tr>
+                                            <!--end::Table row-->
+                                        </thead>
+                                        <!--end::Table head-->
+                                        <!--begin::Table body-->
+                                        <tbody #myTbody class="fw-bold text-gray-600">
+                                            <tr *ngFor="let item of resultlist; index as i">
+                                                <!--begin::Checkbox-->
+                                                <td class="text-gray-800 text-bold">
+                                                    {{i + 1}}
+                                                </td>
+                                                <!--end::Checkbox-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="View_user.html"
+                                                        class="text-gray-800 text-hover-info mb-1">{{item.studentName}}</a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Email=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-600 text-hover-info mb-1">{{item.sex}}</a>
+                                                </td>
+
+                                                <td data-filter="mastercard">{{item.admissionNo}}</td>
+
+
+
+                                                <td>{{item.classes}}</td>
+
+                                                <td>{{item.average}}</td>
+
+                                                <td>{{formatPosition(getposition(item?.average) + 1)}}</td>
+
+                                                <!-- <td class="text-end">
+                                                    <a href="#" class="btn btn-sm btn-light-primary btn-primary">
+                                                        <i class="fonticon-printer"></i> Print
+                                                    </a>
+
+                                                </td> -->
+                                                <td>
+                                                    <button  class="btn btn-sm btn-light-primary btn-active-primary me-3" (click)="student_result.createResult(item.studentId, currentTerm, currentSessionId, currentSession, currentClass, item.average, item.average ? formatPosition(i + 1) : '', examType)"  class="btn btn-sm btn-light-primary btn-active-primary me-3">Download</button>
+
+                                                    <!-- <button *ngIf="getresultUrl != 'student-result' && getresultUrl != 'notre-dame-result'" [routerLink]="['/' + 'admin', 'result', getresultUrl, item.studentId]" [queryParams]="{term: currentTerm, currentSessionId: currentSessionId, currentSession: currentSession, classId: currentClass, average: item.average, classAverage: classAverage,  position: item.average ? formatPosition(i + 1) : ''}"
+                                                    class="btn btn-sm btn-light-primary btn-active-primary me-3">View result</button> -->
+                                                </td>
+                                                
+
+                                                <!-- <td>
+                                                    <button class="btn btn-sm btn-light-primary btn-active-primary me-3" (click)="student_result.createResult(item.studentId, currentTerm, currentSessionId, currentSession, currentClass, item.average, item.average ? formatPosition(i + 1) : '')"  class="btn btn-sm btn-light-primary btn-active-primary me-3">Download</button>
+                                                </td> -->
+                                                
+
+                                                <!-- <div class="dropdown">
+                                                    <button style="font-size: 12; outline: none; border: none; background-color: rgb(232, 237, 243); color: grey; padding: 6px 15px;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                      ACTIONS
+                                                    </button>
+                                                    <ul style="padding: 10px;" class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                        <li style="margin-bottom: 6px;">
+                                                            <a class="dropdown-item"><i class="fonticon-printer" style="margin-right: 6px;"></i> Print</a>
+                                                        </li>
+                                                      <li><a class="dropdown-item" [routerLink]="['/' + 'admin', 'result', 'student-result', item.studentId]" [queryParams]="{term: currentTerm, currentSessionId: currentSessionId, currentSession: currentSession, classId: currentClass, average: item.average, position: item.average ? formatPosition(i + 1) : ''}"><i class="fa fa-user" style="margin-right: 6px;"></i> View Result</a></li>
+                                                    </ul>
+                                                  </div> -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!--end::Card body-->
+
+                </div>
+                <!--end::Card-->
+                <!--begin::Modals-->
+                <!--begin::Modal - Customers - Add-->
+                <div class="modal fade" id="kt_modal_add_customer" tabindex="-1" aria-hidden="true">
+                    <!--begin::Modal dialog-->
+                    <div class="modal-dialog modal-dialog-centered mw-650px">
+                        <!--begin::Modal content-->
+                        <div class="modal-content">
+                            <!--begin::Form-->
+                            <form class="form" action="#" id="kt_modal_add_customer_form"
+                                data-kt-redirect="../../demo1/dist/apps/customers/list.html">
+                                <!--begin::Modal header-->
+                                <div class="modal-header" id="kt_modal_add_customer_header">
+                                    <!--begin::Modal title-->
+                                    <h2 class="fw-bolder">Upload Students</h2>
+                                    <!--end::Modal title-->
+                                    <!--begin::Close-->
+                                    <div id="kt_modal_add_customer_close"
+                                        class="btn btn-icon btn-sm btn-active-icon-primary">
+                                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                                        <span class="svg-icon svg-icon-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1"
+                                                    transform="rotate(-45 6 17.3137)" fill="currentColor" />
+                                                <rect x="7.41422" y="6" width="16" height="2" rx="1"
+                                                    transform="rotate(45 7.41422 6)" fill="currentColor" />
+                                            </svg>
+                                        </span>
+                                        <!--end::Svg Icon-->
+                                    </div>
+                                    <!--end::Close-->
+                                </div>
+                                <!--end::Modal header-->
+                                <!--begin::Modal body-->
+                                <div class="modal-body py-10 px-lg-17">
+                                    <!--begin::Scroll-->
+                                    <div class="scroll-y me-n7 pe-7" id="kt_modal_add_customer_scroll"
+                                        data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}"
+                                        data-kt-scroll-max-height="auto"
+                                        data-kt-scroll-dependencies="#kt_modal_add_customer_header"
+                                        data-kt-scroll-wrappers="#kt_modal_add_customer_scroll"
+                                        data-kt-scroll-offset="300px">
+
+                                        <!--begin::Input group-->
+                                        <div class="d-flex flex-column mb-7 fv-row">
+                                            <!--begin::Label-->
+                                            <label class="fs-6 fw-bold mb-2">
+                                                <span class="required">Class</span>
+                                                <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip"
+                                                    title="Students Class"></i>
+                                            </label>
+                                            <!--end::Label-->
+                                            <!--begin::Input-->
+                                            <select name="Class" data-control="select2"
+                                                data-placeholder="Select Class..."
+                                                data-dropdown-parent="#kt_modal_add_customer"
+                                                class="form-select form-select-solid fw-bolder">
+                                                <option value="">Select Class...</option>
+                                                <option value="1">Primary 1</option>
+                                                <option value="2">Primary 2</option>
+                                            </select>
+                                            <!--end::Input-->
+                                        </div>
+
+                                        <!--begin::Input group-->
+                                        <div class="d-flex flex-column mb-7 fv-row">
+                                            <!--begin::Label-->
+                                            <label class="fs-6 fw-bold mb-2">
+                                                <span class="required">Section </span>
+
+                                            </label>
+                                            <!--end::Label-->
+                                            <!--begin::Input-->
+                                            <select name="Section" data-control="select2"
+                                                data-placeholder="Select Section..."
+                                                data-dropdown-parent="#kt_modal_add_customer"
+                                                class="form-select form-select-solid fw-bolder">
+                                                <option value="">Select Section...</option>
+                                                <option value="1">2022/2023</option>
+                                                <option value="2">2023/2024</option>
+                                            </select>
+                                            <!--end::Input-->
+                                        </div>
+
+
+                                        <!--begin::Input group-->
+                                        <div class="fv-row mb-7">
+                                            <!--begin::Label-->
+                                            <label class="required fs-6 fw-bold mb-2">Upload Template</label>
+                                            <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip"
+                                                title="Click the button below first to download the template, then upload after the excel sheet has been filled with the necessary data"></i>
+                                            <!--end::Label-->
+                                            <!--begin::Input-->
+                                            <input type="file" class="form-control form-control-solid" placeholder=""
+                                                name="passport" value="" />
+                                            <!--end::Input-->
+                                        </div>
+                                        <!--end::Input group-->
+
+                                        <!--begin::download template-->
+                                        <div class="fv-row mt-5 mb-7">
+                                            <button class="btn btn-info w-100">download Template Document</button>
+                                        </div>
+                                        <!--end::download template-->
+                                    </div>
+                                    <!--end::Scroll-->
+                                </div>
+                                <!--end::Modal body-->
+                                <!--begin::Modal footer-->
+                                <div class="modal-footer flex-center">
+                                    <!--begin::Button-->
+                                    <button type="reset" id="kt_modal_add_customer_cancel"
+                                        class="btn btn-light me-3">Discard</button>
+                                    <!--end::Button-->
+                                    <!--begin::Button-->
+                                    <button type="submit" id="kt_modal_add_customer_submit" class="btn btn-info">
+                                        <span class="indicator-label">Submit</span>
+                                        <span class="indicator-progress">Please wait...
+                                            <span
+                                                class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                                    </button>
+                                    <!--end::Button-->
+                                </div>
+                                <!--end::Modal footer-->
+                            </form>
+                            <!--end::Form-->
+                        </div>
+                    </div>
+                </div>
+                <!--end::Modal - Customers - Add-->
+                <!--begin::Modal - Adjust Balance-->
+                <div class="modal fade" id="kt_customers_export_modal" tabindex="-1" aria-hidden="true">
+                    <!--begin::Modal dialog-->
+                    <div class="modal-dialog modal-dialog-centered mw-650px">
+                        <!--begin::Modal content-->
+                        <div class="modal-content">
+                            <!--begin::Modal header-->
+                            <div class="modal-header">
+                                <!--begin::Modal title-->
+                                <h2 class="fw-bolder">Export Result</h2>
+                                <!--end::Modal title-->
+                                <!--begin::Close-->
+                                <div id="kt_customers_export_close" class="btn btn-icon btn-sm btn-active-icon-primary">
+                                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                                    <span class="svg-icon svg-icon-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none">
+                                            <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1"
+                                                transform="rotate(-45 6 17.3137)" fill="currentColor" />
+                                            <rect x="7.41422" y="6" width="16" height="2" rx="1"
+                                                transform="rotate(45 7.41422 6)" fill="currentColor" />
+                                        </svg>
+                                    </span>
+                                    <!--end::Svg Icon-->
+                                </div>
+                                <!--end::Close-->
+                            </div>
+                            <!--end::Modal header-->
+                            <!--begin::Modal body-->
+                            <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
+                                <!--begin::Form-->
+                                <form id="kt_customers_export_form" class="form" action="#">
+                                    <!--begin::Input group-->
+                                    <div class="fv-row mb-10">
+                                        <!--begin::Label-->
+                                        <label class="fs-5 fw-bold form-label mb-5">Select Export Format:</label>
+                                        <!--end::Label-->
+                                        <!--begin::Input-->
+                                        <select data-control="select2" data-placeholder="Select a format"
+                                            data-hide-search="true" name="format" class="form-select form-select-solid">
+                                            <option value="excell">Excel</option>
+                                            <option value="pdf">PDF</option>
+                                            <option value="cvs">CVS</option>
+
+                                        </select>
+                                        <!--end::Input-->
+                                    </div>
+                                    <!--end::Input group-->
+
+                                    <!--begin::Actions-->
+                                    <div class="text-center">
+                                        <div class="row">
+                                            <div class="col 6">
+                                                <button type="reset" id="kt_customers_export_cancel"
+                                                    class="btn btn-light w-100 me-3">Discard</button>
+                                            </div>
+                                            <div class="col 6"><button type="submit" id="kt_customers_export_submit"
+                                                    class="w-100 btn btn-info">
+                                                    <span class="indicator-label">Submit</span>
+                                                    <span class="indicator-progress">Please wait...
+                                                        <span
+                                                            class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                                                </button></div>
+                                        </div>
+                                    </div>
+                                    <!--end::Actions-->
+                                </form>
+                                <!--end::Form-->
+                            </div>
+                            <!--end::Modal body-->
+                        </div>
+                        <!--end::Modal content-->
+                    </div>
+                    <!--end::Modal dialog-->
+                </div>
+                <!--end::Modal - New Card-->
+                <!--end::Modals-->
+            </div>
+            <!--end::Container-->
+        </div>
+        <!--end::Post-->
+    </div>
+</div>
+
+
+
+<!-- Notre Dame Performance Analysis Chart -->
+<div #mychartdiv id="chartdiv">
+    <canvas #mychart id="myChart" width="3600" height="1800" style="display:none;"></canvas>
+</div>

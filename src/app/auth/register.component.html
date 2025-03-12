@@ -1,0 +1,542 @@
+<!-- <div class="bode">
+    <div class="container">
+        <div class="title">Registration</div>
+        <div class="content">
+          <form (ngSubmit)="createSchool()" #f="ngForm">
+            <div>
+              <div class="input-box">
+                <input type="text" placeholder="Admin Email" name="adminemail" [(ngModel)]="school.userName" required>
+              </div>
+              <div class="input-box">
+                <input type="text" placeholder="Admin Password" name="password" [(ngModel)]="school.password" required>
+              </div>
+              <div class="input-box">
+                <input type="text" placeholder="Admin Confirm password" name="confirmpassword" [(ngModel)]="school.confirmPassword" required>
+              </div>
+              <hr>
+              <div class="input-box">
+                <input type="text" placeholder="School Name" name="schoolname" [(ngModel)]="school.schoolName" required>
+              </div>
+              <div class="input-box">
+                <input type="text" placeholder="School Code" name="schoolcode" [(ngModel)]="school.schoolCode">
+              </div>
+              <div class="input-box">
+                <input type="text" placeholder="Phone Number" name="phonenumber" [(ngModel)]="school.phoneOne">
+              </div>
+              <div class="input-box">
+                <input type="text" placeholder="Phone Number 2" name="phonenumber2" [(ngModel)]="school.phoneTwo">
+              </div>
+              <div class="input-box">
+                <input type="text" placeholder="Email" name="email" [(ngModel)]="school.email">
+              </div>
+              <div class="input-box">
+                <input type="text" placeholder="Website" name="website" [(ngModel)]="school.website">
+              </div>
+              <div class="input-box">
+                <input type="text" placeholder="Principal Name" name="principalname" [(ngModel)]="school.principalName">
+              </div>
+              <div class="input-box">
+                <input type="text" placeholder="Principal Phone" name="principalphone" [(ngModel)]="school.principalPhone">
+              </div>
+              
+              
+                <select #st class="input-box" (change)="setLGA(st.value)">
+                  <option selected disabled value="volvo">State</option>
+                  <option *ngFor="let cat of states" [value]="cat">{{cat}}</option>
+                </select>
+
+                <select #lges class="input-box" (change)="selectLG(lges.value)">
+                  <option selected disabled value="volvo">LGA</option>
+                  <option *ngFor="let lg of lgs" [value]="lg">{{lg}}</option>
+                </select>
+              
+            </div>
+            <div>
+              <textarea class="col-12 form-control" name="address" placeholder="School Address" [(ngModel)]="school.address"></textarea>
+            </div>
+            <div class="button">
+              <input type="submit" value="Register">
+            </div>
+          </form>
+        </div>
+      </div>
+</div> -->
+
+
+
+
+
+   <!--begin::Body-->
+	<body id="kt_body" class="bg-body">
+		<!--begin::Main-->
+		<!--begin::Root-->
+		<div class="d-flex flex-column flex-root">
+			<!--begin::Authentication - Multi-steps-->
+			<div class="d-flex flex-column flex-lg-row flex-column-fluid stepper stepper-pills stepper-column" id="kt_create_account_stepper">
+				<!--begin::Aside-->
+					
+                <div class="d-flex flex-column flex-lg-row-auto w-xl-600px positon-xl-relative" style="background-color: #06608e">
+						
+                    <!--begin::Wrapper-->
+                    <div class="d-flex flex-column position-xl-fixed d-none d-lg-block top-0 bottom-0 w-xl-500px scroll-y">
+                        <!--begin::Wrapper-->
+            <div class="d-flex flex-column position-xl-fixed top-0 bottom-0 w-xl-600px scroll-y">
+                <!--begin::Content-->
+                <div class="d-flex flex-row-fluid justify-content-center flex-column text-center p-10 pt-lg-20">
+                   	<!--begin::Logo-->
+							<a href="../../demo1/dist/index.html" class="mb-10 mb-lg-20">
+								<img alt="Logo" src="assets/media/logos/logo1-new.svg" class="h-80px" />
+							</a>
+							<!--end::Logo-->
+
+                    
+                    <!--begin::Title-->
+                    <h3 class="fw-bolder fs-2qx pb-2 pb-md-3" style="color: #ffff;">Sign Up</h3>
+                    <!--end::Title-->
+                    <!--begin::Description-->
+                    <p class="fw-6 fs-4" style="color: #ffff;">
+                    Streamline administrative tasks, communication, and academic tracking in one intuitive platform.</p>
+                    <!--end::Description-->
+                </div>
+                <!--end::Content-->
+            <!--begin::Illustration-->
+            
+            <div class="d-flex flex-row-auto bgi-no-repeat bgi-position-x-center bgi-size-contain bgi-position-y-bottom min-h-100px min-h-lg-450px d-none d-lg-block"  style="background-image: url(assets/girl-img.svg);"></div>
+            <!--end::Illustration-->
+
+            </div>
+            <!--end::Wrapper-->
+                        <!--begin::Header-->
+                        <div class="d-flex flex-row-fluid flex-column flex-center p-10 pt-lg-20">
+                            <!--begin::Logo-->
+                            
+                            <!--begin::Nav-->
+                            <div class="stepper-nav">
+                                <!--begin::Step 1-->
+                                <div class="d-none" data-kt-stepper-element="nav">
+                                    <!--begin::Line-->
+                                    <div class="stepper-line w-40px"></div>
+                                    <!--end::Line-->
+                                    <!--begin::Icon-->
+                                    <div class="stepper-icon w-40px h-40px">
+                                        <i class="stepper-check fas fa-check"></i>
+                                        <span class="stepper-number">1</span>
+                                    </div>
+                                    <!--end::Icon-->
+                                    
+                                </div>
+                                <!--end::Step 1-->
+                                <!--begin::Step 2-->
+                                <div class="d-none" data-kt-stepper-element="nav">
+                                    <!--begin::Line-->
+                                    <div class="stepper-line w-40px"></div>
+                                    <!--end::Line-->
+                                    <!--begin::Icon-->
+                                    <div class="stepper-icon w-40px h-40px">
+                                        <i class="stepper-check fas fa-check"></i>
+                                        <span class="stepper-number">2</span>
+                                    </div>
+                                    <!--end::Icon-->
+                                    
+                                </div>
+                                <!--end::Step 2-->
+                              
+                            </div>
+                            <!--end::Nav-->
+                        </div>
+                        <!--end::Header-->
+                        
+                    </div>
+                    <!--end::Wrapper-->
+                </div>
+                <!--begin::Aside-->
+				<!--begin::Body-->
+				<div class="d-flex flex-column flex-lg-row-fluid py-10">
+					<!--begin::Content-->
+					<div class="d-flex flex-center flex-column flex-column-fluid">
+						<!--begin::Wrapper-->
+						<div class="w-lg-700px p-10 p-lg-15 mx-auto">
+							<!--begin::Form-->
+							<form class="my-auto pb-5" (ngSubmit)="createSchool()" #f="ngForm">
+								<!--begin::Step 1-->
+								<div class="current" *ngIf="pagetype == 'school'">
+									
+                                        <!--begin::Wrapper-->
+                                        <div class="w-100">
+                                            <!--begin::Heading-->
+                                            <div class="pb-10 pb-lg-12">
+                                                <!--begin::Title-->
+                                                <h1 class="fw-bolder text-dark">Registration Information</h1>
+                                                <!--end::Title-->
+                                                <!--begin::Notice-->
+                                                <div class="text-muted fw-bold fs-6">If you need more info, please check out
+                                                <a href="#" class="link-info fw-bolder">Help Page</a>.</div>
+                                                <!--end::Notice-->
+                                            </div>
+                                            <!--end::Heading-->
+                                            <!--begin::Input group-->
+                                            <div class="fv-row mb-10">
+												<!--begin::Label-->
+												<label class="d-block fw-bold fs-6 mb-2">School Logo</label>
+												<!--end::Label-->
+												<!--begin::Image input-->
+												<div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
+													<!--begin::Preview existing avatar-->
+													<div class="image-input-wrapper w-125px h-125px" style="background-image: url(assets/school-logo.jpg);"></div>
+													<!--end::Preview existing avatar-->
+													<!--begin::Label-->
+													<label class="btn btn-icon btn-circle btn-active-color-info w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="" data-bs-original-title="Change logo">
+														<i class="bi bi-pencil-fill fs-7"></i>
+														<!--begin::Inputs-->
+														<input type="file" name="logo" accept=".png, .jpg, .jpeg">
+														<input type="hidden" name="logo_remove">
+														<!--end::Inputs-->
+													</label>
+													<!--end::Label-->
+													<!--begin::Cancel-->
+													<span class="btn btn-icon btn-circle btn-active-color-info w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="" data-bs-original-title="Cancel logo">
+														<i class="bi bi-x fs-2"></i>
+													</span>
+													<!--end::Cancel-->
+													<!--begin::Remove-->
+													<span class="btn btn-icon btn-circle btn-active-color-info w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="" data-bs-original-title="Remove logo">
+														<i class="bi bi-x fs-2"></i>
+													</span>
+													<!--end::Remove-->
+												</div>
+												<!--end::Image input-->
+												<!--begin::Hint-->
+												<div class="form-text">Allowed file types: png, jpg, jpeg.</div>
+												<!--end::Hint-->
+											</div>
+                                            <div class="fv-row mb-7">
+                                                <!--begin::Label-->
+                                                <label class="form-label required">School Name</label>
+                                                <!--end::Label-->
+                                                <!--begin::Input-->
+                                                <input class="form-control form-control-lg form-control-solid" placeholder="School Name" name="schoolname" [(ngModel)]="school.schoolName" required />
+                                                <!--end::Input-->
+                                            </div>
+                                            <!--end::Input group-->
+                                            <!--begin::Input group-->
+                                            <div class="fv-row mb-7">
+                                                <!--begin::Label-->
+                                                <label class="d-flex align-items-center form-label">
+                                                    <span class="">School Code</span>
+                                                    <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-html="true" data-bs-content="School Initials "></i>
+                                               
+                                                </label>
+                                                <!--end::Label-->
+                                                <!--begin::Input-->
+                                                <input class="form-control form-control-lg form-control-solid" placeholder="School Code" name="schoolcode" [(ngModel)]="school.schoolCode" />
+                                                <!--end::Input-->
+                                               
+                                            </div>
+                                            <!--end::Input group-->
+                                          
+                                           
+                                            <!--begin::Input group-->
+                                            <div class="fv-row mb-7">
+                                                <!--begin::Label-->
+                                                <label class="fs-6 fw-bold form-label required">Contact Email</label>
+                                                <!--end::Label-->
+                                                <!--begin::Input-->
+                                                <input class="form-control form-control-lg form-control-solid" placeholder="Email" name="email" [(ngModel)]="school.email" />
+                                                <!--end::Input-->
+                                            </div>
+                                            <!--end::Input group-->
+                                              <!--begin::Input group-->
+                                              <div class="fv-row mb-7">
+                                                <!--begin::Label-->
+                                                <label class="fs-6 fw-bold form-label required">Contact Number</label>
+                                                <!--end::Label-->
+                                                <!--begin::Input-->
+                                                <input class="form-control form-control-lg form-control-solid" placeholder="Phone Number" name="phonenumber" [(ngModel)]="school.phoneOne" />
+                                                <!--end::Input-->
+                                            </div>
+                                            <!--end::Input group-->
+                                              <!--begin::Input group-->
+                                              <div class="fv-row mb-7">
+                                                <!--begin::Label-->
+                                                <label class="fs-6 fw-bold form-label">School Website</label>
+                                                <!--end::Label-->
+                                                <!--begin::Input-->
+                                                <input class="form-control form-control-lg form-control-solid" placeholder="Website" name="website" [(ngModel)]="school.website" />
+                                                <!--end::Input-->
+                                            </div>
+                                            <!--end::Input group-->
+                                             <!--begin::Input group-->
+                                             <div class="fv-row mb-7">
+                                                <!--begin::Label-->
+                                                <label class="fs-6 fw-bold form-label required">State</label>
+                                                <!--end::Label-->
+                                                <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-html="true" data-bs-content=" state school is located "></i>
+                                                <!-- <select name="state" aria-label="Select a state" data-control="select2" data-placeholder="Select a state..." class="form-select form-select-solid form-select-lg fw-bold">
+                                                    <option value="">Select a State...</option>
+                                                    <option  >Abuja</option>
+                                                    <option  >Lagos</option>
+                                                    <option >Ogun </option>
+                                                    <option >Niger</option>
+                                                  
+                                                </select> -->
+
+                                                <select #st class="form-select form-select-solid form-select-lg fw-bold" (change)="setLGA(st.value)">
+                                                  <option selected disabled value="volvo">State</option>
+                                                  <option *ngFor="let cat of states" [value]="cat">{{cat}}</option>
+                                                </select>
+                                                
+                                            </div>
+                                            <!--end::Input group-->
+                                               <!--begin::Input group-->
+                                               <div class="fv-row mb-7">
+                                                <!--begin::Label-->
+                                                <label class="fs-6 fw-bold form-label required">LGA</label>
+                                                <!--end::Label-->
+                                                <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-html="true" data-bs-content=" LGA school is located "></i>
+                                                <!-- <select name="LGA" aria-label="Select LGA" data-control="select2" data-placeholder="Select LGA..." class="form-select form-select-solid form-select-lg fw-bold">
+                                                    <option value="">Select a LGA...</option>
+                                                    <option  >Isikpo</option>
+                                                    <option  >Bwari</option>
+                                                   
+                                                  
+                                                </select> -->
+
+                                                <select #lges class="form-select form-select-solid form-select-lg fw-bold" (change)="selectLG(lges.value)">
+                                                  <option selected disabled value="volvo">LGA</option>
+                                                  <option *ngFor="let lg of lgs" [value]="lg">{{lg}}</option>
+                                                </select>
+                                                
+                                            </div>
+                                            <!--end::Input group-->
+                                              <!--begin::Input group-->
+                                              <div class="fv-row mb-7">
+                                                <!--begin::Label-->
+                                                <label class="fs-6 fw-bold form-label required">School Address</label>
+                                               
+                                                <!--end::Label-->
+                                                <textarea class="form-control form-control-solid" rows="3" name="address" placeholder="School Address" [(ngModel)]="school.address"></textarea>
+                                            </div>
+                                            <!--end::Input group-->
+                                        </div>
+                                        <!--end::Wrapper-->
+                                    
+								</div>
+								<!--end::Step 1-->
+								<!--begin::Step 2-->
+								<div class="" *ngIf="pagetype == 'admin'">
+									<!--begin::Wrapper-->
+									<div class="w-100">
+										<!--begin::Heading-->
+										<div class="pb-10 pb-lg-15">
+											<!--begin::Title-->
+											<h2 class="fw-bolder text-dark">Account Creation</h2>
+											<!--end::Title-->
+											<!--begin::Notice-->
+											<div class="text-muted fw-bold fs-6">If you need more info, please check out
+											<a href="#" class="link-info fw-bolder">Help Page</a>.</div>
+											<!--end::Notice-->
+										</div>
+										<!--end::Heading-->
+									
+										<!--begin::Input group-->
+										<div class="mb-10 fv-row">
+											<!--begin::Label-->
+											<label class="fs-6 fw-bold form-label required">Admin Email</label>
+											<!--end::Label-->
+											<!--begin::Input-->
+											<input class="form-control form-control-lg form-control-solid" placeholder="Admin Email" name="adminemail" [(ngModel)]="school.userName" required />
+											<!--end::Input-->
+										</div>
+										<!--end::Input group-->
+                                        <!--begin::Input group-->
+										<div class="mb-10 fv-row" data-kt-password-meter="true">
+											<!--begin::Label-->
+											<label class="fs-6 fw-bold form-label required">Password</label>
+											<!--end::Label-->
+										<!--begin::Input wrapper-->
+										<div class="position-relative mb-3">
+											<input class="form-control form-control-lg form-control-solid" type="password" placeholder="Admin Password" name="password" [(ngModel)]="school.password" required autocomplete="off" />
+											<span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
+												<i class="bi bi-eye-slash fs-2"></i>
+												<i class="bi bi-eye fs-2 d-none"></i>
+											</span>
+										</div>
+										<!--end::Input wrapper-->
+										<!--begin::Meter-->
+										<div class="d-flex align-items-center mb-3" data-kt-password-meter-control="highlight">
+											<div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
+											<div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
+											<div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
+											<div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px"></div>
+										</div>
+										<!--end::Meter-->
+                                        <!--begin::Hint-->
+									<div class="text-muted">Use 8 or more characters with a mix of letters, numbers &amp; symbols.</div>
+									<!--end::Hint-->
+										</div>
+										<!--end::Input group-->
+										<!--begin::Input group-->
+										<div class="mb-0 fv-row">
+											<!--begin::Label-->
+											<label class="d-flex align-items-center form-label mb-5">Select Account Plan
+											<i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Monthly billing will be based on your account plan"></i></label>
+											<!--end::Label-->
+											<!--begin::Options-->
+											<div class="mb-0">
+												<!--begin:Option-->
+												<label class="d-flex flex-stack mb-5 cursor-pointer">
+													<!--begin:Label-->
+													<span class="d-flex align-items-center me-2">
+														<!--begin::Icon-->
+														<span class="symbol symbol-50px me-6">
+															<span class="symbol-label bg-light-info">
+																<!--begin::Svg Icon | path: icons/duotune/finance/fin001.svg-->
+																<span class="svg-icon svg-icon-1 svg-icon-info">
+																	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+																		<path d="M20 19.725V18.725C20 18.125 19.6 17.725 19 17.725H5C4.4 17.725 4 18.125 4 18.725V19.725H3C2.4 19.725 2 20.125 2 20.725V21.725H22V20.725C22 20.125 21.6 19.725 21 19.725H20Z" fill="currentColor" />
+																		<path opacity="0.3" d="M22 6.725V7.725C22 8.325 21.6 8.725 21 8.725H18C18.6 8.725 19 9.125 19 9.725C19 10.325 18.6 10.725 18 10.725V15.725C18.6 15.725 19 16.125 19 16.725V17.725H15V16.725C15 16.125 15.4 15.725 16 15.725V10.725C15.4 10.725 15 10.325 15 9.725C15 9.125 15.4 8.725 16 8.725H13C13.6 8.725 14 9.125 14 9.725C14 10.325 13.6 10.725 13 10.725V15.725C13.6 15.725 14 16.125 14 16.725V17.725H10V16.725C10 16.125 10.4 15.725 11 15.725V10.725C10.4 10.725 10 10.325 10 9.725C10 9.125 10.4 8.725 11 8.725H8C8.6 8.725 9 9.125 9 9.725C9 10.325 8.6 10.725 8 10.725V15.725C8.6 15.725 9 16.125 9 16.725V17.725H5V16.725C5 16.125 5.4 15.725 6 15.725V10.725C5.4 10.725 5 10.325 5 9.725C5 9.125 5.4 8.725 6 8.725H3C2.4 8.725 2 8.325 2 7.725V6.725L11 2.225C11.6 1.925 12.4 1.925 13.1 2.225L22 6.725ZM12 3.725C11.2 3.725 10.5 4.425 10.5 5.225C10.5 6.025 11.2 6.725 12 6.725C12.8 6.725 13.5 6.025 13.5 5.225C13.5 4.425 12.8 3.725 12 3.725Z" fill="currentColor" />
+																	</svg>
+																</span>
+																<!--end::Svg Icon-->
+															</span>
+														</span>
+														<!--end::Icon-->
+														<!--begin::Description-->
+														<span class="d-flex flex-column">
+															<span class="fw-bolder text-gray-800 text-hover-info fs-5">Basic Plan</span>
+															<span class="fs-6 fw-bold text-muted"> <a href=""> check features</a></span>
+														</span>
+														<!--end:Description-->
+													</span>
+													<!--end:Label-->
+													<!--begin:Input-->
+													<span class="form-check form-check-custom form-check-solid">
+														<input class="form-check-input" type="radio" name="account_plan" value="1" />
+													</span>
+													<!--end:Input-->
+												</label>
+												<!--end::Option-->
+												<!--begin:Option-->
+												<label class="d-flex flex-stack mb-5 cursor-pointer">
+													<!--begin:Label-->
+													<span class="d-flex align-items-center me-2">
+														<!--begin::Icon-->
+														<span class="symbol symbol-50px me-6">
+															<span class="symbol-label bg-light-danger">
+																<!--begin::Svg Icon | path: icons/duotune/graphs/gra006.svg-->
+																<span class="svg-icon svg-icon-1 svg-icon-danger">
+																	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+																		<path d="M13 5.91517C15.8 6.41517 18 8.81519 18 11.8152C18 12.5152 17.9 13.2152 17.6 13.9152L20.1 15.3152C20.6 15.6152 21.4 15.4152 21.6 14.8152C21.9 13.9152 22.1 12.9152 22.1 11.8152C22.1 7.01519 18.8 3.11521 14.3 2.01521C13.7 1.91521 13.1 2.31521 13.1 3.01521V5.91517H13Z" fill="currentColor" />
+																		<path opacity="0.3" d="M19.1 17.0152C19.7 17.3152 19.8 18.1152 19.3 18.5152C17.5 20.5152 14.9 21.7152 12 21.7152C9.1 21.7152 6.50001 20.5152 4.70001 18.5152C4.30001 18.0152 4.39999 17.3152 4.89999 17.0152L7.39999 15.6152C8.49999 16.9152 10.2 17.8152 12 17.8152C13.8 17.8152 15.5 17.0152 16.6 15.6152L19.1 17.0152ZM6.39999 13.9151C6.19999 13.2151 6 12.5152 6 11.8152C6 8.81517 8.2 6.41515 11 5.91515V3.01519C11 2.41519 10.4 1.91519 9.79999 2.01519C5.29999 3.01519 2 7.01517 2 11.8152C2 12.8152 2.2 13.8152 2.5 14.8152C2.7 15.4152 3.4 15.7152 4 15.3152L6.39999 13.9151Z" fill="currentColor" />
+																	</svg>
+																</span>
+																<!--end::Svg Icon-->
+															</span>
+														</span>
+														<!--end::Icon-->
+														<!--begin::Description-->
+														<span class="d-flex flex-column">
+															<span class="fw-bolder text-gray-800 text-hover-info fs-5">Standard Plan</span>
+															<span class="fs-6 fw-bold text-muted"> <a href=""> check features</a></span>
+														</span>
+														<!--end:Description-->
+													</span>
+													<!--end:Label-->
+													<!--begin:Input-->
+													<span class="form-check form-check-custom form-check-solid">
+														<input class="form-check-input" type="radio" checked="checked" name="account_plan" value="2" />
+													</span>
+													<!--end:Input-->
+												</label>
+												<!--end::Option-->
+												<!--begin:Option-->
+												<label class="d-flex flex-stack mb-0 cursor-pointer">
+													<!--begin:Label-->
+													<span class="d-flex align-items-center me-2">
+														<!--begin::Icon-->
+														<span class="symbol symbol-50px me-6">
+															<span class="symbol-label bg-light-success">
+																<!--begin::Svg Icon | path: icons/duotune/graphs/gra008.svg-->
+																<span class="svg-icon svg-icon-1 svg-icon-success">
+																	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+																		<path d="M13 10.9128V3.01281C13 2.41281 13.5 1.91281 14.1 2.01281C16.1 2.21281 17.9 3.11284 19.3 4.61284C20.7 6.01284 21.6 7.91285 21.9 9.81285C22 10.4129 21.5 10.9128 20.9 10.9128H13Z" fill="currentColor" />
+																		<path opacity="0.3" d="M13 12.9128V20.8129C13 21.4129 13.5 21.9129 14.1 21.8129C16.1 21.6129 17.9 20.7128 19.3 19.2128C20.7 17.8128 21.6 15.9128 21.9 14.0128C22 13.4128 21.5 12.9128 20.9 12.9128H13Z" fill="currentColor" />
+																		<path opacity="0.3" d="M11 19.8129C11 20.4129 10.5 20.9129 9.89999 20.8129C5.49999 20.2129 2 16.5128 2 11.9128C2 7.31283 5.39999 3.51281 9.89999 3.01281C10.5 2.91281 11 3.41281 11 4.01281V19.8129Z" fill="currentColor" />
+																	</svg>
+																</span>
+																<!--end::Svg Icon-->
+															</span>
+														</span>
+														<!--end::Icon-->
+														<!--begin::Description-->
+														<span class="d-flex flex-column">
+															<span class="fw-bolder text-gray-800 text-hover-info fs-5">Premuim Plans</span>
+															<span class="fs-6 fw-bold text-muted"> <a href=""> check Features Page</a></span>
+														</span>
+														<!--end:Description-->
+													</span>
+													<!--end:Label-->
+													<!--begin:Input-->
+													<span class="form-check form-check-custom form-check-solid">
+														<input class="form-check-input" type="radio" name="account_plan" value="3" />
+													</span>
+													<!--end:Input-->
+												</label>
+												<!--end::Option-->
+											</div>
+											<!--end::Options-->
+										</div>
+										<!--end::Input group-->
+									</div>
+									<!--end::Wrapper-->
+								</div>
+								<!--end::Step 2-->
+								
+								
+								<!--begin::Actions-->
+								<div class="d-flex flex-stack pt-15">
+									<div class="mr-2">
+										<button *ngIf="pagetype == 'admin'" type="button" class="btn btn-lg btn-light-info me-3" (click)="pagetype = 'school'">
+										<!--begin::Svg Icon | path: icons/duotune/arrows/arr063.svg-->
+										<span class="svg-icon svg-icon-4 me-1">
+											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+												<rect opacity="0.5" x="6" y="11" width="13" height="2" rx="1" fill="currentColor" />
+												<path d="M8.56569 11.4343L12.75 7.25C13.1642 6.83579 13.1642 6.16421 12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75L5.70711 11.2929C5.31658 11.6834 5.31658 12.3166 5.70711 12.7071L11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25C13.1642 17.8358 13.1642 17.1642 12.75 16.75L8.56569 12.5657C8.25327 12.2533 8.25327 11.7467 8.56569 11.4343Z" fill="currentColor" />
+											</svg>
+										</span>
+										<!--end::Svg Icon-->Previous</button>
+									</div>
+									<div>
+										<button type="button" (click)="createSchool()" class="btn btn-lg btn-info" *ngIf="pagetype == 'admin'">
+											<span class="indicator-label">Submit
+											
+											</span>
+											<span class="indicator-progress">Please wait...
+											<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+										</button>
+										<button *ngIf="pagetype == 'school'" type="button" class="btn btn-lg btn-info" (click)="pagetype = 'admin'">Continue
+										<!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg-->
+										<span class="svg-icon svg-icon-4 ms-1">
+											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+												<rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1" transform="rotate(-180 18 13)" fill="currentColor" />
+												<path d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z" fill="currentColor" />
+											</svg>
+										</span>
+										<!--end::Svg Icon--></button>
+									</div>
+								</div>
+								<!--end::Actions-->
+							</form>
+							<!--end::Form-->
+						</div>
+						<!--end::Wrapper-->
+					</div>
+					<!--end::Content-->
+				
+				</div>
+				<!--end::Body-->
+			</div>
+			<!--end::Authentication - Multi-steps-->
+		</div>
+
+	</body>

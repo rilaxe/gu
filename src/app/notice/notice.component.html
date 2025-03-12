@@ -1,0 +1,429 @@
+<div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+    <!--begin::Header-->
+    <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+
+        <!--begin::Post-->
+        <div class="post d-flex flex-column-fluid" id="kt_post">
+
+            <!--begin::Container-->
+            <div id="kt_content_container" class="container-xxl">
+
+                <!--begin::Toolbar-->
+                <div class="d-flex flex-wrap flex-stack mb-5">
+                    <!--begin::Heading-->
+                    <h3 class="fw-bolder my-2">
+                    </h3>
+                    <!--end::Heading-->
+                    <!--begin::Actions-->
+                    <div class="d-flex flex-wrap my-2">
+
+                        <a href="#" class="btn btn-info btn-lg" data-bs-toggle="modal"
+                            data-bs-target="#kt_modal_add_graduate">Add New Notice</a>
+                    </div>
+                    <!--end::Actions-->
+                </div>
+                <!--end::Toolbar-->
+                <!--begin::Row-->
+                <div class="row g-5 g-xxl-8">
+
+                    <!--begin::Col-->
+                    <div *ngFor="let notice of ourNotices; index as u" class="col-xl-6">
+
+                        <!--begin::Feeds Widget 2-->
+                        <div  class="card mb-5 mb-xxl-8">
+                            <!--begin::Body-->
+                            <div class="card-body pb-0">
+                                <!--begin::Header-->
+                                <div class="d-flex align-items-center mb-5">
+                                    <!--begin::User-->
+                                    <div class="d-flex align-items-center flex-grow-1">
+
+                                        <!--begin::Info-->
+                                        <div>
+                                            <a class="text-gray-900  fs-3 fw-bolder" style="font-family: 'Poppins-Medium'">{{notice.title}}</a>
+
+                                            <div style="font-weight: 600; color: rgb(132, 101, 101); font-family: 'Poppins-Medium'">
+                                                <span *ngIf="notice.created < 60">{{ notice.created.toFixed(0) + 'min'}} ago</span>
+                                                <span *ngIf="notice.created >= 60 && notice.created < 1440">{{ (notice.created / 60).toFixed(0)
+                                                  + 'h'}} ago</span>
+                                                <span *ngIf="notice.created >= 1440 && notice.created < 43200">{{ (notice.created /
+                                                  1440).toFixed(0) + 'd'}} ago</span>
+                                                <span *ngIf="notice.created >= 43200">{{ (notice.created / 43200).toFixed(0) +
+                                                  'month'}} ago</span>
+                                            </div>
+
+                                        </div>
+                                        <!--end::Info-->
+
+                                    </div>
+                                    <!--end::User-->
+                                    <!--begin::Toolbar-->
+                                    <div class="d-flex justify-content-end gap-1 mb-7">
+                                        <a (click)="setEdit(notice.title, notice.description, notice.id)" class="btn btn-sm btn-active-info px-1 py-2" data-bs-toggle="modal"
+                                            data-bs-target="#kt_modal_add_graduate1">
+                                            <!--begin::Svg Icon | path: /var/www/preview.keenthemes.com/keenthemes/metronic/docs/core/html/src/media/icons/duotune/art/art005.svg-->
+                                            <span class="svg-icon svg-icon-muted svg-icon-2"><svg width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path opacity="0.3"
+                                                        d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z"
+                                                        fill="currentColor" />
+                                                    <path
+                                                        d="M5.574 21.3L3.692 21.928C3.46591 22.0032 3.22334 22.0141 2.99144 21.9594C2.75954 21.9046 2.54744 21.7864 2.3789 21.6179C2.21036 21.4495 2.09202 21.2375 2.03711 21.0056C1.9822 20.7737 1.99289 20.5312 2.06799 20.3051L2.696 18.422L5.574 21.3ZM4.13499 14.105L9.891 19.861L19.245 10.507L13.489 4.75098L4.13499 14.105Z"
+                                                        fill="currentColor" />
+                                                </svg>
+                                            </span>
+                                            <!--end::Svg Icon-->
+                                        </a>
+                                        <a (click)="setEdit(notice.title, notice.description, notice.id); deleteNotice(notice.id)" class="btn btn-sm  btn-active-danger px-2 py-2">
+                                            <!--begin::Svg Icon | path: icons/duotune/general/gen030.svg-->
+                                            <!--begin::Svg Icon | path: /var/www/preview.keenthemes.com/keenthemes/metronic/docs/core/html/src/media/icons/duotune/general/gen027.svg-->
+                                            <span class="svg-icon svg-icon-muted svg-icon-2"><svg width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z"
+                                                        fill="currentColor" />
+                                                    <path opacity="0.5"
+                                                        d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z"
+                                                        fill="currentColor" />
+                                                    <path opacity="0.5"
+                                                        d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z"
+                                                        fill="currentColor" />
+                                                </svg>
+                                            </span>
+                                            <!--end::Svg Icon-->
+                                        </a>
+                                    </div>
+                                    <!--end::Toolbar-->
+                                </div>
+                                <!--end::Header-->
+                                <!--begin::Post-->
+                                <div class="mb-10">
+                                    <!--begin::Text-->
+                                    <p class="text-gray-800 fw-normal fs-5 mb-5" style="font-family: 'Poppins-Medium'">{{notice.description}}</p>
+                                    <!--end::Text-->
+
+                                </div>
+                                <!--end::Post-->
+                                <!--begin::Timeline details-->
+                                
+
+                                <div style="display: flex; flex-wrap: wrap;">
+                                    <div *ngFor="let item of notice.boardList; index as i" class="d-flex flex-aligns-center pe-10 pe-lg-5" style="align-items: center; margin-bottom: 20px;">
+                                        <!--begin::Icon-->
+                                        <div *ngIf="item['boardFile' + (i + 1) + 'Ext']">
+                                            <div class="zend">
+                                                <div>
+                                                    <div class="imgo w-150px" *ngIf="extDotType(item['boardFile' + (i + 1) + 'Ext']) == 'DOC'"
+                                                    style="border: dotted 1px grey; padding: 5px 10px; border-radius: 10px; background-color: whitesmoke; box-shadow: 1px 1px 3px rgb(0, 0, 0, 0.2);">
+                                                    <img *ngIf="item['boardFile' + (i + 1) + 'Ext'] == '.pdf'" alt="" class="w-100px" style="margin: 0 auto;"
+                                                        src="assets/media/svg/files/pdf.svg" />
+                                        
+                                                    <img *ngIf="item['boardFile' + (i + 1) + 'Ext'] == '.xlsx' || item['boardFile' + (i + 1) + 'Ext'] == '.xls' || item['boardFile' + (i + 1) + 'Ext'] == '.csv'"
+                                                        alt="" class="w-100px me-3" src="assets/media/svg/files/xls.svg" style="margin: 0 auto;" />
+                                        
+                                                    <img *ngIf="item['boardFile' + (i + 1) + 'Ext'] == '.doc' || item['boardFile' + (i + 1) + 'Ext'] == '.docx' || item['boardFile' + (i + 1) + 'Ext'] == '.txt' || item['boardFile' + (i + 1) + 'Ext'] == '.rtf'"
+                                                        alt="" class="w-100px me-3" src="assets/media/svg/files/doc.svg" style="margin: 0 auto;" />
+                                                    <!--end::Icon-->
+                                                    <!--begin::Info-->
+                                                    <div class="ms-1 fw-bold">
+                                                        <!--begin::Desc-->
+                                                        <a href="../../demo1/dist/apps/projects/project.html"
+                                                            class="fs-6 text-hover-primary fw-bolder">{{(item['boardFile' + (i + 1) + 'Name']).substring(0, 15)}}</a>
+                                                        <!--end::Desc-->
+                                                        <!--begin::Number-->
+                                                        <div class="text-gray-400">{{(item['boardFile' + (i + 1) + 'Size']) + ' KB'}}</div>
+                                                        <!--end::Number-->
+                                                    </div>
+                                                </div>
+                                                <div *ngIf="extDotType(item['boardFile' + (i + 1) + 'Ext']) == 'IMAGE'" class="overlay-wrapper" style="box-shadow: 1px 1px 3px rgb(0, 0, 0, 0.2); border-radius: 10px;">
+                                                    <img alt="img" class="w-150px h-150px" style="object-fit:cover; background-color: black; border-radius: 10px;" [src]="item['boardFile' + (i + 1) + 'Path']" />
+                                                </div>
+                                                </div>
+                                                <div class="img2">
+                                                    <a (click)="downloadFile(item['boardFile' + (i + 1) + 'Path'], item['boardFile' + (i + 1) + 'Name'], item['boardFile' + (i + 1) + 'Ext'])" style="width: 30px; height: 30px; border-radius: 20px; display: flex; justify-content: center; align-items: center; background-color: dodgerblue; box-shadow: 1px 1px 4px rgb(0, 0, 0, 0.4);">
+                                                        <i class="fa-solid fa-download" style="color: white; font-size: 18px;"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        
+                                            
+                                        </div>
+                                        <!--begin::Info-->
+                                    </div>
+                                </div>
+                                
+                                <!--end::Timeline details-->
+                                <!--begin::Timeline details-->
+                                <!--end::Timeline details-->
+                            </div>
+
+                            <!--end::Body-->
+                        </div>
+                    </div>
+                    
+                    <!--end::Col-->
+                </div>
+                <!--end::Row-->
+            </div>
+            <!--end::Container-->
+        </div>
+        <!--end::Post-->
+    </div>
+    <!--end::Content-->
+    <!--begin::Modal - Customers - Add-->
+    <div class="modal fade" id="kt_modal_add_graduate" tabindex="-1" aria-hidden="true">
+        <!--begin::Modal dialog-->
+        <div class="modal-dialog modal-dialog-centered mw-650px">
+            <!--begin::Modal content-->
+            <div class="modal-content">
+                <!--begin::Form-->
+                <form class="form" action="#" id="kt_modal_add_graduate_form"
+                    data-kt-redirect="../../demo1/dist/apps/customers/list.html">
+                    <!--begin::Modal header-->
+                    <div class="modal-header" id="kt_modal_add_graduate_header">
+                        <!--begin::Modal title-->
+                        <h2 class="fw-bolder">Add New Notice</h2>
+                        <!--end::Modal title-->
+                        <!--begin::Close-->
+                        <div id="kt_modal_add_graduate_close" class="btn btn-icon btn-sm btn-active-icon-primary">
+                            <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                            <span class="svg-icon svg-icon-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none">
+                                    <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1"
+                                        transform="rotate(-45 6 17.3137)" fill="currentColor" />
+                                    <rect x="7.41422" y="6" width="16" height="2" rx="1"
+                                        transform="rotate(45 7.41422 6)" fill="currentColor" />
+                                </svg>
+                            </span>
+                            <!--end::Svg Icon-->
+                        </div>
+                        <!--end::Close-->
+                    </div>
+                    <!--end::Modal header-->
+                    <!--begin::Modal body-->
+                    <div class="modal-body py-10 px-lg-17">
+                        <!--begin::Scroll-->
+                        <div class="scroll-y me-n7 pe-7" id="kt_modal_add_graduate_scroll" data-kt-scroll="true"
+                            data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto"
+                            data-kt-scroll-dependencies="#kt_modal_add_graduate_header"
+                            data-kt-scroll-wrappers="#kt_modal_add_graduate_scroll" data-kt-scroll-offset="300px">
+
+
+
+                            <!--begin::Input group-->
+                            <div class="row mb-7">
+                                <div class="col-12">
+                                    <!--begin::Label-->
+                                    <label class="fs-6 fw-bold mb-2">
+                                        <span class="required">Notice Title</span>
+
+                                    </label>
+                                    <!--end::Label-->
+                                    <!--begin::Input-->
+                                    <!--begin::Input-->
+                                    <input class="form-control form-control-solid" name="notetitle"
+                                        [(ngModel)]="title" />
+                                    <!--end::Input-->
+                                </div>
+
+
+                            </div>
+                            <!--end::Input group-->
+
+                            <!--begin::Input group-->
+                            <div class="fv-row mb-7">
+                                <!--begin::Label-->
+                                <label class="fs-5 fw-bold form-label mb-2">Notice Details</label>
+                                <!--end::Label-->
+                                <textarea class="form-control form-control-solid" rows="6" name="target_details"
+                                    placeholder="Type Details" name="notedescription"
+                                    [(ngModel)]="description">                        </textarea>
+                            </div>
+
+                            <input style="display: none;" #fil type="file" multiple
+                                accept=".png, .jpg, .pdf, .xlsx,s .txt, .csv, .xls, .docx, .doc, .rtf" (change)="fileChange($event)" />
+
+                            <div style="flex-wrap: wrap;"
+                                class="d-flex align-items-center border border-dashed border-gray-300 rounded min-w-500px p-5">
+                                <!--begin::Item-->
+                                <div *ngFor="let item of myobjlist" class="d-flex flex-aligns-center pe-10 pe-lg-5">
+                                    <!--begin::Icon-->
+                                    <div *ngIf="extType(item.ext) == 'DOC'"
+                                        style="border: dotted 1px grey; padding: 5px 10px; border-radius: 20px;">
+                                        <img *ngIf="item.ext == 'pdf'" alt="" class="w-100px me-3"
+                                            src="assets/media/svg/files/pdf.svg" />
+
+                                        <img *ngIf="item.ext == 'xlsx' || item.ext == 'xls' || item.ext == 'csv'" alt=""
+                                            class="w-100px me-3" src="assets/media/svg/files/xls.svg" />
+
+                                        <img *ngIf="item.ext == 'doc' || item.ext == 'docx' || item.ext == 'txt' || item.ext == 'rtf'" alt=""
+                                            class="w-100px me-3" src="assets/media/svg/files/doc.svg" />
+                                        <!--end::Icon-->
+                                        <!--begin::Info-->
+                                        <div class="ms-1 fw-bold">
+                                            <!--begin::Desc-->
+                                            <a href="../../demo1/dist/apps/projects/project.html"
+                                                class="fs-6 text-hover-primary fw-bolder">{{item.name}}</a>
+                                            <!--end::Desc-->
+                                            <!--begin::Number-->
+                                        
+                                            <!--end::Number-->
+                                        </div>
+                                    </div>
+
+                                    <div *ngIf="extType(item.ext) == 'IMAGE'" class="overlay-wrapper">
+                                        <img alt="img" class="rounded w-150px" [src]="item.src" />
+                                    </div>
+                                    <!--begin::Info-->
+                                </div>
+                                <!--end::Item-->
+                                <!--begin::Item-->
+                                <!--end::Item-->
+                            </div>
+
+                            <div class="fv-row mb-2" (click)="fil.click()">
+                                <!--begin::Dropzone-->
+                                <div class="dropzone" id="kt_ecommerce_add_product_media">
+                                    <!--begin::Message-->
+                                    <div class="dz-message needsclick">
+                                        <!--begin::Icon-->
+                                        <i class="bi bi-file-earmark-arrow-up text-primary fs-3x"></i>
+                                        <!--end::Icon-->
+                                        <!--begin::Info-->
+                                        <div class="ms-4">
+                                            <h3 class="fs-5 fw-bolder text-gray-900 mb-1">Drop files here or
+                                                click to upload.</h3>
+                                            <span class="fs-7 fw-bold text-gray-400">Upload up to 5
+                                                files</span>
+                                        </div>
+                                        <!--end::Info-->
+                                    </div>
+                                </div>
+                                <!--end::Dropzone-->
+                            </div>
+
+                        </div>
+                        <!--end::Scroll-->
+                    </div>
+                    <!--end::Modal body-->
+                    <!--begin::Modal footer-->
+                    <div class="modal-footer flex-center">
+                        <!--begin::Button-->
+                        <button type="reset" id="kt_modal_add_graduate_cancel"
+                            class="btn btn-light me-3">Discard</button>
+                        <!--end::Button-->
+                        <!--begin::Button-->
+                        <button (click)="submit()" type="submit" id="kt_modal_add_graduate_submit" class="btn btn-info">
+                            <span class="indicator-label">Submit</span>
+                            <span class="indicator-progress">Please wait...
+                                <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                        </button>
+                        <!--end::Button-->
+                    </div>
+                    <!--end::Modal footer-->
+                </form>
+                <!--end::Form-->
+            </div>
+        </div>
+    </div>
+    <!--end::Modal - Customers - Add-->
+    <!--begin::Modal - Customers - Add-->
+    <div class="modal fade" id="kt_modal_add_graduate1" tabindex="-1" aria-hidden="true">
+        <!--begin::Modal dialog-->
+        <div class="modal-dialog modal-dialog-centered mw-650px">
+            <!--begin::Modal content-->
+            <div class="modal-content">
+                <!--begin::Form-->
+                <form class="form" action="#" id="kt_modal_add_graduate1_form"
+                    data-kt-redirect="../../demo1/dist/apps/customers/list.html">
+                    <!--begin::Modal header-->
+                    <div class="modal-header" id="kt_modal_add_graduate1_header">
+                        <!--begin::Modal title-->
+                        <h2 class="fw-bolder">Edit Notice</h2>
+                        <!--end::Modal title-->
+                        <!--begin::Close-->
+                        <div id="kt_modal_add_graduate1_close" class="btn btn-icon btn-sm btn-active-icon-primary">
+                            <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                            <span class="svg-icon svg-icon-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none">
+                                    <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1"
+                                        transform="rotate(-45 6 17.3137)" fill="currentColor" />
+                                    <rect x="7.41422" y="6" width="16" height="2" rx="1"
+                                        transform="rotate(45 7.41422 6)" fill="currentColor" />
+                                </svg>
+                            </span>
+                            <!--end::Svg Icon-->
+                        </div>
+                        <!--end::Close-->
+                    </div>
+                    <!--end::Modal header-->
+                    <!--begin::Modal body-->
+                    <div class="modal-body py-10 px-lg-17">
+                        <!--begin::Scroll-->
+                        <div class="scroll-y me-n7 pe-7" id="kt_modal_add_graduate1_scroll" data-kt-scroll="true"
+                            data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto"
+                            data-kt-scroll-dependencies="#kt_modal_add_graduate_header"
+                            data-kt-scroll-wrappers="#kt_modal_add_graduate_scroll" data-kt-scroll-offset="300px">
+
+
+
+                            <!--begin::Input group-->
+                            <div class="row mb-7">
+                                <div class="col-12">
+                                    <!--begin::Label-->
+                                    <label class="fs-6 fw-bold mb-2">
+                                        <span class="required">Notice Title</span>
+
+                                    </label>
+                                    <!--end::Label-->
+                                    <!--begin::Input-->
+                                    <!--begin::Input-->
+                                    <input class="form-control form-control-solid" [(ngModel)]="editTitle" placeholder="" name="newtitle" />
+                                    <!--end::Input-->
+                                </div>
+
+
+                            </div>
+                            <!--end::Input group-->
+
+                            <!--begin::Input group-->
+                            <div class="fv-row mb-7">
+                                <!--begin::Label-->
+                                <label class="fs-5 fw-bold form-label mb-2">Notice Details</label>
+                                <!--end::Label-->
+                                <textarea [(ngModel)]="editDescription" class="form-control form-control-solid" rows="6" name="new_target_details"
+                                    placeholder="Type  Details" spellcheck="false">                        </textarea>
+                            </div>
+
+                          
+
+                        </div>
+                        <!--end::Scroll-->
+                    </div>
+                    <!--end::Modal body-->
+                    <!--begin::Modal footer-->
+                    <div class="modal-footer flex-center">
+                        <!--begin::Button-->
+                        <button type="reset" id="kt_modal_add_graduate123" data-bs-target="#kt_modal_add_graduate1" data-bs-dismiss="modal"
+                            class="btn btn-light me-3">Discard</button>
+                        <!--end::Button-->
+                        <!--begin::Button-->
+                        <button (click)="editNotice()" type="submit" id="kt_modal_add_graduate1_submit" data-bs-target="#kt_modal_add_graduate1" data-bs-dismiss="modal" class="btn btn-info">
+                            <span class="indicator-label">Submit</span>
+                            <span class="indicator-progress">Please wait...
+                                <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                        </button>
+                        <!--end::Button-->
+                    </div>
+                    <!--end::Modal footer-->
+                </form>
+                <!--end::Form-->
+            </div>
+        </div>
+    </div>
+    <!--end::Modal - Customers - Add-->
+   
+    <!--end::Footer-->
+</div>

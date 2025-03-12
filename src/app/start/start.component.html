@@ -1,0 +1,552 @@
+<!-- <div style="font-family: 'Trebuchet MS';">
+    <div class="d-flex">
+     <div>
+       <img src="../assets/images/reel.png" style="height: 100vh;"/>
+     </div>
+     <div style="width: 100%; display: flex; align-items: center; justify-content: center;">
+       <div>
+         <h1 style="color: dodgerblue; text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);">Education is Key</h1>
+       <h5>Available Schools</h5>
+       <br>
+   
+       <select #fir (change)="schoolId = fir.value " class="form-select">
+         <option selected disabled>Select your school</option>
+         <option *ngFor="let school of schools" [value]="school.id">{{school.name}}</option>
+       </select>
+       <div style="margin-top: 50px; text-align: center;">
+        
+         <button [routerLink]="['/' + genk.school, fir.value.toString()]" style="padding: 8px 10%; outline: none; border: none; background-color: rgb(9, 104, 198); color: white; ">Next</button>
+       </div>
+
+       
+       </div>
+     </div>
+    </div> 
+    
+   </div> -->
+
+
+<div id="kt_body" class="bg-body">
+  <!--begin::Main-->
+  <!--begin::Root-->
+  <div class="d-flex flex-column flex-root">
+
+    <!--begin::Authentication - Multi-steps-->
+    <div class="d-flex flex-column flex-lg-row flex-column-fluid stepper stepper-pills stepper-column"
+      id="kt_create_account_stepper">
+      <!--begin::Aside-->
+
+      <div
+        class="d-flex flex-column w-lg-100px w-xl-400px bgi-size-cover bgi-position-center flex-lg-row-auto w-xl-600px positon-xl-relative topimgheight"
+        style="background-image: url(../assets/images/tuo2.jpg);">
+
+        <!--begin::Wrapper-->
+        <div
+          class="d-flex flex-column mt-15 flex-column text-center  d-none d-lg-block top-0 bottom-0 w-xl-500px scroll-y">
+
+          <div class="d-flex flex-column mb-20 position-xl-fixed top-0 bottom-0 w-xl-600px scroll-y">
+            <!--begin::Content-->
+            <div class="d-flex flex-row-fluid mb-20  justify-content-end flex-column text-center pt-5  pt-lg-5">
+              <!--begin::Title-->
+              <h1 class="fw-bolder fs-2qx pb-5 pb-md-5" style="color: #ffff;">Fast, Efficient School
+                Software</h1>
+              <!--end::Title-->
+              <!--begin::Description-->
+              <p class="fw-6 fs-4" style="color: #ffff;">
+                Streamline administrative tasks, grading, and academic <br> reporting in one
+                intuitive platform.</p>
+              <!--end::Description-->
+            </div>
+            <!--end::Content-->
+
+
+          </div>
+          <!--end::Wrapper-->
+
+
+        </div>
+        <!--end::Wrapper-->
+
+      </div>
+      <!--begin::Aside-->
+
+      <!--begin::Body-->
+      <div class="d-flex flex-column flex-lg-row-fluid py-1">
+
+        <!--begin::Content-->
+        <div class="d-flex flex-center flex-column flex-column-fluid">
+
+          <!--begin::Wrapper-->
+          <div class="w-lg-800px p-10 p-lg-15 mx-auto">
+
+            <!--begin::Form-->
+            <form class="my-auto pb-5" *ngIf="logpage == 'none'">
+              <!--begin::Step 1-->
+              <div class="current" data-kt-stepper-element="content">
+
+                <!--begin::Wrapper-->
+                <div class="w-100">
+                  <!--begin::Logo-->
+                  <div class="mb-5 aligntopimg">
+                    <img alt="Logo" src="assets/media/logos/logo1-new.svg" class="logimg" />
+                  </div>
+                  <!--end::Logo-->
+                  <!--begin::Heading-->
+                  <div class="pb-10 pt-15 pb-lg-15">
+
+                    <!--begin::Title-->
+                    <h1 class="fw-bolder d-flex align-items-center text-dark">Education is Key
+
+                    </h1>
+                    <!--end::Title-->
+                    <!--begin::Notice-->
+                    <div class="text-muted fw-bold fs-4">Select your school and account to sign
+                      in.
+
+                    </div>
+                    <!--end::Notice-->
+                  </div>
+                  <!--end::Heading-->
+                  <!--begin::Input group-->
+                  <div class="fv-row">
+                    <!--begin::Input group-->
+                    <div class="fv-row mb-3">
+                      <!-- <select name="" aria-label="Select your school" data-control="select2"
+                        data-placeholder="Select your school"
+                        class="form-select form-select form-select-lg fw-bold fs-4">
+                        <option value="">Select your school</option>
+                        <option>HighCrest International School</option>
+                        <option>Holy Rosary College</option>
+                        <option>Christ the King College, Abuja </option>
+
+                      </select> -->
+
+                      <select #fir (change)="changeSchool(fir)" name="mylo" class="form-select form-select form-select-lg fw-bold fs-4" 
+                      data-placeholder="Select your school">
+                      <option selected value="">Select your school</option>
+                        <option *ngFor="let school of schools" [value]="school.id" [selected]="school.id === genk.selectedSchoolId">{{school.name}}</option>         
+                      </select>
+                    </div>
+                    <!--end::Input group-->
+                    <div class="d-flex flex-stack flex-wrap gap-3 fs-base fw-bold mb-4">
+                      
+
+                      <!--begin::Link-->
+                      <!-- <a [routerLink]="['/' + genk.account, genk.register]" class="link-info fs-5">
+                        Sign-Up as school
+                      </a> -->
+                      <!--end::Link-->
+                    </div>
+
+                    <!--begin::Row-->
+                    <div class="row">
+                      <!--begin::Col-->
+                      <div class="col-lg-6">
+                        <!--begin::Option-->
+                        <input type="radio" class="btn-check " name="account_type" value="personal" />
+                        <label
+                          class="btn btn-outline btn-outline-dashed btn-outline-default p-8 d-flex align-items-center mb-10" (click)="studentCheck = true; staffCheck = false" [ngClass]="studentCheck ? 'bg-light-primary border-primary' : ''">
+                          <!--begin::Svg Icon | path: icons/duotune/communication/com005.svg-->
+                          <span class="svg-icon svg-icon-3x me-5">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                              fill="none">
+                              <path
+                                d="M20 14H18V10H20C20.6 10 21 10.4 21 11V13C21 13.6 20.6 14 20 14ZM21 19V17C21 16.4 20.6 16 20 16H18V20H20C20.6 20 21 19.6 21 19ZM21 7V5C21 4.4 20.6 4 20 4H18V8H20C20.6 8 21 7.6 21 7Z"
+                                fill="currentColor" />
+                              <path opacity="0.3"
+                                d="M17 22H3C2.4 22 2 21.6 2 21V3C2 2.4 2.4 2 3 2H17C17.6 2 18 2.4 18 3V21C18 21.6 17.6 22 17 22ZM10 7C8.9 7 8 7.9 8 9C8 10.1 8.9 11 10 11C11.1 11 12 10.1 12 9C12 7.9 11.1 7 10 7ZM13.3 16C14 16 14.5 15.3 14.3 14.7C13.7 13.2 12 12 10.1 12C8.10001 12 6.49999 13.1 5.89999 14.7C5.59999 15.3 6.19999 16 7.39999 16H13.3Z"
+                                fill="currentColor" />
+                            </svg>
+                          </span>
+                          <!--end::Svg Icon-->
+                          <!--begin::Info-->
+                          <span class="d-block fw-bold text-start">
+                            <span class="text-dark fw-bolder d-block fs-4 mb-2">Student
+                              Sign-In</span>
+
+                          </span>
+                          <!--end::Info-->
+                        </label>
+                        <!--end::Option-->
+                      </div>
+                      <!--end::Col-->
+                      <!--begin::Col-->
+                      <div class="col-lg-6 mb-5">
+                        <!--begin::Option-->
+                        <input type="radio" class="btn-check" name="account_type" value="corporate" />
+                        <label
+                          class="btn btn-outline btn-outline-dashed btn-outline-default p-8 d-flex align-items-center" (click)="staffCheck = true; studentCheck = false" [ngClass]="staffCheck ? 'bg-light-primary border-primary' : ''">
+                          <!--begin::Svg Icon | path: icons/duotune/communication/com005.svg-->
+                          <span class="svg-icon svg-icon-3x me-5">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                              fill="none">
+                              <path
+                                d="M20 14H18V10H20C20.6 10 21 10.4 21 11V13C21 13.6 20.6 14 20 14ZM21 19V17C21 16.4 20.6 16 20 16H18V20H20C20.6 20 21 19.6 21 19ZM21 7V5C21 4.4 20.6 4 20 4H18V8H20C20.6 8 21 7.6 21 7Z"
+                                fill="currentColor" />
+                              <path opacity="0.3"
+                                d="M17 22H3C2.4 22 2 21.6 2 21V3C2 2.4 2.4 2 3 2H17C17.6 2 18 2.4 18 3V21C18 21.6 17.6 22 17 22ZM10 7C8.9 7 8 7.9 8 9C8 10.1 8.9 11 10 11C11.1 11 12 10.1 12 9C12 7.9 11.1 7 10 7ZM13.3 16C14 16 14.5 15.3 14.3 14.7C13.7 13.2 12 12 10.1 12C8.10001 12 6.49999 13.1 5.89999 14.7C5.59999 15.3 6.19999 16 7.39999 16H13.3Z"
+                                fill="currentColor" />
+                            </svg>
+                          </span>
+                          <!--end::Svg Icon-->
+                          <!--begin::Info-->
+                          <span class="d-block fw-bold text-start">
+                            <span class="text-dark fw-bolder d-block fs-4 mb-2">Staff
+                              Sign-In</span>
+
+                          </span>
+                          <!--end::Info-->
+                        </label>
+                        <!--end::Option-->
+                      </div>
+                      <div>
+                        <!-- <div>
+                          <a [routerLink]="['/' + genk.account, genk.register]">Sign-up as a school</a>
+                         </div> -->
+                      </div>
+                      <!--end::Col-->
+                    </div>
+                    <!--end::Row-->
+
+                  </div>
+                  <!--end::Input group-->
+                </div>
+                <!--end::Wrapper-->
+              </div>
+    
+
+              <!--begin::Actions-->
+              <div class="d-flex flex-stack pt-5">
+                <div class="mr-2">
+                  <button type="button" class="btn btn-lg btn-light-info me-3" data-kt-stepper-action="previous">
+                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr063.svg-->
+                    <span class="svg-icon svg-icon-4 me-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <rect opacity="0.5" x="6" y="11" width="13" height="2" rx="1" fill="currentColor" />
+                        <path
+                          d="M8.56569 11.4343L12.75 7.25C13.1642 6.83579 13.1642 6.16421 12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75L5.70711 11.2929C5.31658 11.6834 5.31658 12.3166 5.70711 12.7071L11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25C13.1642 17.8358 13.1642 17.1642 12.75 16.75L8.56569 12.5657C8.25327 12.2533 8.25327 11.7467 8.56569 11.4343Z"
+                          fill="currentColor" />
+                      </svg>
+                    </span>
+                    <!--end::Svg Icon-->Previous</button>
+                </div>
+                <div>
+
+                  <button type="button" class="btn btn-lg btn-info" [disabled]="!genk.selectedSchoolId" (click)="switchPage()">Continue
+                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg-->
+                    <span class="svg-icon svg-icon-4 ms-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1" transform="rotate(-180 18 13)"
+                          fill="currentColor" />
+                        <path
+                          d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z"
+                          fill="currentColor" />
+                      </svg>
+                    </span>
+                    <!--end::Svg Icon--></button>
+                </div>
+              </div>
+              <!--end::Actions-->
+            </form>
+
+            <div class="corporate-form" *ngIf="logpage == 'staff'">
+              <!--begin::Form-->
+              <form class="form w-100" [formGroup]="loginForm" (ngSubmit)="submitAdmin()">
+                <!--begin::Heading-->
+                <div class="text-start mb-10">
+                  <!--begin::Title-->
+                  <h1 class="text-dark mb-3">Staff Sign In </h1>
+                  <!--end::Title-->
+
+                </div>
+                <!--begin::Heading-->
+                <!--begin::Input group-->
+                <div class="fv-row mb-10">
+                  <!--begin::Wrapper-->
+                  <div class="d-flex flex-stack mb-2">
+                    <!--begin::Label-->
+                    <label class="form-label fw-bolder text-dark fs-6 mb-0">Username</label>
+                    <!--end::Label-->
+
+                  </div>
+                  <!--end::Wrapper-->
+                  <!--begin::Input-->
+                  <input #logi class="form-control form-control-lg form-control-light" autocomplete="off"  type="email" required placeholder="Username" formControlName="email" [value]="email" (change)="email = genk.hook(logi.value.toString())"/>
+                  <div class="eroce">
+                    <div>{{emailError}}</div>
+                </div>
+                  <!--end::Input-->
+                </div>
+                <!--end::Input group-->
+                <!--begin::Input group-->
+                <div class="fv-row mb-10">
+                  <!--begin::Wrapper-->
+                  <div class="d-flex flex-stack mb-2">
+                    <!--begin::Label-->
+                    <label class="form-label fw-bolder text-dark fs-6 mb-0">Password</label>
+                    <!--end::Label-->
+
+                  </div>
+                  <!--end::Wrapper-->
+                  <!--begin::Input-->
+                  <input class="form-control form-control-lg form-control-light" type="password" #pas required autocomplete="off" autocorrect="off" placeholder="Password" formControlName="password" [value]="password" (change)="password = genk.hook(pas.value.toString())"/>
+                  <div class="eroce">
+                    <div>{{passwordError}}</div>
+                </div>
+                  <!--end::Input-->
+                </div>
+                <!--end::Input group-->
+                <!--begin::Actions-->
+                <div class="row text-center">
+                  <!--begin::Submit button-->
+                  <button type="submit" class="btn btn-lg btn-info w-100 mb-5">
+                    <span class="indicator-label" [disabled]="loading" (click)="submitAdmin()">Login</span>
+                    <span class="indicator-progress">Please wait...
+                      <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                  </button>
+
+                  <button type="button" (click)="returnPage()" class="btn btn-lg btn-light-info me-3">
+                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr063.svg-->
+                    <span class="svg-icon svg-icon-4 me-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <rect opacity="0.5" x="6" y="11" width="13" height="2" rx="1" fill="currentColor" />
+                        <path
+                          d="M8.56569 11.4343L12.75 7.25C13.1642 6.83579 13.1642 6.16421 12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75L5.70711 11.2929C5.31658 11.6834 5.31658 12.3166 5.70711 12.7071L11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25C13.1642 17.8358 13.1642 17.1642 12.75 16.75L8.56569 12.5657C8.25327 12.2533 8.25327 11.7467 8.56569 11.4343Z"
+                          fill="currentColor" />
+                      </svg>
+                    </span>Previous</button>
+
+
+                </div>
+                <!--end::Actions-->
+              </form>
+              <!--end::Form-->
+            </div>
+
+            <div class="personal-form" *ngIf="logpage == 'student'">
+
+              <!--begin::Form-->
+              <form class="form w-100" [formGroup]="loginStudentForm" (ngSubmit)="submit()">
+
+                <!--begin::Heading-->
+                <div class="text-start mb-10">
+
+                  <!--begin::Title-->
+                  <h1 class="text-dark mb-3">Student Sign In </h1>
+                  <!--end::Title-->
+
+                </div>
+                <!--begin::Heading-->
+
+                <!--begin::Input group-->
+                <div class="fv-row mb-10">
+                  <!--begin::Wrapper-->
+                  <div class="d-flex flex-stack mb-2">
+                    <!--begin::Label-->
+                    <label class="form-label fw-bolder text-dark fs-6 mb-0">Admission
+                      Number</label>
+                    <!--end::Label-->
+
+                  </div>
+                  <!--end::Wrapper-->
+                  <!--begin::Input-->
+                  <input class="form-control form-control-lg form-control-light" autocomplete="off" #studlogi type="email" required placeholder="Admission Number" formControlName="studentEmail" [value]="email" (change)="email = genk.hook(studlogi.value.toString())" />
+                  <!--end::Input-->
+                  <div class="eroce">
+                    <div>{{emailError}}</div>
+                </div>
+                </div>
+                <!--end::Input group-->
+                <!--begin::Input group-->
+                <div class="fv-row mb-10">
+                  <!--begin::Wrapper-->
+                  <div class="d-flex flex-stack mb-2">
+                    <!--begin::Label-->
+                    <label class="form-label fw-bolder text-dark fs-6 mb-0">Password</label>
+                    <!--end::Label-->
+
+                  </div>
+                  <!--end::Wrapper-->
+                  <!--begin::Input-->
+                  <input class="form-control form-control-lg form-control-light" #studpas required type="password" class="form-control" autocomplete="off" autocorrect="off" placeholder="Password" formControlName="studentPassword" [value]="password" (change)="password = genk.hook(studpas.value.toString())"/>
+                  <!--end::Input-->
+                  <div class="eroce">
+                    <div>{{passwordError}}</div>
+                </div>
+
+
+                <div class="fv-row mb-10 mt-4">
+                  <!--begin::Wrapper-->
+                  <div class="d-flex flex-stack mb-2">
+                      <!--begin::Label-->
+                      <button style="margin-left: auto;" type="button" data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer" class="btn btn-sm btn-light-danger fw-bolder fs-6 mb-0">Forgot Admission Number</button>
+                      <!--end::Label-->
+                  </div>
+                  <!--end::Wrapper-->
+              </div>
+
+
+                </div>
+                <!--end::Input group-->
+                <!--begin::Actions-->
+                <div class="row text-center">
+                  <!--begin::Submit button-->
+                  <button type="submit" class="btn btn-lg btn-info w-100 mb-5">
+                    <span class="indicator-label" [disabled]="loading" (click)="submit()">Login</span>
+                    <span class="indicator-progress">Please wait...
+                      <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                  </button>
+                  <!--end::Submit button-->
+                  <button type="button" (click)="returnPage()" class="btn btn-lg btn-light-info me-3">
+                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr063.svg-->
+                    <span class="svg-icon svg-icon-4 me-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <rect opacity="0.5" x="6" y="11" width="13" height="2" rx="1" fill="currentColor" />
+                        <path
+                          d="M8.56569 11.4343L12.75 7.25C13.1642 6.83579 13.1642 6.16421 12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75L5.70711 11.2929C5.31658 11.6834 5.31658 12.3166 5.70711 12.7071L11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25C13.1642 17.8358 13.1642 17.1642 12.75 16.75L8.56569 12.5657C8.25327 12.2533 8.25327 11.7467 8.56569 11.4343Z"
+                          fill="currentColor" />
+                      </svg>
+                    </span>Previous</button>
+
+                </div>
+                <!--end::Actions-->
+              </form>
+              <!--end::Form-->
+            </div>
+            <!--end::Form-->
+
+          </div>
+          <!--end::Wrapper-->
+
+        </div>
+        <!--end::Content-->
+
+      </div>
+      <!--end::Body-->
+    </div>
+    <!--end::Authentication - Multi-steps-->
+  </div>
+  <!--end::Root-->
+  <!--end::Main-->
+  <!--begin::Javascript-->
+  <script>var hostUrl = "assets/";</script>
+  <!--begin::Global Javascript Bundle(used by all pages)-->
+  <script src="assets/plugins/global/plugins.bundle.js"></script>
+  <script src="assets/js/scripts.bundle.js"></script>
+  <!--end::Global Javascript Bundle-->
+  <!--begin::Page Custom Javascript(used by this page)-->
+  <script src="assets/js/custom/utilities/modals/create-account.js"></script>
+  <!--end::Page Custom Javascript-->
+  <!--end::Javascript-->
+</div>
+
+
+
+
+
+<div class="modal fade" id="kt_modal_add_customer" tabindex="-1" aria-hidden="true">
+  <!--begin::Modal dialog-->
+  <div class="modal-dialog modal-dialog-centered mw-650px">
+      <!--begin::Modal content-->
+      <div class="modal-content">
+          <!--begin::Form-->
+          <form class="form" action="#" id="kt_modal_add_customer_form" data-kt-redirect="../../demo1/dist/apps/customers/list.html">
+              <!--begin::Modal header-->
+              <div class="modal-header" id="kt_modal_add_customer_header">
+                  <!--begin::Modal title-->
+                  <h2 class="fw-bolder">Admission Number Lookup</h2>
+                  <!--end::Modal title-->
+                  <!--begin::Close-->
+                  <div id="kt_modal_add_customer_close" class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal">
+                      <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                      <span class="svg-icon svg-icon-1">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                              <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
+                              <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor" />
+                          </svg>
+                      </span>
+                      <!--end::Svg Icon-->
+                  </div>
+                  <!--end::Close-->
+              </div>
+              <!--end::Modal header-->
+              <!--begin::Modal body-->
+              <div class="modal-body py-10 px-lg-17">
+                  <!--begin::Scroll-->
+                  <div
+                      class="scroll-y me-n7 pe-7"
+                      id="kt_modal_add_customer_scroll"
+                      data-kt-scroll="true"
+                      data-kt-scroll-activate="{default: false, lg: true}"
+                      data-kt-scroll-max-height="auto"
+                      data-kt-scroll-dependencies="#kt_modal_add_customer_header"
+                      data-kt-scroll-wrappers="#kt_modal_add_customer_scroll"
+                      data-kt-scroll-offset="300px"
+                  >
+                      <!--begin::Input group-->
+                      <div class="d-flex flex-column mb-7 fv-row">
+                          <!--begin::Label-->
+                          <label class="fs-6 fw-bold mb-2">
+                              <span class="required">Select Class</span>
+                              <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Students Class"></i>
+                          </label>
+                          
+
+                          <select [(ngModel)]="currentClassId" name="forgeId" data-control="select2" data-placeholder="Select Class..."
+                            data-dropdown-parent="#kt_modal_add_customer" class="form-select form-select-solid fw-bolder">
+                            <option value="">Select Class...</option>
+                            <option *ngFor="let session of schoolClasses" [value]="session.id">{{session.class}}</option>
+                          </select>
+                          <!--end::Input-->
+                      </div>
+
+                      <!--begin::Input group-->
+                      <div class="d-flex flex-column mb-7 fv-row">
+                          <!--begin::Label-->
+                          <label class="fs-6 fw-bold mb-2">
+                              <span class="required">Enter Surname</span>
+                          </label>
+
+                          <!--begin::Input-->
+                          <input type="text" class="form-control form-control-lg form-control-solid" [(ngModel)]="surname" name="surname" placeholder="Enter Surname" />
+                          <!--end::Input-->
+                      </div>
+                      <!--begin::download template-->
+                      <div class="fv-row mt-5 mb-10">
+                          <button id="lookupButton" class="btn btn-info w-100" (click)="searchSurname()">Admission Number Lookup</button>
+                      </div>
+                      <!--end::download template-->
+                      
+
+                      <div *ngFor="let mystudent of students" class="d-flex align-items-center bg-light rounded text-center justify-content-between mb-7 fv-row gap-2 p-5" style="display: none;">
+                          <div class=" d-flex gap-4 ">
+                          <div class="circle">
+                              <style>
+                                  .circle{
+                                      background-color: #ed09b0;
+                                      height: 15px;
+                                      width: 15px;
+                                      border-radius: 50%;
+                                  }
+                                  
+                              </style>
+                          </div>
+                          <div class="d-flex flex-column text-start">
+                              <h4>{{mystudent.name}}</h4>
+                              <h4 class="text-dark">{{mystudent.admissionNo}}</h4>
+                          </div>
+                          </div>
+                          <button class="btn btn-sm btn-dark" (click)="copyTextToClipboard(mystudent.admissionNo)">copy</button>
+                      </div>
+                      <div *ngIf="isNoStudents" class="d-flex text-center align-content-center justify-content-center justify-items-center align-items-center mb-7 fv-row gap-2" style="display: none;">
+                          <h5 class="text-danger">Oops! Nothing found. kindly check the details and try again</h5>
+                      </div>
+                  </div>
+                  <!--end::Scroll-->
+              </div>
+              <!--end::Modal body-->
+          </form>
+          <!--end::Form-->
+      </div>
+  </div>
+</div>

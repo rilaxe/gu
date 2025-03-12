@@ -1,0 +1,1351 @@
+<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+    <!--begin::Post-->
+    <div class="post d-flex flex-column-fluid" id="kt_post">
+        <!--begin::Container-->
+        <div id="kt_content_container" class="container-xxl">
+            <!--begin::Form-->
+            <form id="kt_ecommerce_add_product_form" class="form d-flex flex-column flex-lg-row" data-kt-redirect="#">
+               
+                <!--begin::Main column-->
+                <div class="d-flex flex-column flex-row-fluid gap-7 gap-lg-10">
+                    <!--begin:::Tabs-->
+                    <ul class="nav nav-custom nav-tabs nav-line-tabs nav-line-tabs-2x border-0 fs-4 fw-bold mb-n2">
+                        <!--begin:::Tab item-->
+                        <li class="nav-item">
+                            <a class="nav-link text-active-primary pb-4 active" data-bs-toggle="tab" href="#kt_ecommerce_add_product_general">All Staff</a>
+                        </li>
+                        <!--end:::Tab item-->
+                        <!--begin:::Tab item-->
+                        <li class="nav-item">
+                            <a class="nav-link text-active-primary pb-4" data-bs-toggle="tab" href="#kt_ecommerce_add_product_advanced">Academic Staff</a>
+                        </li>
+                        <!--end:::Tab item-->
+                         <!--begin:::Tab item-->
+                         <li class="nav-item">
+                            <a class="nav-link text-active-primary pb-4" data-bs-toggle="tab" href="#kt_ecommerce_add_product_new">Non Academic Staff</a>
+                        </li>
+                        <!--end:::Tab item-->
+                        
+                    </ul>
+                    <!--end:::Tabs-->
+                    <!--begin::Tab content-->
+                    <div class="tab-content">
+                        <!--begin::Tab pane-->
+                        <div class="tab-pane fade show active" id="kt_ecommerce_add_product_general" role="tab-panel">
+                                                <div class="d-flex flex-column gap-7 gap-lg-10">
+                            <!--begin::Card-->
+            <div class="card p-5" style="border-radius: 0;">
+                <!--begin::Card header-->
+                <div class="card-header">
+                    <!--begin::Card title-->
+                    <div class="card-title">
+                        <!--begin::Search-->
+                        <div class="d-flex align-items-center position-relative my-1">
+                            <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
+                            <span class="svg-icon svg-icon-1 position-absolute ms-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="currentColor" />
+                                    <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="currentColor" />
+                                </svg>
+                            </span>
+                            <!--end::Svg Icon-->
+                            <input #myInput type="text" (keyup)='genk.searchTable(myInput, myTbody)' data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search Staffs" />
+                        </div>
+                        <!--end::Search-->
+                    </div>
+                    <!--begin::Card title-->
+                    <!--begin::Card toolbar-->
+                    <div class="card-toolbar">
+                        <!--begin::Toolbar-->
+                        <div class="d-flex justify-content-end" data-kt-customer-table-toolbar="base">
+                           
+                            <!--begin::Menu 1-->
+                            <div class="menu menu-sub menu-sub-dropdown w-300px w-md-325px" data-kt-menu="true" id="kt-toolbar-filter">
+                                <!--begin::Header-->
+                                <div class="px-7 py-5">
+                                    <div class="fs-4 text-dark fw-bolder">Filter Options</div>
+                                </div>
+                                <!--end::Header-->
+                                <!--begin::Separator-->
+                                <div class="separator border-gray-200"></div>
+                                <!--end::Separator-->
+                                <!--begin::Content-->
+                                <div class="px-7 py-5">
+                                    <!--begin::Input group-->
+                                    <div class="mb-10">
+                                        <!--begin::Label-->
+                                        <label class="form-label fs-5 fw-bold mb-3">Class</label>
+                                        <!--end::Label-->
+                                        <!--begin::Input-->
+                                        <select class="form-select form-select-solid fw-bolder" data-kt-select2="true" data-placeholder="Select option" data-allow-clear="true" data-kt-customer-table-filter="month" data-dropdown-parent="#kt-toolbar-filter">
+                                            <option></option>
+                                            <option value="1">Primary 1</option>
+                                            <option value="2">Primary 2</option>
+                                            <option value="3">Primary 3</option>
+                                            <option value="4">Primary 4</option>
+                                            <option value="5">Primary 5</option>
+                                        </select>
+                                        <!--end::Input-->
+                                    </div>
+                                    <!--end::Input group-->
+
+                                    
+                                    
+                                    <!--begin::Actions-->
+                                    <div class="d-flex justify-content-end">
+                                        <button type="reset" class="btn btn-light btn-active-light-primary me-2" data-kt-menu-dismiss="true" data-kt-customer-table-filter="reset">Reset</button>
+                                        <button type="submit" class="btn btn-info" data-kt-menu-dismiss="true" data-kt-customer-table-filter="filter">Apply</button>
+                                    </div>
+                                    <!--end::Actions-->
+                                </div>
+                                <!--end::Content-->
+                            </div>
+                            <!--end::Menu 1-->
+                            <!--end::Filter-->
+                            
+                            <!--begin::Add customer-->
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#kt_modal_create_app" class="btn btn-info me-3">Create Profile</button>
+                            <!--end::Add customer-->
+
+                            <!--begin::Add customer-->
+                            <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer">Batch Uploads</button>
+                            <!--end::Add customer-->
+                        </div>
+                        <!--end::Toolbar-->
+                        <!--begin::Group actions-->
+                        <div class="d-flex justify-content-end align-items-center d-none" data-kt-customer-table-toolbar="selected">
+                            <div class="fw-bolder me-5">
+                            <span class="me-2" data-kt-customer-table-select="selected_count"></span>Selected</div>
+                            <button type="button" class="btn btn-danger" data-kt-customer-table-select="delete_selected">Delete Selected</button>
+                        </div>
+                        <!--end::Group actions-->
+                    </div>
+                    <!--end::Card toolbar-->
+                </div>
+                <!--end::Card header-->
+                <!--begin::Card body-->
+                <div class="card-body" style="overflow-x: auto;">
+                    <!--begin::Table-->
+                    <table class="table align-middle table-row-dashed fs-6" id="kt_customers_table">
+                        <!--begin::Table head-->
+                        <thead>
+                            <!--begin::Table row-->
+                            <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+                                <th class="w-10px pe-2">
+                                    S/N
+                                </th>
+                                <th class="min-w-125px">Full Name</th>
+                                <th class="min-w-100px">Gender</th>
+                                <th class="min-w-125px">Staff ID</th>
+                                <th class="min-w-125px">Contact Number</th>
+                                <th class="min-x-50px">Department</th>
+                                <th class="min-w-100px">Position</th>
+                                <th class="text-end min-w-70px">Actions</th>
+                            </tr>
+                            <!--end::Table row-->
+                        </thead>
+                        <!--end::Table head-->
+                        <!--begin::Table body-->
+                        <tbody #myTbody class="fw-bold text-gray-600">
+                            <tr  *ngFor="let itema of staffList; index as i">
+                                <!--begin::Checkbox-->
+                                <td>
+                                    {{i + 1}}
+                                </td>
+                                <!--end::Checkbox-->
+                                <!--begin::Name=-->
+                                <td class="d-flex align-items-center">
+                                    <!--begin:: Avatar -->
+                                    <div class="symbol symbol-circle symbol-40px overflow-hidden me-3">
+
+                                        <div class="symbol-label">
+                                            <img [src]="setImg(itema.photo)" style="object-fit:cover"
+                                                alt="Emma Smith" class="w-100">
+                                        </div>
+
+                                    </div>
+                                    <!--end::Avatar-->
+                                    <!--begin::User details-->
+                                    <div class="d-flex flex-column">
+                                        <a [routerLink]="['/' + 'admin', 'admin-staff', 'view-staff', itema.id]"
+                                            class="text-gray-800 text-hover-primary mb-1 text-capitalize">{{((itema?.surname ?? '') + ' ' + (itema.otherNames ?? '')).trim()}}</a>
+
+                                    </div>
+                                    <!--begin::User details-->
+                                </td>
+
+                               
+                                <!--end::Name=-->
+                                <!--begin::Email=-->
+                                <td>
+                                    <a href="#" class="text-gray-600 text-hover-info mb-1">{{itema.gender}}</a>
+                                </td>
+                                <!--end::Email=-->
+                                
+                                <!--begin::Payment method=-->
+                                <td data-filter="mastercard">{{itema.idCardNo}}</td>
+                                <!--end::Payment method=-->
+                                <!--begin::Company=-->
+                                <td>{{itema.phone}}</td>
+                                <!--end::Company=-->
+                                <td>{{itema.department}}</td>
+                                    <!--begin::Date=-->
+                                    <td>{{itema.position}}</td>
+                                    <!--end::Date=-->
+                                <!--begin::Action=-->
+                                <td>
+                                    <button [routerLink]="['/' + 'admin', 'admin-staff', 'view-staff', itema.id]"
+                                    style="background-color: rgb(216, 242, 251); color: dodgerblue; font-weight: 600; border: none; outline: none; padding: 5px 10px; font-size: 13px; border-radius: 5px;">View Staff</button>
+                                </td>
+                                <!--end::Action=-->
+                            </tr>
+                            
+                            
+                        </tbody>
+                        <!--end::Table body-->
+                    </table>
+                    <!--end::Table-->
+                </div>
+                <!--end::Card body-->
+            </div>
+            <!--end::Card-->
+                               
+                                
+                            </div>
+                        </div>
+                        <!--end::Tab pane-->
+                        <!--begin::Tab pane-->
+                        <div class="tab-pane fade" id="kt_ecommerce_add_product_advanced" role="tab-panel">
+                            <div class="d-flex flex-column gap-7 gap-lg-10">
+                                    <!--begin::Card-->
+                                <div class="card">
+                                    <!--begin::Card header-->
+                                    <div class="card-header border-0 pt-6">
+                                        <!--begin::Card title-->
+                                        <div class="card-title">
+                                            <!--begin::Search-->
+                                            <div class="d-flex align-items-center position-relative my-1">
+                                                <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
+                                                <span class="svg-icon svg-icon-1 position-absolute ms-6">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                        <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="currentColor" />
+                                                        <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="currentColor" />
+                                                    </svg>
+                                                </span>
+                                                <!--end::Svg Icon-->
+                                                <input type="text" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search Staffs" />
+                                            </div>
+                                            <!--end::Search-->
+                                        </div>
+                                        <!--begin::Card title-->
+                                
+                                    </div>
+                                    <!--end::Card header-->
+                                    <!--begin::Card body-->
+                                    <div class="card-body pt-0">
+                                        <!--begin::Table-->
+                                        <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_customers_table">
+                                            <!--begin::Table head-->
+                                            <thead>
+                                                <!--begin::Table row-->
+                                                <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+                                                    <th class="w-10px pe-2">
+                                                        S/N
+                                                    </th>
+                                                    <th class="min-w-125px">Full Name</th>
+                                                    <th class="min-w-100px">Gender</th>
+                                                    <th class="min-w-125px">Staff ID</th>
+                                                    <th class="min-w-125px">Contact Number</th>
+                                                    <th class="min-x-50px">Department</th>
+                                                    <th class="min-w-100px">Position</th>
+                                                    <th class="text-end min-w-70px">Actions</th>
+                                                </tr>
+                                                <!--end::Table row-->
+                                            </thead>
+                                            <!--end::Table head-->
+                                            <!--begin::Table body-->
+                                            <tbody class="fw-bold text-gray-600">
+                                                <tr  *ngFor="let itema of academicStaffList; index as i">
+                                                    <!--begin::Checkbox-->
+                                                    <td>
+                                                        {{i + 1}}
+                                                    </td>
+                                                    <!--end::Checkbox-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="View_user.html" class="text-gray-800 text-hover-info mb-1">{{itema.surname + ' ' + (itema.otherNames ?? '')}}</a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Email=-->
+                                                    <td>
+                                                        <a href="#" class="text-gray-600 text-hover-info mb-1">{{itema.gender}}</a>
+                                                    </td>
+                                                    <!--end::Email=-->
+                                                    
+                                                    <!--begin::Payment method=-->
+                                                    <td data-filter="mastercard">{{itema.idCardNo}}</td>
+                                                    <!--end::Payment method=-->
+                                                    <!--begin::Company=-->
+                                                    <td>{{itema.phone}}</td>
+                                                    <!--end::Company=-->
+                                                    <td>{{itema.department}}</td>
+                                                        <!--begin::Date=-->
+                                                        <td>{{itema.position}}</td>
+                                                        <!--end::Date=-->
+                                                    <!--begin::Action=-->
+                    
+                                                    <div class="dropdown">
+                                                        <button style="font-size: 12; outline: none; border: none; background-color: rgb(232, 237, 243); color: grey; padding: 6px 15px;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                          ACTIONS
+                                                        </button>
+                                                        <ul style="padding: 10px;" class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                          <li style="margin-bottom: 10px;"><a class="dropdown-item"  [routerLink]="['/' + 'admin', 'admin-students', 'student-profile']">View</a></li>
+                                                          <li><a class="dropdown-item" href="#">Delete</a></li>
+                                                        </ul>
+                                                      </div>
+                                                    
+                                                    <!--end::Action=-->
+                                                </tr>
+                                                
+                                            </tbody>
+                                            <!--end::Table body-->
+                                        </table>
+                                        <!--end::Table-->
+                                    </div>
+                                    <!--end::Card body-->
+                                </div>
+                                <!--end::Card-->
+                                                
+                                
+                            </div>
+                        </div>
+                        <!--end::Tab pane-->
+                         <!--begin::Tab pane-->
+                         <div class="tab-pane fade" id="kt_ecommerce_add_product_new" role="tab-panel">
+                            <div class="d-flex flex-column gap-7 gap-lg-10">
+                                <!--begin::Card-->
+                                <div class="card">
+                                    <!--begin::Card header-->
+                                    <div class="card-header border-0 pt-6">
+                                        <!--begin::Card title-->
+                                        <div class="card-title">
+                                            <!--begin::Search-->
+                                            <div class="d-flex align-items-center position-relative my-1">
+                                                <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
+                                                <span class="svg-icon svg-icon-1 position-absolute ms-6">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                        <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="currentColor" />
+                                                        <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="currentColor" />
+                                                    </svg>
+                                                </span>
+                                                <!--end::Svg Icon-->
+                                                <input type="text" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search Staffs" />
+                                            </div>
+                                            <!--end::Search-->
+                                        </div>
+                                        <!--begin::Card title-->
+                                    <!--begin::Card toolbar-->
+                                <div class="card-toolbar">
+                                    <!--begin::Toolbar-->
+                                    <div class="d-flex justify-content-end" data-kt-customer-table-toolbar="base">
+                                    
+                                        <!--begin::Add customer-->
+                                        <button type="button" class="btn btn-danger" >Batch Delete</button>
+                                        <!--end::Add customer-->
+                                    </div>
+                                    <!--end::Toolbar-->
+                                    
+                                </div>
+                                <!--end::Card toolbar-->
+                                    </div>
+                                    <!--end::Card header-->
+                                    <!--begin::Card body-->
+                                    <div class="card-body pt-0">
+                                        <!--begin::Table-->
+                                        <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_customers_table">
+                                            <!--begin::Table head-->
+                                            <thead>
+                                                <!--begin::Table row-->
+                                                <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+                                                    <th class="w-10px pe-2">
+                                                        S/N
+                                                    </th>
+                                                    <th class="min-w-125px">Full Name</th>
+                                                    <th class="min-w-100px">Gender</th>
+                                                    <th class="min-w-125px">Staff ID</th>
+                                                    <th class="min-w-125px">Contact Number</th>
+                                                    <th class="min-x-50px">Department</th>
+                                                    <th class="min-w-100px">Position</th>
+                                                    <th class="text-end min-w-70px">Actions</th>
+                                                </tr>
+                                                <!--end::Table row-->
+                                            </thead>
+                                            <!--end::Table head-->
+                                            <!--begin::Table body-->
+                                            
+                                            <tbody class="fw-bold text-gray-600">
+                                                <tr  *ngFor="let itema of nonAcademicStaffList; index as i">
+                                                    <!--begin::Checkbox-->
+                                                    <td>
+                                                        {{i + 1}}
+                                                    </td>
+                                                    <!--end::Checkbox-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="View_user.html" class="text-gray-800 text-hover-info mb-1">{{itema.surname + ' ' + (itema.otherNames ?? '')}}</a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Email=-->
+                                                    <td>
+                                                        <a href="#" class="text-gray-600 text-hover-info mb-1">{{itema.gender}}</a>
+                                                    </td>
+                                                    <!--end::Email=-->
+                                                    
+                                                    <!--begin::Payment method=-->
+                                                    <td data-filter="mastercard">{{itema.idCardNo}}</td>
+                                                    <!--end::Payment method=-->
+                                                    <!--begin::Company=-->
+                                                    <td>{{itema.phone}}</td>
+                                                    <!--end::Company=-->
+                                                    <td>{{itema.department}}</td>
+                                                        <!--begin::Date=-->
+                                                        <td>{{itema.position}}</td>
+                                                        <!--end::Date=-->
+                                                    <!--begin::Action=-->
+                    
+                                                    <div class="dropdown">
+                                                        <button style="font-size: 12; outline: none; border: none; background-color: rgb(232, 237, 243); color: grey; padding: 6px 15px;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                          ACTIONS
+                                                        </button>
+                                                        <ul style="padding: 10px;" class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                          <li style="margin-bottom: 10px;"><a class="dropdown-item"  [routerLink]="['/' + 'admin', 'admin-students', 'student-profile']">View</a></li>
+                                                          <li><a class="dropdown-item" href="#">Delete</a></li>
+                                                        </ul>
+                                                      </div>
+                                                    
+                                                    <!--end::Action=-->
+                                                </tr>
+
+                                                
+                                            </tbody>
+                                            <!--end::Table body-->
+                                        </table>
+                                        <!--end::Table-->
+                                    </div>
+                                    <!--end::Card body-->
+                                </div>
+                                <!--end::Card-->
+                            
+                            </div>
+                        </div>
+                        <!--end::Tab pane-->
+                        
+                    </div>
+                    <!--end::Tab content-->
+                   
+                </div>
+                <!--end::Main column-->
+            </form>
+            <!--end::Form-->
+        </div>
+        <!--end::Container-->
+    </div>
+    <!--end::Post-->
+</div>
+
+
+
+
+
+
+<div class="modal fade" id="kt_modal_create_app" tabindex="-1" aria-hidden="true">
+    <!--begin::Modal dialog-->
+    <div class="modal-dialog modal-dialog-centered mw-1000px">
+        <!--begin::Modal content-->
+        <div class="modal-content">
+            <!--begin::Modal header-->
+            <div class="modal-header">
+                <!--begin::Modal title-->
+                <h2>Create Staff Profile</h2>
+                <!--end::Modal title-->
+                <!--begin::Close-->
+                <div class="btn btn-sm btn-icon btn-active-color-info" data-bs-dismiss="modal">
+                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                    <span class="svg-icon svg-icon-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
+                            <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor" />
+                        </svg>
+                    </span>
+                    <!--end::Svg Icon-->
+                </div>
+                <!--end::Close-->
+            </div>
+            <!--end::Modal header-->
+            <!--begin::Modal body-->
+            <!-- <div class="modal-body py-lg-10 px-lg-10 h-600px scroll-y">
+                
+                <div class="stepper stepper-pills stepper-column d-flex flex-column flex-xl-row flex-row-fluid" id="kt_modal_create_app_stepper">
+                    
+                    <div class="d-flex justify-content-center justify-content-xl-start flex-row-auto w-100 w-xl-300px ">
+                        
+                        <div class="stepper-nav ps-lg-10 fixed-" >
+                            
+                            <div class="stepper-item current" data-kt-stepper-element="nav">
+                            
+                                <div class="stepper-line w-40px"></div>
+                                
+                                <div class="stepper-icon w-40px h-40px">
+                                    <i class="stepper-check fas fa-check"></i>
+                                    <span class="stepper-number">1</span>
+                                </div>
+                            
+                                <div class="stepper-label">
+                                    <h3 class="stepper-title">Staffs' Bio</h3>
+                                    <div class="stepper-desc"></div>
+                                </div>
+                               
+                            </div>
+                       
+                            <div class="stepper-item" data-kt-stepper-element="nav">
+                             
+                                <div class="stepper-line w-40px"></div>
+                            
+                                <div class="stepper-icon w-40px h-40px">
+                                    <i class="stepper-check fas fa-check"></i>
+                                    <span class="stepper-number">2</span>
+                                </div>
+                      
+                                <div class="stepper-label">
+                                    <h3 class="stepper-title">Contact Information</h3>
+                                    <div class="stepper-desc"></div>
+                                </div>
+                               
+                            </div>
+                     
+                            
+                        </div>
+                
+                    </div>
+              
+                    <div class="flex-row-fluid py-lg-5 px-lg-15">
+               
+                        <form class="form" novalidate="novalidate" id="kt_modal_create_app_form">
+                      
+                            <div class="current" data-kt-stepper-element="content">
+                                <div class="w-100">
+                           
+                                        <div class="fv-row mb-7">
+                                  
+                                            <label class="d-block fw-bold fs-6 mb-5">Staff Picture</label>
+                                         
+                                            <div>
+                                               <div #magdiv style="display: flex;">
+                                                <img style="width: 250px;" #mag [src]="genk.imag || genk.blankimg">
+                                               </div>
+                                                <label style="margin-top: 10px;">
+                                                    <input #dile type="file"
+                                                class="intbox"
+                                                accept=".jpg, .jpeg, .png, .gif, .tif"
+                                                (change)="genk.showPreview($event, mag)" />
+                                                </label>
+                                               
+                                            </div>
+                              
+                                            <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
+                   
+                                        </div>
+                            
+                                    <div class="row mb-10">
+                                        <div class="col-12 mb-10">
+                            
+                                        <label class="d-flex align-items-center fs-5 fw-bold ">
+                                            <span class="required">Surname</span>
+                                            
+                                        </label>
+                         
+                                        <input type="text" class="form-control form-control-lg form-control-solid" name="name" placeholder="" value="" />
+                            
+                                        </div>
+                                        <div class="col-12 mb-10">
+                               
+                                            <label class="d-flex align-items-center fs-5 fw-bold mb-2">
+                                                <span class="required">First Name</span>
+                                                
+                                            </label>
+                    
+                                            <input type="text" class="form-control form-control-lg form-control-solid" name="name" placeholder="" value="" />
+                            
+                                            </div>
+                                            <div class="col-12">
+                           
+                                                <label class="d-flex align-items-center fs-5 fw-bold mb-2">
+                                                    <span class="">Middle Name</span>
+                                                    
+                                                </label>
+                 
+                                                <input type="text" class="form-control form-control-lg form-control-solid" name="name" placeholder="" value="" />
+                  
+                                                </div>
+                                        
+                                    </div>
+          
+                                    <div class="row mb-10">
+                                        <div class="col-6">
+                          
+                                            <label class="fs-6 fw-bold mb-2">
+                                                <span class="required">Gender</span>
+                                                
+                                            </label>
+                  
+                                            <select name="Section" data-control="select" data-placeholder="Select Section..." class="form-select form-select-solid fw-bolder">
+                                                <option value="">Select Gender...</option>
+                                                <option value="1">Male</option>
+                                                <option value="2">Female</option>	
+                                            </select>
+                    
+                                            </div>
+                                            
+                                        <div class="col-6">
+              
+                                        <label class="d-flex align-items-center fs-5 fw-bold mb-2">
+                                            <span class="required">Staff ID</span>
+                                            
+                                        </label>
+                   
+                                        <input type="mail" class="form-control form-control-lg form-control-solid" name="email" placeholder="" value="" />
+           
+                                        </div>
+                                        
+                                    </div>
+          
+                                    <div class="row mb-10">
+                                        <div class="col-6">
+         
+                                            <label class="d-flex align-items-center fs-5 fw-bold mb-2">
+                                                <span class="required">Date Of Birth</span>
+                                                
+                                            </label>
+                   
+                                            <input type="date" class="form-control form-control-lg form-control-solid" name="dob" placeholder="" value="" />
+            
+                                        </div>
+                                        <div class="col-6">
+                                           
+                                            <label class="d-flex align-items-center fs-5 fw-bold mb-2">
+                                                <span class="required">Staff Category</span>
+                                                
+                                            </label>
+                                         
+                                        <select name="Section" data-control="select" data-placeholder="Select Category..." class="form-select form-select-solid fw-bolder">
+                                            <option value="">Select category...</option>
+                                            <option value="Academic Staff">Academic Staff</option>
+                                            <option value="Non Academic Staff">Non Academic Staff  </option>
+                                            
+                                                    
+                                        </select>
+                                   
+                                        </div>
+                                            
+                                    
+                                        
+                                    </div>
+                             
+
+
+                                    <div class="row mb-10">
+                                        <div class="col-6">
+                         
+                                        <label class="fs-6 fw-bold mb-2">
+                                            <span class="required">Department</span>
+                                            
+                                        </label>
+                        
+                                        <select name="Section" data-control="select" data-placeholder="Select Section..." class="form-select form-select-solid fw-bolder">
+                                            <option value="">Select Department...</option>
+                                            <option value="Humanities I">Humanities I</option>
+                                            <option value="Humanities II">Humanities II </option>
+                                            <option value="Business"> Business </option>	
+                                            <option value=" Mathematics & Computer Science">Mathematics & Computer Science</option>	
+                                            <option value="Vocational & Technology Studies">Vocational & Technology Studies </option>	
+                                            <option value="Science">Science </option>	
+                                            <option value="Clerical">Clerical </option>	
+                                            <option value="Utility">Utility</option>
+                                            <option value="Ground Staff">Ground Staff</option>
+                                            <option value="Vocation and technical Department">Vocation and technical Department</option>		
+                                        </select>
+                       
+                                        </div>
+                                        <div class="col-6">
+                    
+                                        <label class="fs-6 fw-bold mb-2">
+                                            <span class="required">Position</span>
+                                            
+                                        </label>
+                              
+                                        <select name="Section" data-control="select" data-placeholder="Select Section..." class="form-select form-select-solid fw-bolder">
+                                            <option value="">Select Position...</option>
+                                            <option value="Vice Principal Administration">Vice Principal Administration</option>
+                                            <option value="Vice Principal Academics">Vice Principal Academics</option>
+                                            <option value="Human Resource Officer I">Human Resource Officer I</option>
+                                            <option value="Human Resource Officer II">Human Resource Officer II</option>
+                                            <option value="Exam Officer (Internal)">Exam Officer (Internal)</option>
+                                            <option value="Exam Officer (External)">Exam Officer (External)</option>
+                                            <option value="Matron">Matron</option>
+                                            <option value="Cook">Cook</option>
+                                            <option value="Sewing">Sewing</option>
+                                            <option value="Crèche">Crèche</option>
+                                            <option value="Driver">Driver</option>
+                                            <option value="Nurses">Nurses</option>
+                                            <option value="Gardeners">Gardeners</option>
+                                            <option value="Canteen">Canteen</option>
+                                            <option value="Bakery">Bakery</option>
+                                            <option value="Teacher">Teacher</option>
+                                            <option value="Receptionist">Receptionist</option>
+                                            <option value="Electrician">Electrician</option>
+                                            <option value="Plumber">Plumber</option>
+                                            <option value="Class Teacher">Class Teacher</option>
+                                            <option value="ICT Staff">ICT Staff</option>
+                                            <option value="Facility Manager">Facility Manager</option>
+                                            <option value="Head of Department">Head of Department</option>
+                                            <option value="Academic Support and Foreign Admission Officer">Academic Support and Foreign Admission Officer</option>
+                                            <option value="Accountant">Accountant</option>
+                                            <option value="Store Keeper">Store Keeper</option>
+                                            <option value="Procurement">Procurement</option>
+                                            <option value="Principal">Principal</option>
+                                            <option value="Laboratory scientist">Laboratory scientist</option>
+                                            <option value="Chief Security 1">Chief Security 1</option>
+                                            <option value="Chief Security 2">Chief Security 2</option>
+                                            <option value="Counselor 1">Counselor 1</option>
+                                            <option value="Counselor 2">Counselor 2</option>
+                                            <option value="Chief Nurse">Chief Nurse</option>
+                                            <option value="Cleaner">Cleaner</option>
+                                            <option value="Chief Librarian">Chief Librarian</option>
+                                            <option value="Executive Assistant">Executive Assistant</option>
+                                            <option value="Librarian">Librarian</option>
+                                            <option value="Administration Assistant">Administration Assistant</option>
+                                        </select>
+                         
+                                        </div>
+                                    </div>
+                             
+                                    
+                                </div>
+                            </div>
+                    
+                            <div data-kt-stepper-element="content">
+                                <div class="w-100">
+
+                                    <div class="row mb-10">
+                                        <div class="col-12">
+                         
+                                        <label class="d-flex align-items-center fs-5 fw-bold mb-2">
+                                            <span class="required">Home Address</span>
+                                            
+                                        </label>
+                              
+                                        <input type="text" class="form-control form-control-lg form-control-solid" name="name" placeholder="Enter Home Address" value="" />
+                         
+                                        </div>
+                                        
+                                    </div>
+                         
+                                    <div class="row mb-10">
+                                        
+                                            
+                                        <div class="col-12">
+                             
+                                        <label class="d-flex align-items-center fs-5 fw-bold mb-2">
+                                            <span class="required">Phone Number</span>
+                                            
+                                        </label>
+                              
+                                        <input type="mail" class="form-control form-control-lg form-control-solid" name="email" placeholder="Enter Phone number" value="" />
+                             
+                                        </div>
+                                        
+                                    </div>
+                        
+                                    <div class="row mb-10">
+                                        <div class="col-12">
+                           
+                                            <label class="d-flex align-items-center fs-5 fw-bold mb-2">
+                                                <span class="required">Email Address</span>
+                                                
+                                            </label>
+                             
+                                    <textarea class="form-control form-control-solid" row="5" placeholder="Enter Email Address"  name=""></textarea>
+                          
+                                        </div>
+                                            
+                                    
+                                        
+                                    </div>
+                            
+                                </div>
+                            </div>
+                   
+                            <div class="d-flex flex-stack pt-10">
+                
+                                <div class="me-2">
+                                    <button type="button" class="btn btn-lg btn-light-info me-3" data-kt-stepper-action="previous">
+                            
+                                    <span class="svg-icon svg-icon-3 me-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <rect opacity="0.5" x="6" y="11" width="13" height="2" rx="1" fill="currentColor" />
+                                            <path d="M8.56569 11.4343L12.75 7.25C13.1642 6.83579 13.1642 6.16421 12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75L5.70711 11.2929C5.31658 11.6834 5.31658 12.3166 5.70711 12.7071L11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25C13.1642 17.8358 13.1642 17.1642 12.75 16.75L8.56569 12.5657C8.25327 12.2533 8.25327 11.7467 8.56569 11.4343Z" fill="currentColor" />
+                                        </svg>
+                                    </span>
+                                Back</button>
+                                </div>
+                     
+                                <div>
+                                    <button type="button" class="btn btn-lg btn-info" data-kt-stepper-action="submit">
+                                        <span class="indicator-label">Submit
+                              
+                                        <span class="svg-icon svg-icon-3 ms-2 me-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1" transform="rotate(-180 18 13)" fill="currentColor" />
+                                                <path d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z" fill="currentColor" />
+                                            </svg>
+                                        </span>
+                           </span>
+                                        <span class="indicator-progress">Please wait...
+                                        <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                                    </button>
+                                    <button type="button" class="btn btn-lg btn-info" data-kt-stepper-action="next">Continue
+                           
+                                    <span class="svg-icon svg-icon-3 ms-1 me-0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1" transform="rotate(-180 18 13)" fill="currentColor" />
+                                            <path d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z" fill="currentColor" />
+                                        </svg>
+                                    </span>
+                           </button>
+                                </div>
+                    
+                            </div>
+                 
+                        </form>
+           
+                    </div>
+        
+                </div>
+       
+            </div> -->
+
+
+
+
+
+
+            <div class="modal-body py-lg-10 px-lg-10 h-600px scroll-y">
+                <!--begin::Stepper-->
+                <div class="stepper stepper-pills stepper-column d-flex flex-column flex-xl-row flex-row-fluid"
+                    id="kt_modal_create_app_stepper">
+                    <!--begin::Aside-->
+                    <div class="d-flex justify-content-center justify-content-xl-start flex-row-auto w-100 w-xl-300px ">
+                        <!--begin::Nav-->
+                        <div class="stepper-nav ps-lg-10 fixed-" >
+                            <!--begin::Step 1-->
+                            <div class="stepper-item current" data-kt-stepper-element="nav">
+                                <!--begin::Line-->
+                                <div class="stepper-line w-40px"></div>
+                                <!--end::Line-->
+                                <!--begin::Icon-->
+                                <div class="stepper-icon w-40px h-40px">
+                                    <i class="stepper-check fas fa-check"></i>
+                                    <span class="stepper-number">1</span>
+                                </div>
+                                <!--end::Icon-->
+                                <!--begin::Label-->
+                                <div class="stepper-label">
+                                    <h3 class="stepper-title">Staffs' Bio</h3>
+                                    <div class="stepper-desc">Staffs Basic Informations</div>
+                                </div>
+                                <!--end::Label-->
+                            </div>
+                            <!--end::Step 1-->
+                            <!--begin::Step 2-->
+                            <div class="stepper-item" data-kt-stepper-element="nav">
+                                <!--begin::Line-->
+                                <div class="stepper-line w-40px"></div>
+                                <!--end::Line-->
+                                <!--begin::Icon-->
+                                <div class="stepper-icon w-40px h-40px">
+                                    <i class="stepper-check fas fa-check"></i>
+                                    <span class="stepper-number">2</span>
+                                </div>
+                                <!--begin::Icon-->
+                                <!--begin::Label-->
+                                <div class="stepper-label">
+                                    <h3 class="stepper-title">Contact Information</h3>
+                                    <div class="stepper-desc">Link the staffs' contact</div>
+                                </div>
+                                <!--begin::Label-->
+                            </div>
+                            <!--end::Step 2-->
+                            <!--begin::Step 3-->
+                            
+                            
+                        </div>
+                        <!--end::Nav-->
+                    </div>
+                    
+                    <div class="flex-row-fluid py-lg-5 px-lg-15">
+                        <!--begin::Form-->
+                        <form (ngSubmit)="saveStaff(f)" #f="ngForm" class="form">
+                            <!--begin::Step 1-->
+                            <div [ngClass]="regstep == 1 ? 'current' : ''" data-kt-stepper-element="content">
+                                <div class="w-100">
+                                    <div class="fv-row mb-7">
+                                        <!--begin::Label-->
+                                        <label class="d-block fw-bold fs-6 mb-5">Staff Picture</label>
+                                        <!-- src="../../../assets/boy2.jpeg" -->
+                                        <div>
+                                           <div #magdiv style="display: flex;">
+                                            <img style="width: 120px;" #mag [src]="genk.imag || genk.blankimg">
+                                           </div>
+                                            <label style="margin-top: 10px;">
+                                                <input #dile type="file"
+                                            class="intbox"
+                                            accept=".jpg, .jpeg, .png, .gif, .tif"
+                                            (change)="genk.showPreview($event, mag)" />
+                                            </label>
+                                           
+                                        </div>
+                                        <!--end::Image input-->
+                                        <!--begin::Hint-->
+                                        <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
+                                        <!--end::Hint-->
+                                    </div>
+                                    <!--begin::Input group-->
+                                    <div class="row mb-10">
+                                        <div class="col-12 mb-10">
+                                            <!--begin::Label-->
+                                            <label class="d-flex align-items-center fs-5 fw-bold ">
+                                                <span class="required">Surname</span>
+  
+                                            </label>
+                                            <!--end::Label-->
+                                            <!--begin::Input-->
+                                            <input type="text"
+                                                class="form-control form-control-lg form-control-solid" placeholder="" name="surname" [(ngModel)]="staff.surname" />
+                                            <!--end::Input-->
+                                        </div>
+                                        <div class="col-12 mb-10">
+                                            <!--begin::Label-->
+                                            <label class="d-flex align-items-center fs-5 fw-bold mb-2">
+                                                <span class="required">First Name</span>
+                                            </label>
+                                          
+                                            <input type="text"
+                                                class="form-control form-control-lg form-control-solid" name="name"
+                                                placeholder="" name="firstname" [(ngModel)]="staff.firstName"  />
+                                            <!--end::Input-->
+                                        </div>
+                                        <div class="col-12">
+                                            <!--begin::Label-->
+                                            <label class="d-flex align-items-center fs-5 fw-bold mb-2">
+                                                <span class="">Middle Name</span>
+                                            </label>
+                                         
+                                            <input type="text"
+                                                class="form-control form-control-lg form-control-solid" name="name"
+                                                placeholder="" name="middlename" [(ngModel)]="staff.middleName"/>
+                                            <!--end::Input-->
+                                        </div>
+  
+                                    </div>
+                                    
+                                    <div class="row mb-10">
+                                        <div class="col-6">
+                                            <!--begin::Label-->
+                                            <label class="fs-6 fw-bold mb-2">
+                                                <span class="required">Gender</span>
+  
+                                            </label>
+                                            <!--end::Label-->
+                                            <!--begin::Input-->
+                                            <select name="Section" data-control="select" name="gender" [(ngModel)]="staff.gender"
+                                                data-placeholder="Select Section..."
+                                                class="form-select form-select-solid fw-bolder">
+                                                <option value="">Select Gender...</option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                            </select>
+                                            <!--end::Input-->
+                                        </div>
+
+                                        <div class="col-6">
+                                            <!--begin::Label-->
+                                            <label class="d-flex align-items-center fs-5 fw-bold mb-2">
+                                                <span class="">Phone</span>
+                                            </label>
+                                         
+                                            <input type="text"
+                                                class="form-control form-control-lg form-control-solid" name="myphone"
+                                                placeholder="" [(ngModel)]="staff.phone"/>
+                                            <!--end::Input-->
+                                        </div>
+  
+                                        <!-- <div class="col-6">
+                                            
+                                            <label class="d-flex align-items-center fs-5 fw-bold mb-2">
+                                                <span class="required">Staff Id-Card-No</span>
+  
+                                            </label>
+                                            
+                                            <input type="mail"
+                                                class="form-control form-control-lg form-control-solid" name="idCardNo"
+                                                placeholder="" [(ngModel)]="staff.idCardNo"/>
+                                    
+                                        </div> -->
+  
+                                    </div>
+                                    <!--end::Input group-->
+                                    <!--begin::Input group-->
+                                    <div class="row mb-10">
+                                        <div class="col-6">
+                                            <!--begin::Label-->
+                                            <label class="d-flex align-items-center fs-5 fw-bold mb-2">
+                                                <span class="required">Date Of Birth</span>
+  
+                                            </label>
+                                            <!--end::Label-->
+                                            <!--begin::Input-->
+                                            <input type="date"
+                                                class="form-control form-control-lg form-control-solid" name="dob"
+                                                placeholder="" [(ngModel)]="staff.birthDate"/>
+                                            <!--end::Input-->
+                                        </div>
+                                        <div class="col-6">
+                                            <!--begin::Label-->
+                                            <label class="d-flex align-items-center fs-5 fw-bold mb-2">
+                                                <span class="required">Staff Category</span>
+                                            </label>
+                                            <!--end::Label-->
+                                            <!--begin::Input-->
+                                            <select name="Section" data-control="select" name="category" [(ngModel)]="staff.category"
+                                                data-placeholder="Select Category..."
+                                                class="form-select form-select-solid fw-bolder">
+                                                <option value="">Select category...</option>
+                                                <option value="Academic Staff">Academic Staff</option>
+                                                <option value="Non Academic Staff">Non Academic Staff </option>
+                                            </select>
+                                            <!--end::Input-->
+                                        </div>
+                                    </div>
+                                    <!--end::Input group-->
+  
+  
+                                    <!--begin::Input group-->
+                                    <div class="row mb-10">
+                                        <div class="col-6">
+                                            <!--begin::Label-->
+                                            <label class="fs-6 fw-bold mb-2">
+                                                <span class="required">Department</span>
+  
+                                            </label>
+                                            <!--end::Label-->
+                                            <!--begin::Input-->
+                                            <select name="Section" data-control="select" name="department" [(ngModel)]="staff.department"
+                                                data-placeholder="Select Section..."
+                                                class="form-select form-select-solid fw-bolder">
+                                                <option value="">Select Department...</option>
+                                                <option value="Humanities I">Humanities I</option>
+                                                <option value="Humanities II">Humanities II </option>
+                                                <option value="Business"> Business </option>
+                                                <option value=" Mathematics & Computer Science">Mathematics &
+                                                    Computer Science</option>
+                                                <option value="Vocational & Technology Studies">Vocational &
+                                                    Technology Studies </option>
+                                                <option value="Science">Science </option>
+                                                <option value="Clerical">Clerical </option>
+                                                <option value="Utility">Utility</option>
+                                                <option value="Ground Staff">Ground Staff</option>
+                                                <option value="Vocation and technical Department">Vocation and
+                                                    technical Department</option>
+                                            </select>
+                                            <!--end::Input-->
+                                        </div>
+                                        <div class="col-6">
+                                            <!--begin::Label-->
+                                            <label class="fs-6 fw-bold mb-2">
+                                                <span class="required">Position</span>
+  
+                                            </label>
+                                            <!--end::Label-->
+                                            <!--begin::Input-->
+                                            <select data-control="select" name="position" [(ngModel)]="staff.position"
+                                                data-placeholder="Select Section..."
+                                                class="form-select form-select-solid fw-bolder">
+                                                <option value="">Select Position...</option>
+                                                <option value="Vice Principal Administration">Vice Principal
+                                                    Administration</option>
+                                                <option value="Vice Principal Academics">Vice Principal Academics
+                                                </option>
+                                                <option value="Human Resource Officer I">Human Resource Officer I
+                                                </option>
+                                                <option value="Human Resource Officer II">Human Resource Officer II
+                                                </option>
+                                                <option value="Exam Officer (Internal)">Exam Officer (Internal)
+                                                </option>
+                                                <option value="Exam Officer (External)">Exam Officer (External)
+                                                </option>
+                                                <option value="Matron">Matron</option>
+                                                <option value="Cook">Cook</option>
+                                                <option value="Sewing">Sewing</option>
+                                                <option value="Crèche">Crèche</option>
+                                                <option value="Driver">Driver</option>
+                                                <option value="Nurses">Nurses</option>
+                                                <option value="Gardeners">Gardeners</option>
+                                                <option value="Canteen">Canteen</option>
+                                                <option value="Bakery">Bakery</option>
+                                                <option value="Teacher">Teacher</option>
+                                                <option value="Receptionist">Receptionist</option>
+                                                <option value="Electrician">Electrician</option>
+                                                <option value="Plumber">Plumber</option>
+                                                <option value="Class Teacher">Class Teacher</option>
+                                                <option value="ICT Staff">ICT Staff</option>
+                                                <option value="Facility Manager">Facility Manager</option>
+                                                <option value="Head of Department">Head of Department</option>
+                                                <option value="Academic Support and Foreign Admission Officer">
+                                                    Academic Support and Foreign Admission Officer</option>
+                                                <option value="Accountant">Accountant</option>
+                                                <option value="Store Keeper">Store Keeper</option>
+                                                <option value="Procurement">Procurement</option>
+                                                <option value="Principal">Principal</option>
+                                                <option value="Laboratory scientist">Laboratory scientist</option>
+                                                <option value="Chief Security 1">Chief Security 1</option>
+                                                <option value="Chief Security 2">Chief Security 2</option>
+                                                <option value="Counselor 1">Counselor 1</option>
+                                                <option value="Counselor 2">Counselor 2</option>
+                                                <option value="Chief Nurse">Chief Nurse</option>
+                                                <option value="Cleaner">Cleaner</option>
+                                                <option value="Chief Librarian">Chief Librarian</option>
+                                                <option value="Executive Assistant">Executive Assistant</option>
+                                                <option value="Librarian">Librarian</option>
+                                                <option value="Administration Assistant">Administration Assistant
+                                                </option>
+                                            </select>
+                                            <!--end::Input-->
+                                        </div>
+                                    </div>
+                                    <!--end::Input group-->
+  
+                                </div>
+                            </div>
+                            <!--end::Step 1-->
+                            <!--begin::Step 2-->
+                            <div [ngClass]="regstep == 2 ? 'current' : ''" data-kt-stepper-element="content">
+                                <div class="w-100">
+  
+                                    <div class="row mb-10">
+                                        <div class="col-12">
+                                            <!--begin::Label-->
+                                            <label class="d-flex align-items-center fs-5 fw-bold mb-2">
+                                                <span class="required">Email</span>
+  
+                                            </label>
+                                            <!--end::Label-->
+                                            <!--begin::Input-->
+                                            <input type="text"
+                                                class="form-control form-control-lg form-control-solid" 
+                                                placeholder="Enter Home Address" name="homeAddress" [(ngModel)]="staff.email" />
+                                            <!--end::Input-->
+                                        </div>
+  
+                                    </div>
+                                    <!--end::Input group-->
+                                    <!--begin::Input group-->
+                                    <div class="row mb-10">
+  
+  
+                                        <div class="col-12">
+                                            <!--begin::Label-->
+                                            <label class="d-flex align-items-center fs-5 fw-bold mb-2">
+                                                <span class="required">Phone Number</span>
+  
+                                            </label>
+                                            <!--end::Label-->
+                                            <!--begin::Input-->
+                                            <input type="mail"
+                                                class="form-control form-control-lg form-control-solid" 
+                                                placeholder="Enter Phone number" name="phone" [(ngModel)]="staff.phone" />
+                                            <!--end::Input-->
+                                        </div>
+  
+                                    </div>
+                                    <!--end::Input group-->
+                                    <!--begin::Input group-->
+                                    <div class="row mb-10">
+                                        <div class="col-12">
+                                            <!--begin::Label-->
+                                            <label class="d-flex align-items-center fs-5 fw-bold mb-2">
+                                                <span class="required">Address</span>
+  
+                                            </label>
+                                            <!--end::Label-->
+                                            <!--begin::Input-->
+                                            <textarea class="form-control form-control-solid" row="5"
+                                                placeholder="Enter Email Address" name="address" [(ngModel)]="staff.homeAddress"></textarea>
+                                            <!--end::Input-->
+                                        </div>
+  
+  
+  
+                                    </div>
+                                    <!--end::Input group-->
+                                </div>
+                            </div>
+                            <!--end::Step 2-->
+                            <!--begin::Step 3-->
+  
+                            <!--end::Step 3-->
+                            <!--begin::Step 4-->
+  
+                            <!--end::Step 4-->
+                            <!--begin::Step 5-->
+  
+                            <!--end::Step 5-->
+                            <!--begin::Actions-->
+                            
+
+
+                            <div class="d-flex flex-stack pt-10">
+                                <!--begin::Wrapper-->
+                                <div class="me-2" [ngStyle]="{'visibility': regstep == 1 ? 'hidden' : '' }">
+                                    <button (click)="regstep = 1" type="button" class="btn btn-lg btn-light-info me-3">
+                                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr063.svg-->
+                                    <span class="svg-icon svg-icon-3 me-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <rect opacity="0.5" x="6" y="11" width="13" height="2" rx="1" fill="currentColor" />
+                                            <path d="M8.56569 11.4343L12.75 7.25C13.1642 6.83579 13.1642 6.16421 12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75L5.70711 11.2929C5.31658 11.6834 5.31658 12.3166 5.70711 12.7071L11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25C13.1642 17.8358 13.1642 17.1642 12.75 16.75L8.56569 12.5657C8.25327 12.2533 8.25327 11.7467 8.56569 11.4343Z" fill="currentColor" />
+                                        </svg>
+                                    </span>
+                                    <!--end::Svg Icon-->Back</button>
+                                </div>
+                                <!--end::Wrapper-->
+                                <!--begin::Wrapper-->
+                                <div>
+                                    <button [ngStyle]="{'display': regstep == 2 ? 'block' : 'none' }" type="submit" class="btn btn-lg btn-info">
+                                        <span class="indicator-label">Submit
+                                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg-->
+                                        <span class="svg-icon svg-icon-3 ms-2 me-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1" transform="rotate(-180 18 13)" fill="currentColor" />
+                                                <path d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z" fill="currentColor" />
+                                            </svg>
+                                        </span>
+                                        <!--end::Svg Icon--></span>
+                                        <span class="indicator-progress">Please wait...
+                                        <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                                    </button>
+                                    <button (click)="regstep = 2" [ngStyle]="{'display': regstep == 1 ? 'block' : 'none' }" type="button" class="btn btn-lg btn-info" data-kt-stepper-action="next">Continue
+                                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg-->
+                                    <span class="svg-icon svg-icon-3 ms-1 me-0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1" transform="rotate(-180 18 13)" fill="currentColor" />
+                                            <path d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z" fill="currentColor" />
+                                        </svg>
+                                    </span>
+                                    <!--end::Svg Icon--></button>
+                                </div>
+                                <!--end::Wrapper-->
+                            </div>
+                            <!--end::Actions-->
+                        </form>
+                        <!--end::Form-->
+                    </div>
+                    <!--end::Content-->
+                </div>
+                <!--end::Stepper-->
+            </div>
+ 
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="modal fade" id="kt_modal_add_customer" tabindex="-1" aria-hidden="true">
+    <!--begin::Modal dialog-->
+    <div class="modal-dialog modal-dialog-centered mw-650px">
+        <!--begin::Modal content-->
+        <div class="modal-content">
+            <!--begin::Form-->
+            <form class="form" action="#" id="kt_modal_add_customer_form" data-kt-redirect="../../demo1/dist/apps/customers/list.html">
+                <!--begin::Modal header-->
+                <div class="modal-header" id="kt_modal_add_customer_header">
+                    <!--begin::Modal title-->
+                    <h2 class="fw-bolder">Upload Staff</h2>
+                    <!--end::Modal title-->
+                    <!--begin::Close-->
+                    <div id="kt_modal_add_customer_close" class="btn btn-icon btn-sm btn-active-icon-primary">
+                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                        <span class="svg-icon svg-icon-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
+                                <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor" />
+                            </svg>
+                        </span>
+                        <!--end::Svg Icon-->
+                    </div>
+                    <!--end::Close-->
+                </div>
+                <!--end::Modal header-->
+                <!--begin::Modal body-->
+                <div class="modal-body py-10 px-lg-17">
+                    <!--begin::Scroll-->
+                    <div class="scroll-y me-n7 pe-7" id="kt_modal_add_customer_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_customer_header" data-kt-scroll-wrappers="#kt_modal_add_customer_scroll" data-kt-scroll-offset="300px">
+                        
+
+
+                        <!--begin::Input group-->
+                        <div class="fv-row mb-7">
+                            <!--begin::Label-->
+                            <label class="required fs-6 fw-bold mb-2">Upload Template</label>
+                            <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Click the button below first to download the template, then upload after the excel sheet has been filled with the necessary data"></i>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <input type="file" class="form-control form-control-solid" name="passportex" (change)="loadExcel($event)" />
+                            <!--end::Input-->
+                        </div>
+                        <!--end::Input group-->
+
+                        <!--begin::download template-->
+                        <div class="fv-row mt-5 mb-7">
+                            <button (click)="downloadTemplate()" class="btn btn-info w-100">download Template Document</button>
+                        </div>
+                        <!--end::download template-->
+                    </div>
+                    <!--end::Scroll-->
+                </div>
+                <!--end::Modal body-->
+                <!--begin::Modal footer-->
+                <div class="modal-footer flex-center">
+                    <!--begin::Button-->
+                    <button type="reset" id="kt_modal_add_customer_cancel" class="btn btn-light me-3">Discard</button>
+                    <!--end::Button-->
+                    <!--begin::Button-->
+                    <button (click)="saveStaffBulk(bto)" type="submit" id="kt_modal_add_customer_submit" class="btn btn-info">
+                        <span class="indicator-label">Submit</span>
+                        <span class="indicator-progress">Please wait...
+                        <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                    </button>
+                    <!--end::Button-->
+                </div>
+                <!--end::Modal footer-->
+            </form>
+            <!--end::Form-->
+        </div>
+    </div>
+</div>
+
+<button #bto style="display: none;" data-bs-toggle="modal" data-bs-target="#kt_customers_export_modal">Show</button>

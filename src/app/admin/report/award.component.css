@@ -1,0 +1,32 @@
+table {
+    width: 100%;
+    border: solid 1px grey;
+  }
+  
+  th, td {
+    padding: 5px 20px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 13px;
+  }
+  
+  th {
+    background-color: dodgerblue;
+    font-weight: 600;
+  }
+
+  
+  
+  /* .subject-separator {
+    border-bottom: 2px solid red;
+  } */
+
+  
+  .last-row {
+    border-bottom: solid 6px rgb(214, 218, 220);
+    /* outline: 2px solid black;  */
+  }
+  
+  .regular-row {
+    background-color: #ffffff;
+  }

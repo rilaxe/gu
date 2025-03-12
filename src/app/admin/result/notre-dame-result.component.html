@@ -1,0 +1,377 @@
+<div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+    <!--end::Header-->
+    <!--begin::Content-->
+    
+
+
+    <div>
+        <!--begin::Tab pane-->
+        <div>
+            <div>
+                <!--begin::Basic info-->
+                <div>
+                    <div class="content d-flex flex-column flex-column-fluid " id="kt_content">
+                        <div style="display: flex; justify-content: space-evenly; padding: 20px 0;">
+                            <button (click)="convertToPDF(prin)" [ngClass]="'resprint'">
+                                Print Result</button>
+
+                                <button style="background-color: chocolate;" [disabled]="!logoLoaded" (click)="renderPdfChart()" [ngClass]="logoLoaded ? 'resprint' : 'resprintdisabled'">Print Performance Analysis</button>
+                        </div>
+                        
+                        <!--begin::Post-->
+                        <div class="post d-flex flex-column-fluid" id="kt_post">
+                            <!--begin::Container-->
+                            <div id="kt_content_container" class="container-xxl">
+                                <!--begin::Card-->
+                                <div #prin class="card mb-10">
+                                    <!--begin::Card body-->
+                                    <div class="card-body p-12">
+                                        <div style="font-family: 'Poppins-Medium'">
+                                            <div style="text-align: center; margin-bottom: 20px;">
+                                                <span
+                                                    style="font-size: 39px; color: rgb(36, 91, 143); font-weight: 900;">{{myschool?.schoolName}}</span>
+                                            </div>
+                                            <div style="display: flex; justify-content: space-between; font-size: 16px;">
+                                                <div class="col-4">
+                                                    <span style="font-weight: 600;">Postal Address:</span><br>
+                                                    <span>{{myschool?.address}}</span>
+                                                </div>
+                                                <div class="col-4 text-center">
+                                                    <img [src]="myschool?.schoolLogo"
+                                                        style="object-fit:cover; height: 100px; width: 100px; border-radius: 100%;" />
+                                                </div>
+                                                <div class="col-4">
+                                                    <span style="font-weight: 600;">Email: </span><span>{{myschool?.email}}</span><br>
+                                                    <span style="font-weight: 600;">Phone:
+                                                    </span><span>{{myschool?.phoneOne}}</span><br>
+                                                    <span style="font-weight: 600;">website: </span><span>{{myschool?.website}}</span>
+                                                </div>
+                                            </div>
+                                            <div style="height: 6px; background-color: rgb(36, 91, 143); margin-top: 30px;"></div>
+                                            <div style="display: flex; justify-content: space-between; font-size: 17px;">
+                                                <div>
+                                                    <span style="font-weight: 600;">STUDENTS NAME: </span><span>{{((studentobj?.surname
+                                                        ?? '') + ' ' + (studentobj?.middleName ?? '') + ' ' + (studentobj?.firstName ??
+                                                        '')).trim()}}</span><br>
+                                                    <span style="font-weight: 600;">CLASS NAME: </span><span>{{className}}</span><br>
+                                                    <span style="font-weight: 600;">NO. IN CLASS: </span><span>{{noInClass}}</span><br>
+                                                    <span style="font-weight: 600;">AVERAGE SCORE: </span><span>{{average}}</span><br>
+                                                    <span style="font-weight: 600;">TOTAL SCORE:
+                                                    </span><span>{{studentTotal?.toFixed(1)}}</span><br>
+                                                    <span style="font-weight: 600;">POSITION IN CLASS: </span><span>{{position}}</span>
+                                                </div>
+                                                <div class="col-4">
+                                                    <span style="font-weight: 600;">TERM: </span><span>{{currentTerm}}</span><br>
+                                                    <span style="font-weight: 600;">SESSION: </span><span>{{currentSession}}</span><br>
+                                                    <span style="font-weight: 600;">ADMISSION NO.:
+                                                    </span><span>{{studentobj?.admissionNo}}</span><br>
+                                                    <span style="font-weight: 600;">NEXT TERM BEGINS: </span><span>{{nextResumptionDate
+                                                        | date}}</span><br>
+                                                    <span style="font-weight: 600;">HOUSE: </span><span></span><br>
+                                                    <span style="font-weight: 600;">NO OF TIMES PRESENT: </span><span></span><br>
+                                                </div>
+                                            </div>
+                                            <div style="text-align: center; margin-top: 10px;">
+                                                <h1>CONTINUOUS ASSESSMENT DOSSIER FOR JUNIOR AND SENIOR SECONDARY SCHOOL</h1>
+                                            </div>
+                                            <div>
+                
+                                            </div>
+                                        </div>
+                
+                
+                                        <!-- <table #tabl id="customers">
+                                            <thead>
+                                                <tr>
+                                                    <th>Subject</th>
+                                                    <th *ngIf="caSetupData?.CA1">{{caSetupData.CA1 ? caSetupData.CA1 : 'CA1'}}</th>
+                                                    <th *ngIf="caSetupData?.CA2">{{caSetupData.CA2 ? caSetupData.CA2 : 'CA2'}}</th>
+                                                    <th *ngIf="caSetupData?.CA3">{{caSetupData.CA3 ? caSetupData.CA3 : 'CA3'}}</th>
+                                                    <th *ngIf="caSetupData?.CA4">{{caSetupData.CA4 ? caSetupData.CA4 : 'CA4'}}</th>
+                                                    <th *ngIf="caSetupData?.CA5">{{caSetupData.CA5 ? caSetupData.CA5 : 'CA5'}}</th>
+                                                    <th *ngIf="caSetupData?.CA6">{{caSetupData.CA6 ? caSetupData.CA6 : 'CA6'}}</th>
+                                                    <th *ngIf="caSetupData?.CA7">{{caSetupData.CA7 ? caSetupData.CA7 : 'CA7'}}</th>
+                                                    <th *ngIf="caSetupData?.CA8">{{caSetupData.CA8 ? caSetupData.CA8 : 'CA8'}}</th>
+                                                    <th *ngIf="caSetupData?.CA9">{{caSetupData.CA9 ? caSetupData.CA9 : 'CA9'}}</th>
+                                                    <th *ngIf="caSetupData?.CA10">{{caSetupData.CA10 ? caSetupData.CA10 : 'CA10'}}</th>
+                                                    <th *ngIf="caSetupData?.CA11">{{caSetupData.CA11 ? caSetupData.CA11 : 'CA11'}}</th>
+                                                    <th *ngIf="caSetupData?.CA12">{{caSetupData.CA12 ? caSetupData.CA12 : 'CA12'}}</th>
+                                                    <th *ngIf="caSetupData?.CA13">{{caSetupData.CA13 ? caSetupData.CA13 : 'CA13'}}</th>
+                                                    <th *ngIf="caSetupData?.CA14">{{caSetupData.CA14 ? caSetupData.CA14 : 'CA14'}}</th>
+                                                    <th *ngIf="caSetupData?.CA15">{{caSetupData.CA15 ? caSetupData.CA15 : 'CA15'}}</th>
+                                                    <th>Exam {{ '(' + caSetupScoreData.Exam + ')%'}}</th>
+                                                    <th>Total Score (100%)</th>
+                                                    <th>Grade</th>
+                                                    <th>Remark</th>
+                                                    <th>Position</th>
+                                                    <th>Lowest Score</th>
+                                                    <th>Highest Score</th>
+                                                    <th>Average</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let result of resultlist; index as u"
+                                                    class="border-bottom border-bottom-dashed">
+                                                    <td>{{result.subject}}</td>
+                                                    <td *ngIf="caSetupData.CA1">{{result.ca1 ?? ''}}</td>
+                                                    <td *ngIf="caSetupData.CA2">{{result.ca2 ?? ''}}</td>
+                                                    <td *ngIf="caSetupData.CA3">{{result.ca3 ?? ''}}</td>
+                                                    <td *ngIf="caSetupData.CA4">{{result.ca4 ?? ''}}</td>
+                                                    <td *ngIf="caSetupData.CA5">{{result.ca5 ?? ''}}</td>
+                                                    <td *ngIf="caSetupData.CA6">{{result.ca6 ?? ''}}</td>
+                                                    <td *ngIf="caSetupData.CA7">{{result.ca7 ?? ''}}</td>
+                                                    <td *ngIf="caSetupData.CA8">{{result.ca8 ?? ''}}</td>
+                                                    <td *ngIf="caSetupData.CA9">{{result.ca9 ?? ''}}</td>
+                                                    <td *ngIf="caSetupData.CA10">{{result.ca10 ?? ''}}</td>
+                                                    <td *ngIf="caSetupData.CA11">{{result.ca11 ?? ''}}</td>
+                                                    <td *ngIf="caSetupData.CA12">{{result.ca12 ?? ''}}</td>
+                                                    <td *ngIf="caSetupData.CA13">{{result.ca13 ?? ''}}</td>
+                                                    <td *ngIf="caSetupData.CA14">{{result.ca14 ?? ''}}</td>
+                                                    <td *ngIf="caSetupData.CA15">{{result.ca15 ?? ''}}</td>
+                                                    <td [ngStyle]="{'color': getScoreColor(result.exam?.toFixed(1), 60)}">
+                                                        {{result.exam?.toFixed(1) ?? ''}}</td>
+                                                    <td [ngStyle]="{'color': getScoreColor(result.totalScore?.toFixed(1), 100)}">
+                                                        {{result.totalScore?.toFixed(1) ?? ''}}</td>
+                                                    <td [ngStyle]="{'color': gradeColor(result.grade)}">{{result.grade ?? ''}}</td>
+                                                    <td [ngStyle]="{'color': getRemarkColor(result.remark)}">{{result.remark ?? ''}}
+                                                    </td>
+                                                    <td>{{result.position ?? ''}}</td>
+                                                    <td>{{result.lowestScore?.toFixed(1) ?? ''}}</td>
+                                                    <td>{{result.highestScore?.toFixed(1) ?? ''}}</td>
+                                                    <td>{{result.average?.toFixed(1) ?? ''}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                
+                                        <br> -->
+                
+                                        <!-- <table id="analy" style="width: 100%;">
+                                            <tr style="font-size: 10px;">
+                                                <td rowspan="2" style="font-weight: 600; font-size: 13px;">Analysis</td>
+                                                <td>Subject Offered</td>
+                                                <td>{{subjectOffered}}</td>  
+                                                <td>Mark Obtainable</td>
+                                                <td>{{markObtainable}}</td>  
+                                                <td>Mark Obtained</td>
+                                                <td>{{this.studentTotal?.toFixed(1).toString()}}</td>  
+                                            </tr>
+                                            <tr style="font-size: 10px;">
+                                                <td>Student Average</td>
+                                                <td>{{this.average.toString()}}</td>
+                                                <td>Position</td>
+                                                <td>{{this.position.toString()}}</td>
+                                                <td>Class Average</td>
+                                                <td>{{classAverage}}</td>
+                                            </tr>
+                                        </table>
+                
+                                        <br> -->
+                
+                                        <table id="ireg" class="heitable" style="width: 100%;">
+                                            <colgroup span="2"></colgroup>
+                                            <colgroup span="2"></colgroup>
+                
+                                            <tr style="text-align: center; font-size: 10px; font-weight: 600;">
+                                                <th colspan="2" scope="colgroup">HEIGHT</th>
+                                                <th colspan="2" scope="colgroup">WEIGHT</th>
+                                                <th colspan="2" scope="colgroup">Illness Stats</th>
+                                            </tr>
+                
+                                            <tr style="font-size: 10px; font-weight: 600;">
+                                                <th scope="col">Beginning of Term</th>
+                                                <th scope="col">End of Term</th>
+                                                <th scope="col">Beginning of Term</th>
+                                                <th scope="col">End of Term</th>
+                
+                                                <th scope="col">Number of days absent due to Illness</th>
+                                                <th scope="col">Nature of Illness</th>
+                                            </tr>
+                
+                                            <tr style="font-size: 10px;">
+                                                <td scope="col">{{bmi?.heightBOT}}cm</td>
+                                                <td scope="col">{{bmi?.heightEOT}}cm</td>
+                                                <td scope="col">{{bmi?.weightBOT}}cm</td>
+                                                <td scope="col">{{bmi?.weightEOT}}cm</td>
+                
+                                                <td scope="col">0</td>
+                                                <td scope="col"></td>
+                                            </tr>
+                                        </table>
+                
+                
+                
+                                        <!-- <table id="ireg" class="heitable" style="width: 100%;">
+                                            <colgroup span="2"></colgroup>
+                                            <colgroup span="2"></colgroup>
+                
+                                            <tr style="text-align: center; font-size: 10px; font-weight: 600;">
+                                                <th colspan="4" scope="colgroup">SOCIETIES/CLUBS</th>
+                                            </tr>
+                
+                                            <tr style="font-size: 10px; font-weight: 600;">
+                                                <th scope="col">Academic</th>
+                                                <th scope="col">Social</th>
+                                                <th scope="col">Pious</th>
+                                                <th scope="col">Social Acad</th>
+                                            </tr>
+                
+                                            <tr style="font-size: 10px;">
+                
+                                                <td scope="col">4000</td>
+                                                <td scope="col">1000</td>
+                                                <td scope="col">St. Vincent de paul</td>
+                                                <td scope="col">Road Safety</td>
+                                            </tr>
+                                        </table> -->
+                
+                                          
+                
+                
+                
+                
+                                        <div style="margin: 50px 0 30px 0;">
+                                            <table id="attend" style="width: 40%;">
+                                                <tr style="font-size: 10px;">
+                                                    <td>No. of Times School Open</td>
+                                                    <td>{{estAttendance?.noOfOpenDays}}</td>  
+                                                   
+                                                </tr>
+                                                <tr style="font-size: 10px;">
+                                                  
+                                                    <td>Time(s) Present</td>
+                                                    <td>{{estAttendance?.noPresentDays}}</td>  
+                                                 
+                                                </tr>
+                                                <tr style="font-size: 10px;">
+                                             
+                                                    <td>Time(s) Absent</td>
+                                                    <td>{{estAttendance?.noAbsentDays}}</td>  
+                                                </tr>
+                                            </table>
+                
+                                            <table id="mykey" style="border: 1px solid rgb(52, 54, 55); width: 50%;">
+                                                
+                                                <tr style="font-size: 9px;">
+                                                    <td style="padding: 2px 5px; ">5 = Distinction&nbsp;&nbsp; 4 = Very Good &nbsp;&nbsp; 3 = Good &nbsp;&nbsp; 2 = Poor &nbsp;&nbsp; 1 = Needs Attention </td> 
+                                                </tr>
+                                            </table>
+                
+                
+                                            
+                                        </div>
+                
+                                        <!-- <div style="display: flex; justify-content: space-between;">
+                                            <div style="display: flex; width: 50%;">
+                                                <table id="psyco" style="width: 50%;">
+                                                    <tr *ngFor="let psycom of psycomotorlist; index as u" style="font-size: 11px;">
+                                                        <td>{{psycom.skill}}</td>
+                                                        <td>{{psycom.score}}</td>
+                                                    </tr>
+                                                </table>
+                
+                                                <table id="psyco2" style="width: 50%;">
+                
+                                                    <tr *ngFor="let psycom of psycomotorlist2; index as u" style="font-size: 11px;">
+                                                        <td>{{psycom.skill}}</td>
+                                                        <td>{{psycom.score}}</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                
+                
+                                            <table id="grade" style="font-size: 9px; width: 40%;" >
+                                                <thead style="font-weight: 600;">
+                                                    <tr style="border: solid 1px grey;">
+                                                        <th>Color</th>
+                                                        <th>Grade</th>
+                                                        <th>Score Range</th>
+                                                        <th>Remark</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr *ngFor="let gradescaler of gradeScalelist; index as u">
+                                                        <td [ngStyle]="{'color': gradescaler.color.toString()}"
+                                                            style="font-weight: 700;">{{gradescaler.color}}</td>
+                                                        <td>{{gradescaler.grade}}</td>
+                                                        <td>{{gradescaler.begLimit + " " + "-" + " " + floorNum(gradescaler.endLimit)}}
+                                                        </td>
+                                                        <td>{{gradescaler.remarks}}</td> 
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div> -->
+                                    </div>
+                
+                                    <table id="club">
+                
+                                        <tr style="font-size: 7px;">
+                                            <td>CLUB</td>
+                                            <td>OFFICE HELD</td>
+                                            <td>SIGNIFICANT CONTRIBUTION</td>
+                                        </tr>
+                
+                                        <tr style="font-size: 7px;">
+                
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                 
+                                        </tr>
+                
+                                        <tr style="font-size: 7px;">
+                
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                 
+                                        </tr>
+                                    </table>
+                
+                                    <div style="padding: 0 0 50px 50px;">
+                                        <div style="margin-bottom: 15px;">
+                                            <span style="font-size: 15px; font-weight: 600; color: rgb(75, 73, 73);">Form Teacher's Comment:</span> &nbsp;&nbsp;
+                                            <span style="font-size: 15px; color: rgb(9, 95, 182); font-style: italic;">{{resultComment?.formTeacherComment}}</span>
+                                        </div>
+                                        <div>
+                                            <span style="font-size: 15px; font-weight: 600; color: rgb(75, 73, 73);">Principal's Comment:</span> &nbsp;&nbsp;
+                                            <span style="font-size: 15px; color: rgb(9, 95, 182); font-style: italic;">{{resultComment?.principalComment}}</span>
+                                        </div>
+                                      </div>
+                                    <!--end::Card body-->
+                                </div>
+                            </div>
+                            <!--end::Container-->
+                        </div>
+                        <!--end::Post-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div id="kt_ecommerce_add_product_advanced_notre" role="tab-panel">
+            <div  class="d-flex flex-column gap-7 gap-lg-10">
+                begin::Basic info
+                <div [ngStyle]="{'visibility': displayValue}" class="card mb-5 mb-xl-5 col-sm-12 col-lg-6">
+                    <div>
+                        <app-notre-dame-result-analysis></app-notre-dame-result-analysis>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <div id="chartdiv">
+            <canvas id="myChart" width="3600" height="1800" style="display:none;"></canvas>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- <div>
+    <button (click)="alertme()">Alert</button>
+    <img #img src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAUA
+    AAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO
+        9TXL0Y4OHwAAAABJRU5ErkJggg==">
+    <img #img [src]="genk.imgurl + myschool.schoolLogo">
+    <img #img [src]="docimg">
+</div> -->

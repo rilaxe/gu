@@ -1,0 +1,121 @@
+<div style="margin: 30px 20px 0 0;">
+                <!--begin::Content-->
+                <div class="flex-lg-row-fluid ms-lg-10">
+                    <!--begin::Card-->
+                    <div class="card card-flush mb-6 mb-xl-9">
+                        <!--begin::Card header-->
+                        <div class="card-header pt-5">
+                            <!--begin::Card title-->
+                            <div class="card-title">
+                                <h2 class="d-flex align-items-center">Home Economics</h2>
+                            </div>
+                            <!--end::Card title-->
+                            <!--begin::Card toolbar-->
+                            <div class="card-toolbar">
+                                <!--begin::Search-->
+                                <div class="d-flex align-items-center position-relative my-1 me-3 " data-kt-view-roles-table-toolbar="base">
+                                    <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
+                                    <span class="svg-icon svg-icon-1 position-absolute ms-6">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="currentColor" />
+                                            <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="currentColor" />
+                                        </svg>
+                                    </span>
+                                    <!--end::Svg Icon-->
+                                    <input type="text" data-kt-roles-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search Student" />
+                                </div>
+                                <!--end::Search-->
+                                    <!--begin::Filter-->
+
+                                    <select #wed [value]="currentClassLevelId" (change)="getClassByLevel(wed.value)"
+                                        class=" me-2 form-select form-select-sm form-select-solid w-125px"
+                                        data-control="select2" data-placeholder="Select Hours" data-hide-search="true">
+                                        <option value="" selected="selected">Class Level</option>
+                                        <option *ngFor="let level of schoolLevels" [value]="level.id">{{level.name}}
+                                        </option>
+                                </select>
+
+                                <div>
+                                    <button (click)="enrollStudents()">Enroll Students</button>
+                                </div>
+
+                            
+                            </div>
+                            <!--end::Card toolbar-->
+                        </div>
+                        <!--end::Card header-->
+                        <!--begin::Card body-->
+                        <div class="card-body pt-0">
+                            <!--begin::Table-->
+                            <table class="table align-middle table-row-dashed fs-6 gy-5 mb-0" id="kt_roles_view_table">
+                                <!--begin::Table head-->
+                                <thead>
+                                    <!--begin::Table row-->
+                                    <tr class="text-start text-muted fw-bolder fs-7 text-uppercase gs-0">
+                                        <th class="w-10px pe-2">
+                                            <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
+                                                <input class="form-check-input" type="checkbox" />
+                                            </div>
+                                        </th>
+                                        <th class="min-w-50px"> Admission No</th>
+                                        <th class="min-w-150px">Student Name</th>
+                                        <th class="min-w-125px">Class</th>
+                                        <th class="min-w-125px">Gender</th>
+                                        
+                                    </tr>
+                                    <!--end::Table row-->
+                                </thead>
+                                <!--end::Table head-->
+                                <!--begin::Table body-->
+                                <tbody *ngFor="let item of students; index as i" class="fw-bold text-gray-600">
+                                    <tr>
+                                        <!--begin::Checkbox-->
+                                        <td>
+                                            <div class="form-check form-check-sm form-check-custom form-check-solid">
+                                                <input #enr class="form-check-input" type="checkbox" (change)="setStudents(enr.checked, item.id)" [checked]="enr.checked" />
+                                            </div>
+                                        </td>
+                                        <!--end::Checkbox-->
+                                        <!--begin::ID-->
+                                        <td>{{item.admissionNo}}</td>
+                                        <!--begin::ID-->
+                                        <!--begin::User=-->
+                                        <td class="d-flex align-items-center">
+                                            <!--begin:: Avatar -->
+                                            <div class="symbol symbol-circle symbol-35px overflow-hidden me-3">
+                                                <a href="#">
+                                                    <div class="symbol-label">
+                                                        <img [src]="setImg(item.passport)" alt="Emma Smith" class="w-100" />
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <!--end::Avatar-->
+                                            <!--begin::User details-->
+                                            <div class="d-flex flex-column">
+                                                <a href="#" class="text-gray-800 text-hover-primary mb-1">{{((item?.surname ?? '') + ' ' + (item.firstName ?? '') + ' ' + (item?.middleName ?? '')).trim()}}</a>
+                                                
+                                            </div>
+                                            <!--begin::User details-->
+                                        </td>
+                                        <!--end::user=-->
+                                        <!--begin::Joined date=-->
+                                        <td>{{item.class}}</td>
+                                        <!--end::Joined date=-->
+                                        <td>
+                                            <div
+                                                [ngClass]="item.sex == 'Male' ? 'badge badge-light-primary fw-bolder' : 'badge badge-light-danger fw-bolder'">
+                                                {{item.sex}}</div>
+                                        
+                                        </td>
+                                    </tr>
+                                    
+                                </tbody>
+                                <!--end::Table body-->
+                            </table>
+                            <!--end::Table-->
+                        </div>
+                        <!--end::Card body-->
+                    </div>
+                    <!--end::Card-->
+                </div>
+</div>

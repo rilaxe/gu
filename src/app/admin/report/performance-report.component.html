@@ -1,0 +1,1238 @@
+<div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+    
+    <!--end::Header-->
+    <!--begin::Content-->
+    <div class="content d-flex flex-column flex-column-fluid " id="kt_content">
+
+        <!--begin::Post-->
+        <div class="post d-flex flex-column-fluid" id="kt_post">
+            <!--begin::Container-->
+            <div id="kt_content_container" class="container-xxl">
+                <!--begin::Card-->
+                <div class="card mb-10" >
+                    <!--begin::Card body-->
+                    <div class="card-body p-12">
+                        <!--begin::Form-->
+                        <form action="" id="kt_invoice_form">
+
+                            <!--begin::Wrapper-->
+                            <div class="mb-0">
+                                <!--begin::Row-->
+                                <div class="row gx-10 mb-5">
+                                    <!--begin::Col-->
+                                    <div class="col-lg-6">
+                                        <!--begin::Label-->
+                                        <div class="fv-row mb-10">
+                                            <label class="fs-6 fw-bold form-label mt-3">
+                                                <span class="required">Select Session</span>
+                                            </label>
+                                            <!--end::Label-->
+                                            <div class="w-100">
+
+                                                <!--begin::Input-->
+                                                <select name="session" aria-label="Select session"
+                                                    data-control="select2"
+                                                    class="form-select form-select-solid form-select-lg">
+
+                                                    <option value="id">2023/24</option>
+                                                    <option value="id">2022/23</option>
+                                                    <option value="id">2021/22</option>
+                                                    <option value="id">2020/21</option>
+                                                    <option value="id">2019/20</option>
+                                                    <option value="id">2018/19</option>
+
+
+                                                </select>
+                                                <!--end::Input-->
+
+                                            </div>
+                                        </div>
+                                        <!--begin::Label-->
+                                        <div class="fv-row mb-5">
+                                            <label class="fs-6 fw-bold form-label ">
+                                                <span class="required">Class Level</span>
+                                            </label>
+                                            <!--end::Label-->
+                                            <div class="w-100">
+
+                                                <div class="w-100">
+
+                                                    <!--begin::Input-->
+                                                    <select name="class" aria-label="Select classlevel"
+                                                        data-control="select2"
+                                                        class="form-select form-select-solid form-select-lg">
+
+                                                        <option value="id">JSS1</option>
+                                                        <option value="id">JSS2</option>
+                                                        <option value="id">JSS3</option>
+                                                        <option value="id">SSS1</option>
+                                                        <option value="id">SSS2</option>
+                                                        <option value="id">SSS3</option>
+
+                                                    </select>
+                                                    <!--end::Input-->
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!--end::Col-->
+                                    <!--begin::Col-->
+                                    <div class="col-lg-6">
+                                        <!--begin::Label-->
+                                        <div class="fv-row mb-10">
+                                            <label class="fs-6 fw-bold form-label mt-3">
+                                                <span class="required">Term</span>
+                                            </label>
+                                            <!--end::Label-->
+                                            <div class="w-100">
+
+                                                <!--begin::Input-->
+                                                <select name="term" aria-label="Select Term"
+                                                    data-control="select2" data-placeholder="Select term.."
+                                                    class="form-select form-select-solid form-select-lg">
+                                                    <option value="">Select Term...</option>
+                                                    <option value="id">First</option>
+                                                    <option value="id">Second</option>
+                                                    <option value="id">Third</option>
+                                                    <option value="id">Annual</option>
+
+                                                </select>
+                                                <!--end::Input-->
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="card-header border-0 pt-6">
+                                        <!--begin::Card title-->
+                                        <div class="card-title">
+                                            <!--begin::Search-->
+                                            <div class="d-flex align-items-center position-relative my-1">
+                                                <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
+                                                <span class="svg-icon svg-icon-1 position-absolute ms-6">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                        height="24" viewBox="0 0 24 24" fill="none">
+                                                        <rect opacity="0.5" x="17.0365" y="15.1223"
+                                                            width="8.15546" height="2" rx="1"
+                                                            transform="rotate(45 17.0365 15.1223)"
+                                                            fill="currentColor"></rect>
+                                                        <path
+                                                            d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z"
+                                                            fill="currentColor"></path>
+                                                    </svg>
+                                                </span>
+                                                <!--end::Svg Icon-->
+                                                <input type="text" data-kt-customer-table-filter="search"
+                                                    class="form-control form-control-solid w-250px ps-15"
+                                                    placeholder="Search ">
+                                            </div>
+                                            <!--end::Search-->
+                                        </div>
+                                        <!--begin::Card title-->
+                                        <!--begin::Card toolbar-->
+                                        <div class="card-toolbar">
+                                            <div class="text-end me-2">
+                                                <button type="button" class="btn btn-info"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#kt_customers_export_modal">Error</button>
+                                            </div>
+                                            <div class="text-end">
+                                                <button type="button" class="btn btn-info">Export
+                                                    Report</button>
+                                            </div>
+                                        </div>
+                                        <!--end::Row-->
+                                    </div>
+                                    <!--end::Card toolbar-->
+                                </div>
+                                <!--end::Col-->
+
+
+                                <!--begin::Table wrapper-->
+                                <div style="overflow: auto;" class=" mb-5">
+
+                                    <!--begin::Table-->
+                                    <table  class="table-responsive align-middle table-row-dashed fs-6 gy-5"
+                                        id="kt_customers_table">
+                                        <!--begin::Table head-->
+                                        <thead>
+                                            <!--begin::Table row-->
+                                            <tr
+                                                class="text-center text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+                                                <th class=" w-10px pe-2">
+                                                    S/N
+                                                </th>
+                                                <th class="min-w-250px ">Subject</th>
+                                                <th class="min-w-30px">A1</th>
+                                                <th class="min-w-30px">B2</th>
+                                                <th class="min-w-10px">B3</th>
+                                                <th class="min-w-30px">C4</th>
+                                                <th class="min-w-30px">C5</th>
+                                                <th class="min-w-30px">C6</th>
+                                                <th class="min-w-30px">D7</th>
+                                                <th class="min-w-30px">E8</th>
+                                                <th class="min-w-30px">F9</th>
+                                                <th class="min-w-125px text-center">No of Student</th>
+                                                <th class="min-w-200px">No with Credit & Above</th>
+                                                <th class="min-w-150px">No with Passes</th>
+                                                <th class="min-w-150px">Total Passes</th>
+                                                <th class="min-w-200px">Percent of Total Passes</th>
+                                                <th class="min-w-150px">No Failed</th>
+                                                <th class="min-w-150px">Percent Failed</th>
+                                            </tr>
+                                            <!--end::Table row-->
+                                        </thead>
+                                        <!--end::Table head-->
+                                        <!--begin::Table body-->
+                                        <tbody class="fw-bold text-center text-gray-600">
+
+                                            <tr>
+                                                <!--begin::Checkbox-->
+                                                <td class="text-gray-800 text-bold">
+                                                    1
+                                                </td>
+                                                <!--end::Checkbox-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800  mb-1">Agricultural
+                                                        Science </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800 mb-1">1 </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800  mb-1">11 </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800 mb-1">10 </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800  mb-1">41 </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800 mb-1">61 </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800 mb-1">91 </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800  mb-1">91 </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800  mb-1">91 </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800 mb-1">91 </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800 text-start mb-1">18
+                                                    </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800 text-center mb-1">43
+                                                    </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800 text-center mb-1">43
+                                                    </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800 text-center mb-1">50
+                                                    </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <td class="text-center">
+                                                    <div class="d-flex align-items-center w-150px mw-150px">
+                                                        <!--begin::Progress-->
+                                                        <div
+                                                            class="progress h-6px w-100 me-2 bg-light-success">
+                                                            <div class="progress-bar bg-success"
+                                                                role="progressbar" style="width: 65%"
+                                                                aria-valuenow="65" aria-valuemin="0"
+                                                                aria-valuemax="100"></div>
+                                                        </div>
+                                                        <!--end::Progress-->
+                                                        <!--begin::Value-->
+                                                        <span class="text-gray-400 fw-bold">65%</span>
+                                                        <!--end::Value-->
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <a href="#" class="text-gray-800 text-center mb-1">50
+                                                    </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <td class="text-center">
+                                                    <div class="d-flex align-items-center w-125px mw-125px">
+                                                        <!--begin::Progress-->
+                                                        <div
+                                                            class="progress h-6px w-100 me-2 bg-light-danger">
+                                                            <div class="progress-bar bg-danger"
+                                                                role="progressbar" style="width: 65%"
+                                                                aria-valuenow="65" aria-valuemin="0"
+                                                                aria-valuemax="100"></div>
+                                                        </div>
+                                                        <!--end::Progress-->
+                                                        <!--begin::Value-->
+                                                        <span class="text-gray-400 fw-bold">65%</span>
+                                                        <!--end::Value-->
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <!--begin::Checkbox-->
+                                                <td class="text-gray-800 text-bold">
+                                                    2
+                                                </td>
+                                                <!--end::Checkbox-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800  mb-1">Mathematics </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800 mb-1">1 </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800  mb-1">11 </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800 mb-1">10 </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800  mb-1">41 </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800 mb-1">61 </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800 mb-1">91 </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800  mb-1">91 </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800  mb-1">91 </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800 mb-1">91 </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800 text-start mb-1">18
+                                                    </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800 text-center mb-1">43
+                                                    </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800 text-center mb-1">43
+                                                    </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800 text-center mb-1">50
+                                                    </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <td class="text-center">
+                                                    <div class="d-flex align-items-center w-150px mw-150px">
+                                                        <!--begin::Progress-->
+                                                        <div
+                                                            class="progress h-6px w-100 me-2 bg-light-success">
+                                                            <div class="progress-bar bg-success"
+                                                                role="progressbar" style="width: 65%"
+                                                                aria-valuenow="65" aria-valuemin="0"
+                                                                aria-valuemax="100"></div>
+                                                        </div>
+                                                        <!--end::Progress-->
+                                                        <!--begin::Value-->
+                                                        <span class="text-gray-400 fw-bold">65%</span>
+                                                        <!--end::Value-->
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <a href="#" class="text-gray-800 text-center mb-1">50
+                                                    </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <td class="text-center">
+                                                    <div class="d-flex align-items-center w-125px mw-125px">
+                                                        <!--begin::Progress-->
+                                                        <div
+                                                            class="progress h-6px w-100 me-2 bg-light-danger">
+                                                            <div class="progress-bar bg-danger"
+                                                                role="progressbar" style="width: 65%"
+                                                                aria-valuenow="65" aria-valuemin="0"
+                                                                aria-valuemax="100"></div>
+                                                        </div>
+                                                        <!--end::Progress-->
+                                                        <!--begin::Value-->
+                                                        <span class="text-gray-400 fw-bold">65%</span>
+                                                        <!--end::Value-->
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <!--begin::Checkbox-->
+                                                <td class="text-gray-800 text-bold">
+                                                    3
+                                                </td>
+                                                <!--end::Checkbox-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#"
+                                                        class="text-gray-800 text-start mb-1">English </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800 mb-1">1 </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800  mb-1">11 </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800 mb-1">10 </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800  mb-1">41 </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800 mb-1">61 </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800 mb-1">91 </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800  mb-1">91 </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800  mb-1">91 </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800 mb-1">91 </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800 text-start mb-1">18
+                                                    </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800 text-center mb-1">43
+                                                    </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800 text-center mb-1">43
+                                                    </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <!--begin::Name=-->
+                                                <td>
+                                                    <a href="#" class="text-gray-800 text-center mb-1">50
+                                                    </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <td class="text-center">
+                                                    <div class="d-flex align-items-center w-150px mw-150px">
+                                                        <!--begin::Progress-->
+                                                        <div
+                                                            class="progress h-6px w-100 me-2 bg-light-success">
+                                                            <div class="progress-bar bg-success"
+                                                                role="progressbar" style="width: 65%"
+                                                                aria-valuenow="65" aria-valuemin="0"
+                                                                aria-valuemax="100"></div>
+                                                        </div>
+                                                        <!--end::Progress-->
+                                                        <!--begin::Value-->
+                                                        <span class="text-gray-400 fw-bold">65%</span>
+                                                        <!--end::Value-->
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <a href="#" class="text-gray-800 text-center mb-1">50
+                                                    </a>
+                                                </td>
+                                                <!--end::Name=-->
+                                                <td class="text-center">
+                                                    <div class="d-flex align-items-center w-125px mw-125px">
+                                                        <!--begin::Progress-->
+                                                        <div
+                                                            class="progress h-6px w-100 me-2 bg-light-danger">
+                                                            <div class="progress-bar bg-danger"
+                                                                role="progressbar" style="width: 65%"
+                                                                aria-valuenow="65" aria-valuemin="0"
+                                                                aria-valuemax="100"></div>
+                                                        </div>
+                                                        <!--end::Progress-->
+                                                        <!--begin::Value-->
+                                                        <span class="text-gray-400 fw-bold">65%</span>
+                                                        <!--end::Value-->
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                        <!--end::Table body-->
+                                    </table>
+                                    <!--end::Table-->
+
+
+                                    <!--end::Table-->
+
+                                    <style>
+                                        /* CSS for fixed columns */
+                                        #kt_customers_table {
+                                            overflow-x: scroll;
+                                            overflow-y: visible;
+                                            width: 100%;
+                                            border-collapse: collapse;
+                                        }
+
+                                        #kt_customers_table th,
+                                        #kt_customers_table td {
+                                            padding: 10px;
+                                            border: 1px solid #ddd;
+                                        }
+
+                                        /* Set background color for first two columns */
+                                        #kt_customers_table th:nth-child(-n+2),
+                                        #kt_customers_table td:nth-child(-n+2) {
+                                            background-color: white;
+                                            position: sticky;
+                                            left: 0;
+                                            z-index: 1;
+                                        }
+
+                                        /* Ensure content doesn't overlap fixed columns */
+                                        #kt_customers_table th:first-child,
+                                        #kt_customers_table td:first-child {
+                                            position: sticky;
+                                            left: 0;
+                                            background-color: white;
+                                            z-index: 2;
+                                        }
+
+                                        /* Adjust scrollbar style */
+                                        ::-webkit-scrollbar {
+                                            width: 10px;
+                                        }
+
+                                        ::-webkit-scrollbar-thumb {
+                                            background-color: #888;
+                                        }
+                                    </style>
+                                </div>
+                            </div>    <!--end::Wrapper-->
+
+                        </form>
+                        <!--end::Form-->
+
+                    </div>
+                    <!--end::Card body-->
+
+                </div>
+                <!--end::Card-->
+                <!--begin::Modals-->
+                <!--begin::Modal - Customers - Add-->
+                <div class="modal fade" id="kt_modal_add_customer" tabindex="-1" aria-hidden="true">
+                    <!--begin::Modal dialog-->
+                    <div class="modal-dialog modal-dialog-centered mw-650px">
+                        <!--begin::Modal content-->
+                        <div class="modal-content">
+                            <!--begin::Form-->
+                            <form class="form" action="#" id="kt_modal_add_customer_form"
+                                data-kt-redirect="../../demo1/dist/apps/customers/list.html">
+                                <!--begin::Modal header-->
+                                <div class="modal-header" id="kt_modal_add_customer_header">
+                                    <!--begin::Modal title-->
+                                    <h2 class="fw-bolder">Upload Students</h2>
+                                    <!--end::Modal title-->
+                                    <!--begin::Close-->
+                                    <div id="kt_modal_add_customer_close"
+                                        class="btn btn-icon btn-sm btn-active-icon-primary">
+                                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                                        <span class="svg-icon svg-icon-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <rect opacity="0.5" x="6" y="17.3137" width="16" height="2"
+                                                    rx="1" transform="rotate(-45 6 17.3137)"
+                                                    fill="currentColor" />
+                                                <rect x="7.41422" y="6" width="16" height="2" rx="1"
+                                                    transform="rotate(45 7.41422 6)" fill="currentColor" />
+                                            </svg>
+                                        </span>
+                                        <!--end::Svg Icon-->
+                                    </div>
+                                    <!--end::Close-->
+                                </div>
+                                <!--end::Modal header-->
+                                <!--begin::Modal body-->
+                                <div class="modal-body py-10 px-lg-17">
+                                    <!--begin::Scroll-->
+                                    <div class="scroll-y me-n7 pe-7" id="kt_modal_add_customer_scroll"
+                                        data-kt-scroll="true"
+                                        data-kt-scroll-activate="{default: false, lg: true}"
+                                        data-kt-scroll-max-height="auto"
+                                        data-kt-scroll-dependencies="#kt_modal_add_customer_header"
+                                        data-kt-scroll-wrappers="#kt_modal_add_customer_scroll"
+                                        data-kt-scroll-offset="300px">
+
+                                        <!--begin::Input group-->
+                                        <div class="d-flex flex-column mb-7 fv-row">
+                                            <!--begin::Label-->
+                                            <label class="fs-6 fw-bold mb-2">
+                                                <span class="required">Class</span>
+                                                <i class="fas fa-exclamation-circle ms-1 fs-7"
+                                                    data-bs-toggle="tooltip" title="Students Class"></i>
+                                            </label>
+                                            <!--end::Label-->
+                                            <!--begin::Input-->
+                                            <select name="Class" data-control="select2"
+                                                data-placeholder="Select Class..."
+                                                data-dropdown-parent="#kt_modal_add_customer"
+                                                class="form-select form-select-solid fw-bolder">
+                                                <option value="">Select Class...</option>
+                                                <option value="1">Primary 1</option>
+                                                <option value="2">Primary 2</option>
+                                            </select>
+                                            <!--end::Input-->
+                                        </div>
+
+                                        <!--begin::Input group-->
+                                        <div class="d-flex flex-column mb-7 fv-row">
+                                            <!--begin::Label-->
+                                            <label class="fs-6 fw-bold mb-2">
+                                                <span class="required">Section </span>
+
+                                            </label>
+                                            <!--end::Label-->
+                                            <!--begin::Input-->
+                                            <select name="Section" data-control="select2"
+                                                data-placeholder="Select Section..."
+                                                data-dropdown-parent="#kt_modal_add_customer"
+                                                class="form-select form-select-solid fw-bolder">
+                                                <option value="">Select Section...</option>
+                                                <option value="1">2022/2023</option>
+                                                <option value="2">2023/2024</option>
+                                            </select>
+                                            <!--end::Input-->
+                                        </div>
+
+
+                                        <!--begin::Input group-->
+                                        <div class="fv-row mb-7">
+                                            <!--begin::Label-->
+                                            <label class="required fs-6 fw-bold mb-2">Upload
+                                                Template</label>
+                                            <i class="fas fa-exclamation-circle ms-1 fs-7"
+                                                data-bs-toggle="tooltip"
+                                                title="Click the button below first to download the template, then upload after the excel sheet has been filled with the necessary data"></i>
+                                            <!--end::Label-->
+                                            <!--begin::Input-->
+                                            <input type="file" class="form-control form-control-solid"
+                                                placeholder="" name="passport" value="" />
+                                            <!--end::Input-->
+                                        </div>
+                                        <!--end::Input group-->
+
+                                        <!--begin::download template-->
+                                        <div class="fv-row mt-5 mb-7">
+                                            <button class="btn btn-info w-100">download Template
+                                                Document</button>
+                                        </div>
+                                        <!--end::download template-->
+                                    </div>
+                                    <!--end::Scroll-->
+                                </div>
+                                <!--end::Modal body-->
+                                <!--begin::Modal footer-->
+                                <div class="modal-footer flex-center">
+                                    <!--begin::Button-->
+                                    <button type="reset" id="kt_modal_add_customer_cancel"
+                                        class="btn btn-light me-3">Discard</button>
+                                    <!--end::Button-->
+                                    <!--begin::Button-->
+                                    <button type="submit" id="kt_modal_add_customer_submit"
+                                        class="btn btn-info">
+                                        <span class="indicator-label">Submit</span>
+                                        <span class="indicator-progress">Please wait...
+                                            <span
+                                                class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                                    </button>
+                                    <!--end::Button-->
+                                </div>
+                                <!--end::Modal footer-->
+                            </form>
+                            <!--end::Form-->
+                        </div>
+                    </div>
+                </div>
+                <!--end::Modal - Customers - Add-->
+                <!--begin::Modal - Adjust Balance-->
+                <div class="modal fade" id="kt_customers_export_modal" tabindex="-1" aria-hidden="true">
+                    <!--begin::Modal dialog-->
+                    <div class="modal-dialog modal-dialog-centered  mw-850px">
+                        <!--begin::Modal content-->
+                        <div class="modal-content">
+                            <!--begin::Modal header-->
+                            <div class="modal-header " id="kt_modal_add_customer_header">
+                                <!--begin::Modal title-->
+                                <h2 class="fw-bolder">Upload Complete</h2>
+                                <!--end::Modal title-->
+                                <!--begin::Close-->
+                                <div id="kt_modal_add_customer_close"
+                                    class="btn btn-icon btn-sm btn-active-icon-primary">
+                                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                                    <span class="svg-icon svg-icon-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none">
+                                            <rect opacity="0.5" x="6" y="17.3137" width="16" height="2"
+                                                rx="1" transform="rotate(-45 6 17.3137)"
+                                                fill="currentColor" />
+                                            <rect x="7.41422" y="6" width="16" height="2" rx="1"
+                                                transform="rotate(45 7.41422 6)" fill="currentColor" />
+                                        </svg>
+                                    </span>
+                                    <!--end::Svg Icon-->
+                                </div>
+                                <!--end::Close-->
+                            </div>
+                            <!--end::Modal header-->
+                            <!--begin::Modal body-->
+
+                            <ul class="pt-5">
+                                <li class="ms-10 fs-5 text-danger">However, These student(s) have already
+                                    been registered!</li>
+
+                            </ul>
+                            <!--end::Modal title-->
+                            <div class="modal-body pt-0 scroll-y mx-5 mx-xl-15">
+                                <!--begin::Form-->
+                                <form id="kt_customers_export_form" class="form" action="#">
+                                    <!--begin::Table wrapper-->
+                                    <div class="table-responsive mb-10">
+                                        <!--begin::Table-->
+                                        <table
+                                            class="table-responsive align-middle table-row-dashed fs-6 gy-5"
+                                            id="kt_customers_table">
+                                            <!--begin::Table head-->
+                                            <thead>
+                                                <!--begin::Table row-->
+                                                <tr
+                                                    class="text-center text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+                                                    <th class=" w-10px pe-2">
+                                                        S/N
+                                                    </th>
+                                                    <th class="min-w-250px ">Subject</th>
+                                                    <th class="min-w-30px">A1</th>
+                                                    <th class="min-w-30px">B2</th>
+                                                    <th class="min-w-10px">B3</th>
+                                                    <th class="min-w-30px">C4</th>
+                                                    <th class="min-w-30px">C5</th>
+                                                    <th class="min-w-30px">C6</th>
+                                                    <th class="min-w-30px">D7</th>
+                                                    <th class="min-w-30px">E8</th>
+                                                    <th class="min-w-30px">F9</th>
+                                                    <th class="min-w-125px text-center">No of Student</th>
+                                                    <th class="min-w-200px">No with Credit & Above</th>
+                                                    <th class="min-w-150px">No with Passes</th>
+                                                    <th class="min-w-150px">Total Passes</th>
+                                                    <th class="min-w-200px">Percent of Total Passes</th>
+                                                    <th class="min-w-150px">No Failed</th>
+                                                    <th class="min-w-150px">Percent Failed</th>
+                                                </tr>
+                                                <!--end::Table row-->
+                                            </thead>
+                                            <!--end::Table head-->
+                                            <!--begin::Table body-->
+                                            <tbody class="fw-bold text-center text-gray-600">
+
+                                                <tr>
+                                                    <!--begin::Checkbox-->
+                                                    <td class="text-gray-800 text-bold">
+                                                        1
+                                                    </td>
+                                                    <!--end::Checkbox-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#" class="text-gray-800  mb-1">Agricultural
+                                                            Science </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#" class="text-gray-800 mb-1">1 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#" class="text-gray-800  mb-1">11 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#" class="text-gray-800 mb-1">10 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#" class="text-gray-800  mb-1">41 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#" class="text-gray-800 mb-1">61 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#" class="text-gray-800 mb-1">91 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#" class="text-gray-800  mb-1">91 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#" class="text-gray-800  mb-1">91 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#" class="text-gray-800 mb-1">91 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#" class="text-gray-800 text-start mb-1">18
+                                                        </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#"
+                                                            class="text-gray-800 text-center mb-1">43 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#"
+                                                            class="text-gray-800 text-center mb-1">43 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#"
+                                                            class="text-gray-800 text-center mb-1">50 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <td class="text-center">
+                                                        <div
+                                                            class="d-flex align-items-center w-150px mw-150px">
+                                                            <!--begin::Progress-->
+                                                            <div
+                                                                class="progress h-6px w-100 me-2 bg-light-success">
+                                                                <div class="progress-bar bg-success"
+                                                                    role="progressbar" style="width: 65%"
+                                                                    aria-valuenow="65" aria-valuemin="0"
+                                                                    aria-valuemax="100"></div>
+                                                            </div>
+                                                            <!--end::Progress-->
+                                                            <!--begin::Value-->
+                                                            <span class="text-gray-400 fw-bold">65%</span>
+                                                            <!--end::Value-->
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <a href="#"
+                                                            class="text-gray-800 text-center mb-1">50 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <td class="text-center">
+                                                        <div
+                                                            class="d-flex align-items-center w-125px mw-125px">
+                                                            <!--begin::Progress-->
+                                                            <div
+                                                                class="progress h-6px w-100 me-2 bg-light-danger">
+                                                                <div class="progress-bar bg-danger"
+                                                                    role="progressbar" style="width: 65%"
+                                                                    aria-valuenow="65" aria-valuemin="0"
+                                                                    aria-valuemax="100"></div>
+                                                            </div>
+                                                            <!--end::Progress-->
+                                                            <!--begin::Value-->
+                                                            <span class="text-gray-400 fw-bold">65%</span>
+                                                            <!--end::Value-->
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <!--begin::Checkbox-->
+                                                    <td class="text-gray-800 text-bold">
+                                                        2
+                                                    </td>
+                                                    <!--end::Checkbox-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#" class="text-gray-800  mb-1">Mathematics
+                                                        </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#" class="text-gray-800 mb-1">1 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#" class="text-gray-800  mb-1">11 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#" class="text-gray-800 mb-1">10 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#" class="text-gray-800  mb-1">41 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#" class="text-gray-800 mb-1">61 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#" class="text-gray-800 mb-1">91 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#" class="text-gray-800  mb-1">91 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#" class="text-gray-800  mb-1">91 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#" class="text-gray-800 mb-1">91 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#" class="text-gray-800 text-start mb-1">18
+                                                        </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#"
+                                                            class="text-gray-800 text-center mb-1">43 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#"
+                                                            class="text-gray-800 text-center mb-1">43 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#"
+                                                            class="text-gray-800 text-center mb-1">50 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <td class="text-center">
+                                                        <div
+                                                            class="d-flex align-items-center w-150px mw-150px">
+                                                            <!--begin::Progress-->
+                                                            <div
+                                                                class="progress h-6px w-100 me-2 bg-light-success">
+                                                                <div class="progress-bar bg-success"
+                                                                    role="progressbar" style="width: 65%"
+                                                                    aria-valuenow="65" aria-valuemin="0"
+                                                                    aria-valuemax="100"></div>
+                                                            </div>
+                                                            <!--end::Progress-->
+                                                            <!--begin::Value-->
+                                                            <span class="text-gray-400 fw-bold">65%</span>
+                                                            <!--end::Value-->
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <a href="#"
+                                                            class="text-gray-800 text-center mb-1">50 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <td class="text-center">
+                                                        <div
+                                                            class="d-flex align-items-center w-125px mw-125px">
+                                                            <!--begin::Progress-->
+                                                            <div
+                                                                class="progress h-6px w-100 me-2 bg-light-danger">
+                                                                <div class="progress-bar bg-danger"
+                                                                    role="progressbar" style="width: 65%"
+                                                                    aria-valuenow="65" aria-valuemin="0"
+                                                                    aria-valuemax="100"></div>
+                                                            </div>
+                                                            <!--end::Progress-->
+                                                            <!--begin::Value-->
+                                                            <span class="text-gray-400 fw-bold">65%</span>
+                                                            <!--end::Value-->
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <!--begin::Checkbox-->
+                                                    <td class="text-gray-800 text-bold">
+                                                        3
+                                                    </td>
+                                                    <!--end::Checkbox-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#"
+                                                            class="text-gray-800 text-start mb-1">English
+                                                        </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#" class="text-gray-800 mb-1">1 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#" class="text-gray-800  mb-1">11 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#" class="text-gray-800 mb-1">10 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#" class="text-gray-800  mb-1">41 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#" class="text-gray-800 mb-1">61 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#" class="text-gray-800 mb-1">91 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#" class="text-gray-800  mb-1">91 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#" class="text-gray-800  mb-1">91 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#" class="text-gray-800 mb-1">91 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#" class="text-gray-800 text-start mb-1">18
+                                                        </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#"
+                                                            class="text-gray-800 text-center mb-1">43 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#"
+                                                            class="text-gray-800 text-center mb-1">43 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <!--begin::Name=-->
+                                                    <td>
+                                                        <a href="#"
+                                                            class="text-gray-800 text-center mb-1">50 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <td class="text-center">
+                                                        <div
+                                                            class="d-flex align-items-center w-150px mw-150px">
+                                                            <!--begin::Progress-->
+                                                            <div
+                                                                class="progress h-6px w-100 me-2 bg-light-success">
+                                                                <div class="progress-bar bg-success"
+                                                                    role="progressbar" style="width: 65%"
+                                                                    aria-valuenow="65" aria-valuemin="0"
+                                                                    aria-valuemax="100"></div>
+                                                            </div>
+                                                            <!--end::Progress-->
+                                                            <!--begin::Value-->
+                                                            <span class="text-gray-400 fw-bold">65%</span>
+                                                            <!--end::Value-->
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <a href="#"
+                                                            class="text-gray-800 text-center mb-1">50 </a>
+                                                    </td>
+                                                    <!--end::Name=-->
+                                                    <td class="text-center">
+                                                        <div
+                                                            class="d-flex align-items-center w-125px mw-125px">
+                                                            <!--begin::Progress-->
+                                                            <div
+                                                                class="progress h-6px w-100 me-2 bg-light-danger">
+                                                                <div class="progress-bar bg-danger"
+                                                                    role="progressbar" style="width: 65%"
+                                                                    aria-valuenow="65" aria-valuemin="0"
+                                                                    aria-valuemax="100"></div>
+                                                            </div>
+                                                            <!--end::Progress-->
+                                                            <!--begin::Value-->
+                                                            <span class="text-gray-400 fw-bold">65%</span>
+                                                            <!--end::Value-->
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+                                            <!--end::Table body-->
+                                        </table>
+                                        <!--end::Table-->
+
+
+                                        <!--begin::Notes
+                                        <div class="mb-0">
+                                            <label class="form-label fs-6 fw-bolder text-gray-700">Notes</label>
+                                            <textarea name="notes" class="form-control form-control-solid" rows="3" placeholder="Thanks for your business"></textarea>
+                                        </div>
+                                        <!--end::Notes-->
+
+                                    </div>
+                                    <!--begin::Actions-->
+                                    <div class="text-center mb-5">
+                                        <div class="row">
+                                            <div class="col 6">
+                                                <button type="reset" id="kt_customers_export_cancel"
+                                                    class="btn btn-light w-100 me-3">Cancel</button>
+                                            </div>
+                                            <div class="col 6"><button type="submit"
+                                                    id="kt_customers_export_submit"
+                                                    class="w-100 btn btn-info">
+                                                    <span class="indicator-label">Export</span>
+
+                                                </button></div>
+                                        </div>
+                                    </div>
+                                    <!--end::Actions-->
+                                </form>
+                                <!--end::Form-->
+                            </div>
+                            <!--end::Modal body-->
+                        </div>
+                        <!--end::Modal content-->
+                    </div>
+                    <!--end::Modal dialog-->
+                </div>
+                <!--end::Modal - New Card-->
+                <!--end::Modals-->
+            </div>
+            <!--end::Container-->
+        </div>
+        <!--end::Post-->
+    </div>
+    <!--end::Content-->
+    
+</div>

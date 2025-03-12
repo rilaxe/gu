@@ -1,0 +1,58 @@
+
+<div>
+  <div>
+      <div>
+         <div style="font-family: 'Poppins-Medium';">
+            <div style="background-color: rgb(5, 111, 187); color: white; padding: 20px 20px 10px 20px; margin-bottom: 5vh; border-radius: 10px 10px 0 0;">
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+                    <h4></h4>
+                    <h4>Student Login</h4>
+                   <h4 style="font-size: 40px;" (click)="closeLogin()">&times;</h4> 
+                </div>
+                
+             
+              <div class="text-center mb-3">
+                  
+                  <a href="index.html"><img src="../assets/images/school-logo.jpg" alt="" style="border-radius: 100%;" width="80"></a>
+              </div>
+            </div>
+         </div> 
+          
+          <form [formGroup]="loginForm" (ngSubmit)="submit()" style="padding: 0 20px;">
+              <div class="form-group mb-3">
+                  <label class="mb-1"><strong>Admission No.</strong></label>
+                  <input #logi type="email" class="form-control" required placeholder="Email address" formControlName="email" [value]="email" (change)="email = genk.hook(logi.value.toString())">
+                  <div class="eroce">
+                      <div>{{emailError}}</div>
+                  </div>
+              </div>
+              
+              <div class="form-group mb-3">
+                  <label class="mb-1"><strong>Password</strong></label>
+                  <input #pas required type="password" class="form-control" autocomplete="off" autocorrect="off" placeholder="Password" formControlName="password" [value]="password" (change)="password = genk.hook(pas.value.toString())">
+                  <div class="eroce">
+                      <div>{{passwordError}}</div>
+                  </div>
+              </div>
+              <!-- <div class="form-row d-flex justify-content-between mt-4 mb-2">
+                  <div class="form-group">
+                     <div class="custom-control custom-checkbox ml-1">
+                          <input type="checkbox" class="custom-control-input" id="basic_checkbox_1">
+                          <label class="custom-control-label" for="basic_checkbox_1">Remember my preference</label>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <a href="page-forgot-password.html">Forgot Password?</a>
+                  </div>
+              </div> -->
+              <div class="text-center">
+                  <button type="submit" class="btn btn-primary btn-block" [disabled]="loading" (click)="submit()">Login</button>
+              </div>
+          </form>
+          <!-- <div class="new-account mt-3">
+              <p>Don't have an account? <a class="text-primary" [routerLink]="['/', genk.account, genk.register]">Sign up</a></p>
+          </div> -->
+      </div>
+  </div>
+</div>
